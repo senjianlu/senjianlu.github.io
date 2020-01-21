@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Windows下 Hugo&#43;Github Pages 搭建静态博客 - 許さん的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用Hugo&#43;Git" />
+  <meta name="generator" content="Hugo 0.62.2 with theme pure" />
+  <title>Windows下 Hugo&#43;Github Pages 搭建静态博客 - 許さん的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://m18018230731.github.io/css/style.min.1d5507eaceb785fa09a503d817a5ab7c4df333ce47f7c9d6545aabbbbb0fa2d9.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="Windows下 Hugo&#43;Github Pages 搭建静态博客" />
+<meta property="og:description" content="确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用Hugo&#43;Git" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://m18018230731.github.io/2020/01/hugogithubpages/" />
+<meta property="article:published_time" content="2020-01-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-11T00:00:00+00:00" />
+<meta itemprop="name" content="Windows下 Hugo&#43;Github Pages 搭建静态博客">
+<meta itemprop="description" content="确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用Hugo&#43;Git">
+<meta itemprop="datePublished" content="2020-01-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1766">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Windows下 Hugo&#43;Github Pages 搭建静态博客"/>
+<meta name="twitter:description" content="确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用Hugo&#43;Git"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-white" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/m18018230731" target="_blank">
+            <img class="img-circle img-rotate" src="https://m18018230731.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Explicit is better than implicit.</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>因为觉得别人写的教程不好或是不够好，所以自己花时间重新整理一遍。</br>希望也能帮助到你。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://m18018230731.github.io/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://m18018230731.github.io/categories/%E7%A1%AC%E4%BB%B6%E6%8A%98%E8%85%BE/" class="category-list-link">硬件折腾</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://m18018230731.github.io/tags/django/" class="tag-list-link">django</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://m18018230731.github.io/2020/01/pveledeikuai/" class="title">PVE下 LEDE&#43;爱快 双软路由部署</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-13</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://m18018230731.github.io/2020/01/picgogithub/" class="title">Windows下 PicGo&#43;GitHub 搭建个人图床工具</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-12</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://m18018230731.github.io/2020/01/hugogithubpages/" class="title">Windows下 Hugo&#43;Github Pages 搭建静态博客</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://m18018230731.github.io/2020/01/centos7nginxuwsgidjango/" class="title">Centos7下 Nginx&#43;Uwsgi 配置Django项目</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/01/hugogithubpages/"
+    >Windows下 Hugo&#43;Github Pages 搭建静态博客</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://m18018230731.github.io/2020/01/hugogithubpages/" class="article-date">
+  <time datetime="2020-01-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-11</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
+</span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/hugogithubpages/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1766字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用Hugo+Github Pages免费搭建个静态博客来做树洞吧。</p>
+<hr>
+<p><strong>环境</strong>：Windows 10 64位<br>
+<strong>需要时间</strong>：1小时左右<br>
+<strong>原教程</strong>：<a href="https://blog.csdn.net/weixin_30265103/article/details/95670529">CSDN Windows下搭建Hugo博客</a></p>
+<hr>
+<p>1：在<a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a>地址下找到Windows压缩文件下载，如下图64位的。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112113921.png" alt="64位"></p>
+<p>2：新建Hugo和Hugo/bin文件夹，将下载下来的.exe文件放入bin文件夹，并<strong>添加至环境变量中</strong>。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112114203.png" alt="下载并安装"></p>
+<p>3：在cmd中输入</p>
+<pre><code class="language-code">hugo version
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115115.png" alt="检测"><br>
+检测是否安装成功，安装成功后进入Hugo文件夹中，输入</p>
+<pre><code class="language-code">hugo new site myblog
+</code></pre>
+<p>myblog替换成想要的博客文件夹名字。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115141.png" alt="新建"></p>
+<p>4：进入新建的博客文件夹下，可以看见项目结构：content存放内容，themes用来存放主题，config.toml用来配置文件，这也是这次初步建立需要博客需要改的内容。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115238.png" alt="项目结构"></p>
+<p>5：建完文件夹后先去挑选主题，在<a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>选择自己喜欢的主题进行下载，这次我使用<a href="https://github.com/vaga/hugo-theme-m10c">hugo-theme-m10c</a>这款主题，因为选择它避免配置config.toml文件而花费大量时间。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115824.png" alt="挑选博客"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115858.png" alt="进入github页面"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115934.png" alt="复制git地址方便clone"></p>
+<p>6：cmd进入博客文件夹下，执行以下命令把github上的主题文件clone到对应文件夹下 themes/m10c</p>
+<pre><code class="language-code">git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112120323.png" alt="下载主题"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112120406.png" alt="确认主题下载成功"></p>
+<p>7：此时就已经在本地运行博客做确认了，执行</p>
+<pre><code class="language-code">hugo server -t m10c --buildDrafts
+</code></pre>
+<p>启动项目，然后前往 <a href="http://localhost:1313/">http://localhost:1313/</a> 就可以看到了。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112120719.png" alt="项目启动成功"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112120748.png" alt="博客页"></p>
+<p>8：接下来开始新建一篇博客，使用Hugo很大程度上就是看中了它将.md文件渲染成静态博客页面的能力，即使是发布完成后，原稿也可以保存方便脱机查看。<br>
+首选Ctrl+C结束本地的预览，然后新建博文对应的.md文件。</p>
+<pre><code class="language-code">hugo new post/blog.md
+</code></pre>
+<p>新建的.md文件会存储在content/post中，直接前往进行编辑即可。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112121314.png" alt="文件目录"></p>
+<p>9：推荐使用VS Code进行编辑，左上角的预览按钮，点击后可以将窗口分为左右两部分用于查看实施效果。
+<strong>注意：draft: true 需要改为 draft: false 图中并未做修改，如果不修改就是草稿，不会在博文页面上显示内容！</strong><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112121815.png" alt="vscode"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112121932.png" alt="vscode预览"><br>
+写完后直接Ctrl+S保存即可。</p>
+<p>10：再次本地启动项目，可以看见已经有对应的博文了。<strong>至此，本地博客环境就算配置完成了。</strong></p>
+<pre><code class="language-code">hugo server -t m10c --buildDrafts
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112122412.png" alt="博文"></p>
+<p>11：Github位每个账号提供了一个免费的空间来存储静态的html、js和css，而我们就可以借此来发布博客。
+首先去新建仓库，注意命名，这是github辨别是否为网络空间的依据。<br>
+仓库名需满足 账户名.github.io 的命名规范，然后点击绿色的Create按钮进行创建。</p>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112122910.png" alt="创建仓库"><br>
+我因为已经部署完成，因此这里显示重复创建。</p>
+<p>12：创建完成后，回到myblog博客目录，执行以下命令来生成public目录，也就是github仓库所需的静态博客的文件。（后续都用的原博客的图，路径可能有偏差，都是基础的git操作）</p>
+<pre><code class="language-code">hugo --theme=m10c --baseUrl=&quot;地址&quot; --buildDrafts
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123241.png" alt="public"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123513.png" alt="路径"></p>
+<p>13：进入public文件夹，将所有文件添加、提交到本地。</p>
+<pre><code class="language-code">git init
+git add.
+git commit -m &quot;附言&quot;
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123639.png" alt="git提交本地"></p>
+<p>14：将本地public与github进行关联后，进行推送，第一次推送会需要输入github的账号密码。</p>
+<pre><code class="language-code">git add origin http://github.com/m1801823/m1801823.github.io.git
+git push -u origin master
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123744.png" alt="git关联"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123755.png" alt="git推送"></p>
+<p>15：等待推送完成后，刷新github页面，对应的文件就上传上来了，这时候输入<a href="http://github.com">http://账户名.github.io</a> 就可以访问了<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112124221.png" alt="博客"></p>
+<p>16：如果自己有域名的话，也可以配置DNS直接让域名解析到你的静态博客上，方便告诉好友你的博客网址。<br>
+<em>这里以在<a href="https://www.namecheap.com/">namecheap.com</a>上购买的域名为例，不推荐阿里云和腾讯云，只因为管局备案太麻烦。</em></p>
+<p>首先选择已有域名进入管理面板。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112124605.png" alt="域名管理"></p>
+<p>然后新增或者修改DNS解析记录，对应以下修改即可，只需要把CNAME Record 的Value修改成你的地址即可。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112124750.png" alt="DNS解析"></p>
+<p>最后回到Github的仓库部分，选择Settings,拉到Custom domain部分修改成你的域名保存。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112125107.png" alt="绑定域名"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112125135.png" alt="绑定域名"><br>
+大概5分钟左右，域名就会解析到你的博客，在开始的几天是不支持https的，只能先用<a href="http://%E4%BD%A0%E7%9A%84%E5%9F%9F%E5%90%8D.com">http://你的域名</a>进行访问。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112125455.png" alt="域名访问"><br>
+之后如果https加密可用，则需要更改一下模板，在head部分加上</p>
+<pre><code class="language-code">&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;upgrade-insecure-requests&quot;&gt;
+</code></pre>
+<p>来自动将http的不安全请求升级为https，否则可能出现css等加载不出来的情况。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112183525.png" alt="头文件修改"></p>
+<p><strong>至此基于Hugo和Github Pages的静态博客搭建完成，开始养成记录的好习惯吧！</strong></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://m18018230731.github.io/2020/01/hugogithubpages/" title="Windows下 Hugo&#43;Github Pages 搭建静态博客" target="_blank" rel="external">https://m18018230731.github.io/2020/01/hugogithubpages/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://m18018230731.github.io/2020/01/centos7nginxuwsgidjango/" title="Centos7下 Nginx&#43;Uwsgi 配置Django项目"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://m18018230731.github.io/2020/01/picgogithub/"
+                    title="Windows下 PicGo&#43;GitHub 搭建个人图床工具"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/m18018230731" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://m18018230731.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://m18018230731.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://m18018230731.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/m18018230731.github.io',
+            CONTENT_URL: 'https:\/\/m18018230731.github.io\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://m18018230731.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Centos7下 Nginx&#43;Uwsgi 配置Django项目 - 許さん的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="服务器的部署笔记。 各部分功能介绍： Nginx是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。 Uw" />
+  <meta name="generator" content="Hugo 0.62.2 with theme pure" />
+  <title>Centos7下 Nginx&#43;Uwsgi 配置Django项目 - 許さん的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://m18018230731.github.io/css/style.min.1d5507eaceb785fa09a503d817a5ab7c4df333ce47f7c9d6545aabbbbb0fa2d9.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="Centos7下 Nginx&#43;Uwsgi 配置Django项目" />
+<meta property="og:description" content="服务器的部署笔记。 各部分功能介绍： Nginx是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。 Uw" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://m18018230731.github.io/2020/01/centos7nginxuwsgidjango/" />
+<meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+<meta itemprop="name" content="Centos7下 Nginx&#43;Uwsgi 配置Django项目">
+<meta itemprop="description" content="服务器的部署笔记。 各部分功能介绍： Nginx是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。 Uw">
+<meta itemprop="datePublished" content="2020-01-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1529">
+
+
+
+<meta itemprop="keywords" content="Django," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Centos7下 Nginx&#43;Uwsgi 配置Django项目"/>
+<meta name="twitter:description" content="服务器的部署笔记。 各部分功能介绍： Nginx是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。 Uw"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-white" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/m18018230731" target="_blank">
+            <img class="img-circle img-rotate" src="https://m18018230731.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Explicit is better than implicit.</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>因为觉得别人写的教程不好或是不够好，所以自己花时间重新整理一遍。</br>希望也能帮助到你。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://m18018230731.github.io/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://m18018230731.github.io/categories/%E7%A1%AC%E4%BB%B6%E6%8A%98%E8%85%BE/" class="category-list-link">硬件折腾</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://m18018230731.github.io/tags/django/" class="tag-list-link">django</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://m18018230731.github.io/2020/01/pveledeikuai/" class="title">PVE下 LEDE&#43;爱快 双软路由部署</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-13</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://m18018230731.github.io/2020/01/picgogithub/" class="title">Windows下 PicGo&#43;GitHub 搭建个人图床工具</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-12</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://m18018230731.github.io/2020/01/hugogithubpages/" class="title">Windows下 Hugo&#43;Github Pages 搭建静态博客</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://m18018230731.github.io/2020/01/centos7nginxuwsgidjango/" class="title">Centos7下 Nginx&#43;Uwsgi 配置Django项目</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/01/centos7nginxuwsgidjango/"
+    >Centos7下 Nginx&#43;Uwsgi 配置Django项目</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://m18018230731.github.io/2020/01/centos7nginxuwsgidjango/" class="article-date">
+  <time datetime="2020-01-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/django/"> Django </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/centos7nginxuwsgidjango/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1529字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><strong>服务器的部署笔记。</strong></p>
+<hr>
+<p>各部分功能介绍：</p>
+<ul>
+<li>Nginx是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。</li>
+<li>Uwsgi负责多线程，即支持多人同时访问网站。</li>
+<li>Django是由Python编写的开源Web应用框架，适合个人小项目搭建。</li>
+</ul>
+<hr>
+<p>服务器系统为Centos7，当然记录的所有命令再更高版本上也都可以使用。</p>
+<p>1、既然搭建的是Python项目，首先升级以下服务器端的Python版本，默认linux自带python2，我们把它先升级为python3。</p>
+<p>安装依赖软件</p>
+<pre><code class="language-code">yum -y install sqlite-devel
+yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel
+</code></pre>
+<p>下载安装python3.6</p>
+<pre><code class="language-code">wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz
+tar zxvf Python-3.6.1.tgz
+cd Python-3.6.1
+./configure --prefix=/usr/local/python3
+make &amp;&amp; make install
+</code></pre>
+<p>创建python及pip命令软链接</p>
+<pre><code class="language-code">ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+</code></pre>
+<p>这样python3就已经安装完成了，键入 python3 再回车就可以进入python编译了。<br>
+<em>注：Ctrl+Z退出python编译</em><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115210804.png" alt="python3"></p>
+<p>2、接下来安装Django并配置项目，这里选择的版本是 2.1.8，单纯的因为够用且稳定，新版本的环境配置没有前人指导。</p>
+<pre><code class="language-code">pip3 install django==2.1.8
+</code></pre>
+<p>等待安装完成后，上传Django项目到服务器上任意目录，使用Xftp或者git clone都可以</p>
+<pre><code class="language-code">cd 项目文件夹
+python3 manage.py runserver 0.0.0.0:80
+</code></pre>
+<p><strong>注意，运行项目时可能报错：</strong></p>
+<blockquote>
+<p>You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run &lsquo;python manage.py migrate&rsquo; to apply them.</p>
+</blockquote>
+<p>这时只需要按照提示，输入以下内容即可</p>
+<pre><code class="language-code">python3 manage.py migrate
+</code></pre>
+<p>出现以下信息则说明启动成功。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115220221.png" alt="启动成功"><br>
+<strong>注意：</strong> 如果访问页面出现了以下错误，那么进入你的项目，修改 settings.py 将 ALLOWED——HOSTS = [] 修改为 ['*'] 即可解决。</p>
+<blockquote>
+<p>DisallowedHost at / Invalid HTTP_HOST header: &lsquo;47.56.227.27&rsquo;. You may need to add &lsquo;47.56.227.27&rsquo; to ALLOWED_HOSTS.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115215725.png" alt="修改"><br>
+<strong>至此，python环境与Django环境就安装完成。</strong></p>
+<p>3、接下来安装uwsgi web网关。<br>
+首先下载安装uwsgi</p>
+<pre><code class="language-code">wget http://projects.unbit.it/downloads/uwsgi-2.0.1.tar.gz
+tar zxvf uwsgi-2.0.1.tar.gz
+cd uwsgi-2.0.1
+python3 uwsgiconfig.py --build
+cp -R /home/uwsgi-2.0.1 /usr/local/uwsgi
+ln -s /usr/local/uwsgi/uwsgi /usr/bin/uwsgi
+</code></pre>
+<p>然后测试uwsgi是否安装成功，创建测试文件</p>
+<pre><code class="language-code">vi test.py
+</code></pre>
+<p>文件内容为：</p>
+<pre><code class="language-text">def application(env, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
+    return [b&quot;Hello World&quot;]
+</code></pre>
+<p>输入完成后 :wq 保存，然后执行以下命令进行测试。</p>
+<pre><code class="language-code">/usr/local/uwsgi/uwsgi --http :9090 --wsgi-file /home/test.py
+</code></pre>
+<blockquote>
+<p>防火墙开放端口指令：<br>
+<strong>firewall-cmd &ndash;list-all</strong> | <em>查看当前开放的所有端口</em><br>
+<strong>firewall-cmd  &ndash;add-port=80/tcp &ndash;permanent</strong>  | <em>80替换为你需要开放的端口</em><br>
+<strong>firewall-cmd &ndash;reload</strong><br>
+然后去对应服务商的安全组处开放安全组。这里就以阿里云国际为例。
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115222117.png" alt="安全组"></p>
+</blockquote>
+<p>前往你的 ip:9090 出现 Hello World 就说明uwsgi的安装已经完成了！<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115223058.png" alt="成功"></p>
+<p>4、开始Uwsgi和Django结合，执行</p>
+<pre><code class="language-code">uwsgi --http :9090 --chdir /home/Django项目文件夹 --wsgi-file Django项目(与manage.py同级)/wsgi.py --master --processes 4 --threads 2 --stats 127.0.0.1:9192
+</code></pre>
+<p>同样访问 ip:9090 ，如果可以访问django页面则说明成功。<br>
+<em>注：如果在访问django项目时静态文件加载失败可以先忽略，在nginx配置中会指定静态文件路径，配置后可以正常访问。</em></p>
+<p>5、安装Nginx<br>
+首先下载安装依赖第三方软件pcre</p>
+<pre><code class="language-code">wget http://jaist.dl.sourceforge.net/project/pcre/pcre/8.34/pcre-8.34.tar.bz2
+tar jxvf pcre-8.34.tar.bz2
+</code></pre>
+<blockquote>
+<p>如果报错：bzip2: Cannot exec: No such file or directory<br>
+执行：yum -y install bzip2</p>
+</blockquote>
+<pre><code class="language-code">cd pcre-8.34
+./configure --enable-utf8
+make &amp;&amp; make install
+</code></pre>
+<p>下载安装依赖第三方软件openssl</p>
+<pre><code class="language-code">wget http://distfiles.macports.org/openssl/openssl-1.0.2h.tar.gz
+tar zxvf openssl-1.0.2h.tar.gz
+</code></pre>
+<p>下载安装nginx</p>
+<pre><code class="language-code">wget http://nginx.org/download/nginx-1.9.9.tar.gz
+tar zxvf nginx-1.9.9.tar.gz
+./configure --prefix=/usr/local/nginx --with-pcre --with-http_stub_status_module --with-http_ssl_module --with-openssl=/home/openssl-1.0.2h --with-http_gzip_static_module --with-http_sub_module --with-cc=/usr/bin/gcc
+make install
+</code></pre>
+<p>新建www用户</p>
+<pre><code class="language-code">useradd -s /sbin/nologin -M www
+</code></pre>
+<p>备份、修改nginx配置文件</p>
+<pre><code class="language-code">cd /usr/local/nginx/conf
+cp -f nginx.conf nginx.conf_bak
+vi nginx.conf
+    (修改文件)
+    user www;         #修改启动用户为www
+    worker_processes 4;         #启动4个进程，根据实际需求配置
+</code></pre>
+<p>启动nginx</p>
+<pre><code class="language-code">cd /usr/local/nginx/sbin
+./nginx
+</code></pre>
+<blockquote>
+<p>如果报错：nginx: [emerg] still could not bind()<br>
+说明80端口目前被占用<br>
+执行：netstat -apn | grep 80<br>
+然后：kill -9 26105<br>
+<em>26105为搜索出来的 0.0.0.0/80 对应的PID</em><br>
+<em>注意：需要删除5-6次，因为执行的适合有进程保护</em></p>
+</blockquote>
+<p>再访问 ip:80 显示nginx页面说明nginx安装成功。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115234646.png" alt="成功"></p>
+<p>6、Nginx+Uwsgi+Django 三者连携。<br>
+首先在Django项目文件夹中创建 uwsgi.ini</p>
+<pre><code class="language-code">vi uwsgi.ini
+    (文件内容)
+    [uwsgi]
+    #uwsgi启动端口
+    socket = 127.0.0.1:9090 
+    #django项目目录
+    chdir=/home/SteamCash
+    module=SteamCash.wsgi
+    master = true
+    processes=2
+    threads=2
+    max-requests=2000
+    chmod-socket=664
+    vacuum=true
+    # 日志路径
+    daemonize = /home/SteamCash/logs/uwsgi.log
+</code></pre>
+<p>配置Nginx</p>
+<pre><code>vi /usr/local/nginx/conf/nginx.conf
+    (文件内容)
+    ......
+    server {
+        listen       80;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        # 选择为你项目的static文件夹
+	    location /static {
+		    alias /home/SteamCash/static;
+	    }
+
+        location / {
+	    include uwsgi_params;
+	    uwsgi_pass 127.0.0.1:9090;
+            root   html;
+            index  index.html index.htm;
+        }
+    ......
+</code></pre>
+<p>启动uwsgi</p>
+<pre><code class="language-code">uwsgi --ini /home/SteamCash/uwsgi.ini
+</code></pre>
+<p>启动nginx</p>
+<pre><code class="language-code">./usr/local/nginx/sbin/nginx
+</code></pre>
+<p>接着访问页面即可。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200116002213.png" alt="访问"></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://m18018230731.github.io/2020/01/centos7nginxuwsgidjango/" title="Centos7下 Nginx&#43;Uwsgi 配置Django项目" target="_blank" rel="external">https://m18018230731.github.io/2020/01/centos7nginxuwsgidjango/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://m18018230731.github.io/about/" title="About"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://m18018230731.github.io/2020/01/hugogithubpages/"
+                    title="Windows下 Hugo&#43;Github Pages 搭建静态博客"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/m18018230731" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://m18018230731.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://m18018230731.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://m18018230731.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/m18018230731.github.io',
+            CONTENT_URL: 'https:\/\/m18018230731.github.io\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://m18018230731.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>
