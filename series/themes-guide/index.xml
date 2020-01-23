@@ -2,65 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Themes Guide on 許さん的博客 </title>
-    <link>https://m18018230731.github.io/series/themes-guide/</link>
+    <link>https://moyu.best/series/themes-guide/</link>
     <description>Recent content in Themes Guide on 許さん的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 12 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://m18018230731.github.io/series/themes-guide/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://moyu.best/series/themes-guide/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PVE下 黑群晖 的安装和硬盘直通组Raid1</title>
-      <link>https://m18018230731.github.io/2020/01/pvesynology/</link>
+      <link>https://moyu.best/2020/01/pvesynology/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://m18018230731.github.io/2020/01/pvesynology/</guid>
+      <guid>https://moyu.best/2020/01/pvesynology/</guid>
       <description>突然发现PVE下安装的 LEDE和爱快 不是占用的CPU物理核心，所设置的1核只是限制了最高占用，于是就决定再利用下多下来的2G内存，安装个黑群</description>
     </item>
     
     <item>
       <title>PVE下 LEDE&#43;爱快 双软路由部署</title>
-      <link>https://m18018230731.github.io/2020/01/pveledeikuai/</link>
+      <link>https://moyu.best/2020/01/pveledeikuai/</link>
       <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://m18018230731.github.io/2020/01/pveledeikuai/</guid>
+      <guid>https://moyu.best/2020/01/pveledeikuai/</guid>
       <description>起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装lede的，但是手头正好闲下来一块亮机的</description>
     </item>
     
     <item>
       <title>Windows下 PicGo&#43;GitHub 搭建个人图床工具</title>
-      <link>https://m18018230731.github.io/2020/01/picgogithub/</link>
+      <link>https://moyu.best/2020/01/picgogithub/</link>
       <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://m18018230731.github.io/2020/01/picgogithub/</guid>
+      <guid>https://moyu.best/2020/01/picgogithub/</guid>
       <description>虽然也有免费的可以用，但是既然软路由已经配置了方便的上网环境，Github访问起来比以前便利了许多，那就把图床直接部署在Github上好了，</description>
     </item>
     
     <item>
       <title>Windows下 Hugo&#43;Github Pages 搭建静态博客</title>
-      <link>https://m18018230731.github.io/2020/01/hugogithubpages/</link>
+      <link>https://moyu.best/2020/01/hugogithubpages/</link>
       <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://m18018230731.github.io/2020/01/hugogithubpages/</guid>
+      <guid>https://moyu.best/2020/01/hugogithubpages/</guid>
       <description>确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用Hugo+Git</description>
     </item>
     
     <item>
       <title>Centos7下 Nginx&#43;Uwsgi 配置Django项目</title>
-      <link>https://m18018230731.github.io/2020/01/centos7nginxuwsgidjango/</link>
+      <link>https://moyu.best/2020/01/centos7nginxuwsgidjango/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://m18018230731.github.io/2020/01/centos7nginxuwsgidjango/</guid>
+      <guid>https://moyu.best/2020/01/centos7nginxuwsgidjango/</guid>
       <description>服务器的部署笔记。 各部分功能介绍： Nginx是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。 Uw</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://m18018230731.github.io/about/</link>
+      <link>https://moyu.best/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://m18018230731.github.io/about/</guid>
+      <guid>https://moyu.best/about/</guid>
       <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
 Hugo makes use of a variety of open source projects including:
  https://github.</description>
