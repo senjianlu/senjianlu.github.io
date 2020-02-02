@@ -29,6 +29,15 @@
     </item>
     
     <item>
+      <title>PostgreSQL 学习笔记 (一)</title>
+      <link>https://moyu.best/2020/01/postgresqlnote01/</link>
+      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://moyu.best/2020/01/postgresqlnote01/</guid>
+      <description>由于在学校针对作业和毕设 MySQL已经很够用了，因此也没有做更多对数据库的功课，只知道 Oracle数据库适合企业，MySQL适合小型项目，但</description>
+    </item>
+    
+    <item>
       <title>Windows下 PicGo&#43;GitHub 搭建个人图床工具</title>
       <link>https://moyu.best/2020/01/picgogithub/</link>
       <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
