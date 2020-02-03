@@ -11,7 +11,16 @@
     
     
     <item>
-      <title>PostgreSQL 学习笔记 (二) psql工具的使用和权限管理</title>
+      <title>PostgreSQL 学习笔记 (三) 用户权限的管理控制</title>
+      <link>https://moyu.best/2020/02/postgresqlnote03/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://moyu.best/2020/02/postgresqlnote03/</guid>
+      <description>在学习具体的权限管理之前，需要先了解一下 PostgreSQL中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户已经 L</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 学习笔记 (二) psql工具的使用</title>
       <link>https://moyu.best/2020/02/postgresqlnote02/</link>
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       

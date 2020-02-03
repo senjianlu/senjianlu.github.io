@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>教程翻新 on 許さん的博客 </title>
-    <link>https://moyu.best/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</link>
-    <description>Recent content in 教程翻新 on 許さん的博客 </description>
+    <title>Python on 許さん的博客 </title>
+    <link>https://moyu.best/tags/python/</link>
+    <description>Recent content in Python on 許さん的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://moyu.best/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://moyu.best/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

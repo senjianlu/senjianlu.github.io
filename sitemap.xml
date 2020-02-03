@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>https://moyu.best/2020/02/postgresqlnote03/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://moyu.best/2020/02/postgresqlnote02/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -122,7 +129,7 @@
   </url>
   
   <url>
-    <loc>https://moyu.best/tags/django/</loc>
+    <loc>https://moyu.best/tags/python/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
