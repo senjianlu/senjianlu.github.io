@@ -5,10 +5,28 @@
     <link>https://moyu.best/tags/postgresql/</link>
     <description>Recent content in PostgreSQL on 許さん的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://moyu.best/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PostgreSQL 学习笔记 (二) psql工具的使用和权限管理</title>
+      <link>https://moyu.best/2020/02/postgresqlnote02/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://moyu.best/2020/02/postgresqlnote02/</guid>
+      <description>psql是 PostgreSQL中的一个命令行工具，类似与 Oracle中的 sqlplus，但是与之不同的是 psql支持运行数据库命令或者直接运</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 学习笔记 (一) 数据库的安装与环境配置</title>
+      <link>https://moyu.best/2020/02/postgresqlnote01/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://moyu.best/2020/02/postgresqlnote01/</guid>
+      <description>由于在学校针对作业和毕设 MySQL已经很够用了，因此也没有做更多对数据库的功课，只知道 Oracle数据库适合企业，MySQL适合小型项目，但</description>
+    </item>
     
     <item>
       <title>PVE下 黑群晖 的安装和硬盘直通组Raid1</title>
@@ -26,15 +44,6 @@
       
       <guid>https://moyu.best/2020/01/pveledeikuai/</guid>
       <description>起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装lede的，但是手头正好闲下来一块亮机的</description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL 学习笔记 (一)</title>
-      <link>https://moyu.best/2020/01/postgresqlnote01/</link>
-      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://moyu.best/2020/01/postgresqlnote01/</guid>
-      <description>由于在学校针对作业和毕设 MySQL已经很够用了，因此也没有做更多对数据库的功课，只知道 Oracle数据库适合企业，MySQL适合小型项目，但</description>
     </item>
     
     <item>
