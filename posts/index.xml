@@ -5,10 +5,19 @@
     <link>https://moyu.best/posts/</link>
     <description>Recent content in Posts on 許さん的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://moyu.best/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Windows下 Hugo静态博客一键推送发布</title>
+      <link>https://moyu.best/2020/05/hugoauto/</link>
+      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://moyu.best/2020/05/hugoauto/</guid>
+      <description>为了在东京奥运会期间应对临时封路，紧跟日本人赶了2个月的功能，终于能休息一阵了 :) 虽然是因为奥运会推迟而不是因为开发完成 总之又能学点新东西了，</description>
+    </item>
     
     <item>
       <title>PostgreSQL 学习笔记 (三) 用户权限的管理控制</title>
@@ -71,15 +80,6 @@
       
       <guid>https://moyu.best/2020/01/hugogithubpages/</guid>
       <description>确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用Hugo+Git</description>
-    </item>
-    
-    <item>
-      <title>Windows下 Hugo静态博客一键推送发布</title>
-      <link>https://moyu.best/2020/01/hugoauto/</link>
-      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://moyu.best/2020/01/hugoauto/</guid>
-      <description>为了在东京奥运会期间应对临时封路，紧跟日本人赶了2个月的功能，终于能休息一阵了 :) 虽然是因为奥运会推迟而不是因为开发完成 总之又能学点新东西了，</description>
     </item>
     
     <item>
