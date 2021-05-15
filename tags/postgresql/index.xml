@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PostgreSQL on 許さん的博客 </title>
+    <title>PostgreSQL on 森见鹿的博客 </title>
     <link>https://senjianlu.com/tags/postgresql/</link>
-    <description>Recent content in PostgreSQL on 許さん的博客 </description>
+    <description>Recent content in PostgreSQL on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
     
