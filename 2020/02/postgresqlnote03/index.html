@@ -23,32 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 L" />
-  <meta name="generator" content="Hugo 0.62.2 with theme pure" />
+  <meta name="description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中" />
+  <meta name="generator" content="Hugo 0.83.1 with theme pure" />
   <title>PostgreSQL 学习笔记 (三) 用户权限的管理控制 - 許さん的博客 </title>
   
   
-  <link rel="stylesheet" href="https://moyu.best/css/style.min.1d5507eaceb785fa09a503d817a5ab7c4df333ce47f7c9d6545aabbbbb0fa2d9.css">
+  <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
   <meta property="og:title" content="PostgreSQL 学习笔记 (三) 用户权限的管理控制" />
-<meta property="og:description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 L" />
+<meta property="og:description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://moyu.best/2020/02/postgresqlnote03/" />
-<meta property="article:published_time" content="2020-02-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-02-03T00:00:00+00:00" />
+<meta property="og:url" content="https://senjianlu.com/2020/02/postgresqlnote03/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-02-03T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-02-03T00:00:00&#43;00:00" />
+
 <meta itemprop="name" content="PostgreSQL 学习笔记 (三) 用户权限的管理控制">
-<meta itemprop="description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 L">
-<meta itemprop="datePublished" content="2020-02-03T00:00:00&#43;00:00" />
+<meta itemprop="description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中"><meta itemprop="datePublished" content="2020-02-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-02-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1217">
-
-
-
+<meta itemprop="wordCount" content="1176">
 <meta itemprop="keywords" content="PostgreSQL," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PostgreSQL 学习笔记 (三) 用户权限的管理控制"/>
-<meta name="twitter:description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 L"/>
+<meta name="twitter:description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -65,15 +62,15 @@
   
   
 
-  <body class="main-center theme-white" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <body class="main-center theme-green" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="slimContent">
       <div class="navbar-header">
         <div class="profile-block text-center">
-          <a id="avatar" href="https://github.com/m18018230731" target="_blank">
-            <img class="img-circle img-rotate" src="https://moyu.best/avatar.png" width="200" height="200">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://senjianlu.com/avatar.png" width="200" height="200">
           </a>
           <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
-          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Explicit is better than implicit.</h3>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">树深时见鹿，溪午不闻钟。</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
         </div><div class="search" id="search-form-wrap">
     <form class="search-form sidebar-form">
@@ -151,7 +148,7 @@
     <h3 class="widget-title">公告</h3>
     <div class="widget-body">
         <div id="board">
-            <div class="content"><p>因为觉得别人写的教程不好或是不够好，所以自己花时间重新整理一遍，希望也能帮助到你。</br>有错误或困惑请及时联系我！</br>base64:cmFiYmlyYm90MDA=</p>
+            <div class="content"><p>用来记录在工作中的一些问题和对应解决。</br>博客发布之前我会尽量检查，但是避免不了环境或是配置所造成的难以预测的问题，错误和疑问可以提 Issue 给我，感谢!</p>
             </div>
         </div>
     </div>
@@ -161,8 +158,9 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://moyu.best/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">3</span></li>
-            <li class="category-list-item"><a href="https://moyu.best/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">1</span></li>
         </ul>
     </div>
 </div>
@@ -172,15 +170,15 @@
         <ul class="tag-list">
             
             
-            <li class="tag-list-item"><a href="https://moyu.best/tags/postgresql/" class="tag-list-link">postgresql</a><span
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://moyu.best/tags/python/" class="tag-list-link">python</a><span
-                    class="tag-list-count">1</span></li>
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">2</span></li>
             
             
-            <li class="tag-list-item"><a href="https://moyu.best/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
                     class="tag-list-count">2</span></li>
             
         </ul>
@@ -195,7 +193,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/05/hugoauto/" class="title">Windows下 Hugo静态博客一键推送发布</a>
+                        <a href="https://senjianlu.com/2020/05/hugoauto/" class="title">Windows 下 Hugo 静态博客一键推送发布</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-05-17</time>
@@ -205,7 +203,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/02/postgresqlnote03/" class="title">PostgreSQL 学习笔记 (三) 用户权限的管理控制</a>
+                        <a href="https://senjianlu.com/2020/02/postgresqlnote03/" class="title">PostgreSQL 学习笔记 (三) 用户权限的管理控制</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
@@ -215,7 +213,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/02/postgresqlnote02/" class="title">PostgreSQL 学习笔记 (二) psql工具的使用</a>
+                        <a href="https://senjianlu.com/2020/02/postgresqlnote02/" class="title">PostgreSQL 学习笔记 (二) psql 工具的使用</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
@@ -225,7 +223,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/02/postgresqlnote01/" class="title">PostgreSQL 学习笔记 (一) 数据库的安装与环境配置</a>
+                        <a href="https://senjianlu.com/2020/02/postgresqlnote01/" class="title">PostgreSQL 学习笔记 (一) 数据库的安装与环境配置</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-02-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-02</time>
@@ -235,7 +233,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/01/pvesynology/" class="title">PVE下 黑群晖 的安装和硬盘直通组Raid1</a>
+                        <a href="https://senjianlu.com/2020/01/pvesynology/" class="title">PVE 下黑群晖的安装和硬盘直通组 RAID1</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-01-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-22</time>
@@ -267,7 +265,7 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://moyu.best/2020/02/postgresqlnote03/" class="article-date">
+<a href="https://senjianlu.com/2020/02/postgresqlnote03/" class="article-date">
   <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
 </a>
 </span>
@@ -282,23 +280,23 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/postgresqlnote03/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1217字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1176字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>在学习具体的权限管理之前，需要先了解一下 PostgreSQL中权限的几个层次：</p>
+      <p>在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次：</p>
 <ol>
-<li>特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login的权限。</li>
+<li>特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。</li>
 <li>在数据库中创建模式 (SCHEMA) 的权限。</li>
 <li>在模式中创建数据库对象的权限，如创建表、索引等。</li>
 <li>查询单表，和插入、更新或删除表中数据的权限。</li>
 <li>最低的则是只能操作表中部分字段的权限。</li>
 </ol>
-<p>五种权限中，比较难理解的可能就是为什么要把创建数据库等设置为特殊权限。在这之前，我们需要先学习 PostgreSQL中是如果对权限进行管理的。</p>
+<p>五种权限中，比较难理解的可能就是为什么要把创建数据库等设置为特殊权限。在这之前，我们需要先学习 PostgreSQL 中是如果对权限进行管理的。</p>
 <hr>
-<p>PostgreSQL使用角色的概念管理数据库权限，为了方便管理，往往给一个角色赋予一系列的权限，而如果某个用户需要这些权限，则只需要直接把角色赋给用户即可。<br>
-稍微有点绕的是在这里，PostgreSQL中角色和用户又是没有区别的，一个用户就是一个角色，因此可以把一个用户的权限赋给另一个用户，稍稍有点难理解，但是实际操作中不会有什么阻碍。</p>
+<p>PostgreSQL 使用角色的概念管理数据库权限，为了方便管理，往往给一个角色赋予一系列的权限，而如果某个用户需要这些权限，则只需要直接把角色赋给用户即可。<br>
+稍微有点绕的是在这里，PostgreSQL 中角色和用户又是没有区别的，一个用户就是一个角色，因此可以把一个用户的权限赋给另一个用户，稍稍有点难理解，但是实际操作中不会有什么阻碍。</p>
 <p>1、那就从创建用户开始吧。<br>
 指令如下：</p>
 <pre><code class="language-code">创建角色：CREATE ROLE username [ [ WITH ] option [...] ]
@@ -316,7 +314,7 @@ ALTER USER new_project_user PASSWORD '12345';       # 修改登录密码
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203184432.png" alt="测试"><br>
 这样一个可创建项目数据库的用户就创建完成了！当然这种情况下，创建的用户其他是没有其他数据库及表的访问权限的。</p>
 <p>2、修改权限<br>
-之前说过的5项权限中，存在包含超级用户、创建数据库权限和 Login在内的特殊权限，在修改权限或者说管理权限时，使用的命令是与一般权限不同的：</p>
+之前说过的5项权限中，存在包含超级用户、创建数据库权限和 Login 在内的特殊权限，在修改权限或者说管理权限时，使用的命令是与一般权限不同的：</p>
 <pre><code class="language-code">ALTER ROLE username [ [WITH] option [ ... ] ]
 </code></pre>
 <p>而一般的针对数据库中建模式、数据库中建表等的则使用 &ldquo;GRANT&rdquo;、&ldquo;REVOKE&rdquo; 命令：</p>
@@ -334,7 +332,7 @@ GRANT some_privileges ON database_object_type object_name TO username
 <pre><code class="language-code">GRANT SELECT ON table student TO new_project_user;
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203226.png" alt="table student"><br>
-这个时候再用 Navicat连接后去查看 &ldquo;student&quot;表，可以正常访问了。<br>
+这个时候再用 Navicat 连接后去查看 &ldquo;student&quot;表，可以正常访问了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203344.png" alt="访问正常"></p>
 <p>具体的权限贴在下放以作记录，如果需要同时赋予多个权限，除了 &ldquo;ALL PRIVILEGES&rdquo; 以外，只需要在多个权限中用 &ldquo;,&rdquo; 隔开就行了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203607.png" alt="权限01"><br>
@@ -358,7 +356,7 @@ GRANT some_privileges ON database_object_type object_name TO username
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://moyu.best/2020/02/postgresqlnote03/" title="PostgreSQL 学习笔记 (三) 用户权限的管理控制" target="_blank" rel="external">https://moyu.best/2020/02/postgresqlnote03/</a>
+      <a href="https://senjianlu.com/2020/02/postgresqlnote03/" title="PostgreSQL 学习笔记 (三) 用户权限的管理控制" target="_blank" rel="external">https://senjianlu.com/2020/02/postgresqlnote03/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -375,13 +373,13 @@ GRANT some_privileges ON database_object_type object_name TO username
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://moyu.best/2020/02/postgresqlnote02/" title="PostgreSQL 学习笔记 (二) psql工具的使用"><i
+                <a href="https://senjianlu.com/2020/02/postgresqlnote02/" title="PostgreSQL 学习笔记 (二) psql 工具的使用"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://moyu.best/2020/05/hugoauto/"
-                    title="Windows下 Hugo静态博客一键推送发布"><span>上一篇&nbsp;&nbsp;</span><i
+                <a href="https://senjianlu.com/2020/05/hugoauto/"
+                    title="Windows 下 Hugo 静态博客一键推送发布"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
@@ -393,16 +391,16 @@ GRANT some_privileges ON database_object_type object_name TO username
 
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
-    <li><a href="https://github.com/m18018230731" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
             <i class="icon icon-github"></i></a></li>
-    <li><a href="https://moyu.best/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+    <li><a href="https://senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
             <i class="icon icon-rss"></i></a></li>
 </ul>
   <div class="copyright">
     &copy;2019  -
-    2020
+    2021
     <div class="publishby">
-        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>
   </div>
 </footer>
@@ -432,8 +430,8 @@ GRANT some_privileges ON database_object_type object_name TO username
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://moyu.best/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
-<script src="https://moyu.best/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+<script src="https://senjianlu.com/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://senjianlu.com/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
 
 <script>
     (function (window) {
@@ -445,13 +443,13 @@ GRANT some_privileges ON database_object_type object_name TO username
                 TAGS: '标签',
                 UNTITLED: '(未命名)',
             },
-            ROOT_URL: 'https:\/\/moyu.best',
-            CONTENT_URL: 'https:\/\/moyu.best\/searchindex.json ',
+            ROOT_URL: 'https:\/\/senjianlu.com',
+            CONTENT_URL: 'https:\/\/senjianlu.com\/searchindex.json ',
         };
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://moyu.best/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script type="text/javascript" src="https://senjianlu.com/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({

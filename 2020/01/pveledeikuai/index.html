@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        PVE下 LEDE&#43;爱快 双软路由部署 - 許さん的博客 
+        PVE 下 LEDE&#43;爱快 双软路由部署 - 許さん的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,32 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装lede的，但是手头正好闲下来一块亮机的" />
-  <meta name="generator" content="Hugo 0.62.2 with theme pure" />
-  <title>PVE下 LEDE&#43;爱快 双软路由部署 - 許さん的博客 </title>
+  <meta name="description" content="起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200" />
+  <meta name="generator" content="Hugo 0.83.1 with theme pure" />
+  <title>PVE 下 LEDE&#43;爱快 双软路由部署 - 許さん的博客 </title>
   
   
-  <link rel="stylesheet" href="https://moyu.best/css/style.min.1d5507eaceb785fa09a503d817a5ab7c4df333ce47f7c9d6545aabbbbb0fa2d9.css">
+  <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="PVE下 LEDE&#43;爱快 双软路由部署" />
-<meta property="og:description" content="起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装lede的，但是手头正好闲下来一块亮机的" />
+  <meta property="og:title" content="PVE 下 LEDE&#43;爱快 双软路由部署" />
+<meta property="og:description" content="起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://moyu.best/2020/01/pveledeikuai/" />
-<meta property="article:published_time" content="2020-01-13T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-13T00:00:00+00:00" />
-<meta itemprop="name" content="PVE下 LEDE&#43;爱快 双软路由部署">
-<meta itemprop="description" content="起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装lede的，但是手头正好闲下来一块亮机的">
-<meta itemprop="datePublished" content="2020-01-13T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://senjianlu.com/2020/01/pveledeikuai/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-01-13T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-01-13T00:00:00&#43;00:00" />
+
+<meta itemprop="name" content="PVE 下 LEDE&#43;爱快 双软路由部署">
+<meta itemprop="description" content="起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200"><meta itemprop="datePublished" content="2020-01-13T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-01-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3892">
-
-
-
+<meta itemprop="wordCount" content="3645">
 <meta itemprop="keywords" content="硬件," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PVE下 LEDE&#43;爱快 双软路由部署"/>
-<meta name="twitter:description" content="起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装lede的，但是手头正好闲下来一块亮机的"/>
+<meta name="twitter:title" content="PVE 下 LEDE&#43;爱快 双软路由部署"/>
+<meta name="twitter:description" content="起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -65,15 +62,15 @@
   
   
 
-  <body class="main-center theme-white" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <body class="main-center theme-green" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="slimContent">
       <div class="navbar-header">
         <div class="profile-block text-center">
-          <a id="avatar" href="https://github.com/m18018230731" target="_blank">
-            <img class="img-circle img-rotate" src="https://moyu.best/avatar.png" width="200" height="200">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://senjianlu.com/avatar.png" width="200" height="200">
           </a>
           <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
-          <h3 id="title" class="hidden-xs hidden-sm hidden-md">Explicit is better than implicit.</h3>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">树深时见鹿，溪午不闻钟。</h3>
           <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
         </div><div class="search" id="search-form-wrap">
     <form class="search-form sidebar-form">
@@ -151,7 +148,7 @@
     <h3 class="widget-title">公告</h3>
     <div class="widget-body">
         <div id="board">
-            <div class="content"><p>因为觉得别人写的教程不好或是不够好，所以自己花时间重新整理一遍，希望也能帮助到你。</br>有错误或困惑请及时联系我！</br>base64:cmFiYmlyYm90MDA=</p>
+            <div class="content"><p>用来记录在工作中的一些问题和对应解决。</br>博客发布之前我会尽量检查，但是避免不了环境或是配置所造成的难以预测的问题，错误和疑问可以提 Issue 给我，感谢!</p>
             </div>
         </div>
     </div>
@@ -161,8 +158,9 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://moyu.best/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">3</span></li>
-            <li class="category-list-item"><a href="https://moyu.best/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">1</span></li>
         </ul>
     </div>
 </div>
@@ -172,15 +170,15 @@
         <ul class="tag-list">
             
             
-            <li class="tag-list-item"><a href="https://moyu.best/tags/postgresql/" class="tag-list-link">postgresql</a><span
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://moyu.best/tags/python/" class="tag-list-link">python</a><span
-                    class="tag-list-count">1</span></li>
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">2</span></li>
             
             
-            <li class="tag-list-item"><a href="https://moyu.best/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
                     class="tag-list-count">2</span></li>
             
         </ul>
@@ -195,7 +193,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/05/hugoauto/" class="title">Windows下 Hugo静态博客一键推送发布</a>
+                        <a href="https://senjianlu.com/2020/05/hugoauto/" class="title">Windows 下 Hugo 静态博客一键推送发布</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-05-17</time>
@@ -205,7 +203,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/02/postgresqlnote03/" class="title">PostgreSQL 学习笔记 (三) 用户权限的管理控制</a>
+                        <a href="https://senjianlu.com/2020/02/postgresqlnote03/" class="title">PostgreSQL 学习笔记 (三) 用户权限的管理控制</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
@@ -215,7 +213,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/02/postgresqlnote02/" class="title">PostgreSQL 学习笔记 (二) psql工具的使用</a>
+                        <a href="https://senjianlu.com/2020/02/postgresqlnote02/" class="title">PostgreSQL 学习笔记 (二) psql 工具的使用</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
@@ -225,7 +223,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/02/postgresqlnote01/" class="title">PostgreSQL 学习笔记 (一) 数据库的安装与环境配置</a>
+                        <a href="https://senjianlu.com/2020/02/postgresqlnote01/" class="title">PostgreSQL 学习笔记 (一) 数据库的安装与环境配置</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-02-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-02</time>
@@ -235,7 +233,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://moyu.best/2020/01/pvesynology/" class="title">PVE下 黑群晖 的安装和硬盘直通组Raid1</a>
+                        <a href="https://senjianlu.com/2020/01/pvesynology/" class="title">PVE 下黑群晖的安装和硬盘直通组 RAID1</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-01-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-22</time>
@@ -259,7 +257,7 @@
   <a
     class="article-title"
     href="/2020/01/pveledeikuai/"
-    >PVE下 LEDE&#43;爱快 双软路由部署</a
+    >PVE 下 LEDE&#43;爱快 双软路由部署</a
   >
 </h1>
 
@@ -267,7 +265,7 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://moyu.best/2020/01/pveledeikuai/" class="article-date">
+<a href="https://senjianlu.com/2020/01/pveledeikuai/" class="article-date">
   <time datetime="2020-01-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-13</time>
 </a>
 </span>
@@ -282,31 +280,31 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/pveledeikuai/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3892字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3645字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装lede的，但是手头正好闲下来一块亮机的200ge，索性就再组台小机器来当软路由吧。<br>
-不过我不推荐200ge作为软路由的cpu，不仅功耗大，而且只有2个核心，LEDE和爱快各占用一个以后就不能再安装群晖或是其他虚拟机，容易造成性能浪费的情况。</p>
+      <p>起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200ge，索性就再组台小机器来当软路由吧。<br>
+不过我不推荐 200ge 作为软路由的cpu，不仅功耗大，而且只有2个核心，LEDE 和爱快各占用一个以后就不能再安装群晖或是其他虚拟机，容易造成性能浪费的情况。</p>
 <hr>
 <p><strong>环境</strong>：ProXmoX VE<br>
 <strong>需要时间</strong>：3小时左右<br>
-<strong>原教程</strong>：<a href="https://www.youtube.com/watch?v=-ofQ3PgOIsI">【悟空5kong】PVE下部署LEDE+黑群晖NAS双系统（J1900软路由）</a><br>
-<a href="https://www.youtube.com/watch?v=wef8artq7lo">上集-PVE(Proxmox VE)安装双软路由爱快+LEDE保姆级教程</a><br>
-<a href="https://www.youtube.com/watch?v=Yj7u97MISJg">下集-PVE(Proxmox VE)安装双软路由爱快+LEDE保姆级教程</a></p>
+<strong>原教程</strong>：<a href="https://www.youtube.com/watch?v=-ofQ3PgOIsI">【悟空5kong】PVE下部署 LEDE+黑群晖 NAS 双系统（J1900 软路由）</a><br>
+<a href="https://www.youtube.com/watch?v=wef8artq7lo">上集- PVE (Proxmox VE) 安装双软路由 爱快+LEDE 保姆级教程</a><br>
+<a href="https://www.youtube.com/watch?v=Yj7u97MISJg">下集- PVE (Proxmox VE) 安装双软路由 爱快+LEDE 保姆级教程</a></p>
 <hr>
 <p><strong>配置单和价格</strong><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114210701.png" alt="配置"></p>
 <hr>
 <p><strong>所需的软件及下载地址</strong><br>
-所有文件(Google Drive )：<a href="https://drive.google.com/open?id=1vKsXSHBc3etPTQ7tRx3AP1ZLK5Nt03qj">PVE下 LEDE+爱快 双软路由部署 所需文件</a><br>
+所有文件 (Google Drive)：<a href="https://drive.google.com/open?id=1vKsXSHBc3etPTQ7tRx3AP1ZLK5Nt03qj">PVE 下 LEDE+爱快 双软路由部署 所需文件</a><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114210759.png" alt="文件"></p>
 <hr>
 <p><strong>从这里正式开始操作系统的安装和配置过程。</strong><br>
 <strong>注意：除了软路由本机，你还需要一台自己的电脑包括显示器鼠标和键盘。同时如果你是拨号上网，你还需要知道自己的运营商账号密码！</strong><br>
-<em>注：操作系统及软路由的安装都较为简单，繁琐的主要是配置的过程，涉及到网卡上网口的切换以及同步DNS和网关的修改，推荐在看博文之前首先过一遍视频教程，pve和lede的安装参照悟空，而爱快和lede的网口映射参照Video Talk。</em></p>
-<p>1、首先安装PVE系统，安装过程类似于Windows操作系统：下载iso文件拷贝进U盘，然后开机过程中按Del键进入bios，选择u盘启动来进行安装。<br>
+<em>注：操作系统及软路由的安装都较为简单，繁琐的主要是配置的过程，涉及到网卡上网口的切换以及同步 DNS 和网关的修改，推荐在看博文之前首先过一遍视频教程，PVE 和 LEDE 的安装参照悟空，而爱快和 LEDE 的网口映射参照 Video Talk。</em></p>
+<p>1、首先安装 PVE 系统，安装过程类似于 Windows 操作系统：下载 .iso 文件拷贝进 U 盘，然后开机过程中按 Del 键进入 BIOS，选择 U 盘启动来进行安装。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113215340.png" alt="选择第一个进行安装" title="选择第一个进行安装"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113215731.png" alt="安装到硬盘上" title="安装到硬盘上"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113215905.png" alt="选择中国" title="选择中国"><br>
@@ -324,26 +322,26 @@
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113221057.png" alt="安装完成后重启" title="安装完成后重启"><br>
 重启过程中拔下u盘，重启后出现以下界面即说明PVE操作系统已经安装完成。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113221308.png" alt="安装完成出现地址" title="安装完成出现地址"></p>
-<p>2、在PVE系统安装完成后，需要将电脑连接到软路由进行接下来的操作，网线的连接比较简单：一头连接正在使用的电脑，<strong>另一头连接刚刚配置的PVE连接网口</strong>，一般情况下是主板的网口，如果配置的是网卡上的网口，那么离pcie连接口最远的一般就是一号网口。<br>
-物理连接完成后，还需要配置本机的IP和网关等才能进入PVE后台。<br>
+<p>2、在 PVE 系统安装完成后，需要将电脑连接到软路由进行接下来的操作，网线的连接比较简单：一头连接正在使用的电脑，<strong>另一头连接刚刚配置的 PVE 连接网口</strong>，一般情况下是主板的网口，如果配置的是网卡上的网口，那么离 PCIe 连接口最远的一般就是一号网口。<br>
+物理连接完成后，还需要配置本机的 IP 和网关等才能进入 PVE 后台。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113.png" alt="打开网络属性" title="打开网络属性"></p>
 <ul>
-<li>IP 地址：保证和PVE虚拟机的IP在同一网段</li>
+<li>IP 地址：保证和 PVE 虚拟机的 IP 在同一网段</li>
 <li>子网掩码：默认的 255.255.255.0</li>
-<li>默认网关：和PVE的相同</li>
+<li>默认网关：和 PVE 的相同</li>
 <li>DNS：不配置自动获取即可</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113223540.png" alt="具体配置" title="具体配置"><br>
-打开浏览器，输入PVE安装完成后显示的地址，注意是 <strong>https</strong>://10.10.10.254:<strong>8006</strong>/ 前缀和端口号不要忘记。<br>
+打开浏览器，输入 PVE 安装完成后显示的地址，注意是 <strong>https</strong>://10.10.10.254:<strong>8006</strong>/ 前缀和端口号不要忘记。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113224105.png" alt="注意协议和端口号" title="注意协议和端口号"><br>
 <em>注：可能有安全提示，直接跳过即可。</em></p>
 <ul>
 <li>用户名：root</li>
-<li>密码：PVE安装时设置的密码</li>
+<li>密码：PVE 安装时设置的密码</li>
 <li>语言：默认英文，选择为中文</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113224248.png" alt="登录"><br>
-进入系统的网口选项下，可以看见有一个桥接网口已经建立，端口从属显示与enp1so对应，就是第一个网口，意味着第一个网口就被占用了。<br>
+进入系统的网口选项下，可以看见有一个桥接网口已经建立，端口从属显示与 enp1so 对应，就是第一个网口，意味着第一个网口就被占用了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113224505.png" alt="桥接网口为管理口"><br>
 接下来打开所有物理网口的自动启动。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113224654.png" alt="打开网口的自动启动"><br>
@@ -353,43 +351,43 @@
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113225302.png" alt="填写" title="只需要填桥接端口，其他不需要填写"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113225442.png" alt="检查"><br>
 所有的网口都同样操作即可。一一对应检查完后网口就配置完成了。</p>
-<p>3、接下来开始创建虚拟机，原理和Windows上使用vmplayer等创建虚拟机一样。<br>
-首先来创建LEDE对应的虚拟机，这一部分参考悟空的视频教程更加简单。<br>
+<p>3、接下来开始创建虚拟机，原理和 Windows 上使用 VMware Workstation Player 等创建虚拟机一样。<br>
+首先来创建 LEDE 对应的虚拟机，这一部分参考悟空的视频教程更加简单。<br>
 点击创建虚拟机按钮。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113230537.png" alt="新建虚拟机">
 第一步没有需要特殊配置的。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113230654.png" alt="一般"><br>
-选择不使用任何介质，这里的安装方法是ssh连接至PVE后直接命令行安装，然后将这个虚拟机挂载在安装完成的文件夹上，更加快捷。<br>
+选择不使用任何介质，这里的安装方法是 SSH 连接至 PVE 后直接命令行安装，然后将这个虚拟机挂载在安装完成的文件夹上，更加快捷。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113230746.png" alt="操作系统"><br>
 硬盘不需要任何操作，反正等下不用这个盘。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113231148.png" alt="硬盘"><br>
-CPU核心一核就够了。<br>
+CPU 核心一核就够了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113231228.png" alt="CPU"><br>
-内存推荐2G。<br>
+内存推荐 2G。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113231421.png" alt="内存"><br>
-桥接网口选择管理口即可，模型推荐E1000，Video Talk之后爱快等都会用E100进行配置。<br>
+桥接网口选择管理口即可，模型推荐 E1000，Video Talk 之后爱快等都会用E100进行配置。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113233424.png" alt="网络"><br>
 检查无误点击完成即可。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113232835.png" alt="确认"><br>
 接着进行<strong>添加网卡</strong>的操作，为所有虚拟网口在这台虚拟机中配置桥接。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113232952.png" alt="添加"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113233311.png" alt="配置"><br>
-接着在本机上下载安装MobaXterm，准备连接PVE系统。<br>
+接着在本机上下载安装 MobaXterm，准备连接 PVE 系统。<br>
 打开新建一个连接，截图是编辑但也啥差别。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113233658.png" alt="连接"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113234028.png" alt="连接"><br>
-输入密码，点击Yes连接成功。<br>
+输入密码，点击 Yes 连接成功。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113234153.png" alt="输入密码"><br>
 拖拽虚拟机安装文件和转换工具进软路由系统中。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113234417.png" alt="转移文件"><br>
 接下来</p>
 <pre><code class="language-code">ls
 </code></pre>
-<p>确保文件转移成功，接着为img2kvm添加可执行权限，并开始执行img文件的转换</p>
+<p>确保文件转移成功，接着为 img2kvm 添加可执行权限，并开始执行 .img 文件的转换</p>
 <pre><code class="language-code">chmod +x img2kvm
 ./img2kvm lede.img 101 vm-101-disk-1
 </code></pre>
-<p><em>101是虚拟机的序号</em><br>
+<p><em>101 是虚拟机的序号</em><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113235203.png" alt="具体界面" title="安装过程"><br>
 接下来回到浏览器的PVE后台界面，可以看到多出来一个未使用的磁盘，这就是刚刚转换完的，无视后缀是 disk-1 还是 disk-2 ，双击，选择添加即可。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113235506.png" alt="新增"><br>
@@ -397,41 +395,41 @@ CPU核心一核就够了。<br>
 接着选择 <strong>&ldquo;选项&rdquo;</strong>，<strong>&ldquo;引导顺序&rdquo;</strong> 更改为刚刚挂载上的新硬盘即可。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113235835.png" alt="引导顺序"><br>
 <strong>注意：接下来直接重启软路由，断电重启也可以！</strong><br>
-然后回来点击虚拟机，可能LEDE显示会没有反应，点击随意按一个键就可以了。<br>
+然后回来点击虚拟机，可能 LEDE 显示会没有反应，点击随意按一个键就可以了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114000102.png" alt="完成"><br>
-<strong>至此，最有可能出错的LEDE安装完成，配置的事等到爱快配置完后进行。</strong><br>
+<strong>至此，最有可能出错的 LEDE 安装完成，配置的事等到爱快配置完后进行。</strong><br>
 <em>如果你是光纤，不需要拨号，那可以跳过接下来的爱快的安装与配置。</em></p>
 <p>4、接下来开始安装爱快软路由。<br>
 一样新建虚拟机，此界面的名称可以自由更改，其他保持默认即可。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114000536.png" alt="一般"><br>
-存储不用改，iso介质选刚刚上传的ikuai就可以了，类型Linux版本也不用变。<br>
+存储不用改，.iso 介质选刚刚上传的 iKuai 就可以了，类型 Linux 版本也不用变。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114000711.png" alt="iso"><br>
-硬盘2G就够了，配置如图。<br>
+硬盘 2G 就够了，配置如图。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114000836.png" alt="硬盘"><br>
-CPU配置也是一核就够了。<br>
+CPU 配置也是一核就够了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114000908.png" alt="CPU"><br>
-内存的设置要注意，新版本爱快最低4G内存，如果你的内存不够，需要选择较低版本。
+内存的设置要注意，新版本爱快最低 4G 内存，如果你的内存不够，需要选择较低版本。
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114001003.png" alt="内存"><br>
-网络的配置和LEDE一样，管理口对应的虚拟网口和E1000。<br>
+网络的配置和 LEDE 一样，管理口对应的虚拟网口和 E1000。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114001139.png" alt="网络"><br>
 核对后直接完成即可。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114001258.png" alt="完成"><br>
-创建完成后，去虚拟机的硬件管理界面，当前只有一个默认网口，也是当时配置的PVE的管理网口，同时它也是只是一个lan口，lan口通俗来讲就是出网的口，而wan口是进网的口，爱快的作用是拨号，因此我们需要新建一个wan口：选择添加网络设备。<br>
+创建完成后，去虚拟机的硬件管理界面，当前只有一个默认网口，也是当时配置的PVE的管理网口，同时它也是只是一个 LAN 口，LAN 口通俗来讲就是出网的口，而 WAN 口是进网的口，爱快的作用是拨号，因此我们需要新建一个 WAN 口：选择添加网络设备。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114002207.png" alt="添加wan口"><br>
-选择最后一个端口，物理上就是离pcie连接口最近的网口。<br>
+选择最后一个端口，物理上就是离 PCIe 连接口最近的网口。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114002830.png" alt="配置"><br>
 接着启动虚拟机即可。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114002914.png" alt="启动虚拟机"><br>
 爱快的安装还没有结束，进入虚拟机页面，还需要选择安装，如图输入，等待安装完成后的自动重启。如果重启后没有画面或是端口显示断开，按下回车刷新就行了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114003105.png" alt="安装"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114003234.png" alt="完成" title="启动完成"><br>
-进入系统后，设置lan口IP：<strong>10.10.10.253</strong><br>
+进入系统后，设置 LAN 口 IP：<strong>10.10.10.253</strong><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114003443.png" alt="设置ip"><br>
-接着在浏览器地址栏输入 <strong>10.10.10.253</strong> 便可进去ikuai的后台了，账号密码均为 <strong>admin</strong><br>
+接着在浏览器地址栏输入 <strong>10.10.10.253</strong> 便可进去 iKuai 的后台了，账号密码均为 <strong>admin</strong><br>
 <em>登录后会提示修改管理员密码，改不改都无所谓</em><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114003659.png" alt="登录"><br>
-登录进去以后可以看到我们预先配置的两个网口，lan口是绿色的说明正在被正常使用，这个口就是我们设置的PVE管理口兼lan口，而wan口还是灰色的，需要我们点进去绑定以下刚刚新建的网卡。<br>
-<strong>注意：此时将家庭数据中心拉出来的网线接到设置的wan口对应的物理网口上！准备进行拨号上网！</strong><br>
+登录进去以后可以看到我们预先配置的两个网口，LAN 口是绿色的说明正在被正常使用，这个口就是我们设置的 PVE 管理口兼 LAN 口，而 WAN 口还是灰色的，需要我们点进去绑定以下刚刚新建的网卡。<br>
+<strong>注意：此时将家庭数据中心拉出来的网线接到设置的 WAN 口对应的物理网口上！准备进行拨号上网！</strong><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114085538.png" alt="绑定wan"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114085758.png" alt="绑定即可"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114085902.png" alt="拨号"><br>
@@ -439,69 +437,69 @@ CPU配置也是一核就够了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114121109.png" alt="拨号"><br>
 这边显示已连接说明爱快已经拨号上网成功了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114193747.png" alt="成功"><br>
-接下来配置DHCP服务端，选择 DHCP设置 DHCP服务端，进行填写。<br>
-<em>注：DHCP协议的功能为集中的管理、分配IP地址。</em></p>
+接下来配置 DHCP 服务端，选择 DHCP 设置 DHCP 服务端，进行填写。<br>
+<em>注：DHCP 协议的功能为集中的管理、分配 IP 地址。</em></p>
 <ul>
-<li>客户端地址：覆盖网段内的所有ip即可。</li>
+<li>客户端地址：覆盖网段内的所有 IP 即可。</li>
 <li>子网掩码：默认的 255.255.255.0</li>
-<li>网关：10.10.10.252 就是LEDE的后台地址</li>
+<li>网关：10.10.10.252 就是 LEDE 的后台地址</li>
 <li>DNS：如果以科学上网为主选 8.8.8.8 不然就用网络所属运营商的</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114194133.png" alt="DHCP服务端"><br>
 保存后刷新页面，确认服务正常，爱快软路由的配置就全部完成了。
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114194557.png" alt="服务正常"><br>
-<strong>总之，爱快主要负责拨号上网和提供DHCP服务，在配置完成之后，可以先验证下本机是否有网络在进行下一步操作。</strong></p>
-<p>5、配置LEDE软路由。首先回到LEDE的系统界面，输入以下命令去更改LEDE的IP地址。</p>
+<strong>总之，爱快主要负责拨号上网和提供 DHCP 服务，在配置完成之后，可以先验证下本机是否有网络在进行下一步操作。</strong></p>
+<p>5、配置 LEDE 软路由。首先回到 LEDE 的系统界面，输入以下命令去更改 LEDE 的 IP 地址。</p>
 <pre><code class="language-code">vi /etc/config/network
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114195025.png" alt="更改ip"><br>
-方向键控制光标找到这一行，按以下 &ldquo;i&rdquo; 键进入编辑模式，更改成 <strong>10.10.10.252</strong> 就是你想要的LEDE的后台IP地址。<br>
+方向键控制光标找到这一行，按以下 &ldquo;i&rdquo; 键进入编辑模式，更改成 <strong>10.10.10.252</strong> 就是你想要的 LEDE 的后台 IP 地址。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114195205.png" alt="更改ip"><br>
 编辑完成后，按下 &ldquo;Esc&rdquo; 键，左下角有冒号出来后，输入 &ldquo;wq&rdquo; 保存并退出。
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114195410.png" alt="编辑完成后退出"><br>
 <strong>之后输入</strong></p>
 <pre><code class="language-code">reboot
 </code></pre>
-<p><strong>重启LEDE软路由。</strong>
-接着就可以在本机的浏览器上输入 10.10.10.252 进入LEDE软路由的后台了，默认密码是 <strong>koolshare</strong><br>
+<p><strong>重启 LEDE 软路由。</strong>
+接着就可以在本机的浏览器上输入 10.10.10.252 进入 LEDE 软路由的后台了，默认密码是 <strong>koolshare</strong><br>
 进入后台后首先来配置网口。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114195904.png" alt="配置" title="选择 网络 接口"><br>
-选择lan口这一行，点击 编辑。<br>
+选择 LAN 口这一行，点击 编辑。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114200021.png" alt="lan口"><br>
-首先在物理设置部分将所有的网口都勾选上，因为有爱快的情况下LEDE不需要wan口。<br>
+首先在物理设置部分将所有的网口都勾选上，因为有爱快的情况下 LEDE 不需要 WAN 口。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114200203.png" alt="勾选所有端口"><br>
 然后回到基本设置，如图设置。</p>
 <ul>
-<li>IP：LEDE后台地址 10.10.10.252</li>
+<li>IP：LEDE 后台地址 10.10.10.252</li>
 <li>网关：爱快的后台地址 10.10.10.253</li>
-<li>DNS服务器：和刚刚一样填写即可</li>
+<li>DNS 服务器：和刚刚一样填写即可</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114200633.png" alt="配置基本设置"><br>
-接着下滑，到DHCP服务器部分，因为LEDE是作为爱快下的二级路由存在的，我希望所有的DHCP服务都由LEDE来提供而不是不具有科学上网功能的爱快来提供，因此要去掉 <strong>忽略此接口</strong> 的勾选。然后还要去高级设置中，再把 <strong>强制</strong> 的勾勾上。<br>
+接着下滑，到 DHCP 服务器部分，因为 LEDE 是作为爱快下的二级路由存在的，我希望所有的 DHCP 服务都由 LEDE 来提供而不是不具有科学上网功能的爱快来提供，因此要去掉 <strong>忽略此接口</strong> 的勾选。然后还要去高级设置中，再把 <strong>强制</strong> 的勾勾上。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114200914.png" alt="去掉勾选" title="去掉勾选"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114201219.png" alt="勾上强制" title="勾上强制"><br>
 <strong>接着保存即可。</strong><br>
-由于LEDE用不到wan口，所以将wan口和wan6的接口绑定到空的接口上就可以了。<br>
+由于 LEDE 用不到 WAN 口，所以将 WAN 口和 WAN6 的接口绑定到空的接口上就可以了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114201412.png" alt="wan口"><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114201518.png" alt="wan6口" title="绑定至空的接口即可"><br>
-<strong>至此LEDE的安装和配置就全部完成了，修改以下本机的网络设置，将ip和dns都勾选至自动获取，看看能不能上网吧！</strong><br>
+<strong>至此 LEDE 的安装和配置就全部完成了，修改以下本机的网络设置，将 IP 和 DNS 都勾选至自动获取，看看能不能上网吧！</strong><br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114201812.png" alt="自动获取"></p>
-<p>6、确保可以上网后，我们回到LEDE的后台，准备进行科学上网等的配置操作。<br>
+<p>6、确保可以上网后，我们回到 LEDE 的后台，准备进行科学上网等的配置操作。<br>
 点击左侧菜单中的 酷软中心，进入的时候如果提示更新，千万不要去更新，新版本会有大量的软件无法使用。
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114201917.png" alt="不更新"><br>
-一般情况下，即使你不更新进入酷软中心，也无法再在商城找到科学上网的工具，在19年6月份的更新中，酷软就将这几个插件删去了。你可以选择去下载网友提供的包离线安装，但很大几率上是不兼容新版本系统的，这里推荐使用酷软的系统备份还原，直接将系统回复至有插件的版本。<br>
+一般情况下，即使你不更新进入酷软中心，也无法再在商城找到科学上网的工具，在 19 年 6 月份的更新中，酷软就将这几个插件删去了。你可以选择去下载网友提供的包离线安装，但很大几率上是不兼容新版本系统的，这里推荐使用酷软的系统备份还原，直接将系统回复至有插件的版本。<br>
 选择 系统 备份/升级<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114202641.png" alt="备份"><br>
 选择我上面提供的老版本，再点击上传备份。上传之后系统会自动重启。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114202825.png" alt="上传备份"><br>
 <strong>等待重启完成后，再进入酷软中心就可以看到消失的科学上网插件了！</strong><br>
-节点的配置就不再阐述了，ssr和ss订阅的稳定性在我实际用下来后觉得并不好，不如只在电脑端开启相应代理，而v2ray则比较稳定，基本全天24小时节点都不会出现断连情况。</p>
+节点的配置就不再阐述了，SSR 和 SS 订阅的稳定性在我实际用下来后觉得并不好，不如只在电脑端开启相应代理，而 V2Ray 则比较稳定，基本全天 24 小时节点都不会出现断连情况。</p>
 <blockquote>
 <p>推荐2家供应商：<br>
-<a href="https://renzhe.cloud/auth/register?code=5IP7">忍者云</a> <em>有线路提供v2ray代理，稳定</em><br>
+<a href="https://renzhe.cloud/auth/register?code=5IP7">忍者云</a> <em>有线路提供 V2Ray 代理，稳定</em><br>
 <a href="https://www.ustravel.cloud/aff.php?aff=3351">奇幻之旅</a> <em>便宜实在</em></p>
 </blockquote>
-<p><strong>至此，PVE下 LEDE+爱快 双软路由的部署就全部完成了，好好享受世界吧！</strong></p>
+<p><strong>至此，PVE 下 LEDE+爱快 双软路由的部署就全部完成了，好好享受世界吧！</strong></p>
 
     </div>
     <div class="article-footer">
@@ -509,7 +507,7 @@ CPU配置也是一核就够了。<br>
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://moyu.best/2020/01/pveledeikuai/" title="PVE下 LEDE&#43;爱快 双软路由部署" target="_blank" rel="external">https://moyu.best/2020/01/pveledeikuai/</a>
+      <a href="https://senjianlu.com/2020/01/pveledeikuai/" title="PVE 下 LEDE&#43;爱快 双软路由部署" target="_blank" rel="external">https://senjianlu.com/2020/01/pveledeikuai/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -526,13 +524,13 @@ CPU配置也是一核就够了。<br>
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://moyu.best/2020/01/picgogithub/" title="Windows下 PicGo&#43;GitHub 搭建个人图床工具"><i
+                <a href="https://senjianlu.com/2020/01/picgogithub/" title="Windows 下 PicGo&#43;GitHub 搭建个人图床工具"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://moyu.best/2020/01/pvesynology/"
-                    title="PVE下 黑群晖 的安装和硬盘直通组Raid1"><span>上一篇&nbsp;&nbsp;</span><i
+                <a href="https://senjianlu.com/2020/01/pvesynology/"
+                    title="PVE 下黑群晖的安装和硬盘直通组 RAID1"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
@@ -544,16 +542,16 @@ CPU配置也是一核就够了。<br>
 
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
-    <li><a href="https://github.com/m18018230731" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
             <i class="icon icon-github"></i></a></li>
-    <li><a href="https://moyu.best/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+    <li><a href="https://senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
             <i class="icon icon-rss"></i></a></li>
 </ul>
   <div class="copyright">
     &copy;2019  -
-    2020
+    2021
     <div class="publishby">
-        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>
   </div>
 </footer>
@@ -583,8 +581,8 @@ CPU配置也是一核就够了。<br>
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://moyu.best/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
-<script src="https://moyu.best/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+<script src="https://senjianlu.com/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://senjianlu.com/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
 
 <script>
     (function (window) {
@@ -596,13 +594,13 @@ CPU配置也是一核就够了。<br>
                 TAGS: '标签',
                 UNTITLED: '(未命名)',
             },
-            ROOT_URL: 'https:\/\/moyu.best',
-            CONTENT_URL: 'https:\/\/moyu.best\/searchindex.json ',
+            ROOT_URL: 'https:\/\/senjianlu.com',
+            CONTENT_URL: 'https:\/\/senjianlu.com\/searchindex.json ',
         };
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://moyu.best/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script type="text/javascript" src="https://senjianlu.com/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({

@@ -3,147 +3,161 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://moyu.best/categories/</loc>
+    <loc>https://senjianlu.com/categories/</loc>
     <lastmod>2020-05-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/posts/</loc>
+    <loc>https://senjianlu.com/posts/</loc>
     <lastmod>2020-05-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/2020/05/hugoauto/</loc>
+    <loc>https://senjianlu.com/2020/05/hugoauto/</loc>
     <lastmod>2020-05-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
+    <loc>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
     <lastmod>2020-05-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/</loc>
+    <loc>https://senjianlu.com/</loc>
     <lastmod>2020-05-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/tags/postgresql/</loc>
+    <loc>https://senjianlu.com/tags/postgresql/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/2020/02/postgresqlnote03/</loc>
+    <loc>https://senjianlu.com/2020/02/postgresqlnote03/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/2020/02/postgresqlnote02/</loc>
+    <loc>https://senjianlu.com/2020/02/postgresqlnote02/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/tags/</loc>
+    <loc>https://senjianlu.com/tags/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/2020/02/postgresqlnote01/</loc>
+    <loc>https://senjianlu.com/2020/02/postgresqlnote01/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/2020/01/pvesynology/</loc>
+    <loc>https://senjianlu.com/2020/01/pvesynology/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/tags/%E7%A1%AC%E4%BB%B6/</loc>
+    <loc>https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/2020/01/pveledeikuai/</loc>
+    <loc>https://senjianlu.com/2020/01/pveledeikuai/</loc>
     <lastmod>2020-01-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/series/</loc>
+    <loc>https://senjianlu.com/series/</loc>
     <lastmod>2020-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/series/themes-guide/</loc>
+    <loc>https://senjianlu.com/series/themes-guide/</loc>
     <lastmod>2020-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/2020/01/picgogithub/</loc>
+    <loc>https://senjianlu.com/2020/01/picgogithub/</loc>
     <lastmod>2020-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/2020/01/hugogithubpages/</loc>
+    <loc>https://senjianlu.com/2020/01/hugogithubpages/</loc>
     <lastmod>2020-01-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/2020/01/centos7nginxuwsgidjango/</loc>
+    <loc>https://senjianlu.com/2020/01/centos7nginxuwsgidjango/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/tags/python/</loc>
+    <loc>https://senjianlu.com/2020/01/centos7httpandsocks5proxy/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://moyu.best/about/</loc>
+    <loc>https://senjianlu.com/tags/python/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
