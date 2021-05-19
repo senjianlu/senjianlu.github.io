@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        森见鹿的博客 </title>
+        7 下 Nginx&#43;uWSGI 配置 Django 项目 - 森见鹿的博客 
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>森见鹿的博客 </title>
+  <title>7 下 Nginx&#43;uWSGI 配置 Django 项目 - 森见鹿的博客 </title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://senjianlu.com/index.xml" title="森见鹿的博客 " />
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="森见鹿的博客 " />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://senjianlu.com/" />
+  <meta property="og:title" content="7 下 Nginx&#43;uWSGI 配置 Django 项目" />
+<meta property="og:description" content="服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-01-10T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-01-10T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="森见鹿的博客 ">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="森见鹿的博客 "/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="7 下 Nginx&#43;uWSGI 配置 Django 项目">
+<meta itemprop="description" content="服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编"><meta itemprop="datePublished" content="2020-01-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1303">
+<meta itemprop="keywords" content="Python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="7 下 Nginx&#43;uWSGI 配置 Django 项目"/>
+<meta name="twitter:description" content="服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -243,278 +248,268 @@
 
     
     
-
-<main class="main" role="main">
-  
-  <div class="content article-list">
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
     
-    
-    
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
+    <div class="article-header">
+      <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/05/hugo-auto-build/"
-    >Windows 下 Hugo 静态博客一键推送发布</a
+    href="/2020/01/centos7-nginx-uwsgi-django/"
+    >7 下 Nginx&#43;uWSGI 配置 Django 项目</a
   >
 </h1>
 
-      </div>
-      <div class="article-entry text-muted" itemprop="description">为了在东京奥运会期间应对临时封路，紧跟日本人赶了2个月的功能，终于能休息一阵了 :) 虽然是因为奥运会推迟而不是因为开发完成 总之又能学点新东西了，</div>
-      <p class="article-meta">
+      <div class="article-meta">
+        
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/05/hugo-auto-build/" class="article-title">
-  <time datetime="2020-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-05-17</time>
+<a href="https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/" class="article-date">
+  <time datetime="2020-01-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-10</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
   <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 606字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/02/postgresql-note-03/"
-    >PostgreSQL 学习笔记 (三) 用户权限的管理控制</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/02/postgresql-note-03/" class="">
-  <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
+    <a class="article-tag-link" href="/tags/python/"> Python </a>
   </span>
 
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1176字</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/centos7-nginx-uwsgi-django/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1303字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/02/postgresql-note-02/"
-    >PostgreSQL 学习笔记 (二) psql 工具的使用</a
-  >
-</h1>
-
       </div>
-      <div class="article-entry text-muted" itemprop="description">psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/02/postgresql-note-02/" class="">
-  <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 375字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/02/postgresql-note-01/"
-    >PostgreSQL 学习笔记 (一) 数据库的安装与环境配置</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">由于在学校针对作业和毕设 MySQL 已经很够用了，因此也没有做更多对数据库的功课，只知道 Oracle 数据库适合企业，MySQL 适合小型项目，但是工作以后的第一个</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/02/postgresql-note-01/" class="">
-  <time datetime="2020-02-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-02</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1304字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/01/pve-synology/"
-    >PVE 下黑群晖的安装和硬盘直通组 RAID1</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/pve-synology/" class="">
-  <time datetime="2020-01-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-22</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%A1%AC%E4%BB%B6/"> 硬件 </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1442字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/01/pve-lede-ikuai/"
-    >PVE 下 LEDE&#43;爱快 双软路由部署</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/pve-lede-ikuai/" class="">
-  <time datetime="2020-01-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-13</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%A1%AC%E4%BB%B6/"> 硬件 </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3645字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/01/picgo-github/"
-    >Windows 下 PicGo&#43;GitHub 搭建个人图床工具</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">虽然也有免费的可以用，但是既然软路由已经配置了方便的上网环境，GitHub 访问起来比以前便利了许多，那就把图床直接部署在 GitHub 上好了，虽然隐私性</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/picgo-github/" class="">
-  <time datetime="2020-01-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-12</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 577字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article></div>
-  
-<nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    <ul class="pager pull-left"><li class="next">
-        <a href="/page/2/">
-          <i class="icon icon-angle-right"></i>
-          
-        </a>
-      </li>
-    </ul>
-    <div class="total-article bar-right">
-      Page:1/2
     </div>
-  </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><strong>服务器的部署笔记。</strong></p>
+<hr>
+<p>各部分功能介绍：</p>
+<ul>
+<li>Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。</li>
+<li>uWSGI 负责多线程，即支持多人同时访问网站。</li>
+<li>Django 是由 Python 编写的开源 Web 应用框架，适合个人小项目搭建。</li>
+</ul>
+<hr>
+<p>服务器系统为 CentOS7，当然记录的所有命令再更高版本上也都可以使用。</p>
+<p>1、既然搭建的是 Python 项目，首先升级以下服务器端的 Python 版本，默认 Linux 自带 Python2，我们把它先升级为 Python3。</p>
+<p>安装依赖软件</p>
+<pre><code class="language-code">yum -y install sqlite-devel
+yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel
+</code></pre>
+<p>下载安装 Python3.6</p>
+<pre><code class="language-code">wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz
+tar zxvf Python-3.6.1.tgz
+cd Python-3.6.1
+./configure --prefix=/usr/local/python3
+make &amp;&amp; make install
+</code></pre>
+<p>创建 Python 及 pip 命令软链接</p>
+<pre><code class="language-code">ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+</code></pre>
+<p>这样 Python3 就已经安装完成了，键入 Python3 再回车就可以进入 Python 编译了。<br>
+<em>注：Ctrl+Z 退出 Python 编译</em><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115210804.png" alt="python3"></p>
+<p>2、接下来安装 Django 并配置项目，这里选择的版本是 2.1.8，单纯的因为够用且稳定，新版本的环境配置没有前人指导。</p>
+<pre><code class="language-code">pip3 install django==2.1.8
+</code></pre>
+<p>等待安装完成后，上传 Django 项目到服务器上任意目录，使用 Xftp 或者 git clone 都可以</p>
+<pre><code class="language-code">cd 项目文件夹
+python3 manage.py runserver 0.0.0.0:80
+</code></pre>
+<p><strong>注意，运行项目时可能报错：</strong></p>
+<blockquote>
+<p>You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run &lsquo;python manage.py migrate&rsquo; to apply them.</p>
+</blockquote>
+<p>这时只需要按照提示，输入以下内容即可</p>
+<pre><code class="language-code">python3 manage.py migrate
+</code></pre>
+<p>出现以下信息则说明启动成功。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115220221.png" alt="启动成功"><br>
+<strong>注意：</strong> 如果访问页面出现了以下错误，那么进入你的项目，修改 settings.py 将 ALLOWED——HOSTS = [] 修改为 ['*'] 即可解决。</p>
+<blockquote>
+<p>DisallowedHost at / Invalid HTTP_HOST header: &lsquo;47.56.227.27&rsquo;. You may need to add &lsquo;47.56.227.27&rsquo; to ALLOWED_HOSTS.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115215725.png" alt="修改"><br>
+<strong>至此，Python 环境与 Django 环境就安装完成。</strong></p>
+<p>3、接下来安装 uWSGI Web 网关。<br>
+首先下载安装 uWSGI</p>
+<pre><code class="language-code">wget http://projects.unbit.it/downloads/uwsgi-2.0.1.tar.gz
+tar zxvf uwsgi-2.0.1.tar.gz
+cd uwsgi-2.0.1
+python3 uwsgiconfig.py --build
+cp -R /home/uwsgi-2.0.1 /usr/local/uwsgi
+ln -s /usr/local/uwsgi/uwsgi /usr/bin/uwsgi
+</code></pre>
+<p>然后测试 uWSGI 是否安装成功，创建测试文件</p>
+<pre><code class="language-code">vi test.py
+</code></pre>
+<p>文件内容为：</p>
+<pre><code class="language-text">def application(env, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
+    return [b&quot;Hello World&quot;]
+</code></pre>
+<p>输入完成后 :wq 保存，然后执行以下命令进行测试。</p>
+<pre><code class="language-code">/usr/local/uwsgi/uwsgi --http :9090 --wsgi-file /home/test.py
+</code></pre>
+<blockquote>
+<p>防火墙开放端口指令：<br>
+<strong>firewall-cmd &ndash;list-all</strong> | <em>查看当前开放的所有端口</em><br>
+<strong>firewall-cmd  &ndash;add-port=80/tcp &ndash;permanent</strong>  | <em>80替换为你需要开放的端口</em><br>
+<strong>firewall-cmd &ndash;reload</strong><br>
+然后去对应服务商的安全组处开放安全组。这里就以阿里云国际为例。
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115222117.png" alt="安全组"></p>
+</blockquote>
+<p>前往你的 IP:9090 出现 Hello World 就说明 uWSGI 的安装已经完成了！<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115223058.png" alt="成功"></p>
+<p>4、开始 uWSGI 和 Django 结合，执行</p>
+<pre><code class="language-code">uwsgi --http :9090 --chdir /home/Django 项目文件夹 --wsgi-file Django 项目(与 manage.py 同级)/wsgi.py --master --processes 4 --threads 2 --stats 127.0.0.1:9192
+</code></pre>
+<p>同样访问 IP:9090 ，如果可以访问 Django 页面则说明成功。<br>
+<em>注：如果在访问 Django 项目时静态文件加载失败可以先忽略，在 Nginx 配置中会指定静态文件路径，配置后可以正常访问。</em></p>
+<p>5、安装 Nginx<br>
+首先下载安装依赖第三方软件 PCRE</p>
+<pre><code class="language-code">wget http://jaist.dl.sourceforge.net/project/pcre/pcre/8.34/pcre-8.34.tar.bz2
+tar jxvf pcre-8.34.tar.bz2
+</code></pre>
+<blockquote>
+<p>如果报错：bzip2: Cannot exec: No such file or directory<br>
+执行：yum -y install bzip2</p>
+</blockquote>
+<pre><code class="language-code">cd pcre-8.34
+./configure --enable-utf8
+make &amp;&amp; make install
+</code></pre>
+<p>下载安装依赖第三方软件 OpenSSL</p>
+<pre><code class="language-code">wget http://distfiles.macports.org/openssl/openssl-1.0.2h.tar.gz
+tar zxvf openssl-1.0.2h.tar.gz
+</code></pre>
+<p>下载安装 Nginx</p>
+<pre><code class="language-code">wget http://nginx.org/download/nginx-1.9.9.tar.gz
+tar zxvf nginx-1.9.9.tar.gz
+./configure --prefix=/usr/local/nginx --with-pcre --with-http_stub_status_module --with-http_ssl_module --with-openssl=/home/openssl-1.0.2h --with-http_gzip_static_module --with-http_sub_module --with-cc=/usr/bin/gcc
+make install
+</code></pre>
+<p>新建 www 用户</p>
+<pre><code class="language-code">useradd -s /sbin/nologin -M www
+</code></pre>
+<p>备份、修改 Nginx 配置文件</p>
+<pre><code class="language-code">cd /usr/local/nginx/conf
+cp -f nginx.conf nginx.conf_bak
+vi nginx.conf
+    (修改文件)
+    user www;         # 修改启动用户为 www
+    worker_processes 4;         # 启动4个进程，根据实际需求配置
+</code></pre>
+<p>启动 Nginx</p>
+<pre><code class="language-code">cd /usr/local/nginx/sbin
+./nginx
+</code></pre>
+<blockquote>
+<p>如果报错：nginx: [emerg] still could not bind()<br>
+说明80端口目前被占用<br>
+执行：netstat -apn | grep 80<br>
+然后：kill -9 26105<br>
+<em>26105为搜索出来的 0.0.0.0/80 对应的PID</em><br>
+<em>注意：需要删除5-6次，因为执行的适合有进程保护</em></p>
+</blockquote>
+<p>再访问 IP:80 显示 Nginx 页面说明 Nginx 安装成功。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200115234646.png" alt="成功"></p>
+<p>6、Nginx+uWSGI+Django 三者连携。<br>
+首先在 Django 项目文件夹中创建 uwsgi.ini</p>
+<pre><code class="language-code">vi uwsgi.ini
+    (文件内容)
+    [uwsgi]
+    # uwsgi启动端口
+    socket = 127.0.0.1:9090 
+    # django项目目录
+    chdir=/home/SteamCash
+    module=SteamCash.wsgi
+    master = true
+    processes=2
+    threads=2
+    max-requests=2000
+    chmod-socket=664
+    vacuum=true
+    # 日志路径
+    daemonize = /home/SteamCash/logs/uwsgi.log
+</code></pre>
+<p>配置 Nginx</p>
+<pre><code>vi /usr/local/nginx/conf/nginx.conf
+    (文件内容)
+    ......
+    server {
+        listen       80;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        # 选择为你项目的static文件夹
+	    location /static {
+		    alias /home/SteamCash/static;
+	    }
+
+        location / {
+	    include uwsgi_params;
+	    uwsgi_pass 127.0.0.1:9090;
+            root   html;
+            index  index.html index.htm;
+        }
+    ......
+</code></pre>
+<p>启动 uWSGI</p>
+<pre><code class="language-code">uwsgi --ini /home/SteamCash/uwsgi.ini
+</code></pre>
+<p>启动 Nginx</p>
+<pre><code class="language-code">./usr/local/nginx/sbin/nginx
+</code></pre>
+<p>接着访问页面即可。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200116002213.png" alt="访问"></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/" title="7 下 Nginx&#43;uWSGI 配置 Django 项目" target="_blank" rel="external">https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2020/01/centos7-http-and-socks5-proxy/" title="Centos7 下配置 HTTP 和 SOCKS5 代理服务端 用以代理 HTPPS 解决爬虫 SSL 错误"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://senjianlu.com/2020/01/hugo-github-pages/"
+                    title="Windows 下 Hugo&#43;GitHub Pages 搭建静态博客"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
 </nav>
 
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -591,6 +586,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>

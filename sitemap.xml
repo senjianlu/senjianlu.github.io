@@ -17,7 +17,7 @@
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/05/hugoauto/</loc>
+    <loc>https://senjianlu.com/2020/05/hugo-auto-build/</loc>
     <lastmod>2020-05-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -45,14 +45,14 @@
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/02/postgresqlnote03/</loc>
+    <loc>https://senjianlu.com/2020/02/postgresql-note-03/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/02/postgresqlnote02/</loc>
+    <loc>https://senjianlu.com/2020/02/postgresql-note-02/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -73,14 +73,14 @@
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/02/postgresqlnote01/</loc>
+    <loc>https://senjianlu.com/2020/02/postgresql-note-01/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/pvesynology/</loc>
+    <loc>https://senjianlu.com/2020/01/pve-synology/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -94,7 +94,7 @@
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/pveledeikuai/</loc>
+    <loc>https://senjianlu.com/2020/01/pve-lede-ikuai/</loc>
     <lastmod>2020-01-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -115,28 +115,28 @@
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/picgogithub/</loc>
+    <loc>https://senjianlu.com/2020/01/picgo-github/</loc>
     <lastmod>2020-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/hugogithubpages/</loc>
+    <loc>https://senjianlu.com/2020/01/hugo-github-pages/</loc>
     <lastmod>2020-01-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/centos7nginxuwsgidjango/</loc>
+    <loc>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/centos7httpandsocks5proxy/</loc>
+    <loc>https://senjianlu.com/2020/01/centos7-http-and-socks5-proxy/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

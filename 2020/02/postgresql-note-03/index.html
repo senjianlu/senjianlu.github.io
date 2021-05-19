@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        森见鹿的博客 </title>
+        PostgreSQL 学习笔记 (三) 用户权限的管理控制 - 森见鹿的博客 
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>森见鹿的博客 </title>
+  <title>PostgreSQL 学习笔记 (三) 用户权限的管理控制 - 森见鹿的博客 </title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://senjianlu.com/tags/index.xml" title="森见鹿的博客 " />
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://senjianlu.com/tags/" />
+  <meta property="og:title" content="PostgreSQL 学习笔记 (三) 用户权限的管理控制" />
+<meta property="og:description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2020/02/postgresql-note-03/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-02-03T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-02-03T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="Tags">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="PostgreSQL 学习笔记 (三) 用户权限的管理控制">
+<meta itemprop="description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中"><meta itemprop="datePublished" content="2020-02-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1176">
+<meta itemprop="keywords" content="PostgreSQL," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PostgreSQL 学习笔记 (三) 用户权限的管理控制"/>
+<meta name="twitter:description" content="在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -243,147 +248,147 @@
 
     
     
-<main class="main" role="main">
-    <article class="article article-tags post-type-list" itemscope="">
-        <header class="article-header">
-            <h1 itemprop="name" class="hidden-xs">Tags</h1>
-            <p class="text-muted hidden-xs">共 3 个标签</p>
-            <nav role="navigation" id="nav-main" class="okayNav">
-                <ul>
-                    <li><a href="https://senjianlu.com/tags">All</a></li>
-                    <li><a href="https://senjianlu.com/tags/postgresql/">PostgreSQL</a></li>
-                    <li><a href="https://senjianlu.com/tags/python/">Python</a></li>
-                    <li><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/">硬件</a></li>
-                </ul>
-            </nav>
-        </header>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/02/postgresql-note-03/"
+    >PostgreSQL 学习笔记 (三) 用户权限的管理控制</a
+  >
+</h1>
+
+      <div class="article-meta">
         
-        <div class="article-body">
-            <h3 class="panel-title mb-1x">
-                <a href="https://senjianlu.com/tags/postgresql" title="#postgresql"># postgresql</a>
-                <small class="text-muted">(Total3 articles)</small>
-            </h3>
-            <div class="row">
-                <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-02-03 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-02-03</time>
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://senjianlu.com/2020/02/postgresql-note-03/" class="article-date">
+  <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/postgresql-note-03/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1176字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次：</p>
+<ol>
+<li>特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。</li>
+<li>在数据库中创建模式 (SCHEMA) 的权限。</li>
+<li>在模式中创建数据库对象的权限，如创建表、索引等。</li>
+<li>查询单表，和插入、更新或删除表中数据的权限。</li>
+<li>最低的则是只能操作表中部分字段的权限。</li>
+</ol>
+<p>五种权限中，比较难理解的可能就是为什么要把创建数据库等设置为特殊权限。在这之前，我们需要先学习 PostgreSQL 中是如果对权限进行管理的。</p>
+<hr>
+<p>PostgreSQL 使用角色的概念管理数据库权限，为了方便管理，往往给一个角色赋予一系列的权限，而如果某个用户需要这些权限，则只需要直接把角色赋给用户即可。<br>
+稍微有点绕的是在这里，PostgreSQL 中角色和用户又是没有区别的，一个用户就是一个角色，因此可以把一个用户的权限赋给另一个用户，稍稍有点难理解，但是实际操作中不会有什么阻碍。</p>
+<p>1、那就从创建用户开始吧。<br>
+指令如下：</p>
+<pre><code class="language-code">创建角色：CREATE ROLE username [ [ WITH ] option [...] ]
+创建用户：CREATE USER username [ [ WITH ] option [...] ]
+</code></pre>
+<p>在这里我一般情况下使用 CREATE USER，因为这样默认出来的用户是有 &ldquo;Login&rdquo; 权限的，不需要再去额外设置一下了。用户的其他属性用两种方法创建出来不会有任何不同。<br>
+上面命令中的 &ldquo;option&rdquo; 就是用户创建时被赋予的权限了，可以是如下内容：<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203175847.png" alt="01"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203175919.png" alt="02"></p>
+<p>举个实际的例子，比如我现在有一个新的项目要启动，需要创建对应的用户和数据库：</p>
+<pre><code class="language-code">CREATE USER new_project_user CREATEDB;
+ALTER USER new_project_user PASSWORD '12345';       # 修改登录密码
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203184537.png" alt="创建"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203184432.png" alt="测试"><br>
+这样一个可创建项目数据库的用户就创建完成了！当然这种情况下，创建的用户其他是没有其他数据库及表的访问权限的。</p>
+<p>2、修改权限<br>
+之前说过的5项权限中，存在包含超级用户、创建数据库权限和 Login 在内的特殊权限，在修改权限或者说管理权限时，使用的命令是与一般权限不同的：</p>
+<pre><code class="language-code">ALTER ROLE username [ [WITH] option [ ... ] ]
+</code></pre>
+<p>而一般的针对数据库中建模式、数据库中建表等的则使用 &ldquo;GRANT&rdquo;、&ldquo;REVOKE&rdquo; 命令：</p>
+<pre><code class="language-code">GRANT role_name [, ...] TO role_name [, ...] [ WITH ADMIN OPTION ]
+# 上面这种是书中记载的，可能难以理解，换种形式如下
+GRANT some_privileges ON database_object_type object_name TO username
+</code></pre>
+<ul>
+<li>&ldquo;some_privileges&rdquo; 代表一种权限，例如 &ldquo;SELECT&rdquo;、&ldquo;UPDATE&rdquo;</li>
+<li>&ldquo;database_object_type&rdquo; 代表一种数据库对象类型，例如 &ldquo;TABLE&rdquo;、&ldquo;SEQUENCE&rdquo;</li>
+<li>&ldquo;object_name&rdquo; 代表表名</li>
+<li>&ldquo;username&rdquo; 则就是用户名了</li>
+</ul>
+<p>比如说我现在需要将 &ldquo;testdb&rdquo; 模式中的 &ldquo;student&rdquo; 表查看权限赋予刚刚我们创建的 &ldquo;new_project_user&rdquo; 用户：</p>
+<pre><code class="language-code">GRANT SELECT ON table student TO new_project_user;
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203226.png" alt="table student"><br>
+这个时候再用 Navicat 连接后去查看 &ldquo;student&quot;表，可以正常访问了。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203344.png" alt="访问正常"></p>
+<p>具体的权限贴在下放以作记录，如果需要同时赋予多个权限，除了 &ldquo;ALL PRIVILEGES&rdquo; 以外，只需要在多个权限中用 &ldquo;,&rdquo; 隔开就行了。<br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203607.png" alt="权限01"><br>
+<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203708.png" alt="权限02"></p>
+<hr>
+<p><strong>这里是后面学习时候的修修补补：</strong></p>
+<ol>
+<li>只有创建数据库的权限是特殊权限，而如果要将某个数据库的权限全赋给某个用户，同样使用的是 &ldquo;GRANT&rdquo; 命令，例如：</li>
+</ol>
+<pre><code class="language-code">GRANT ALL PRIVILEGES ON DATABASE testdb TO new_project_user;
+</code></pre>
+<ol start="2">
+<li>&ldquo;REVOKE&rdquo; 是删除权限的命令，忘记举例：</li>
+</ol>
+<pre><code class="language-code">REVOKE CREATE ON SCHEMA public from new_project_user;
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2020/02/postgresql-note-03/" title="PostgreSQL 学习笔记 (三) 用户权限的管理控制" target="_blank" rel="external">https://senjianlu.com/2020/02/postgresql-note-03/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2020/02/postgresql-note-02/" title="PostgreSQL 学习笔记 (二) psql 工具的使用"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://senjianlu.com/2020/05/hugo-auto-build/"
+                    title="Windows 下 Hugo 静态博客一键推送发布"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
         </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://senjianlu.com/2020/02/postgresql-note-03/">PostgreSQL 学习笔记 (三) 用户权限的管理控制</a>
-        </h3>
     </div>
-    <div class="panel-footer">
-        <a href="https://senjianlu.com/tags/postgresql" class="label label-default mb">PostgreSQL</a>
-    </div>
-</article>
-                </div>
-                <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-02-03 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-02-03</time>
-        </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://senjianlu.com/2020/02/postgresql-note-02/">PostgreSQL 学习笔记 (二) psql 工具的使用</a>
-        </h3>
-    </div>
-    <div class="panel-footer">
-        <a href="https://senjianlu.com/tags/postgresql" class="label label-default mb">PostgreSQL</a>
-    </div>
-</article>
-                </div>
-                <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-02-02 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-02-02</time>
-        </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://senjianlu.com/2020/02/postgresql-note-01/">PostgreSQL 学习笔记 (一) 数据库的安装与环境配置</a>
-        </h3>
-    </div>
-    <div class="panel-footer">
-        <a href="https://senjianlu.com/tags/postgresql" class="label label-default mb">PostgreSQL</a>
-    </div>
-</article>
-                </div>
-            </div>
-            <h3 class="panel-title mb-1x">
-                <a href="https://senjianlu.com/tags/python" title="#python"># python</a>
-                <small class="text-muted">(Total2 articles)</small>
-            </h3>
-            <div class="row">
-                <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-01-10 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-01-10</time>
-        </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/">7 下 Nginx&#43;uWSGI 配置 Django 项目</a>
-        </h3>
-    </div>
-    <div class="panel-footer">
-        <a href="https://senjianlu.com/tags/python" class="label label-default mb">Python</a>
-    </div>
-</article>
-                </div>
-                <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-01-10 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-01-10</time>
-        </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://senjianlu.com/2020/01/centos7-http-and-socks5-proxy/">Centos7 下配置 HTTP 和 SOCKS5 代理服务端 用以代理 HTPPS 解决爬虫 SSL 错误</a>
-        </h3>
-    </div>
-    <div class="panel-footer">
-        <a href="https://senjianlu.com/tags/python" class="label label-default mb">Python</a>
-    </div>
-</article>
-                </div>
-            </div>
-            <h3 class="panel-title mb-1x">
-                <a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6" title="#硬件"># 硬件</a>
-                <small class="text-muted">(Total2 articles)</small>
-            </h3>
-            <div class="row">
-                <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-01-22 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-01-22</time>
-        </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://senjianlu.com/2020/01/pve-synology/">PVE 下黑群晖的安装和硬盘直通组 RAID1</a>
-        </h3>
-    </div>
-    <div class="panel-footer">
-        <a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6" class="label label-default mb">硬件</a>
-    </div>
-</article>
-                </div>
-                <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-01-13 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-01-13</time>
-        </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://senjianlu.com/2020/01/pve-lede-ikuai/">PVE 下 LEDE&#43;爱快 双软路由部署</a>
-        </h3>
-    </div>
-    <div class="panel-footer">
-        <a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6" class="label label-default mb">硬件</a>
-    </div>
-</article>
-                </div>
-            </div>
-        </div>
-    </article>
+</nav>
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
     <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
@@ -458,6 +463,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>
