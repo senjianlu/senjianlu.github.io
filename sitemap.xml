@@ -4,7 +4,70 @@
   
   <url>
     <loc>https://senjianlu.com/categories/</loc>
-    <lastmod>2021-06-15T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/posts/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/tags/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</loc>
+    <lastmod>2021-06-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/</loc>
+    <lastmod>2021-06-18T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/06/japanses-shi-yi-bei-dong/</loc>
+    <lastmod>2021-06-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,21 +80,7 @@
   </url>
   
   <url>
-    <loc>https://senjianlu.com/posts/</loc>
-    <lastmod>2021-06-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
-    <lastmod>2021-06-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/</loc>
     <lastmod>2021-06-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -67,20 +116,6 @@
   
   <url>
     <loc>https://senjianlu.com/tags/rabbitmq/</loc>
-    <lastmod>2020-12-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/tags/</loc>
-    <lastmod>2020-12-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-12-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
