@@ -39,10 +39,10 @@
     
     <item>
       <title>日语学习 使役、被动和使役被动</title>
-      <link>https://senjianlu.com/2021/06/japanses-shi-yi-bei-dong/</link>
+      <link>https://senjianlu.com/2021/06/japanese-shi-yi-bei-dong/</link>
       <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/06/japanses-shi-yi-bei-dong/</guid>
+      <guid>https://senjianlu.com/2021/06/japanese-shi-yi-bei-dong/</guid>
       <description>Notion 链接：https://www.notion.so/rabbir/eee6ce0ebd9249a9a281805aadb54582</description>
     </item>
     
@@ -53,6 +53,15 @@
       
       <guid>https://senjianlu.com/2021/06/centos7-socks5-gost/</guid>
       <description>虽然 Telegram 的 APP 自带 SOCKS5 代理支持，直接配置即可使用，但是几乎配置完连上就是秒封，必须通过国内服务器做中转，即：国外服务器先安装 SOCKS5 代理，再安装 GOST 将国内</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下建立 SWaP 分区以增加虚拟内存</title>
+      <link>https://senjianlu.com/2021/06/centos7-swap/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/06/centos7-swap/</guid>
+      <description>明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&amp;hellip;&amp;hellip; 看了下现在的这些容器基本都</description>
     </item>
     
     <item>
