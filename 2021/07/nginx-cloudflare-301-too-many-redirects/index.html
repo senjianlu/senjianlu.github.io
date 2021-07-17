@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        森见鹿的博客 </title>
+        Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法 - 森见鹿的博客 
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>森见鹿的博客 </title>
+  <title>Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法 - 森见鹿的博客 </title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://senjianlu.com/posts/index.xml" title="森见鹿的博客 " />
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://senjianlu.com/posts/" />
+  <meta property="og:title" content="Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法" />
+<meta property="og:description" content="新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-17T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-17T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法">
+<meta itemprop="description" content="新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的"><meta itemprop="datePublished" content="2021-07-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-07-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="637">
+<meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法"/>
+<meta name="twitter:description" content="新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -263,110 +268,135 @@
 
     
     
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/07/nginx-cloudflare-301-too-many-redirects/"
+    >Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法</a
+  >
+</h1>
 
-<main class="main" role="main">
-    <article class="content article article-archives article-type-list" itemscope="">
-        <header class="article-header">
-            <h1 itemprop="title">Posts</h1>
-            <p class="text-muted">共 22 篇文章</p>
-        </header>
-        <div class="article-body">
-                        <section class="panel panel-default b-no">
-                            <div class="panel-heading" role="tab">
-                                <h3 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse2021" aria-expanded="true">
-                                        <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-                                        &nbsp;2021
-                                    </a>
-                                </h3>
-                            </div>
-                            <div id="collapse2021" class="panel-collapse collapse in" role="tabpanel"
-                                aria-labelledby="heading2021">
-                                <div class="panel-body">
-                                    <div class="collection"><a href="https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-07-17 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-07-17
-    </time>Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法
-</a><a href="https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-07-16 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-07-16
-    </time>Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置
-</a><a href="https://senjianlu.com/2021/07/nginx-note-02/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-07-16 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-07-16
-    </time>Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题
-</a><a href="https://senjianlu.com/2021/07/centos7-swap/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-07-12 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-07-12
-    </time>CentOS7 下建立 SWaP 分区以增加虚拟内存
-</a><a href="https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-06-20 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-06-20
-    </time>日语学习 「こそあど系統」
-</a><a href="https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-06-19 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-06-19
-    </time>日语学习 格助词「を」在自动词前的使用
-</a><a href="https://senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-06-18 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-06-18
-    </time>日语学习 日语词类划分整理
-</a><a href="https://senjianlu.com/2021/06/japanese-shi-yi-bei-dong/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-06-17 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-06-17
-    </time>日语学习 使役、被动和使役被动
-</a><a href="https://senjianlu.com/2021/06/centos7-socks5-gost/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-06-15 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-06-15
-    </time>CentOS7 下安装 SOCKS5 代理并使用 GOST 搭建加密中转隧道
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/" class="article-date">
+  <time datetime="2021-07-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-17</time>
 </a>
-                        </div></div></div></section>
-                        <section class="panel panel-default b-no">
-                            <div class="panel-heading" role="tab">
-                                <h3 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse2020" aria-expanded="true">
-                                        <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-                                        &nbsp;2020
-                                    </a>
-                                </h3>
-                            </div>
-                            <div id="collapse2020" class="panel-collapse collapse in" role="tabpanel"
-                                aria-labelledby="heading2020">
-                                <div class="panel-body">
-                                    <div class="collection"><a href="https://senjianlu.com/2020/12/centos7-jdk/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-12-31 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-12-31
-    </time>CentOS7 下安装 Java 环境（JDK11）
-</a><a href="https://senjianlu.com/2020/12/centos7-install-rabbitmq/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-12-31 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-12-31
-    </time>CentOS7 下安装 RabbitMQ
-</a><a href="https://senjianlu.com/2020/12/nginx-note-01/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-12-31 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-12-31
-    </time>Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别
-</a><a href="https://senjianlu.com/2020/05/hugo-auto-build/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-05-17
-    </time>Windows 下 Hugo 静态博客一键推送发布
-</a><a href="https://senjianlu.com/2020/02/postgresql-note-03/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-02-03
-    </time>PostgreSQL 学习笔记 (三) 用户权限的管理控制
-</a><a href="https://senjianlu.com/2020/02/postgresql-note-02/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-02-03
-    </time>PostgreSQL 学习笔记 (二) psql 工具的使用
-</a><a href="https://senjianlu.com/2020/02/postgresql-note-01/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-02-02 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-02-02
-    </time>PostgreSQL 学习笔记 (一) 数据库的安装与环境配置
-</a><a href="https://senjianlu.com/2020/01/pve-synology/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-01-22 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-01-22
-    </time>PVE 下黑群晖的安装和硬盘直通组 RAID1
-</a><a href="https://senjianlu.com/2020/01/pve-lede-ikuai/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-01-13 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-01-13
-    </time>PVE 下 LEDE&#43;爱快 双软路由部署
-</a><a href="https://senjianlu.com/2020/01/picgo-github/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-01-12 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-01-12
-    </time>Windows 下 PicGo&#43;GitHub 搭建个人图床工具
-</a><a href="https://senjianlu.com/2020/01/hugo-github-pages/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-01-11 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-01-11
-    </time>Windows 下 Hugo&#43;GitHub Pages 搭建静态博客
-</a><a href="https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-01-10 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-01-10
-    </time>CentOS7 下 Nginx&#43;uWSGI 配置 Django 项目
-</a><a href="https://senjianlu.com/2020/01/centos7-http-and-socks5-proxy/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-01-10 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-01-10
-    </time>Centos7 下配置 HTTP 和 SOCKS5 代理服务端，用以代理 HTPPS 解决爬虫 SSL 错误
-</a>
-        </div></div></div></section>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"> 踩坑记录 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"> 网站建设 </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/nginx-cloudflare-301-too-many-redirects/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 637字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的错误，百思不得其解。<br>
+后来在查询解决方案的时候试着加上了 Cloudflare 关键词，然后看到了这篇文章：<a href="https://bupt.dev/index.php/archives/75/">一种可能导致 ERR_TOO_MANY_REDIRECTS 的原因</a>，感觉就是这个原因，试了下果然解决了，优化下标题 SEO 希望能给更多人看到。<br>
+虽然很简单还是放下具体的操作步骤。</p>
+<hr>
+<p>1、确定你的 Nginx 配置是没有问题的。</p>
+<pre><code class="language-nginx">    # HTTP 80 端口
+    server {
+        listen      80;
+        server_name example.com;
+        root        /usr/share/nginx/html;
+        index       index.html;
+oil
+        # 强制跳转 HTTPS
+        location / {
+            return 301 https://$server_name$request_uri;
+        }
+    }
+
+    # HTTPS 443 端口
+    server {
+        listen      443 ssl;
+        server_name example.com;
+        root        /usr/share/nginx/html;
+        index       index.html;
+
+        # SSL 配置
+        ssl_certificate             /etc/letsencrypt/live/example.com/fullchain.pem;
+        ssl_certificate_key         /etc/letsencrypt/live/example.com/privkey.pem;
+        ssl_protocols               TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers                 ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+
+        location / {
+            # 服务所在端口
+            proxy_pass http://127.0.0.1:8080;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection &quot;upgrade&quot;;
+            proxy_set_header Host $host;
+        }
+    }
+</code></pre>
+<p>这样的配置至少 HTTP 强制跳转 HTTPS 就已经是没有问题的了，在防火墙和安全组打开 80 和 443 端口之后不会出现重定向不到的问题。<br>
+修改完记得重启 Nginx 服务。</p>
+<pre><code class="language-bash">nginx -s reload
+service nginx restart
+</code></pre>
+<p>2、Cloudflare 配置修改 SSL/TLS 为端到端加密。<br>
+原因在开头文章中已经讲的很明确了：</p>
+<blockquote>
+<p><strong>原因</strong><br>
+因为在 Cloudflare 的 SSL/TLS 设置选项中，如果你选择了 Flexible ，那么所有对你的服务器的请求都是通过 HTTP 发送的，而如果服务器上已经设置了将 HTTP 重定向到 HTTPS 的话，就会发生重定向循环。</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210717151750.png" alt=""><br>
+如图更改即可。</p>
+<p>3、<strong>注意事项：</strong><br>
+上述操作结束后，如果服务器 Nginx 配置项中一个域名同时有 HTTP 和 HTTPS 两个 server 配置内容的话，所有 HTTP 访问会无视其对应配置而改为 HTTPS 协议并遵循 HTTPS 的 server 配置内容，这会引起最大的问题就是类似 Let&rsquo;s Encrypt SSL 证书申请时所采取的：在服务器某一位置生成认证文件并用 HTTP 协议访问它以完成验证这一措施失效。<br>
+也就是说，强制 HTTPS 跳转和 Let&rsquo;s Encrypt SSL 证书自动续签你只能选其一。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/" title="Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法" target="_blank" rel="external">https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/" title="Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
         </div>
-    </article>
+    </div>
+</nav>
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
     <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
