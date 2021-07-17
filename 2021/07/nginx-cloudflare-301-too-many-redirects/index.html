@@ -42,7 +42,7 @@
 <meta itemprop="name" content="Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法">
 <meta itemprop="description" content="新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的"><meta itemprop="datePublished" content="2021-07-17T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-07-17T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="637">
+<meta itemprop="wordCount" content="636">
 <meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法"/>
 <meta name="twitter:description" content="新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的"/>
@@ -300,7 +300,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/nginx-cloudflare-301-too-many-redirects/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 637字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 636字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
@@ -316,7 +316,7 @@
         server_name example.com;
         root        /usr/share/nginx/html;
         index       index.html;
-oil
+
         # 强制跳转 HTTPS
         location / {
             return 301 https://$server_name$request_uri;
