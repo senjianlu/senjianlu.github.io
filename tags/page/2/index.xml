@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 森见鹿的博客 </title>
+    <link>https://senjianlu.com/tags/</link>
+    <description>Recent content in Tags on 森见鹿的博客 </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 16 Jul 2021 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS7 下 Nginx&#43;uWSGI 配置 Django 项目</title>
+      <link>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</guid>
+      <description>服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编</description>
+    </item>
+    
+    <item>
+      <title>Centos7 下配置 HTTP 和 SOCKS5 代理服务端，用以代理 HTPPS 解决爬虫 SSL 错误</title>
+      <link>https://senjianlu.com/2020/01/centos7-http-and-socks5-proxy/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/01/centos7-http-and-socks5-proxy/</guid>
+      <description>如果你急于解决爬虫 HTTP 代理池访问 HTPPS 出错，并且自己有境外服务器的话，我直接给出解决方案：服务器搭建 SOCKS5 代理并在代码中以 socks5h://账号:密</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://senjianlu.com/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/about/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Hugo makes use of a variety of open source projects including:
+ https://github.</description>
+    </item>
+    
+  </channel>
+</rss>
