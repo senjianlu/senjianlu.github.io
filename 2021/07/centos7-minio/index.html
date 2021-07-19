@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        森见鹿的博客 </title>
+        CentOS7 下 MinIO 的安装和配置 - 森见鹿的博客 
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>森见鹿的博客 </title>
+  <title>CentOS7 下 MinIO 的安装和配置 - 森见鹿的博客 </title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://senjianlu.com/tags/python/index.xml" title="森见鹿的博客 " />
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="Python" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://senjianlu.com/tags/python/" />
+  <meta property="og:title" content="CentOS7 下 MinIO 的安装和配置" />
+<meta property="og:description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2021/07/centos7-minio/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-19T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-19T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="Python">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Python"/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="CentOS7 下 MinIO 的安装和配置">
+<meta itemprop="description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘"><meta itemprop="datePublished" content="2021-07-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-07-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="737">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7 下 MinIO 的安装和配置"/>
+<meta name="twitter:description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -267,60 +272,168 @@
 
     
     
-<main class="main" role="main">
-    <article class="content article article-tags post-type-list" itemscope="">
-        <header class="article-header">
-            <h1 itemprop="name" class="hidden-xs">Python</h1>
-            <p class="text-muted hidden-xs">共 9 个标签</p>
-            <nav role="navigation" id="nav-main" class="okayNav">
-                <ul>
-                    <li><a href="https://senjianlu.com/tags">All</a></li>
-                    <li><a href="https://senjianlu.com/tags/docker/">Docker</a></li>
-                    <li><a href="https://senjianlu.com/tags/java/">Java</a></li>
-                    <li><a href="https://senjianlu.com/tags/linux/">Linux</a></li>
-                    <li><a href="https://senjianlu.com/tags/postgresql/">PostgreSQL</a></li>
-                    <li><a href="https://senjianlu.com/tags/python/">Python</a></li>
-                    <li><a href="https://senjianlu.com/tags/rabbitmq/">RabbitMQ</a></li>
-                    <li><a href="https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/">日语</a></li>
-                    <li><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/">硬件</a></li>
-                    <li><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/">网站建设</a></li>
-                </ul>
-            </nav>
-        </header>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/07/centos7-minio/"
+    >CentOS7 下 MinIO 的安装和配置</a
+  >
+</h1>
+
+      <div class="article-meta">
         
-        <div class="article-body">
-            <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-01-10 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-01-10</time>
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://senjianlu.com/2021/07/centos7-minio/" class="article-date">
+  <time datetime="2021-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-19</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-minio/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 737字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。</p>
+<blockquote>
+<p><strong>顺便把 BuyVM 挂载硬盘的流程一起记下：</strong><br>
+1、购买后去<a href="https://manage.buyvm.net">控制台</a>把 Block Storage 附加到（Attached To）对应的 VPS 上。<br>
+2、在 VPS 里查看数据块编号，类似 scsi-0BUYVM_SLAB_VOLUME-1331 的就是存储块。</p>
+<pre><code class="language-bash">ls /dev/disk/by-id/
+</code></pre>
+<p>3、格式化。</p>
+<pre><code class="language-bash">mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-1331
+</code></pre>
+<p>4、新建文件夹并挂载，这里以根目录下的 /storage 为例：</p>
+<pre><code class="language-bash">mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-1331 /storage
+</code></pre>
+<p>5、设置开机自动挂载，完成。</p>
+<pre><code class="language-bash">echo '/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-1331 /storage ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
+</code></pre>
+</blockquote>
+<hr>
+<p>MinIO 的安装也没有任何难度，因为有现成编译好的版本，直接下载运行就行了。</p>
+<p>1、我是用的是 CentOS7 系统，所以选择 linux-amd64 版本：</p>
+<pre><code class="language-bash">wget https://dl.minio.io/server/minio/release/linux-amd64/minio
+</code></pre>
+<p>2、下载下来的文件加上权限就能运行，但是为了方便管理还是放到 /usr/local 路径下：</p>
+<pre><code class="language-bash">mv minio /usr/local/
+chmod +x /usr/local/minio
+</code></pre>
+<p>测试启动一下：</p>
+<pre><code class="language-bash">/usr/local/minio server /stroage --address &quot;:9000&quot; --console-address &quot;:9001&quot;
+</code></pre>
+<p>启动成功，默认账号密码都是：minioadmin
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210719212837.png" alt="启动成功"></p>
+<p>3、修改账号密码。<br>
+最新版本的 MinIO 已经停用从配置文件中读取账号密码启动的功能，因此现在只能将用户信息配置在系统的环境变量中。<br>
+以下命令仅可用来测试，在终端关闭后就会失效。</p>
+<pre><code class="language-bash">export MINIO_ACCESS_KEY=username
+export MINIO_SECRET_KEY=password
+</code></pre>
+<p>永久配置请参照这个命令，修改 /etc/profile 文件：</p>
+<pre><code class="language-bash">vi /etc/profile
+</code></pre>
+<p>并在空白处添加：</p>
+<pre><code class="language-bash">export MINIO_ACCESS_KEY=username
+export MINIO_SECRET_KEY=password
+</code></pre>
+<p>使其生效：</p>
+<pre><code class="language-bash">source /etc/profile
+</code></pre>
+<p>4、开机启动。<br>
+这里用最简单的方法实现开机启动：</p>
+<pre><code class="language-bash">crontab -e
+</code></pre>
+<pre><code class="language-bash"># MinIO 开机启动
+# . /etc/profile; 作用为先读取环境变量，不配置无法读取账号密码。
+@reboot . /etc/profile;/usr/local/minio server /storage --address &quot;:9000&quot; --console-address &quot;:9001&quot;
+</code></pre>
+<pre><code class="language-bash">service crond restart
+</code></pre>
+<blockquote>
+<p>如果重启后 MinIO 没有自启动的话，请自行查看 log，crontab 的配置头上可能需要加上 3 行：</p>
+<pre><code class="language-bash">SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+</code></pre>
+<p>这些是用来选择语言、可执行文件目录和用户的，具体情况还是看日志处理。</p>
+</blockquote>
+<p>5、Nginx 上传文件的配置。<br>
+我至今遇到了两个错误：</p>
+<ol>
+<li><a href="https://blog.csdn.net/Twostring/article/details/111190396">413 Request Entity Too Large</a> 修改上传文件最大大小解决。</li>
+<li><a href="http://zuori.gitee.io/zaker/2020/08/04/Nginx%E9%85%8D%E7%BD%AEminio%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">文件下载报错 403 SignatureDoesNotMatch</a> 就很巧全是大家碰到过的问题，修改 headers 传递解决。</li>
+</ol>
+<p>最后的 Nginx 配置如下：</p>
+<pre><code class="language-bash">        ...
+
+        location / {
+            proxy_pass http://127.0.0.1:9001;
+            # MinIO 上传最大大小 1 GB
+            client_max_body_size 1024m;
+            proxy_http_version 1.1;
+            # headers 传递
+            proxy_set_header Host $host;
+            proxy_set_header Connection &quot;upgrade&quot;;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+        ...
+</code></pre>
+<p>至此结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2021/07/centos7-minio/" title="CentOS7 下 MinIO 的安装和配置" target="_blank" rel="external">https://senjianlu.com/2021/07/centos7-minio/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2021/07/centos7-docker-zabbix/" title="CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
         </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/">CentOS7 下 Nginx&#43;uWSGI 配置 Django 项目</a>
-        </h3>
     </div>
-    <div class="panel-footer">
-        <a href="https://senjianlu.com/tags/python" class="label label-default mb">Python</a>
-    </div>
-</article>
-            </div>
-            <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="panel-body">
-        <div class="article-meta">
-            <time datetime="2020-01-10 00:00:00 &#43;0000 UTC"
-                itemprop="datePublished">2020-01-10</time>
-        </div>
-        <h3 class="article-title" itemprop="name">
-            <a class="article-link" href="https://senjianlu.com/2020/01/centos7-http-and-socks5-proxy/">Centos7 下配置 HTTP 和 SOCKS5 代理服务端，用以代理 HTPPS 解决爬虫 SSL 错误</a>
-        </h3>
-    </div>
-    <div class="panel-footer">
-        <a href="https://senjianlu.com/tags/python" class="label label-default mb">Python</a>
-    </div>
-</article>
-            </div>
-        </div>
-    </article>
+</nav>
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
     <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
@@ -395,6 +508,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>
