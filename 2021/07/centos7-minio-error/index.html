@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别 - 森见鹿的博客 
+        MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误 - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&amp;hellip" />
+  <meta name="description" content="刚装完 MinIO 测试的时候其实就发现了部分页面会出错，但是看了下错误基本都是认证错误，响应代码为 500，觉得可能是 Nginx 配置有误，实则不然&amp;hellip" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别 - 森见鹿的博客 </title>
+  <title>MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误 - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别" />
-<meta property="og:description" content="因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&hellip" />
+  <meta property="og:title" content="MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误" />
+<meta property="og:description" content="刚装完 MinIO 测试的时候其实就发现了部分页面会出错，但是看了下错误基本都是认证错误，响应代码为 500，觉得可能是 Nginx 配置有误，实则不然&hellip" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2020/12/nginx-note-01/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-12-31T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-12-31T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/07/centos7-minio-error/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-21T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-21T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别">
-<meta itemprop="description" content="因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&hellip"><meta itemprop="datePublished" content="2020-12-31T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-12-31T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="615">
-<meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别"/>
-<meta name="twitter:description" content="因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&hellip"/>
+<meta itemprop="name" content="MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误">
+<meta itemprop="description" content="刚装完 MinIO 测试的时候其实就发现了部分页面会出错，但是看了下错误基本都是认证错误，响应代码为 500，觉得可能是 Nginx 配置有误，实则不然&hellip"><meta itemprop="datePublished" content="2021-07-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-07-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="872">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误"/>
+<meta name="twitter:description" content="刚装完 MinIO 测试的时候其实就发现了部分页面会出错，但是看了下错误基本都是认证错误，响应代码为 500，觉得可能是 Nginx 配置有误，实则不然&hellip"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -281,8 +281,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/12/nginx-note-01/"
-    >Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别</a
+    href="/2021/07/centos7-minio-error/"
+    >MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误</a
   >
 </h1>
 
@@ -290,64 +290,83 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/12/nginx-note-01/" class="article-date">
-  <time datetime="2020-12-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-12-31</time>
+<a href="https://senjianlu.com/2021/07/centos7-minio-error/" class="article-date">
+  <time datetime="2021-07-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-21</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"> 网站建设 </a>
+    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/12/nginx-note-01/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-minio-error/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 615字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 872字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&hellip;&hellip;剩下服务器上一堆没注释的配置连自己都看晕了，就重新学下吧。</p>
+      <p>刚<a href="https://senjianlu.com/2021/07/centos7-minio/">装完 MinIO</a> 测试的时候其实就发现了部分页面会出错，但是看了下错误基本都是认证错误，响应代码为 500，觉得可能是 Nginx 配置有误，实则不然&hellip;&hellip;</p>
 <hr>
-<p>Nginx 反代路由的替换在同一服务器部署多项目是还是很常用的，比方说我有一个将 <a href="https://github.com/senjianlu/tiny-server-probe">https://ceshiku.cn/tiny-server-proxy/</a> 反代到本地的 57191 端口的需求，但是又不想影响到主路由和其他项目地址例如 <a href="https://ceshiku.cn/test/">https://ceshiku.cn/test/</a> 的解析。<br>
-我肯定不能这么写：</p>
-<pre><code class="language-nginx">location ^~ /tiny-server-proxy {
-    proxy_pass http://localhost:57191;
-}
+<p>具体见帖子：<a href="http://slack.minio.org.cn/question/708">windows 启动之后minio之后。访问127.0.0.1:9000 跳转到了 127.0.0.1:9001 是什么原因</a></p>
+<p>1、最直观的表现就是最新版本的 MinIO 9000 端口会强制被转到 9001 的控制台端口，登录页面是这样的：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721214310.png" alt="控制台"></p>
+<p>2、<strong>操作过程中，会出现部分错误：</strong><br>
+① 查看存储桶具体信息时<br>
+页面报错：</p>
+<blockquote>
+<p>This &lsquo;admin&rsquo; API is not supported by server in &lsquo;mode-server-fs&rsquo;</p>
+</blockquote>
+<p>后端报错：</p>
+<pre><code class="language-bash">...
+original error -&gt; (user_buckets.go:123: error server side encryption configuration not found)
+friendly error: The server side encryption configuration was not found
 </code></pre>
-<p>为什么呢，如果我这么写的话，那当我访问 <a href="https://ceshiku.cn/tiny-server-proxy/status">https://ceshiku.cn/tiny-server-proxy/status</a> 的时候，虽然能被代理到指定端口上运行的项目，但是实际上项目收到的请求路由是这样的：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210520000615.png" alt="错误路由"><br>
-很明显多出来的 /tiny-server-proxy/ 其实是我不需要的，那我改一下：</p>
-<pre><code class="language-nginx">location ^~ /tiny-server-proxy/ {
-    proxy_pass http://localhost:57191;
-}
+<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721214352.png" alt=""></p>
+<p>② 分享文件时<br>
+页面报错：</p>
+<blockquote>
+<p>An error occurred, please try again</p>
+</blockquote>
+<p>后端报错：</p>
+<pre><code>...
+original error -&gt; (user_objects.go:51: A header you provided implies functionality that is not implemented)
 </code></pre>
-<p>结果收到的路由呢，如下：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210520001028.png" alt="错误路由"><br>
-依旧是多了 /tiny-server-proxy/ 这个路径，可见在路由匹配上下功夫是没有用的，只能在 proxy_pass 后反代的端口上做更改：</p>
-<pre><code class="language-nginx">location ^~ /tiny-server-proxy/ {
-    proxy_pass http://localhost:57191/;
-}
+<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721214742.png" alt=""></p>
+<p>3、<strong>解决方法：</strong><br>
+和帖子里讲的一样，回退版本，我出错的版本是 2021/07/18 更新的版本，是通过：</p>
+<pre><code class="language-bash">wget https://dl.minio.io/server/minio/release/linux-amd64/minio
 </code></pre>
-<p>再试一下，果然可以了：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210520001308.png" alt="正常路由"><br>
-那么 Nginx 反代到端口项目时路由部分路径替换的问题就解决了。</p>
-<hr>
-<p>那么碰到动静分离的项目，想要访问静态资源时替换路径有该怎么操作呢，这个时间就要搬出除了 root 之外 Nginx 另一个资源映射语法了：<strong>alias</strong></p>
-<pre><code class="language-nginx">location ^~ /t/ {
-    root /www/root/html/;
-}
-
-location ^~ /t/ {
-    alias /www/root/html/;
-}
+<p>直接下载的，看同目录下文件应该是 <a href="https://dl.minio.io/server/minio/release/linux-amd64/">minio.RELEASE.2021-07-15T22-27-34Z</a> 版本，GitHub 上也有发布，但是不知道为什么问题这么多&hellip;&hellip;<br>
+帖子推荐版本是 <a href="https://github.com/minio/minio/releases/tag/RELEASE.2021-07-12T02-44-53Z">RELEASE.2021-07-12T02-44-53Z</a>，但是经过测试向前推 2 个版本强制跳转控制台的问题依旧存在，于是看文件大小选了个想必不包括控制台的版本：<a href="https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2021-06-14T01-29-23Z">RELEASE.2021-06-14T01-29-23Z</a>，下载后因为本地已经配置好了环境变量的关系，直接覆盖之前的 minio 文件然后重启服务即可。</p>
+<pre><code class="language-bash">/usr/local/minio server /storage --address &quot;:9000&quot;
 </code></pre>
-<p>当路由和文件夹配置完全一样的情况下，当请求链接是 /t/a.html 的情况下，两个配置分别会：<br>
-root 的配置会返回 /www/root/html/<strong>t</strong>/a.html 的文件，alias 的配置会返回 /www/root/html/a.html 的文件，alias 所起的作用就和刚刚往反代端口后加的斜杠类似，做到因为把 location 后面配置的路径完全舍弃。<br>
-<em>但是用的时候还需要注意：alias 只能位于 location 块中（root 可以不放在 location 中）。</em></p>
+<blockquote>
+<p>Unable to initialize OpenID: found invalid keys (client_secret= redirect_uri= ) for &lsquo;identity_openid&rsquo; sub-system, use &lsquo;mc admin config reset myminio identity_openid&rsquo; to fix invalid keys (*fmt.wrapError)
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721223253.png" alt="错误"><br>
+启动时你有可能会和我一样碰到上面的报错，你可以忽略它，在我的测试下即使有错误 MinIO 的所有功能也都正常。<br>
+如果你是强迫症，那么请遵循下面的步骤来解决它：</p>
+<ol>
+<li>先删除之前的 mc 再下载对应版本的：<a href="https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.2021-06-13T17-48-22Z">mc.RELEASE.2021-06-13T17-48-22Z</a></li>
+<li>在后台启动你的 MinIO，因为 mc 需要访问你的 MinIO 服务。</li>
+<li>然后执行：</li>
+</ol>
+<pre><code class="language-bash"># 新增 host，这里的 myminio 是你上面所缺少的 host 的名字，请自行替换
+# $minio_host 可以是 IP 也可以是你已经反代完成的域名，只要能正常访问即可
+mc config host add myminio http://$minio_host $root_user $root_password --api s3v4
+# 保存中提醒你做的刷新操作
+./mc admin config reset myminio identity_openid
+</code></pre>
+<ol start="4">
+<li>再启动，理论上就已经不报错了，如果还有错误请花时间对照文档修复吧：<a href="http://docs.minio.org.cn/docs/master/minio-client-complete-guide">MinIO Client 完全指南</a></li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721231307.png" alt="完成"></p>
+</blockquote>
+<p>小声逼逼，挺离谱的&hellip;&hellip;</p>
 
     </div>
     <div class="article-footer">
@@ -355,7 +374,7 @@ root 的配置会返回 /www/root/html/<strong>t</strong>/a.html 的文件，ali
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2020/12/nginx-note-01/" title="Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别" target="_blank" rel="external">https://senjianlu.com/2020/12/nginx-note-01/</a>
+      <a href="https://senjianlu.com/2021/07/centos7-minio-error/" title="MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误" target="_blank" rel="external">https://senjianlu.com/2021/07/centos7-minio-error/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -372,14 +391,9 @@ root 的配置会返回 /www/root/html/<strong>t</strong>/a.html 的文件，ali
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2020/05/hugo-auto-build/" title="Windows 下 Hugo 静态博客一键推送发布"><i
+                <a href="https://senjianlu.com/2021/07/linux-command-01/" title=""><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
-            </li>
-            <li class="next">
-                <a href="https://senjianlu.com/2020/12/centos7-install-rabbitmq/"
-                    title="CentOS7 下安装 RabbitMQ"><span>上一篇&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
         </ul>

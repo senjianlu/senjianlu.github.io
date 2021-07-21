@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Themes Guide on 森见鹿的博客 </title>
-    <link>https://senjianlu.com/series/themes-guide/</link>
-    <description>Recent content in Themes Guide on 森见鹿的博客 </description>
+    <title>Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭 on 森见鹿的博客 </title>
+    <link>https://senjianlu.com/categories/linux-%E5%91%BD%E4%BB%A41%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3-ssh-%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3-%E9%98%B2%E7%81%AB%E5%A2%99%E7%AB%AF%E5%8F%A3%E5%BC%80%E5%90%AF%E5%85%B3%E9%97%AD/</link>
+    <description>Recent content in Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://senjianlu.com/series/themes-guide/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://senjianlu.com/categories/linux-%E5%91%BD%E4%BB%A41%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3-ssh-%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3-%E9%98%B2%E7%81%AB%E5%A2%99%E7%AB%AF%E5%8F%A3%E5%BC%80%E5%90%AF%E5%85%B3%E9%97%AD/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

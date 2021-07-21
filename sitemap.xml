@@ -4,7 +4,63 @@
   
   <url>
     <loc>https://senjianlu.com/categories/</loc>
-    <lastmod>2021-07-19T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/tags/linux/</loc>
+    <lastmod>2021-07-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/07/centos7-minio-error/</loc>
+    <lastmod>2021-07-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/posts/</loc>
+    <lastmod>2021-07-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/tags/</loc>
+    <lastmod>2021-07-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
+    <lastmod>2021-07-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/</loc>
+    <lastmod>2021-07-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/07/linux-command-01/</loc>
+    <lastmod>2021-07-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/categories/linux-%E5%91%BD%E4%BB%A41%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3-ssh-%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3-%E9%98%B2%E7%81%AB%E5%A2%99%E7%AB%AF%E5%8F%A3%E5%BC%80%E5%90%AF%E5%85%B3%E9%97%AD/</loc>
+    <lastmod>2021-07-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -25,41 +81,6 @@
   
   <url>
     <loc>https://senjianlu.com/tags/docker/</loc>
-    <lastmod>2021-07-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/tags/linux/</loc>
-    <lastmod>2021-07-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/posts/</loc>
-    <lastmod>2021-07-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/tags/</loc>
-    <lastmod>2021-07-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
-    <lastmod>2021-07-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/</loc>
     <lastmod>2021-07-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/tags/linux/</link>
     <description>Recent content in Linux on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PVE 下黑群晖的安装和硬盘直通组 RAID1</title>
+      <link>https://senjianlu.com/2020/01/pve-synology/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/01/pve-synology/</guid>
+      <description>突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本</description>
+    </item>
+    
+    <item>
+      <title>PVE 下 LEDE&#43;爱快 双软路由部署</title>
+      <link>https://senjianlu.com/2020/01/pve-lede-ikuai/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/01/pve-lede-ikuai/</guid>
+      <description>起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200</description>
+    </item>
     
     <item>
       <title>Windows 下 PicGo&#43;GitHub 搭建个人图床工具</title>

@@ -158,8 +158,9 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/linux-%E5%91%BD%E4%BB%A41%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3-ssh-%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3-%E9%98%B2%E7%81%AB%E5%A2%99%E7%AB%AF%E5%8F%A3%E5%BC%80%E5%90%AF%E5%85%B3%E9%97%AD/" class="category-list-link">linux-命令1系统硬件网络相关-ssh-连接文件相关-防火墙端口开启关闭</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">9</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">13</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">14</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">2</span></li>
         </ul>
     </div>
@@ -179,7 +180,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">3</span></li>
+                    class="tag-list-count">5</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
@@ -217,6 +218,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/07/centos7-minio-error/" class="title">MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-07-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/07/linux-command-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/07/centos7-minio/" class="title">CentOS7 下 MinIO 的安装和配置</a>
                     </p>
                     <p class="item-date">
@@ -241,26 +262,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-07-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-17</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/" class="title">Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-07-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-16</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/07/nginx-note-02/" class="title">Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-07-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-16</time>
                     </p>
                 </div>
             </li>
@@ -337,15 +338,15 @@ PDF 下载 (Google Drive)：<a href="https://drive.google.com/file/d/1FU5l9AIvIT
 PostgreSQL 支持 Linux、Mac OS 和 Windows 下安装，而且方法相当简单，由于我是为了部署项目数据库，因此这里以 CentOS7 为例。<br>
 <em>注：这里安装的是 9.2.24 版本的,如果需要 10+ 版本的可参考这个博文 <a href="https://www.cnblogs.com/Crise2018/p/11568328.html">CentOS7.6 安装 PostgreSQL10</a></em><br>
 运行</p>
-<pre><code class="language-code">yum install postgresql-server.x86_64
+<pre><code class="language-bash">yum install postgresql-server.x86_64
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200202181540.png" alt="安装"><br>
 当然在安装前可以先运行</p>
-<pre><code class="language-code">psql --version
+<pre><code class="language-bash">psql --version
 </code></pre>
 <p>查看下云服务等是否自带了低版本 Postgresql 数据库。<br>
 安装之后，记得先初使用化数据库再启动</p>
-<pre><code class="language-code">service postgresql initdb
+<pre><code class="language-bash">service postgresql initdb
 service postgresql start
 service postgresql status
 </code></pre>
@@ -353,38 +354,38 @@ service postgresql status
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200202182013.png" alt="数据库"></p>
 <p>2、登录到数据库。<br>
 PostgreSQL 在安装时默认会添加用户 postgres，运行</p>
-<pre><code class="language-code">su - postgres
+<pre><code class="language-bash">su - postgres
 </code></pre>
 <p>先切换到 postgres 用户下，再输入</p>
-<pre><code class="language-code">psql
+<pre><code class="language-bash">psql
 </code></pre>
 <p>就进入到 PostgreSQL 数据库中了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200202182821.png" alt="进入数据库"></p>
 <p><strong>这里推荐先把 postgres 用户的密码改掉：</strong></p>
-<pre><code class="language-code">ALTER USER postgres WITH PASSWORD &lt;password&gt;;
+<pre><code class="language-bash">ALTER USER postgres WITH PASSWORD &lt;password&gt;;
 </code></pre>
 <p><strong>注意：这里的命令是在数据库中运行的，即 postgres=#: 下。</strong></p>
 <p>3、远程连接，如果你要在 Navicat 等工具中使用这个数据库，还需要做些配置。<br>
 首先是 postgresql.conf 文件的配置</p>
-<pre><code class="language-code">vi /var/lib/psql/data/postgresql.conf
+<pre><code class="language-bash">vi /var/lib/psql/data/postgresql.conf
 </code></pre>
 <p>修改</p>
-<pre><code class="language-code">listen_addresses = '*'  
+<pre><code class="language-bash">listen_addresses = '*'  
 port = 5432
 max_connections = 100
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200202184311.png" alt="修改"></p>
 <p>保存退出即可。<br>
 然后再修改 pg_hba.conf 这个文件，路径和刚刚相同</p>
-<pre><code class="language-code">vi /var/lib/psql/data/pg_hba.conf
+<pre><code class="language-bash">vi /var/lib/psql/data/pg_hba.conf
 </code></pre>
 <p>在最后添加这条</p>
-<pre><code class="language-code">host    all         all         0.0.0.0/0           md5
+<pre><code class="language-bash">host    all         all         0.0.0.0/0           md5
 </code></pre>
 <p>当然开放访问的 IP 视自己情况而定，这里因为腾讯云服务器安全组全开而且机器连防火墙都没开我也就自暴自弃了，后面会再专做一个项目部署时端口等的初步设置以保障最基础的安全性。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200202184538.png" alt="2修改"></p>
 <p>都保存以后重启 PostgreSQL 服务，再尝试远程连接吧！</p>
-<pre><code class="language-code">service postgresql restart
+<pre><code class="language-bash">service postgresql restart
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200202185135.png" alt="连接成功"></p>
 <p>至此，PostgreSQL 的学习环境就已经安装完成了，如果想升级为开发环境，就像之前强调的一是防火墙要开，端口要适当开放；二是版本最好升级到 10+，以使用最新的特性。</p>

@@ -158,8 +158,9 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/linux-%E5%91%BD%E4%BB%A41%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3-ssh-%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3-%E9%98%B2%E7%81%AB%E5%A2%99%E7%AB%AF%E5%8F%A3%E5%BC%80%E5%90%AF%E5%85%B3%E9%97%AD/" class="category-list-link">linux-命令1系统硬件网络相关-ssh-连接文件相关-防火墙端口开启关闭</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">9</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">13</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">14</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">2</span></li>
         </ul>
     </div>
@@ -179,7 +180,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">3</span></li>
+                    class="tag-list-count">5</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
@@ -217,6 +218,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/07/centos7-minio-error/" class="title">MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-07-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/07/linux-command-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/07/centos7-minio/" class="title">CentOS7 下 MinIO 的安装和配置</a>
                     </p>
                     <p class="item-date">
@@ -241,26 +262,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-07-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-17</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/" class="title">Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-07-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-16</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/07/nginx-note-02/" class="title">Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-07-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-16</time>
                     </p>
                 </div>
             </li>
@@ -405,10 +406,10 @@ CPU 核心一核就够了。<br>
 拖拽虚拟机安装文件和转换工具进软路由系统中。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200113234417.png" alt="转移文件"><br>
 接下来</p>
-<pre><code class="language-code">ls
+<pre><code class="language-bash">ls
 </code></pre>
 <p>确保文件转移成功，接着为 img2kvm 添加可执行权限，并开始执行 .img 文件的转换</p>
-<pre><code class="language-code">chmod +x img2kvm
+<pre><code class="language-bash">chmod +x img2kvm
 ./img2kvm lede.img 101 vm-101-disk-1
 </code></pre>
 <p><em>101 是虚拟机的序号</em><br>
@@ -474,7 +475,7 @@ CPU 配置也是一核就够了。<br>
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114194557.png" alt="服务正常"><br>
 <strong>总之，爱快主要负责拨号上网和提供 DHCP 服务，在配置完成之后，可以先验证下本机是否有网络在进行下一步操作。</strong></p>
 <p>5、配置 LEDE 软路由。首先回到 LEDE 的系统界面，输入以下命令去更改 LEDE 的 IP 地址。</p>
-<pre><code class="language-code">vi /etc/config/network
+<pre><code class="language-bash">vi /etc/config/network
 </code></pre>
 <p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114195025.png" alt="更改ip"><br>
 方向键控制光标找到这一行，按以下 &ldquo;i&rdquo; 键进入编辑模式，更改成 <strong>10.10.10.252</strong> 就是你想要的 LEDE 的后台 IP 地址。<br>
@@ -482,7 +483,7 @@ CPU 配置也是一核就够了。<br>
 编辑完成后，按下 &ldquo;Esc&rdquo; 键，左下角有冒号出来后，输入 &ldquo;wq&rdquo; 保存并退出。
 <img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200114195410.png" alt="编辑完成后退出"><br>
 <strong>之后输入</strong></p>
-<pre><code class="language-code">reboot
+<pre><code class="language-bash">reboot
 </code></pre>
 <p><strong>重启 LEDE 软路由。</strong>
 接着就可以在本机的浏览器上输入 10.10.10.252 进入 LEDE 软路由的后台了，默认密码是 <strong>koolshare</strong><br>
