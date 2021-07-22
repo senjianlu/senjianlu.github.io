@@ -42,7 +42,7 @@
 <meta itemprop="name" content="CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统">
 <meta itemprop="description" content="又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的"><meta itemprop="datePublished" content="2021-07-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-07-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="963">
+<meta itemprop="wordCount" content="964">
 <meta itemprop="keywords" content="Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统"/>
 <meta name="twitter:description" content="又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的"/>
@@ -159,7 +159,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">10</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">14</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">16</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">2</span></li>
         </ul>
     </div>
@@ -171,7 +171,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
-                    class="tag-list-count">1</span></li>
+                    class="tag-list-count">2</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/java/" class="tag-list-link">java</a><span
@@ -179,7 +179,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
@@ -217,6 +217,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/07/centos7-docker-command-proxy/" class="title">CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-07-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-22</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/07/centos7-minio-error/" class="title">MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误</a>
                     </p>
                     <p class="item-date">
@@ -251,16 +261,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-19</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/" class="title">Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-07-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-17</time>
                     </p>
                 </div>
             </li>
@@ -304,7 +304,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-docker-zabbix/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 963字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 964字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
@@ -353,7 +353,7 @@ docker update --restart=always some-zabbix-web-nginx-pgsql
 <pre><code class="language-bash"># pull
 docker pull zabbix/zabbix-agent:4.0-centos-latest
 # 启动，server_ip 填写 server 端所在服务器的外网 IP，端口默认为 10051，而 hostname 则需要在前端面板上配置好，参考下方步骤。
-run --name some-zabbix-agent -p 10050:10050 -e ZBX_HOSTNAME=&quot;$hostname&quot; -e ZBX_SERVER_HOST=&quot;$server_ip&quot; -e ZBX_SERVER_PORT=$server_port -d docker.io/zabbix/zabbix-agent:4.0-centos-latest
+docker run --name some-zabbix-agent -p 10050:10050 -e ZBX_HOSTNAME=&quot;$hostname&quot; -e ZBX_SERVER_HOST=&quot;$server_ip&quot; -e ZBX_SERVER_PORT=$server_port -d docker.io/zabbix/zabbix-agent:4.0-centos-latest
 </code></pre>
 <blockquote>
 <p>选择创建主机，

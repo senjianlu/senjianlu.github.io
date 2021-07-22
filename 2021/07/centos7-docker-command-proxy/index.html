@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别 - 森见鹿的博客 
+        CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用） - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&amp;hellip" />
+  <meta name="description" content="国内服务器访问不到各种官方镜像应该是老生常谈的问题了，Docker 也不例外，拉取官方镜像时各种 EOF 错误大概率就是墙的问题了，这篇文档不会记录 Linux" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别 - 森见鹿的博客 </title>
+  <title>CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用） - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别" />
-<meta property="og:description" content="因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&hellip" />
+  <meta property="og:title" content="CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）" />
+<meta property="og:description" content="国内服务器访问不到各种官方镜像应该是老生常谈的问题了，Docker 也不例外，拉取官方镜像时各种 EOF 错误大概率就是墙的问题了，这篇文档不会记录 Linux" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2020/12/nginx-note-01/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-12-31T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-12-31T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/07/centos7-docker-command-proxy/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-22T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-22T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别">
-<meta itemprop="description" content="因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&hellip"><meta itemprop="datePublished" content="2020-12-31T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-12-31T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="615">
-<meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别"/>
-<meta name="twitter:description" content="因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&hellip"/>
+<meta itemprop="name" content="CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）">
+<meta itemprop="description" content="国内服务器访问不到各种官方镜像应该是老生常谈的问题了，Docker 也不例外，拉取官方镜像时各种 EOF 错误大概率就是墙的问题了，这篇文档不会记录 Linux"><meta itemprop="datePublished" content="2021-07-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-07-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="556">
+<meta itemprop="keywords" content="Docker," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）"/>
+<meta name="twitter:description" content="国内服务器访问不到各种官方镜像应该是老生常谈的问题了，Docker 也不例外，拉取官方镜像时各种 EOF 错误大概率就是墙的问题了，这篇文档不会记录 Linux"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -280,8 +280,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/12/nginx-note-01/"
-    >Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别</a
+    href="/2021/07/centos7-docker-command-proxy/"
+    >CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）</a
   >
 </h1>
 
@@ -289,64 +289,77 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/12/nginx-note-01/" class="article-date">
-  <time datetime="2020-12-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-12-31</time>
+<a href="https://senjianlu.com/2021/07/centos7-docker-command-proxy/" class="article-date">
+  <time datetime="2021-07-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-22</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"> 网站建设 </a>
+    <a class="article-tag-link" href="/tags/docker/"> Docker </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/12/nginx-note-01/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-docker-command-proxy/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 615字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 556字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&hellip;&hellip;剩下服务器上一堆没注释的配置连自己都看晕了，就重新学下吧。</p>
+      <p>国内服务器访问不到各种官方镜像应该是老生常谈的问题了，Docker 也不例外，拉取官方镜像时各种 EOF 错误大概率就是墙的问题了，这篇文档不会记录 Linux 整体环境代理的配置方法，只会配置 Docker 的。</p>
 <hr>
-<p>Nginx 反代路由的替换在同一服务器部署多项目是还是很常用的，比方说我有一个将 <a href="https://github.com/senjianlu/tiny-server-probe">https://ceshiku.cn/tiny-server-proxy/</a> 反代到本地的 57191 端口的需求，但是又不想影响到主路由和其他项目地址例如 <a href="https://ceshiku.cn/test/">https://ceshiku.cn/test/</a> 的解析。<br>
-我肯定不能这么写：</p>
-<pre><code class="language-nginx">location ^~ /tiny-server-proxy {
-    proxy_pass http://localhost:57191;
-}
+<p>1、首先确定你的代理可以被稳定访问：</p>
+<pre><code class="language-bash"># 相关参数自行替换，如果不需要认证信息可以直接跳到第 2 步
+# HTTP 代理
+curl -x http://$username:$password@$host:$port http://ip-api.com/json/?lang=zh-CN
+# SOCKS5 代理 
+curl -x socks5://$username:$password@$host:$port http://ip-api.com/json/?lang=zh-CN
 </code></pre>
-<p>为什么呢，如果我这么写的话，那当我访问 <a href="https://ceshiku.cn/tiny-server-proxy/status">https://ceshiku.cn/tiny-server-proxy/status</a> 的时候，虽然能被代理到指定端口上运行的项目，但是实际上项目收到的请求路由是这样的：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210520000615.png" alt="错误路由"><br>
-很明显多出来的 /tiny-server-proxy/ 其实是我不需要的，那我改一下：</p>
-<pre><code class="language-nginx">location ^~ /tiny-server-proxy/ {
-    proxy_pass http://localhost:57191;
-}
+<p>如果你的代理需要认证信息，那么是不能直接被配置到 Docker 的配置文件中的，如果强行配置的话，运行时会出现以下信息：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210722195042.png" alt="cuowu "><br>
+光从代理打码长度也能看到根本没有使用账号密码去访问代理。<br>
+你需要做的是使用 GOST 做转发，在本地搭建一个无需账号密码的长久代理：</p>
+<pre><code class="language-bash"># 从我的 Gitee 仓库下载 GOST 压缩包
+curl -s https://gitee.com/senjianlu/one-click-scripts/raw/main/CentOS7%20%E4%B8%8B%E4%B8%8B%E8%BD%BD%20Gitee%20%E8%B6%85%E8%BF%87%201%20MB%20%E5%A4%A7%E5%B0%8F%E7%9A%84%E6%96%87%E4%BB%B6/download.sh | bash -s https://gitee.com/senjianlu/one-click-scripts/raw/main/mirror/GOST/gost-linux-amd64-2.11.1.gz
+# 解压
+gunzip gost-linux-amd64-2.11.1.gz
+# 转移到 /usr/bin 使其在任意目录都可执行
+mv gost-linux-amd64-2.11.1 /usr/bin/gost
+chmod 777 /usr/bin/gost
+# 开启开机自启动，本地端口和代理信息自行替换
+echo &quot;@reboot gost -L :$local_port -F=socks5://$username:$password@$host:$port&quot; &gt;&gt; /var/spool/cron/root
+service crond restart
+# nohup 启动在后台
+nohup gost -L :$local_port -F=socks5://$username:$password@$host:$port &gt;/dev/null 2&gt;&amp;1 &amp;
 </code></pre>
-<p>结果收到的路由呢，如下：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210520001028.png" alt="错误路由"><br>
-依旧是多了 /tiny-server-proxy/ 这个路径，可见在路由匹配上下功夫是没有用的，只能在 proxy_pass 后反代的端口上做更改：</p>
-<pre><code class="language-nginx">location ^~ /tiny-server-proxy/ {
-    proxy_pass http://localhost:57191/;
-}
+<p>接着测试本地代理是否正常，和最上面的测试方法一样，不过不需要账号密码了。</p>
+<pre><code class="language-bash">curl -x socks5://127.0.0.1:$local_port http://ip-api.com/json/?lang=zh-CN
 </code></pre>
-<p>再试一下，果然可以了：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210520001308.png" alt="正常路由"><br>
-那么 Nginx 反代到端口项目时路由部分路径替换的问题就解决了。</p>
-<hr>
-<p>那么碰到动静分离的项目，想要访问静态资源时替换路径有该怎么操作呢，这个时间就要搬出除了 root 之外 Nginx 另一个资源映射语法了：<strong>alias</strong></p>
-<pre><code class="language-nginx">location ^~ /t/ {
-    root /www/root/html/;
-}
-
-location ^~ /t/ {
-    alias /www/root/html/;
-}
+<p>2、配置 Docker 代理。<br>
+此方法配置的代理对 Docker 长久有效，如果你的代理失效了及时修改 GOST 的转发配置即可。</p>
+<pre><code class="language-bash"># 为 Docker 服务创建一个内嵌的 systemd 目录
+mkdir -p /etc/systemd/system/docker.service.d
 </code></pre>
-<p>当路由和文件夹配置完全一样的情况下，当请求链接是 /t/a.html 的情况下，两个配置分别会：<br>
-root 的配置会返回 /www/root/html/<strong>t</strong>/a.html 的文件，alias 的配置会返回 /www/root/html/a.html 的文件，alias 所起的作用就和刚刚往反代端口后加的斜杠类似，做到因为把 location 后面配置的路径完全舍弃。<br>
-<em>但是用的时候还需要注意：alias 只能位于 location 块中（root 可以不放在 location 中）。</em></p>
+<p>创建 /etc/systemd/system/docker.service.d/http-proxy.conf 文件，</p>
+<pre><code class="language-bash">vi /etc/systemd/system/docker.service.d/http-proxy.conf
+</code></pre>
+<p>文件内容如下，只需要这 3 行即可：</p>
+<pre><code class="language-bash">[Service]
+Environment=&quot;HTTP_PROXY=socks5://127.0.0.1:$local_port&quot;
+Environment=&quot;HTTPS_PROXY=socks5://127.0.0.1:$local_port&quot;
+</code></pre>
+<p>然后重新加载配置，确定下代理配置没问题后重启即可。</p>
+<pre><code class="language-bash"># 重新加载配置
+systemctl daemon-reload
+# 查看配置是否生效
+systemctl show --property=Environment docker
+# 无误后重启
+systemctl restart docker
+</code></pre>
+<p>然后就去 Pull 你的镜像吧！</p>
 
     </div>
     <div class="article-footer">
@@ -354,7 +367,7 @@ root 的配置会返回 /www/root/html/<strong>t</strong>/a.html 的文件，ali
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2020/12/nginx-note-01/" title="Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别" target="_blank" rel="external">https://senjianlu.com/2020/12/nginx-note-01/</a>
+      <a href="https://senjianlu.com/2021/07/centos7-docker-command-proxy/" title="CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）" target="_blank" rel="external">https://senjianlu.com/2021/07/centos7-docker-command-proxy/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -371,14 +384,9 @@ root 的配置会返回 /www/root/html/<strong>t</strong>/a.html 的文件，ali
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2020/05/hugo-auto-build/" title="Windows 下 Hugo 静态博客一键推送发布"><i
+                <a href="https://senjianlu.com/2021/07/centos7-minio-error/" title="MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
-            </li>
-            <li class="next">
-                <a href="https://senjianlu.com/2020/12/centos7-install-rabbitmq/"
-                    title="CentOS7 下安装 RabbitMQ"><span>上一篇&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
         </ul>
