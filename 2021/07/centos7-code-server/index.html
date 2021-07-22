@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置 - 森见鹿的博客 
+        CentOS7 下安装 code-server - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一" />
+  <meta name="description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置 - 森见鹿的博客 </title>
+  <title>CentOS7 下安装 code-server - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置" />
-<meta property="og:description" content="腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一" />
+  <meta property="og:title" content="CentOS7 下安装 code-server" />
+<meta property="og:description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-16T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-07-16T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/07/centos7-code-server/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-22T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-22T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置">
-<meta itemprop="description" content="腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一"><meta itemprop="datePublished" content="2021-07-16T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-07-16T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="847">
-<meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置"/>
-<meta name="twitter:description" content="腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一"/>
+<meta itemprop="name" content="CentOS7 下安装 code-server">
+<meta itemprop="description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转"><meta itemprop="datePublished" content="2021-07-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-07-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="325">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7 下安装 code-server"/>
+<meta name="twitter:description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -280,8 +280,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2021/07/nginx-letsencrypt-apply-and-auto-renew/"
-    >Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置</a
+    href="/2021/07/centos7-code-server/"
+    >CentOS7 下安装 code-server</a
   >
 </h1>
 
@@ -289,8 +289,8 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/" class="article-date">
-  <time datetime="2021-07-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-16</time>
+<a href="https://senjianlu.com/2021/07/centos7-code-server/" class="article-date">
+  <time datetime="2021-07-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-22</time>
 </a>
 </span>
 <span class="article-category">
@@ -299,77 +299,76 @@
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"> 网站建设 </a>
+    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/nginx-letsencrypt-apply-and-auto-renew/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-code-server/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 847字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 325字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一下一劳永逸感觉会更方便一点，这样在后续的其他项目也能直接用。</p>
+      <p>记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。</p>
 <hr>
-<p>教程的顺序为我自己操作的顺序：<br>
-申请证书 → 配置 Nginx HTTPS 访问和放行 HTTP 下的证书路由 → 自动续签证书配置</p>
-<p>1、首先申请证书，由于我使用的是 CentOS7 系统，因此可以 yum 直接安装 Certbot：</p>
-<pre><code class="language-bash">yum -y install certbot
+<p>官方 GitHub 项目地址：<a href="https://github.com/cdr/code-server">code-server</a></p>
+<p>1、下载安装<br>
+选个中意的 <a href="https://github.com/cdr/code-server/releases">Release</a> 下载并解压：</p>
+<pre><code class="language-bash"># 下载
+wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz
+# 解压
+tar -xzvf code-server-3.11.0-linux-amd64.tar.gz
+# 转移到你想转移的目录
+mv code-server-3.11.0-linux-amd64 /usr/local/code-server
 </code></pre>
-<p>虽然一般教程接下来都是直接执行如下命令申请证书（example.com 替换为你自己的域名，也可是二级域名）</p>
-<pre><code class="language-bash">certbot certonly --webroot --agree-tos -v -t --email example@gmail.com -w /usr/share/nginx/ -d example.com
+<p>2、配置账号密码和启动端口<br>
+code-server 的配置文件目录：~/.config/code-server/config.yaml<br>
+先启动一下生成目录：</p>
+<pre><code class="language-bash">/usr/local/code-server/code-server
 </code></pre>
-<p>但是还是有几点需要在执行之前确认：</p>
-<ol>
-<li>防火墙和安全组放行 80 端口（后续配置 HTTPS 访问再自行放行 443 端口）</li>
-<li>确保 example.com 域名已经解析到了你在申请证书的服务器 IP 上</li>
-<li>确保 Nginx 配置无误，指：http://example.com/.well-known/acme-challenge/ 下临时生成的认证文件可以被访问到。</li>
-</ol>
-<p>2、Nginx 的配置可以像我下面这样（我选的验证文件临时目录为 /usr/share/nginx，server_name 等可以自行替换）：</p>
-<pre><code class="language-nginx">server {
+<p>然后停止掉程序后修改配置文件：<br>
+<em>注：cert 可以选择为 false，后面再 Nginx 处配置证书即可。</em></p>
+<pre><code class="language-bash">bind-addr: 0.0.0.0:8080
+auth: password
+password: $password
+cert: false
+</code></pre>
+<p>再启动即可。<br>
+加入开机自启动：</p>
+<pre><code class="language-bash">echo &quot;@reboot /usr/local/code-server/code-server&quot; &gt;&gt; /var/spool/cron/root
+service crond restart
+</code></pre>
+<p>3、配置 Nginx 反代和开启 SSL 证书<br>
+<em>注：自行替换 example.com 为你的域名和修改 SSL 证书所在位置。</em></p>
+<pre><code class="language-bash">    ...
+    server {
         listen       80;
-        listen       [::]:80;
-        server_name  _;
-        root         /usr/share/nginx/html;
+        server_name  example.com;
+        return 301   https://$host$request_uri;
+    }
 
-        # Load configuration files for the default server block.
-        include /etc/nginx/default.d/*.conf;
+    server {
+        listen          443 ssl;
+        server_name     example.com;
 
-        # Let's Encrypt 证书认证（优先级最高放在最前面）
-        location ~ /.well-known {
-            root /usr/share/nginx;
-            allow all;
+        # SSL 配置
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_certificate cert/1_example.com_bundle.crt;
+        ssl_certificate_key cert/2_example.com.key;
+
+        # 反代 8080 端口的 code-server
+        location / {
+            proxy_pass http://localhost:8080;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection &quot;upgrade&quot;;
+            proxy_set_header Host $host;
         }
     }
+    ...
 </code></pre>
-<p>在配置好后重启 Nginx：</p>
-<pre><code class="language-bash">nginx -s reload
-service nginx restart
-</code></pre>
-<p>然后执行上面证书申请的命令应该就可以申请到了，任何错误请依次确认上述 3 点事项。<br>
-<em>注：如果使用的是 Cloudflare DNS 解析，请在 SSL/TLS 处选为<strong>灵活</strong>模式，以防止强制 HTTPS 转换导致的文件无法验证。</em><br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210717195647.png" alt="证书申请成功"></p>
-<p>3、证书自动续签。<br>
-Certbot 提供了方便的一键续签命令：</p>
-<pre><code class="language-bash">certbot renew
-</code></pre>
-<p>在证书到期时间小于 30 天的情况下，执行以上指令后会在原位置更新证书，接下来只要手动 Nginx 重新加载配置并重启就能使用新的证书了。<br>
-Certbot 很贴心的提供了钩子，以方便在 renew 操作前后执行其他命令，于是便可以直接使用下面的命令同时完成续签和重启 Nginx 操作：</p>
-<pre><code class="language-bash">certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;
-</code></pre>
-<p>接着以官方建议的每天 2 次频率将其加入到任务计划中：</p>
-<pre><code class="language-bash">crontab -e
-</code></pre>
-<pre><code class="language-bash">...
-# 每 12 小时执行一次
-0 */12 * * * certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;
-...
-</code></pre>
-<pre><code class="language-bash">service crond restart
-</code></pre>
-<p>理论上是没问题的，大概 60 天以后回来记录下自动续签是否生效。</p>
-<p>2021/07/17<br>
-todo&hellip;</p>
+<p>至此完成，以上。</p>
 
     </div>
     <div class="article-footer">
@@ -377,7 +376,7 @@ todo&hellip;</p>
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/" title="Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置" target="_blank" rel="external">https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</a>
+      <a href="https://senjianlu.com/2021/07/centos7-code-server/" title="CentOS7 下安装 code-server" target="_blank" rel="external">https://senjianlu.com/2021/07/centos7-code-server/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -394,13 +393,13 @@ todo&hellip;</p>
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/07/nginx-note-02/" title="Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题"><i
+                <a href="https://senjianlu.com/2021/07/centos7-minio-error/" title="MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/"
-                    title="Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法"><span>上一篇&nbsp;&nbsp;</span><i
+                <a href="https://senjianlu.com/2021/07/centos7-docker-command-proxy/"
+                    title="CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
