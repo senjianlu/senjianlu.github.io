@@ -73,6 +73,13 @@
   </url>
   
   <url>
+    <loc>https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2021-07-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://senjianlu.com/2021/07/linux-command-01/</loc>
     <lastmod>2021-07-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -109,13 +116,6 @@
   
   <url>
     <loc>https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/</loc>
-    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2021-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -242,6 +242,13 @@
   
   <url>
     <loc>https://senjianlu.com/2020/02/postgresql-note-02/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2020/02/vscode-remote-ssh-use-proxy-with-auth/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

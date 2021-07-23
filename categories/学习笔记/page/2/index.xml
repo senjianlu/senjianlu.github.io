@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发</title>
+      <link>https://senjianlu.com/2020/02/vscode-remote-ssh-use-proxy-with-auth/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/02/vscode-remote-ssh-use-proxy-with-auth/</guid>
+      <description>本来是很简单的一件事情，追求新版本又把自己坑了一次&amp;hellip;&amp;hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS</description>
+    </item>
+    
+    <item>
       <title>PostgreSQL 学习笔记 (一) 数据库的安装与环境配置</title>
       <link>https://senjianlu.com/2020/02/postgresql-note-01/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>

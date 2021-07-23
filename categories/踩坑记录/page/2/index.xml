@@ -5,7 +5,7 @@
     <link>https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
     <description>Recent content in 踩坑记录 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 17 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,6 +17,15 @@
       
       <guid>https://senjianlu.com/2020/02/postgresql-note-02/</guid>
       <description>psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习</description>
+    </item>
+    
+    <item>
+      <title>VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发</title>
+      <link>https://senjianlu.com/2020/02/vscode-remote-ssh-use-proxy-with-auth/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/02/vscode-remote-ssh-use-proxy-with-auth/</guid>
+      <description>本来是很简单的一件事情，追求新版本又把自己坑了一次&amp;hellip;&amp;hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS</description>
     </item>
     
     <item>
