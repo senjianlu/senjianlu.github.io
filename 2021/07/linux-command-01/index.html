@@ -42,7 +42,7 @@
 <meta itemprop="name" content="Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭">
 <meta itemprop="description" content="Linux 命令笔记，方便查找。 系统硬件 1、内存 SWaP 查看： free -m 2、系统内核查看： uname -a 3、SELinux 关闭： # 临时关闭 setenforce 0 修改 /etc/selinux/config 文件： # 永久关闭 vi /etc/selinux/config 将 SELINUX=enforcing"><meta itemprop="datePublished" content="2021-07-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-07-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="257">
+<meta itemprop="wordCount" content="282">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭"/>
 <meta name="twitter:description" content="Linux 命令笔记，方便查找。 系统硬件 1、内存 SWaP 查看： free -m 2、系统内核查看： uname -a 3、SELinux 关闭： # 临时关闭 setenforce 0 修改 /etc/selinux/config 文件： # 永久关闭 vi /etc/selinux/config 将 SELINUX=enforcing"/>
@@ -225,6 +225,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/" class="title">VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-07-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/07/centos7-docker-command-proxy/" class="title">CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）</a>
                     </p>
                     <p class="item-date">
@@ -259,16 +269,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-20</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/07/centos7-minio/" class="title">CentOS7 下 MinIO 的安装和配置</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-19</time>
                     </p>
                 </div>
             </li>
@@ -312,7 +312,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/linux-command-01/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 257字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 282字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
       </div>
     </div>
@@ -356,6 +356,9 @@ firewall-cmd --add-port=$port/tcp --permanent
 firewall-cmd --zone=public --remove-port=$port/tcp --permanent
 # 加载防火墙配置
 firewall-cmd --reload
+# 彻底关闭
+systemctl stop firewalld.service
+systemctl disable firewalld.service
 </code></pre>
 <p>2、Iptables 防火墙相关：</p>
 <pre><code class="language-bash"># 查看当前防火墙规则
@@ -365,6 +368,10 @@ iptables -A INPUT -p tcp --dport $port -j ACCEPT
 iptables -A OUTPUT -p tcp --dport $port -j ACCEPT
 # 存储防火墙配置
 service iptables save
+# 彻底关闭
+systemctl stop iptables.service
+systemctl disable iptables.service
+chkconfig iptables off
 </code></pre>
 
     </div>

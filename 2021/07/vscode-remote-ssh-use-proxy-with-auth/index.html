@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Windows 下 Hugo&#43;GitHub Pages 搭建静态博客 - 森见鹿的博客 
+        VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发 - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo&#43;GitHub Pages 免费搭建个静" />
+  <meta name="description" content="本来是很简单的一件事情，追求新版本又把自己坑了一次&amp;hellip;&amp;hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>Windows 下 Hugo&#43;GitHub Pages 搭建静态博客 - 森见鹿的博客 </title>
+  <title>VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发 - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="Windows 下 Hugo&#43;GitHub Pages 搭建静态博客" />
-<meta property="og:description" content="确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo&#43;GitHub Pages 免费搭建个静" />
+  <meta property="og:title" content="VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发" />
+<meta property="og:description" content="本来是很简单的一件事情，追求新版本又把自己坑了一次&hellip;&hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2020/01/hugo-github-pages/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-01-11T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-01-11T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-24T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-24T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="Windows 下 Hugo&#43;GitHub Pages 搭建静态博客">
-<meta itemprop="description" content="确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo&#43;GitHub Pages 免费搭建个静"><meta itemprop="datePublished" content="2020-01-11T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-01-11T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1472">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Windows 下 Hugo&#43;GitHub Pages 搭建静态博客"/>
-<meta name="twitter:description" content="确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo&#43;GitHub Pages 免费搭建个静"/>
+<meta itemprop="name" content="VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发">
+<meta itemprop="description" content="本来是很简单的一件事情，追求新版本又把自己坑了一次&hellip;&hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS"><meta itemprop="datePublished" content="2021-07-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-07-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="909">
+<meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发"/>
+<meta name="twitter:description" content="本来是很简单的一件事情，追求新版本又把自己坑了一次&hellip;&hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -288,8 +288,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/01/hugo-github-pages/"
-    >Windows 下 Hugo&#43;GitHub Pages 搭建静态博客</a
+    href="/2021/07/vscode-remote-ssh-use-proxy-with-auth/"
+    >VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发</a
   >
 </h1>
 
@@ -297,115 +297,88 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/hugo-github-pages/" class="article-date">
-  <time datetime="2020-01-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-11</time>
+<a href="https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/" class="article-date">
+  <time datetime="2021-07-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-24</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>
+  <a class="article-category-link" href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"> 踩坑记录 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/linux/"> linux </a>
+  </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/hugo-github-pages/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/vscode-remote-ssh-use-proxy-with-auth/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1472字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 909字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo+GitHub Pages 免费搭建个静态博客来做树洞吧。</p>
+      <p>本来是很简单的一件事情，追求新版本又把自己坑了一次&hellip;&hellip;<br>
+留个记录稍微描述详细一点，希望能帮到你。</p>
 <hr>
-<p><strong>环境</strong>：Windows 10 64 位<br>
-<strong>需要时间</strong>：1 小时左右<br>
-<strong>原教程</strong>：<a href="https://blog.csdn.net/weixin_30265103/article/details/95670529">CSDN Windows 下搭建 Hugo 博客</a></p>
-<hr>
-<p>1：在 <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a> 地址下找到Windows压缩文件下载，如下图 64 位的。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112113921.png" alt="64位"></p>
-<p>2：新建 Hugo 和 Hugo/bin 文件夹，将下载下来的 .exe 文件放入 bin 文件夹，并<strong>添加至环境变量中</strong>。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112114203.png" alt="下载并安装"></p>
-<p>3：在 Cmd 中输入</p>
-<pre><code class="language-bash">hugo version
+<p>参考的文章：<a href="https://blog.csdn.net/maokelong95/article/details/91801944">「VS Code」如何通过跳板机连接服务器进行远程开发：Remote-SSH 篇</a></p>
+<p>1、VS Code 中 Remote - SSH 的安装和使用都很简单，就一步带过了。<br>
+在插件库中搜索安装：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210723213358.png" alt="选择安装"><br>
+新建连接：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210723213626.png" alt="配置"><br>
+选择 SSH 配置存放和读取路径：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210723214404.png" alt="选择 SSH 配置存放路径"><br>
+接下来就是输入密码登录服务器，自行操作即可，但是如果你需要密钥登录，请跟着步骤 2 进行配置。</p>
+<p>2、进行 SSH 密钥登录的配置和代理的配置。<br>
+进入刚刚所选 SSH 配置存放的目录，一般是 <a href="">C:\Users\你的用户名\.ssh</a> 这个路径。<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210724000113.png" alt=""><br>
+选择编辑 config 文件，密钥和代理的配置参照我设置即可：</p>
+<pre><code class="language-bash"># Host 为服务器别名，可以和 HostName 一样
+Host $server_host
+  # 你的服务器域名或 IP
+  HostName $server_host
+  # 用户
+  User $user
+  # SSH 私钥地址，例如：C:\Users\你的用户名\.ssh\example
+  IdentityFile $ssh_primary_key$path
+  # 代理配置
+  ProxyCommand C:\bin\nmap\ncat.exe --proxy-type socks5 --proxy $proxy_host:$proxy_port %h %p --proxy-auth $proxy_auth_username:$proxy_auth_passwod
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115115.png" alt="检测"><br>
-检测是否安装成功，安装成功后进入 Hugo 文件夹中，输入</p>
-<pre><code class="language-bash">hugo new site myblog
+<p>代理的配置详细说一下，也是我踩坑的地方。<br>
+下载压缩包后解压到任意目录，然后替换上面 C:\bin\nmap\ncat.exe 的路径即可。<br>
+虽然<a href="https://nmap.org/ncat/guide/ncat-proxy.html">官方文档</a>中明确记载了代理认证信息的配置方法，但是经过实测在当前最新版本：<a href="https://nmap.org/dist/nmap-7.70-win32.zip">nmap-7.91-win32.zip</a> 下是不支持的，VS Code 具体错误日志：</p>
+<pre><code class="language-bash">[01:09:46.557] Running script with connection command: ssh -T -D 13100 &quot;example.com&quot; bash
+[01:09:46.559] Terminal shell path: C:\Windows\System32\cmd.exe
+[01:09:46.742] &gt; ]0;C:\Windows\System32\cmd.exe
+[01:09:46.742] Got some output, clearing connection timeout
+[01:09:47.447] &gt; kex_exchange_identification: Connection closed by remote host
+[01:09:47.454] &gt; 过程试图写入的管道不存在。
+[01:09:48.732] &quot;install&quot; terminal command done
+[01:09:48.732] Install terminal quit with output: 过程试图写入的管道不存在。
+[01:09:48.732] Received install output: 过程试图写入的管道不存在。
+[01:09:48.733] Failed to parse remote port from server output
+[01:09:48.733] Resolver error: Error: 
+	at Function.Create (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:64659)
+	at Object.t.handleInstallOutput (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:63302)
+	at Object.t.tryInstall (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:415135)
+	at processTicksAndRejections (internal/process/task_queues.js:93:5)
+	at async c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:294918
+	at async Object.t.withShowDetailsEvent (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:406463)
+	at async Object.t.resolve (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:295994)
+	at async c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:127:110656
+[01:09:48.736] ------
 </code></pre>
-<p>myblog 替换成想要的博客文件夹名字。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115141.png" alt="新建"></p>
-<p>4：进入新建的博客文件夹下，可以看见项目结构：content 文件夹存放内容，themes 文件夹用来存放主题，config.toml 用来配置文件，这也是这次初步建立需要博客需要改的内容。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115238.png" alt="项目结构"></p>
-<p>5：建完文件夹后先去挑选主题，在 <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> 选择自己喜欢的主题进行下载，这次我使用 <a href="https://github.com/vaga/hugo-theme-m10c">hugo-theme-m10c</a> 这款主题，因为选择它避免配置 config.toml 文件而花费大量时间。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115824.png" alt="挑选博客"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115858.png" alt="进入github页面"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112115934.png" alt="复制git地址方便clone"></p>
-<p>6：Cmd 进入博客文件夹下，执行以下命令把 GitHub 上的主题文件 Clone 到对应文件夹下 themes/m10c</p>
-<pre><code class="language-bash">git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c
+<p>这种情况似乎只会在 VS Code 中出现，我在命令行中尝试连接时没有问题：</p>
+<pre><code class="language-bash">C:\Users\my_user&gt;ssh root@example.com ProxyCommand=&quot;C:\bin\nmap-7.91\ncat.exe --proxy-type socks5 --proxy example.proxy:1080 %h %p --proxy-auth 111:222&quot;
+root@example.com: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112120323.png" alt="下载主题"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112120406.png" alt="确认主题下载成功"></p>
-<p>7：此时就已经在本地运行博客做确认了，执行</p>
-<pre><code class="language-bash">hugo server -t m10c --buildDrafts
+<p>而解决方法则只有一个，回退版本，和参考的教程中使用同样的版本：<a href="https://nmap.org/dist/nmap-7.70-win32.zip">nmap-7.70-win32.zip</a><br>
+这个问题的解决单纯就是试出来的，暂时也没有功夫去探究错误的原因，可能也只是个例，Stack Overflow 的个别讨论也都是纠结配置方法的问题，事实上格式官方已经给了，参考意义都不是很大。<br>
+如果回退依然没有解决你的问题的话，在确保 SSH 不适用代理能访问的前提下，使用以下代码去排查下：</p>
+<pre><code class="language-bash">lastb -n 100
 </code></pre>
-<p>启动项目，然后前往 <a href="http://localhost:1313/">http://localhost:1313/</a> 就可以看到了。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112120719.png" alt="项目启动成功"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112120748.png" alt="博客页"></p>
-<p>8：接下来开始新建一篇博客，使用 Hugo 很大程度上就是看中了它将 .md 文件渲染成静态博客页面的能力，即使是发布完成后，原稿也可以保存方便脱机查看。<br>
-首选 Ctrl+C 结束本地的预览，然后新建博文对应的 .md 文件。</p>
-<pre><code class="language-bash">hugo new post/blog.md
-</code></pre>
-<p>新建的 .md 文件会存储在 content/post 中，直接前往进行编辑即可。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112121314.png" alt="文件目录"></p>
-<p>9：推荐使用 VS Code 进行编辑，左上角的预览按钮，点击后可以将窗口分为左右两部分用于查看实施效果。
-<strong>注意：draft: true 需要改为 draft: false 图中并未做修改，如果不修改就是草稿，不会在博文页面上显示内容！</strong><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112121815.png" alt="vscode"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112121932.png" alt="vscode预览"><br>
-写完后直接 Ctrl+S 保存即可。</p>
-<p>10：再次本地启动项目，可以看见已经有对应的博文了。<strong>至此，本地博客环境就算配置完成了。</strong></p>
-<pre><code class="language-bash">hugo server -t m10c --buildDrafts
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112122412.png" alt="博文"></p>
-<p>11：GitHub 为每个账号提供了一个免费的空间来存储静态的 HTML、JS 和 CSS，而我们就可以借此来发布博客。
-首先去新建仓库，注意命名，这是 GitHub 辨别是否为网络空间的依据。<br>
-仓库名需满足 账户名.github.io 的命名规范，然后点击绿色的 create 按钮进行创建。</p>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112122910.png" alt="创建仓库"><br>
-我因为已经部署完成，因此这里显示重复创建。</p>
-<p>12：创建完成后，回到 myblog 博客目录，执行以下命令来生成 public 目录，也就是 GitHub 仓库所需的静态博客的文件。（后续都用的原博客的图，路径可能有偏差，都是基础的 Git 操作）</p>
-<pre><code class="language-bash">hugo --theme=m10c --baseUrl=&quot;地址&quot; --buildDrafts
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123241.png" alt="public"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123513.png" alt="路径"></p>
-<p>13：进入 public 文件夹，将所有文件添加、提交到本地。</p>
-<pre><code class="language-bash">git init
-git add.
-git commit -m &quot;附言&quot;
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123639.png" alt="git提交本地"></p>
-<p>14：将本地 public 与 GitHub 进行关联后，进行推送，第一次推送会需要输入
-GitHub 的账号密码。</p>
-<pre><code class="language-bash">git add origin http://github.com/m1801823/m1801823.github.io.git
-git push -u origin master
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123744.png" alt="git关联"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112123755.png" alt="git推送"></p>
-<p>15：等待推送完成后，刷新 GitHub 页面，对应的文件就上传上来了，这时候输入 <a href="http://github.com">http://账户名.github.io</a> 就可以访问了<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112124221.png" alt="博客"></p>
-<p>16：如果自己有域名的话，也可以配置 DNS 直接让域名解析到你的静态博客上，方便告诉好友你的博客网址。<br>
-<em>这里以在 <a href="https://www.namecheap.com/">Namecheap</a> 上购买的域名为例，不推荐阿里云和腾讯云，只因为管局备案太麻烦。</em></p>
-<p>首先选择已有域名进入管理面板。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112124605.png" alt="域名管理"></p>
-<p>然后新增或者修改 DNS 解析记录，对应以下修改即可，只需要把 CNAME Record 的 Value 修改成你的地址即可。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112124750.png" alt="DNS解析"></p>
-<p>最后回到 GitHub 的仓库部分，选择 Settings，拉到 Custom domain 部分修改成你的域名保存。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112125107.png" alt="绑定域名"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112125135.png" alt="绑定域名"><br>
-大概 5 分钟左右，域名就会解析到你的博客，在开始的几天是不支持 HTTPS 的，只能先用 <a href="http://%E4%BD%A0%E7%9A%84%E5%9F%9F%E5%90%8D.com">http://你的域名</a> 进行访问。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112125455.png" alt="域名访问"><br>
-之后如果 HTTPS 加密可用，则需要更改一下模板，在 head 部分加上</p>
-<pre><code class="language-bash">&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;upgrade-insecure-requests&quot;&gt;
-</code></pre>
-<p>来自动将 HTTP 的不安全请求升级为 HTTPS，否则可能出现 CSS 等加载不出来的情况。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200112183525.png" alt="头文件修改"></p>
-<p><strong>至此基于 Hugo 和 Github Pages 的静态博客搭建完成，开始养成记录的好习惯吧！</strong></p>
+<p>在服务器运行，查看最近受阻的 100 次 SSH 登录，看客户端到服务器是否打开过连接，再做下一步的判断。<br>
+结束。</p>
 
     </div>
     <div class="article-footer">
@@ -413,7 +386,7 @@ git push -u origin master
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2020/01/hugo-github-pages/" title="Windows 下 Hugo&#43;GitHub Pages 搭建静态博客" target="_blank" rel="external">https://senjianlu.com/2020/01/hugo-github-pages/</a>
+      <a href="https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/" title="VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发" target="_blank" rel="external">https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -430,14 +403,9 @@ git push -u origin master
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/" title="CentOS7 下 Nginx&#43;uWSGI 配置 Django 项目"><i
+                <a href="https://senjianlu.com/2021/07/centos7-docker-command-proxy/" title="CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
-            </li>
-            <li class="next">
-                <a href="https://senjianlu.com/2020/01/picgo-github/"
-                    title="Windows 下 PicGo&#43;GitHub 搭建个人图床工具"><span>上一篇&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
         </ul>

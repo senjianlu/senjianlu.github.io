@@ -11,21 +11,21 @@
     
     
     <item>
+      <title>PostgreSQL 学习笔记 (三) 用户权限的管理控制</title>
+      <link>https://senjianlu.com/2020/02/postgresql-note-03/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/02/postgresql-note-03/</guid>
+      <description>在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中</description>
+    </item>
+    
+    <item>
       <title>PostgreSQL 学习笔记 (二) psql 工具的使用</title>
       <link>https://senjianlu.com/2020/02/postgresql-note-02/</link>
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://senjianlu.com/2020/02/postgresql-note-02/</guid>
       <description>psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习</description>
-    </item>
-    
-    <item>
-      <title>VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发</title>
-      <link>https://senjianlu.com/2020/02/vscode-remote-ssh-use-proxy-with-auth/</link>
-      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/02/vscode-remote-ssh-use-proxy-with-auth/</guid>
-      <description>本来是很简单的一件事情，追求新版本又把自己坑了一次&amp;hellip;&amp;hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS</description>
     </item>
     
     <item>

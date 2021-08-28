@@ -42,7 +42,7 @@
 <meta itemprop="name" content="CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统">
 <meta itemprop="description" content="又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的"><meta itemprop="datePublished" content="2021-07-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-07-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="964">
+<meta itemprop="wordCount" content="1105">
 <meta itemprop="keywords" content="Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统"/>
 <meta name="twitter:description" content="又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的"/>
@@ -225,6 +225,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/" class="title">VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-07-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/07/centos7-docker-command-proxy/" class="title">CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）</a>
                     </p>
                     <p class="item-date">
@@ -259,16 +269,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-20</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/07/centos7-minio/" class="title">CentOS7 下 MinIO 的安装和配置</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-19</time>
                     </p>
                 </div>
             </li>
@@ -312,8 +312,8 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-docker-zabbix/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 964字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1105字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -330,8 +330,8 @@ server 端 &ndash;&gt; 前端面板 &ndash;&gt; agent 端<br>
 <strong>注意</strong>：使用 MySQL 和 PostgreSQL 时 Docker 镜像是不同的，且在启动 Docker 镜像之前就先创建好名为 zabbix 的数据库。</p>
 <pre><code class="language-bash"># pull
 docker pull zabbix/zabbix-server-pgsql:4.0-centos-latest
-# 启动，自行更改 host、port、username 和 password 数据库连接参数
-docker run --name some-zabbix-server-pgsql -p 10051:10051 --net=host -e DB_SERVER_HOST=&quot;$pgsql_host&quot; -e DB_SERVER_PORT=$pgsql_port -e POSTGRES_USER=&quot;$pgsql_username&quot; -e POSTGRES_PASSWORD=&quot;$pgsql_password&quot; -d docker.io/zabbix/zabbix-server-pgsql:4.0-centos-latest
+# 启动，自行更改 host、port、username 和 password 数据库连接参数（ZBX_STARTPOLLERS 参数可以保证你在监听大量高延迟服务器下不产生 zabbix poller process more than 75% busy 的错误，如果出错之后再去修改 config.v2.json 会比较麻烦）
+docker run --name some-zabbix-server-pgsql -p 10051:10051 --net=host -e DB_SERVER_HOST=&quot;$pgsql_host&quot; -e DB_SERVER_PORT=$pgsql_port -e POSTGRES_USER=&quot;$pgsql_username&quot; -e POSTGRES_PASSWORD=&quot;$pgsql_password&quot; -e ZBX_STARTPOLLERS=15 -d docker.io/zabbix/zabbix-server-pgsql:4.0-centos-latest
 # 查看 log
 docker logs some-zabbix-server-pgsql
 # 没有报错的话将其设为开机启动
@@ -342,8 +342,8 @@ docker update --restart=always some-zabbix-server-pgsql
 <strong>注意</strong>：一般情况下都和 server 端安装在同一个服务器上。</p>
 <pre><code class="language-bash"># pull
 docker pull zabbix/zabbix-web-nginx-pgsql:4.0-centos-latest
-# 启动，自行替换数据库连接参数，并将容器的 80 端口映射到本机 10052 端口
-docker run --name some-zabbix-web-nginx-pgsql -p 10052:80 -e DB_SERVER_HOST=&quot;$pgsql_host&quot; -e DB_SERVER_PORT=$pgsql_port -e POSTGRES_USER=&quot;$pgsql_username&quot; -e POSTGRES_PASSWORD=&quot;$pgsql_password&quot; -e PHP_TZ=&quot;Asia/Shanghai&quot; -d docker.io/zabbix/zabbix-web-nginx-pgsql:4.0-centos-latest
+# 启动，自行替换数据库连接参数，并将容器的 8080 端口映射到本机 10052 端口（注意该容易已经内置 Nginx，因此如果你准备在宿主机中安装 Nginx 并解析域名反代该容器，请使用 8080 端口，如果只准备用端口访问服务，则映射 80 端口也无妨）
+docker run --name some-zabbix-web-nginx-pgsql -p 10052:8080 -e DB_SERVER_HOST=&quot;$pgsql_host&quot; -e DB_SERVER_PORT=$pgsql_port -e POSTGRES_USER=&quot;$pgsql_username&quot; -e POSTGRES_PASSWORD=&quot;$pgsql_password&quot; -e PHP_TZ=&quot;Asia/Shanghai&quot; -d docker.io/zabbix/zabbix-web-nginx-pgsql:4.0-centos-latest
 # 查看 log
 docker logs some-zabbix-web-nginx-pgsql
 </code></pre>
