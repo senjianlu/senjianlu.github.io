@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        森见鹿的博客 </title>
+        CentOS7 关于使用 GNU Screen 的笔记 - 森见鹿的博客 
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="持续更新。 Screen 环境变量的配置使其能读取类似 /usr/bin 下的脚本。 vi /etc/screenrc 取消注释 ... shell -$SHELL ..." />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>森见鹿的博客 </title>
+  <title>CentOS7 关于使用 GNU Screen 的笔记 - 森见鹿的博客 </title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://senjianlu.com/index.xml" title="森见鹿的博客 " />
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="森见鹿的博客 " />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://senjianlu.com/" />
+  <meta property="og:title" content="CentOS7 关于使用 GNU Screen 的笔记" />
+<meta property="og:description" content="持续更新。 Screen 环境变量的配置使其能读取类似 /usr/bin 下的脚本。 vi /etc/screenrc 取消注释 ... shell -$SHELL ..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2021/09/centos7-gun-screen/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-07T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-09-07T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="森见鹿的博客 ">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="森见鹿的博客 "/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="CentOS7 关于使用 GNU Screen 的笔记">
+<meta itemprop="description" content="持续更新。 Screen 环境变量的配置使其能读取类似 /usr/bin 下的脚本。 vi /etc/screenrc 取消注释 ... shell -$SHELL ..."><meta itemprop="datePublished" content="2021-09-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-09-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="36">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7 关于使用 GNU Screen 的笔记"/>
+<meta name="twitter:description" content="持续更新。 Screen 环境变量的配置使其能读取类似 /usr/bin 下的脚本。 vi /etc/screenrc 取消注释 ... shell -$SHELL ..."/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -65,7 +70,7 @@
   
   
 
-  <body class="main-center theme-black main-center theme-black main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="slimContent">
       <div class="navbar-header">
         <div class="profile-block text-center">
@@ -275,34 +280,25 @@
 
     
     
-
-<main class="main" role="main">
-  
-  <div class="content article-list">
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
     
-    
-    
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
+    <div class="article-header">
+      <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2021/07/centos7-swap/"
-    >CentOS7 下建立 SWaP 分区以增加虚拟内存</a
+    href="/2021/09/centos7-gun-screen/"
+    >CentOS7 关于使用 GNU Screen 的笔记</a
   >
 </h1>
 
-      </div>
-      <div class="article-entry text-muted" itemprop="description">明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&hellip;&hellip; 看了下现在的这些容器基本都</div>
-      <p class="article-meta">
+      <div class="article-meta">
+        
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/07/centos7-swap/" class="">
-  <time datetime="2021-07-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-12</time>
+<a href="https://senjianlu.com/2021/09/centos7-gun-screen/" class="article-date">
+  <time datetime="2021-09-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-07</time>
 </a>
 </span>
 <span class="article-category">
@@ -314,252 +310,61 @@
     <a class="article-tag-link" href="/tags/linux/"> Linux </a>
   </span>
 
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 710字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/06/japanese-ko-so-a-do-xi-tong/"
-    >日语学习 「こそあど系統」</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">Notion 链接：https://www.notion.so/rabbir/1a25e9f6a26d4551902af651915117d7</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/" class="">
-  <time datetime="2021-06-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-20</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E6%97%A5%E8%AF%AD/"> 日语 </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 65字</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/centos7-gun-screen/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 36字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/06/japanese-ge-zhu-ci-wo/"
-    >日语学习 格助词「を」在自动词前的使用</a
-  >
-</h1>
-
       </div>
-      <div class="article-entry text-muted" itemprop="description">Notion 链接：https://www.notion.so/rabbir/a24f7acbdba44e0ebe290fd0c3dd1907</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/" class="">
-  <time datetime="2021-06-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-19</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E6%97%A5%E8%AF%AD/"> 日语 </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 65字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/"
-    >日语学习 日语词类划分整理</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">Notion 链接：https://www.notion.so/rabbir/e0d5da57af9c47c5a58df377cc4ac558</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/" class="">
-  <time datetime="2021-06-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-18</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E6%97%A5%E8%AF%AD/"> 日语 </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 65字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/06/japanese-shi-yi-bei-dong/"
-    >日语学习 使役、被动和使役被动</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">Notion 链接：https://www.notion.so/rabbir/eee6ce0ebd9249a9a281805aadb54582</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/06/japanese-shi-yi-bei-dong/" class="">
-  <time datetime="2021-06-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-17</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E6%97%A5%E8%AF%AD/"> 日语 </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 65字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/06/centos7-socks5-gost/"
-    >CentOS7 下安装 SOCKS5 代理并使用 GOST 搭建加密中转隧道</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">虽然 Telegram 的 APP 自带 SOCKS5 代理支持，直接配置即可使用，但是几乎配置完连上就是秒封，必须通过国内服务器做中转，即：国外服务器先安装 SOCKS5 代理，再安装 GOST 将国内</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/06/centos7-socks5-gost/" class="">
-  <time datetime="2021-06-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-15</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 719字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/12/centos7-jdk/"
-    >CentOS7 下安装 Java 环境（JDK11）</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">为了在 CentOS7 服务器下部署 Java Web 项目和使用 RabbitMQ 所留的笔记。 1、首先检查服务器当前 OpenJDK 版本，如果不是需要的版本请先卸载。 java -version 由于这次我们使用的是下载压缩包</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/12/centos7-jdk/" class="">
-  <time datetime="2020-12-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-12-31</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/java/"> Java </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 479字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
-      </p>
-    </article></div>
-  
-<nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    <ul class="pager pull-left"><li class="prev">
-        <a href="/page/2/">
-          <i class="icon icon-angle-left"></i>
-          
-        </a>
-      </li><li class="next">
-        <a href="/page/4/">
-          <i class="icon icon-angle-right"></i>
-          
-        </a>
-      </li>
-    </ul>
-    <div class="total-article bar-right">
-      Page:3/5
     </div>
-  </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>持续更新。</p>
+<hr>
+<p>Screen 环境变量的配置使其能读取类似 /usr/bin 下的脚本。</p>
+<pre><code class="language-bash">vi /etc/screenrc
+</code></pre>
+<p>取消注释</p>
+<pre><code class="language-bash">...
+shell -$SHELL
+...
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2021/09/centos7-gun-screen/" title="CentOS7 关于使用 GNU Screen 的笔记" target="_blank" rel="external">https://senjianlu.com/2021/09/centos7-gun-screen/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2021/09/centos7-matplotlib-chinese/" title="CentOS7 下解决 Python3 使用 Matplotlib 生成图表时中文乱码的问题"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://senjianlu.com/2021/09/nextcloud-google-analytics/"
+                    title="Nextcloud 前端页面插入 JS 代码以使用 Google Analytics 分析"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
 </nav>
 
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -636,6 +441,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>
