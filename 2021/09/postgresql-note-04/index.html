@@ -42,7 +42,7 @@
 <meta itemprop="name" content="PostgreSQL 学习笔记 (四) 安装 plpythonu 以使用 Python3 语言编写函数">
 <meta itemprop="description" content="我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展"><meta itemprop="datePublished" content="2021-09-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-09-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="482">
+<meta itemprop="wordCount" content="640">
 <meta itemprop="keywords" content="PostgreSQL," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PostgreSQL 学习笔记 (四) 安装 plpythonu 以使用 Python3 语言编写函数"/>
 <meta name="twitter:description" content="我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展"/>
@@ -312,8 +312,8 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/postgresql-note-04/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 482字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 640字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -353,11 +353,9 @@ $$;
 <tr>
 <td>2</td>
 </tr>
-<tr>
-<td>没有问题。</td>
-</tr>
 </tbody>
 </table>
+<p>没有问题。</p>
 <p>4、导入 Python3 包和在本数据库执行查询语句<br>
 <strong>注意：Python3 语句严格使用 4 空格进行缩进！</strong></p>
 <pre><code class="language-pgsql">CREATE OR REPLACE FUNCTION &quot;public&quot;.&quot;python3_test&quot;(str text)
@@ -432,6 +430,69 @@ $$;
 <tbody>
 <tr>
 <td>200</td>
+</tr>
+</tbody>
+</table>
+<p>6、打印日志和返回表结构的数据</p>
+<pre><code class="language-pgsql">CREATE OR REPLACE FUNCTION &quot;public&quot;.&quot;python3_test&quot;(str text)
+  RETURNS TABLE(_varchar VARCHAR, _numeric NUMERIC, _boolean BOOLEAN)
+	LANGUAGE plpython3u
+AS $$
+    import sys
+    sys.path.append(&quot;/usr/local/lib/python3.6/site-packages/&quot;)
+    # 类
+    class return_class():
+        def __init__(self, _varchar, _numeric, _boolean):
+            self._varchar = _varchar
+            self._numeric = _numeric
+            self._boolean = _boolean
+    # 打印日志
+    plpy.debug(&quot;debug&quot;)
+    plpy.log(&quot;log&quot;)
+    plpy.info(&quot;info&quot;)
+    plpy.notice(&quot;notice&quot;)
+    plpy.warning(&quot;warning&quot;)
+    # 返回表结构（在声明了返回表的列名后只要以列为单位生成对象并放入数组返回即可）
+    return_classes = []
+    a_class = return_class(str, 1.00, True)
+    a_class._numeric = 0.01
+    return_classes.append(a_class)
+    return_classes.append(return_class(&quot;bb&quot;, 1.23, True))
+    return_classes.append(return_class(&quot;cc&quot;, 3.21, False))
+    return return_classes
+$$;
+</code></pre>
+<p>运行：</p>
+<pre><code class="language-bash">SELECT * FROM python3_test('test_log_table')
+&gt; INFO:  info
+&gt; NOTICE:  notice
+&gt; WARNING:  warning
+&gt; OK
+&gt; 时间: 0.115s
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>_varchar</th>
+<th>_numeric</th>
+<th>_boolean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>test_log_table</td>
+<td>0.01</td>
+<td>t</td>
+</tr>
+<tr>
+<td>bb</td>
+<td>1.23</td>
+<td>t</td>
+</tr>
+<tr>
+<td>cc</td>
+<td>3.21</td>
+<td>f</td>
 </tr>
 </tbody>
 </table>
