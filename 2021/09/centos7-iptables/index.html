@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        CentOS7 下安装 code-server - 森见鹿的博客 
+        CentOS7 下安装 RabbitMQ - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转" />
+  <meta name="description" content="一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>CentOS7 下安装 code-server - 森见鹿的博客 </title>
+  <title>CentOS7 下安装 RabbitMQ - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="CentOS7 下安装 code-server" />
-<meta property="og:description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转" />
+  <meta property="og:title" content="CentOS7 下安装 RabbitMQ" />
+<meta property="og:description" content="一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/07/centos7-code-server/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-22T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-07-22T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/09/centos7-iptables/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-30T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-09-30T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="CentOS7 下安装 code-server">
-<meta itemprop="description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转"><meta itemprop="datePublished" content="2021-07-22T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-07-22T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="325">
+<meta itemprop="name" content="CentOS7 下安装 RabbitMQ">
+<meta itemprop="description" content="一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT"><meta itemprop="datePublished" content="2021-09-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-09-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="166">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CentOS7 下安装 code-server"/>
-<meta name="twitter:description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转"/>
+<meta name="twitter:title" content="CentOS7 下安装 RabbitMQ"/>
+<meta name="twitter:description" content="一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -292,8 +292,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2021/07/centos7-code-server/"
-    >CentOS7 下安装 code-server</a
+    href="/2021/09/centos7-iptables/"
+    >CentOS7 下安装 RabbitMQ</a
   >
 </h1>
 
@@ -301,8 +301,8 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/07/centos7-code-server/" class="article-date">
-  <time datetime="2021-07-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-22</time>
+<a href="https://senjianlu.com/2021/09/centos7-iptables/" class="article-date">
+  <time datetime="2021-09-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-30</time>
 </a>
 </span>
 <span class="article-category">
@@ -314,73 +314,29 @@
     <a class="article-tag-link" href="/tags/linux/"> Linux </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-code-server/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/centos7-iptables/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 325字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 166字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。</p>
+      <p>一些基础的 iptables 规则来保护服务器，持续更新。</p>
 <hr>
-<p>官方 GitHub 项目地址：<a href="https://github.com/cdr/code-server">code-server</a></p>
-<p>1、下载安装<br>
-选个中意的 <a href="https://github.com/cdr/code-server/releases">Release</a> 下载并解压：</p>
-<pre><code class="language-bash"># 下载
-wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz
-# 解压
-tar -xzvf code-server-3.11.0-linux-amd64.tar.gz
-# 转移到你想转移的目录
-mv code-server-3.11.0-linux-amd64 /usr/local/code-server
+<p>1、查看当前 iptables 入方向规则：<br>
+<strong>注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！</strong></p>
+<pre><code class="language-bash">iptables -L INPUT --line-numbers
 </code></pre>
-<p>2、配置账号密码和启动端口<br>
-code-server 的配置文件目录：~/.config/code-server/config.yaml<br>
-先启动一下生成目录：</p>
-<pre><code class="language-bash">/usr/local/code-server/code-server
+<p>2、删除指定行的入方向规则：</p>
+<pre><code class="language-bash">iptables -D INPUT $row_no
 </code></pre>
-<p>然后停止掉程序后修改配置文件：<br>
-<em>注：cert 可以选择为 false，后面再 Nginx 处配置证书即可。</em></p>
-<pre><code class="language-bash">bind-addr: 0.0.0.0:8080
-auth: password
-password: $password
-cert: false
+<p>3、允许指定 MAC 地址访问本机所有端口：</p>
+<pre><code class="language-bash">iptables -I INPUT -m mac --mac-source xx:D3:xx:7A:02:xx -j ACCEPT
 </code></pre>
-<p>再启动即可。<br>
-加入开机自启动：</p>
-<pre><code class="language-bash">echo &quot;@reboot /usr/local/code-server/code-server&quot; &gt;&gt; /var/spool/cron/root
-service crond restart
+<p>4、屏蔽所有人对域名（包括子域名的访问）:<br>
+<strong>注意：需要放在最后一行处！</strong></p>
+<pre><code class="language-bash">iptables $row_no -I INPUT -p tcp --dport $port -m string --string &quot;example.com&quot; --algo kmp -j DROP
 </code></pre>
-<p>3、配置 Nginx 反代和开启 SSL 证书<br>
-<em>注：自行替换 example.com 为你的域名和修改 SSL 证书所在位置。</em></p>
-<pre><code class="language-bash">    ...
-    server {
-        listen       80;
-        server_name  example.com;
-        return 301   https://$host$request_uri;
-    }
-
-    server {
-        listen          443 ssl;
-        server_name     example.com;
-
-        # SSL 配置
-        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-        ssl_certificate cert/1_example.com_bundle.crt;
-        ssl_certificate_key cert/2_example.com.key;
-
-        # 反代 8080 端口的 code-server
-        location / {
-            proxy_pass http://localhost:8080;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection &quot;upgrade&quot;;
-            proxy_set_header Host $host;
-        }
-    }
-    ...
-</code></pre>
-<p>至此完成，以上。</p>
 
     </div>
     <div class="article-footer">
@@ -388,7 +344,7 @@ service crond restart
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/07/centos7-code-server/" title="CentOS7 下安装 code-server" target="_blank" rel="external">https://senjianlu.com/2021/07/centos7-code-server/</a>
+      <a href="https://senjianlu.com/2021/09/centos7-iptables/" title="CentOS7 下安装 RabbitMQ" target="_blank" rel="external">https://senjianlu.com/2021/09/centos7-iptables/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -405,14 +361,9 @@ service crond restart
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/07/centos7-minio-error/" title="MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误"><i
+                <a href="https://senjianlu.com/2021/09/k3s-note-02-02/" title="K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
-            </li>
-            <li class="next">
-                <a href="https://senjianlu.com/2021/07/centos7-docker-command-proxy/"
-                    title="CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）"><span>上一篇&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
         </ul>

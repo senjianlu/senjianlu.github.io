@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 学习笔记 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下建立 SWaP 分区以增加虚拟内存</title>
+      <link>https://senjianlu.com/2021/07/centos7-swap/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/centos7-swap/</guid>
+      <description>明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&amp;hellip;&amp;hellip; 看了下现在的这些容器基本都</description>
+    </item>
+    
+    <item>
+      <title>日语学习 「こそあど系統」</title>
+      <link>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</guid>
+      <description>Notion 链接：https://www.notion.so/rabbir/1a25e9f6a26d4551902af651915117d7</description>
+    </item>
     
     <item>
       <title>日语学习 格助词「を」在自动词前的使用</title>

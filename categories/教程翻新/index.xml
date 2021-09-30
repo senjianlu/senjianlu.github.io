@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</link>
     <description>Recent content in 教程翻新 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下安装 RabbitMQ</title>
+      <link>https://senjianlu.com/2021/09/centos7-iptables/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/centos7-iptables/</guid>
+      <description>一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）</title>
+      <link>https://senjianlu.com/2021/09/k3s-note-02-02/</link>
+      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/k3s-note-02-02/</guid>
+      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 考虑到作为 Docker 容器运行的 Rancher 重启较为安全简单，不再使用</description>
+    </item>
     
     <item>
       <title>CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题</title>
@@ -20,12 +38,12 @@
     </item>
     
     <item>
-      <title>K3s 学习（二）安装 Rancher Labs</title>
-      <link>https://senjianlu.com/2021/09/k3s-note-02/</link>
+      <title>K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）</title>
+      <link>https://senjianlu.com/2021/09/k3s-note-02-01/</link>
       <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/09/k3s-note-02/</guid>
-      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 1、首先安装 Kubernetes 的软件包管理工具：Helm 这也是Ra</description>
+      <guid>https://senjianlu.com/2021/09/k3s-note-02-01/</guid>
+      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs</description>
     </item>
     
     <item>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/07/nginx-note-02/</guid>
       <description>给网站套上 Cloudflare 防止被打和缓存部分静态文件应该是常规操作了，但是想起来之前好像见到过的帖子：第一次知道 HTTPS 会暴露服务器 IP，在新的服务器上试验了一</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下建立 SWaP 分区以增加虚拟内存</title>
-      <link>https://senjianlu.com/2021/07/centos7-swap/</link>
-      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/centos7-swap/</guid>
-      <description>明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&amp;hellip;&amp;hellip; 看了下现在的这些容器基本都</description>
-    </item>
-    
-    <item>
-      <title>日语学习 「こそあど系統」</title>
-      <link>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</link>
-      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</guid>
-      <description>Notion 链接：https://www.notion.so/rabbir/1a25e9f6a26d4551902af651915117d7</description>
     </item>
     
   </channel>

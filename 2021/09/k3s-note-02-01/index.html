@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        CentOS7 下安装 code-server - 森见鹿的博客 
+        K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐） - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转" />
+  <meta name="description" content="第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>CentOS7 下安装 code-server - 森见鹿的博客 </title>
+  <title>K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐） - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="CentOS7 下安装 code-server" />
-<meta property="og:description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转" />
+  <meta property="og:title" content="K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）" />
+<meta property="og:description" content="第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/07/centos7-code-server/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-22T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-07-22T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/09/k3s-note-02-01/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-28T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-09-28T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="CentOS7 下安装 code-server">
-<meta itemprop="description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转"><meta itemprop="datePublished" content="2021-07-22T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-07-22T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="325">
-<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CentOS7 下安装 code-server"/>
-<meta name="twitter:description" content="记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转"/>
+<meta itemprop="name" content="K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）">
+<meta itemprop="description" content="第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs"><meta itemprop="datePublished" content="2021-09-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-09-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="808">
+<meta itemprop="keywords" content="Linux,K3s," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）"/>
+<meta name="twitter:description" content="第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -292,8 +292,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2021/07/centos7-code-server/"
-    >CentOS7 下安装 code-server</a
+    href="/2021/09/k3s-note-02-01/"
+    >K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）</a
   >
 </h1>
 
@@ -301,86 +301,102 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/07/centos7-code-server/" class="article-date">
-  <time datetime="2021-07-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-22</time>
+<a href="https://senjianlu.com/2021/09/k3s-note-02-01/" class="article-date">
+  <time datetime="2021-09-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-28</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
+  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
     <a class="article-tag-link" href="/tags/linux/"> Linux </a>
+    <a class="article-tag-link" href="/tags/k3s/"> K3s </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-code-server/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/k3s-note-02-01/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 325字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 808字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。</p>
+      <p>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。<br>
+<strong>注意：请参考成功率更高的<a href="https://senjianlu.com/2021/09/k3s-note-02/"> Docker 安装 Rancher Labs</a>，该文章已作废！</strong></p>
+<blockquote>
+<p>谨慎考虑是否参考，能确定的是在 2H4G 轻量服务器下，手动安装会出现很多奇奇怪怪的错误，光我自己安装 3 次一样的步骤就出现 2 次安装结束检查状态出现“error: deployment &ldquo;rancher&rdquo; exceeded its progress deadline”的问题，并且日志的排查相当麻烦，尝试前请一定建立云服务器快照以便回滚！</p>
+</blockquote>
+<p><strong>注意：如果没有在 K3s 安装时修改 Ingress 监听端口，请不要在 server 或 agent 同服务器上安装，会造成 80 和 443 端口上起的服务无法正常访问！</strong></p>
 <hr>
-<p>官方 GitHub 项目地址：<a href="https://github.com/cdr/code-server">code-server</a></p>
-<p>1、下载安装<br>
-选个中意的 <a href="https://github.com/cdr/code-server/releases">Release</a> 下载并解压：</p>
-<pre><code class="language-bash"># 下载
-wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz
+<p>1、首先安装 Kubernetes 的软件包管理工具：Helm<br>
+这也是<a href="https://docs.rancher.cn/docs/rancher2/installation/install-rancher-on-k8s/_index#cli"> Rancher 安装官方文档</a>所提示必要的模块，安装步骤参考<a href="https://helm.sh/docs/intro/install/"> Installing Helm</a>：</p>
+<pre><code class="language-bash"># 下载压缩包
+wget https://get.helm.sh/helm-v3.7.0-linux-amd64.tar.gz
 # 解压
-tar -xzvf code-server-3.11.0-linux-amd64.tar.gz
-# 转移到你想转移的目录
-mv code-server-3.11.0-linux-amd64 /usr/local/code-server
+tar -zxvf helm-v3.7.0-linux-amd64.tar.gz
+# 二进制文件直接放入环境变量中即可使用
+mv linux-amd64/helm /usr/local/bin/helm
 </code></pre>
-<p>2、配置账号密码和启动端口<br>
-code-server 的配置文件目录：~/.config/code-server/config.yaml<br>
-先启动一下生成目录：</p>
-<pre><code class="language-bash">/usr/local/code-server/code-server
+<p>完成后确定下是否安装成功：</p>
+<pre><code class="language-bash">[root@VM-8-6-centos ~]# helm version
+version.BuildInfo{Version:&quot;v3.7.0&quot;, GitCommit:&quot;eeac83883cb40xxxxxxxxxxxec6373570374ce770b&quot;, GitTreeState:&quot;clean&quot;, GoVersion:&quot;go1.16.x&quot;}
 </code></pre>
-<p>然后停止掉程序后修改配置文件：<br>
-<em>注：cert 可以选择为 false，后面再 Nginx 处配置证书即可。</em></p>
-<pre><code class="language-bash">bind-addr: 0.0.0.0:8080
-auth: password
-password: $password
-cert: false
+<p>成功的情况添加含有 Rancher Chart 的 Helm Chart 仓库：</p>
+<pre><code class="language-bash">helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
 </code></pre>
-<p>再启动即可。<br>
-加入开机自启动：</p>
-<pre><code class="language-bash">echo &quot;@reboot /usr/local/code-server/code-server&quot; &gt;&gt; /var/spool/cron/root
-service crond restart
+<blockquote>
+<p>境内服务器使用阿里云的源</p>
+<pre><code class="language-bash">helm repo add rancher-stable http://rancher-mirror.oss-cn-beijing.aliyuncs.com/server-charts/stable
 </code></pre>
-<p>3、配置 Nginx 反代和开启 SSL 证书<br>
-<em>注：自行替换 example.com 为你的域名和修改 SSL 证书所在位置。</em></p>
-<pre><code class="language-bash">    ...
-    server {
-        listen       80;
-        server_name  example.com;
-        return 301   https://$host$request_uri;
-    }
-
-    server {
-        listen          443 ssl;
-        server_name     example.com;
-
-        # SSL 配置
-        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-        ssl_certificate cert/1_example.com_bundle.crt;
-        ssl_certificate_key cert/2_example.com.key;
-
-        # 反代 8080 端口的 code-server
-        location / {
-            proxy_pass http://localhost:8080;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection &quot;upgrade&quot;;
-            proxy_set_header Host $host;
-        }
-    }
-    ...
+</blockquote>
+<p>2、为 Rancher 创建 Namespace</p>
+<pre><code class="language-bash">kubectl create namespace cattle-system
 </code></pre>
-<p>至此完成，以上。</p>
+<p>3、使用自签证书 安装 Rancher</p>
+<blockquote>
+<p>这一步官方给了 3 个选项：</p>
+<ul>
+<li>Rancher 生成的自签名证书</li>
+<li>Let&rsquo;s Encrypt</li>
+<li>使用您自己的证书（可以是自签也可以是腾讯云等免费申请来的或是付费购买的）</li>
+</ul>
+</blockquote>
+<p>我选择了最后一种，自签发 10 年并在本地安装证书以信任，教程在这：<a href="https://senjianlu.com/2021/09/centos7-openssl-ca/">CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题</a>。</p>
+<p>先配置环境变量：</p>
+<pre><code class="language-bash">vi /etc/profile
+</code></pre>
+<pre><code class="language-bash">...
+...
+# 指定 Rancher 的安装使用 KUBECONFIG 配置文件防止出现“dial tcp [::1]:8080: connect: connection refused”的错误
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+</code></pre>
+<pre><code class="language-bash">source /etc/profile
+</code></pre>
+<p>接着执行安装命令：<br>
+<strong>注意：hostname 选项必须与服务器证书中的 Common Name 或 Subject Alternative Names 条目匹配！</strong></p>
+<pre><code class="language-bash"># 使用 Helm 安装 Rancher
+# replicas 为 Rancher 部署所使用的复制数量，少于 3 个节点时填写准确节点数
+# 自签节点 privateCA 变量设置为 true
+helm install rancher rancher-stable/rancher \
+  --namespace cattle-system \
+  --set hostname=rancher.k3s.com \
+  --set replicas=3 \
+  --set ingress.tls.source=secret \
+  --set privateCA=true
+# 配置 SSL 证书
+kubectl -n cattle-system create secret tls tls-rancher-ingress \
+  --cert=/etc/nginx/ssl/rancher.crt \
+  --key=/etc/nginx/ssl/rancher.key
+</code></pre>
+<p>验证是否安装成功：</p>
+<pre><code class="language-bash"># Rancher 是否成功部署
+kubectl -n cattle-system rollout status deploy/rancher
+# Rancher 当前状态
+kubectl -n cattle-system get deploy rancher
+</code></pre>
+<p>确定完成后用 HTTPS://域名 进行访问。</p>
+<p>结束。</p>
 
     </div>
     <div class="article-footer">
@@ -388,7 +404,7 @@ service crond restart
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/07/centos7-code-server/" title="CentOS7 下安装 code-server" target="_blank" rel="external">https://senjianlu.com/2021/07/centos7-code-server/</a>
+      <a href="https://senjianlu.com/2021/09/k3s-note-02-01/" title="K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）" target="_blank" rel="external">https://senjianlu.com/2021/09/k3s-note-02-01/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -405,13 +421,13 @@ service crond restart
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/07/centos7-minio-error/" title="MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误"><i
+                <a href="https://senjianlu.com/2021/09/k3s-note-01/" title="K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://senjianlu.com/2021/07/centos7-docker-command-proxy/"
-                    title="CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）"><span>上一篇&nbsp;&nbsp;</span><i
+                <a href="https://senjianlu.com/2021/09/centos7-openssl-ca/"
+                    title="CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             

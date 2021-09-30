@@ -42,7 +42,7 @@
 <meta itemprop="name" content="K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点">
 <meta itemprop="description" content="之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的"><meta itemprop="datePublished" content="2021-09-27T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-09-27T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="820">
+<meta itemprop="wordCount" content="916">
 <meta itemprop="keywords" content="Linux,K3s," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点"/>
 <meta name="twitter:description" content="之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的"/>
@@ -166,8 +166,8 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">13</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">18</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">14</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">19</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">6</span></li>
         </ul>
     </div>
@@ -187,11 +187,11 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">3</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">12</span></li>
+                    class="tag-list-count">14</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
@@ -229,6 +229,26 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/09/centos7-iptables/" class="title">CentOS7 下安装 RabbitMQ</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-09-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-30</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/09/k3s-note-02-02/" class="title">K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-09-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-29</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/09/centos7-openssl-ca/" class="title">CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题</a>
                     </p>
                     <p class="item-date">
@@ -239,7 +259,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://senjianlu.com/2021/09/k3s-note-02/" class="title">K3s 学习（二）安装 Rancher Labs</a>
+                        <a href="https://senjianlu.com/2021/09/k3s-note-02-01/" class="title">K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2021-09-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-28</time>
@@ -253,26 +273,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-09-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-27</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/09/postgresql-note-04/" class="title">PostgreSQL 学习笔记 (四) 安装 plpythonu 以使用 Python3 语言编写函数</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-09-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-25</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/09/centos7-jupyter/" class="title">CentOS7 下安装 Jupyter</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-09-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-24</time>
                     </p>
                 </div>
             </li>
@@ -317,17 +317,17 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/k3s-note-01/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 820字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 916字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <p>之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的服务器，带上学生机组个集群，后面再把项目都做成 Docker 运行应该就能保证稳定性了。</p>
 <hr>
-<p>本次用来构建集群的服务器共有 5 台，另有 1 台数据库专用的服务器不会加入集群。<br>
-2 台 1H2G 作为 server 节点，其中一台安装 PostgreSQL 数据库，和专用数据库服务器建立主从同步以保证不会集群不会消耗过多资源同时也有容灾备份；剩余 3 台 2H4G 作为 agent 节点以执行任务。<br>
-<em>注：均通过内网建立连接。</em><br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210928194448.png" alt="架构图"></p>
+<p>本次用来构建集群的服务器共有 3 台，另有 1 台用作面板安装。为什么不将面板部署到节点服务器是因为 K3s 安装时默认会安装 Ingress 做负载均衡，它会监听 80 和 443 端口并在 Nginx 之前就处理请求并返回“404 Page not found”，甚是烦人索性抽离出来。<br>
+因为使用了外置数据库的原因，K3s server 节点不再需要安装 3 台（3 台的限制是为了保证内置数据库同步并推举出主节点），就部署 2 台初步保证个可用性，反正是个人项目，后续出了问题再优化。<br>
+<em>注：服务器间均通过内网建立连接。</em><br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210930214144.png" alt="架构图"></p>
 <hr>
 <p>1、准备外部数据库连接<br>
 我这里使用的是已有的 PostgreSQL 数据库，编辑环境变量以添加 server 用的数据库连接：</p>
@@ -336,13 +336,16 @@
 <pre><code class="language-bash">...
 # 在最末尾添加数据库连接
 # 自行替换数据库连接参数
+# MySQL
+export K3S_DATASTORE_ENDPOINT=&quot;mysql://$username:$password@tcp(127.0.0.1:3306)/$database&quot;
+# PostgreSQL
 export K3S_DATASTORE_ENDPOINT=&quot;postgres://$username:$password@127.0.0.1:5432/$database?sslmode=disable&quot;
 </code></pre>
 <pre><code class="language-bash"># 使环境变量生效
 source /etc/profile
 </code></pre>
 <blockquote>
-<p>不禁用 SSL 连接的话后续安装并启动 K3s 时会报以下错误：</p>
+<p>PostgreSQL 连接不禁用 SSL 连接的话后续安装并启动 K3s 时会报以下错误：</p>
 <pre><code class="language-bash">...
 ...
 -- Unit k3s.service has begun starting up.  
@@ -439,8 +442,8 @@ vm-9-9-centos   Ready    control-plane,master   10h     v1.21.4+k3s1
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://senjianlu.com/2021/09/k3s-note-02/"
-                    title="K3s 学习（二）安装 Rancher Labs"><span>上一篇&nbsp;&nbsp;</span><i
+                <a href="https://senjianlu.com/2021/09/k3s-note-02-01/"
+                    title="K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
