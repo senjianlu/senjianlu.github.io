@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/tags/linux/</link>
     <description>Recent content in Linux on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用</title>
+      <link>https://senjianlu.com/2021/10/k3s-note-03/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/k3s-note-03/</guid>
+      <description>将 server + agent 的集群导入 Docker 安装的 Rancher 中以进行管理。 1、从面板导入现有集群 添加集群： 导入： 数据集群名词后创建： 复制命令前往集群执行： 我是在节点的主 server 节</description>
+    </item>
+    
+    <item>
+      <title>Nginx 学习（三）配置基础的用户登录验证以保护站点</title>
+      <link>https://senjianlu.com/2021/10/nginx-note-03/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/nginx-note-03/</guid>
+      <description>临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric</description>
+    </item>
     
     <item>
       <title>CentOS7 下的一些 iptables 实用配置</title>
@@ -56,7 +74,7 @@
     </item>
     
     <item>
-      <title>PostgreSQL 学习笔记 (四) 安装 plpythonu 以使用 Python3 语言编写函数</title>
+      <title>PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数</title>
       <link>https://senjianlu.com/2021/09/postgresql-note-04/</link>
       <pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate>
       
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</guid>
       <description>新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的</description>
-    </item>
-    
-    <item>
-      <title>Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置</title>
-      <link>https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</link>
-      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</guid>
-      <description>腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一</description>
-    </item>
-    
-    <item>
-      <title>Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题</title>
-      <link>https://senjianlu.com/2021/07/nginx-note-02/</link>
-      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/nginx-note-02/</guid>
-      <description>给网站套上 Cloudflare 防止被打和缓存部分静态文件应该是常规操作了，但是想起来之前好像见到过的帖子：第一次知道 HTTPS 会暴露服务器 IP，在新的服务器上试验了一</description>
     </item>
     
   </channel>
