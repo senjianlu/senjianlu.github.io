@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/docker/</link>
     <description>Recent content in Docker on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法</title>
+      <link>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</link>
+      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</guid>
+      <description>新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的</description>
+    </item>
     
     <item>
       <title>Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2020/01/hugo-github-pages/</guid>
       <description>确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo+GitHub Pages 免费搭建个静</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下 Nginx&#43;uWSGI 配置 Django 项目</title>
-      <link>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</guid>
-      <description>服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编</description>
     </item>
     
   </channel>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        CentOS7 下建立 SWaP 分区以增加虚拟内存 - 森见鹿的博客 
+        CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题 - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&amp;hellip;&amp;hellip; 看了下现在的这些容器基本都" />
+  <meta name="description" content="这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>CentOS7 下建立 SWaP 分区以增加虚拟内存 - 森见鹿的博客 </title>
+  <title>CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题 - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="CentOS7 下建立 SWaP 分区以增加虚拟内存" />
-<meta property="og:description" content="明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&hellip;&hellip; 看了下现在的这些容器基本都" />
+  <meta property="og:title" content="CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题" />
+<meta property="og:description" content="这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/07/centos7-swap/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-12T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-07-12T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-06T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-10-06T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="CentOS7 下建立 SWaP 分区以增加虚拟内存">
-<meta itemprop="description" content="明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&hellip;&hellip; 看了下现在的这些容器基本都"><meta itemprop="datePublished" content="2021-07-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-07-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="710">
-<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CentOS7 下建立 SWaP 分区以增加虚拟内存"/>
-<meta name="twitter:description" content="明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&hellip;&hellip; 看了下现在的这些容器基本都"/>
+<meta itemprop="name" content="CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题">
+<meta itemprop="description" content="这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式："><meta itemprop="datePublished" content="2021-10-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-10-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="239">
+<meta itemprop="keywords" content="Docker," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题"/>
+<meta name="twitter:description" content="这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式："/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -292,8 +292,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2021/07/centos7-swap/"
-    >CentOS7 下建立 SWaP 分区以增加虚拟内存</a
+    href="/2021/10/centos7-docker-zabbix-fix-font/"
+    >CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题</a
   >
 </h1>
 
@@ -301,8 +301,8 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/07/centos7-swap/" class="article-date">
-  <time datetime="2021-07-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-12</time>
+<a href="https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/" class="article-date">
+  <time datetime="2021-10-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-06</time>
 </a>
 </span>
 <span class="article-category">
@@ -311,59 +311,48 @@
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
+    <a class="article-tag-link" href="/tags/docker/"> Docker </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-swap/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/10/centos7-docker-zabbix-fix-font/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 710字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 239字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&hellip;&hellip;<br>
-看了下现在的这些容器基本都是做端口流量转发的任务，内存交换量不需要很大，想试着加下虚拟内存看看能不能解决问题，毕竟 2H8G 的服务器就要到 70 多一个月了，能省则省。</p>
+      <p>这次迁移又需要修复一下中文字体的问题，记录一下。</p>
 <hr>
-<p>1、因为 SWaP 分区相当于是将硬盘作为内存使用，硬盘 IO 速率如果不行会很影响程序运行，所以请先确定虚拟内存是否能满足你的需要。<br>
-因我的需求是新增内存以运行更多的 Docker 容器，起一个样例并循环调用查看它的运行情况。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/IO.gif" alt=""><br>
-粗略可以看到大概为 4 kB/s 的内存速率要求&hellip;&hellip;<br>
-再野鸡的 VPS 钻石盘都能满足，但还是来看下腾讯云硬盘 IO：</p>
-<pre><code class="language-bash">time dd if=/dev/zero of=/test.disk bs=8k count=300
+<p>1、下载有中文的字体<br>
+前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211006183841.png" alt=""><br>
+因此先下载中文字体：</p>
+<pre><code class="language-bash">wget https://www.wfonts.com/download/data/2014/06/01/microsoft-yahei/chinese.msyh.ttf
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210712200605.png" alt="硬盘 IO"><br>
-肯定能满足要求了。</p>
-<p>2、创建 SWaP 分区。<br>
-首先查看是否是否已经有 SWaP 分区存在：</p>
-<pre><code class="language-bash"># 一般情况下 SWaP 分区操作都在服务器根目录下执行
-cd /
-free -m
+<p>2、将中文字体拷贝到 Docker 容器内<br>
+首先确定 Zabbix Web Nginx 容器的 ID：</p>
+<pre><code class="language-bash">docker ps -a
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210712200902.png" alt="SWaP"><br>
-如果有的话先删除，执行以下命令清理分区：</p>
-<pre><code class="language-bash"># swapfile 为你的分区文件名
-swapoff /swapfile
+<p>我这里为 60d60911c8a7，进行拷贝：</p>
+<pre><code>docker cp chinese.msyh.ttf 60d60911c8a7:/usr/share/zabbix/assets/fonts
 </code></pre>
-<p>如果没有既存分区或者分区清理完毕以后，便可以开始着手增加分区了。<br>
-网上一般都建议增加 1 到 2 倍原内存的虚拟内存空间，实际上还是得看你是否真的需要这些内存和其性能是否能满足你的要求，部分情况下堆积过多缓存在 SWaP 会严重影响程序运行，在最边缘的扇区 IO 速率甚至会降到不到 1mB/s 以下，详细可以参照这篇讨论：<a href="https://unix.stackexchange.com/questions/45673/how-can-swapoff-be-that-slow">How can swapoff be that slow?</a><br>
-回归正题，因为我对内存速率一点要求都没有，因此直接扩容到当前内存的 2 倍大小，</p>
-<pre><code class="language-bash"># 创建分区文件，我的分区文件名为 swapfile
-sudo dd if=/dev/zero of=/swapfile bs=1k count=7578000
-# 建立 SWaP
-mkswap /swapfile
-# 启动 SWaP
-swapon /swapfile
-# 查看虚拟内存是否创建成功
-free -m
+<p>3、进去容器修改配置文件<br>
+进入容器：</p>
+<pre><code class="language-bash">docker exec -it 60d60911c8a7 /bin/bash
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210712203115.png" alt="创建成功"><br>
-创建成功。</p>
-<p>3、开机自动启动 SWaP 分区。<br>
-只需要修改 /etc/fstab 文件，在最后添加一行内容即可。</p>
-<pre><code class="language-bash">sudo chmod 777 /etc/fstab
-sed -i '$a /swapfile swap swap defaults 0 0' /etc/fstab
+<p>确定字体拷贝成功和打开配置文件：</p>
+<pre><code class="language-bash"># 确定字体文件拷贝成功
+cd /usr/share/zabbix/assets/fonts/
+ls
+# 打开配置文件
+vi /usr/share/zabbix/include/defines.inc.php
 </code></pre>
-<p>至此，SWaP 分区创建成功，可以重启看下配置是否均生效。</p>
+<p>如下修改后保存（字体文件名去掉 .ttf）：
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211006202607.png" alt=""><br>
+<em>注：大概在 67 行左右。</em></p>
+<p>4、页面刷新<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211006202817.png" alt=""></p>
+<p>结束。</p>
 
     </div>
     <div class="article-footer">
@@ -371,7 +360,7 @@ sed -i '$a /swapfile swap swap defaults 0 0' /etc/fstab
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/07/centos7-swap/" title="CentOS7 下建立 SWaP 分区以增加虚拟内存" target="_blank" rel="external">https://senjianlu.com/2021/07/centos7-swap/</a>
+      <a href="https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/" title="CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题" target="_blank" rel="external">https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -388,14 +377,9 @@ sed -i '$a /swapfile swap swap defaults 0 0' /etc/fstab
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/" title="日语学习 「こそあど系統」"><i
+                <a href="https://senjianlu.com/2021/10/k3s-note-03/" title="K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
-            </li>
-            <li class="next">
-                <a href="https://senjianlu.com/2021/07/nginx-note-02/"
-                    title="Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题"><span>上一篇&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
         </ul>
