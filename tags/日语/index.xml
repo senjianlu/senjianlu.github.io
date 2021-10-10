@@ -11,6 +11,24 @@
     
     
     <item>
+      <title>K3s 学习（四）CentOS7 下挂载腾讯云 COS 为 K3s 集群提供持久化存储 PV</title>
+      <link>https://senjianlu.com/2021/10/k3s-note-04/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/k3s-note-04/</guid>
+      <description>考虑到之后的项目有日志记录和分析的功能需求，提前准一下用以日志存储的 PV，虽然说挂载到服务器本地路径也可以，但这样的话服务器到期时就会有点麻</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下使用 Docker 的一些实用指令</title>
+      <link>https://senjianlu.com/2021/10/centos7-docker/</link>
+      <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-docker/</guid>
+      <description>官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`</description>
+    </item>
+    
+    <item>
       <title>CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题</title>
       <link>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</link>
       <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/07/linux-command-01/</guid>
       <description>Linux 命令笔记，方便查找。 系统硬件 1、内存 SWaP 查看： free -m 2、系统内核查看： uname -a 3、SELinux 关闭： # 临时关闭 setenforce 0 修改 /etc/selinux/config 文件： # 永久关闭 vi /etc/selinux/config 将 SELINUX=enforcing</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下 MinIO 的安装和配置</title>
-      <link>https://senjianlu.com/2021/07/centos7-minio/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/centos7-minio/</guid>
-      <description>起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统</title>
-      <link>https://senjianlu.com/2021/07/centos7-docker-zabbix/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/centos7-docker-zabbix/</guid>
-      <description>又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的</description>
     </item>
     
   </channel>

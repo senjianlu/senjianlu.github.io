@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        森见鹿的博客 </title>
+        CentOS7 下使用 Docker 的一些实用指令 - 森见鹿的博客 
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>森见鹿的博客 </title>
+  <title>CentOS7 下使用 Docker 的一些实用指令 - 森见鹿的博客 </title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" title="森见鹿的博客 " />
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="学习笔记" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+  <meta property="og:title" content="CentOS7 下使用 Docker 的一些实用指令" />
+<meta property="og:description" content="官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2021/10/centos7-docker/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-07T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-10-07T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="学习笔记">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="学习笔记"/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="CentOS7 下使用 Docker 的一些实用指令">
+<meta itemprop="description" content="官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`"><meta itemprop="datePublished" content="2021-10-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-10-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="41">
+<meta itemprop="keywords" content="Docker,Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7 下使用 Docker 的一些实用指令"/>
+<meta name="twitter:description" content="官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -279,92 +284,93 @@
 
     
     
-<main class="main" role="main">
-    <article class="article article-categories article-type-list" itemscope="">
-        <header class="article-header">
-            <h1 itemprop="name" class="hidden-xs">学习笔记</h1>
-            <p class="text-muted hidden-xs">共 3 个分类</p>
-            <nav role="navigation" id="nav-main" class="okayNav">
-                <ul>
-                    <li><a href="/categories/">All</a></li>
-                    <li><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li>
-                    <li><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/">教程翻新</a></li>
-                    <li><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">踩坑记录</a></li>
-                </ul>
-            </nav>
-        </header>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/10/centos7-docker/"
+    >CentOS7 下使用 Docker 的一些实用指令</a
+  >
+</h1>
+
+      <div class="article-meta">
         
-        <div class="article-body">
-            <div class="panel panel-default b-no">
-                <div class="panel-heading" role="tab">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapse078425eaf316a180b0989442e53f920b" aria-expanded="true">
-                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>学习笔记
-                        </a>
-                        <small class="text-muted">(Total17 articles)</small>
-                    </h4>
-                </div>
-                <div id="collapse078425eaf316a180b0989442e53f920b" class="panel-collapse collapse in" role="tabpanel"
-                    aria-labelledby="heading078425eaf316a180b0989442e53f920b">
-                    <div class="panel-body">
-                        <div class="collection"><a href="https://senjianlu.com/2021/10/k3s-note-04/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-10-10 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-10-10
-    </time>K3s 学习（四）CentOS7 下挂载腾讯云 COS 为 K3s 集群提供持久化存储 PV
-</a><a href="https://senjianlu.com/2021/10/k3s-note-03/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-10-01 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-10-01
-    </time>K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用
-</a><a href="https://senjianlu.com/2021/10/nginx-note-03/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-10-01 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-10-01
-    </time>Nginx 学习（三）配置基础的用户登录验证以保护站点
-</a><a href="https://senjianlu.com/2021/09/k3s-note-02-02/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-09-29 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-09-29
-    </time>K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）
-</a><a href="https://senjianlu.com/2021/09/k3s-note-02-01/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-09-28 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-09-28
-    </time>K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）
-</a><a href="https://senjianlu.com/2021/09/k3s-note-01/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-09-27 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-09-27
-    </time>K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点
-</a><a href="https://senjianlu.com/2021/09/postgresql-note-04/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-09-25 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-09-25
-    </time>PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数
-</a><a href="https://senjianlu.com/2021/07/linux-command-01/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-07-20
-    </time>Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭
-</a><a href="https://senjianlu.com/2021/07/nginx-note-02/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-07-16 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-07-16
-    </time>Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题
-</a><a href="https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-06-20 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-06-20
-    </time>日语学习 「こそあど系統」
-</a><a href="https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-06-19 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-06-19
-    </time>日语学习 格助词「を」在自动词前的使用
-</a><a href="https://senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-06-18 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-06-18
-    </time>日语学习 日语词类划分整理
-</a><a href="https://senjianlu.com/2021/06/japanese-shi-yi-bei-dong/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2021-06-17 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2021-06-17
-    </time>日语学习 使役、被动和使役被动
-</a><a href="https://senjianlu.com/2020/12/nginx-note-01/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-12-31 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-12-31
-    </time>Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别
-</a><a href="https://senjianlu.com/2020/02/postgresql-note-03/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-02-03
-    </time>PostgreSQL 学习笔记（三）用户权限的管理控制
-</a><a href="https://senjianlu.com/2020/02/postgresql-note-02/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-02-03
-    </time>PostgreSQL 学习笔记（二）psql 工具的使用
-</a><a href="https://senjianlu.com/2020/02/postgresql-note-01/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2020-02-02 00:00:00 &#43;0000 UTC" itemprop="datePublished" style="margin-right: 5px;">2020-02-02
-    </time>PostgreSQL 学习笔记（一） 数据库的安装与环境配置
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://senjianlu.com/2021/10/centos7-docker/" class="article-date">
+  <time datetime="2021-10-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-07</time>
 </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/docker/"> Docker </a>
+    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/10/centos7-docker/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 41字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><a href="https://docs.docker.com/engine/reference/commandline/ps/">官方文档</a><br>
+持续更新。</p>
+<hr>
+<p>1、停止所有的容器</p>
+<pre><code class="language-bash">docker stop $(docker ps -aq)
+</code></pre>
+<p>2、停止指定镜像的容器</p>
+<pre><code class="language-bash">docker stop `docker ps -aq --filter ancestor=$image`
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2021/10/centos7-docker/" title="CentOS7 下使用 Docker 的一些实用指令" target="_blank" rel="external">https://senjianlu.com/2021/10/centos7-docker/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/" title="CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://senjianlu.com/2021/10/k3s-note-04/"
+                    title="K3s 学习（四）CentOS7 下挂载腾讯云 COS 为 K3s 集群提供持久化存储 PV"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
         </div>
-    </article>
+    </div>
+</nav>
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
     <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
@@ -439,6 +445,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>

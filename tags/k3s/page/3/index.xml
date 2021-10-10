@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/tags/k3s/</link>
     <description>Recent content in K3s on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/k3s/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Windows 下 PicGo&#43;GitHub 搭建个人图床工具</title>
+      <link>https://senjianlu.com/2020/01/picgo-github/</link>
+      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/01/picgo-github/</guid>
+      <description>虽然也有免费的可以用，但是既然软路由已经配置了方便的上网环境，GitHub 访问起来比以前便利了许多，那就把图床直接部署在 GitHub 上好了，虽然隐私性</description>
+    </item>
+    
+    <item>
+      <title>Windows 下 Hugo&#43;GitHub Pages 搭建静态博客</title>
+      <link>https://senjianlu.com/2020/01/hugo-github-pages/</link>
+      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/01/hugo-github-pages/</guid>
+      <description>确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo+GitHub Pages 免费搭建个静</description>
+    </item>
     
     <item>
       <title>CentOS7 下 Nginx&#43;uWSGI 配置 Django 项目</title>

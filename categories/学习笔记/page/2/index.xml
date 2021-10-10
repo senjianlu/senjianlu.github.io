@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 学习笔记 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下 MinIO 的安装和配置</title>
+      <link>https://senjianlu.com/2021/07/centos7-minio/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/centos7-minio/</guid>
+      <description>起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统</title>
+      <link>https://senjianlu.com/2021/07/centos7-docker-zabbix/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/centos7-docker-zabbix/</guid>
+      <description>又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的</description>
+    </item>
     
     <item>
       <title>Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法</title>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2020/01/pve-lede-ikuai/</guid>
       <description>起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200</description>
-    </item>
-    
-    <item>
-      <title>Windows 下 PicGo&#43;GitHub 搭建个人图床工具</title>
-      <link>https://senjianlu.com/2020/01/picgo-github/</link>
-      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/picgo-github/</guid>
-      <description>虽然也有免费的可以用，但是既然软路由已经配置了方便的上网环境，GitHub 访问起来比以前便利了许多，那就把图床直接部署在 GitHub 上好了，虽然隐私性</description>
-    </item>
-    
-    <item>
-      <title>Windows 下 Hugo&#43;GitHub Pages 搭建静态博客</title>
-      <link>https://senjianlu.com/2020/01/hugo-github-pages/</link>
-      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/hugo-github-pages/</guid>
-      <description>确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo+GitHub Pages 免费搭建个静</description>
     </item>
     
   </channel>
