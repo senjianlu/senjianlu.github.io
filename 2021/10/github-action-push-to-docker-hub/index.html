@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        森见鹿的博客 </title>
+        GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub - 森见鹿的博客 
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。 以 rab_python_packages 项目为例，文件结构也可直接参" />
   <meta name="generator" content="Hugo 0.83.1 with theme pure" />
-  <title>森见鹿的博客 </title>
+  <title>GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub - 森见鹿的博客 </title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://senjianlu.com/index.xml" title="森见鹿的博客 " />
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="森见鹿的博客 " />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://senjianlu.com/" />
+  <meta property="og:title" content="GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub" />
+<meta property="og:description" content="首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。 以 rab_python_packages 项目为例，文件结构也可直接参" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2021/10/github-action-push-to-docker-hub/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-10T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-10-10T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="森见鹿的博客 ">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="森见鹿的博客 "/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub">
+<meta itemprop="description" content="首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。 以 rab_python_packages 项目为例，文件结构也可直接参"><meta itemprop="datePublished" content="2021-10-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-10-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="575">
+<meta itemprop="keywords" content="Docker," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub"/>
+<meta name="twitter:description" content="首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。 以 rab_python_packages 项目为例，文件结构也可直接参"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -65,7 +70,7 @@
   
   
 
-  <body class="main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="slimContent">
       <div class="navbar-header">
         <div class="profile-block text-center">
@@ -279,283 +284,168 @@
 
     
     
-
-<main class="main" role="main">
-  
-  <div class="content article-list">
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
     
-    
-    
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
+    <div class="article-header">
+      <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/05/hugo-auto-build/"
-    >Windows 下 Hugo 静态博客一键推送发布</a
+    href="/2021/10/github-action-push-to-docker-hub/"
+    >GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub</a
   >
 </h1>
 
-      </div>
-      <div class="article-entry text-muted" itemprop="description">为了在东京奥运会期间应对临时封路，紧跟日本人赶了2个月的功能，终于能休息一阵了 :) 虽然是因为奥运会推迟而不是因为开发完成 总之又能学点新东西了，</div>
-      <p class="article-meta">
+      <div class="article-meta">
+        
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/05/hugo-auto-build/" class="">
-  <time datetime="2020-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-05-17</time>
+<a href="https://senjianlu.com/2021/10/github-action-push-to-docker-hub/" class="article-date">
+  <time datetime="2021-10-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-10</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
   <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/docker/"> Docker </a>
+  </span>
 
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 606字</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/10/github-action-push-to-docker-hub/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 575字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/02/postgresql-note-03/"
-    >PostgreSQL 学习笔记（三）用户权限的管理控制</a
-  >
-</h1>
-
       </div>
-      <div class="article-entry text-muted" itemprop="description">在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/02/postgresql-note-03/" class="">
-  <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1176字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/02/postgresql-note-02/"
-    >PostgreSQL 学习笔记（二）psql 工具的使用</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/02/postgresql-note-02/" class="">
-  <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 375字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/02/postgresql-note-01/"
-    >PostgreSQL 学习笔记（一） 数据库的安装与环境配置</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">由于在学校针对作业和毕设 MySQL 已经很够用了，因此也没有做更多对数据库的功课，只知道 Oracle 数据库适合企业，MySQL 适合小型项目，但是工作以后的第一个</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/02/postgresql-note-01/" class="">
-  <time datetime="2020-02-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-02</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1304字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/01/pve-synology/"
-    >PVE 下黑群晖的安装和硬盘直通组 RAID1</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/pve-synology/" class="">
-  <time datetime="2020-01-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-22</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%A1%AC%E4%BB%B6/"> 硬件 </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1442字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/01/pve-lede-ikuai/"
-    >PVE 下 LEDE&#43;爱快 双软路由部署</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/pve-lede-ikuai/" class="">
-  <time datetime="2020-01-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-13</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%A1%AC%E4%BB%B6/"> 硬件 </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3645字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/01/picgo-github/"
-    >Windows 下 PicGo&#43;GitHub 搭建个人图床工具</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">虽然也有免费的可以用，但是既然软路由已经配置了方便的上网环境，GitHub 访问起来比以前便利了许多，那就把图床直接部署在 GitHub 上好了，虽然隐私性</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/picgo-github/" class="">
-  <time datetime="2020-01-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-12</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 577字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article></div>
-  
-<nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    <ul class="pager pull-left"><li class="prev">
-        <a href="/page/5/">
-          <i class="icon icon-angle-left"></i>
-          
-        </a>
-      </li><li class="next">
-        <a href="/page/7/">
-          <i class="icon icon-angle-right"></i>
-          
-        </a>
-      </li>
-    </ul>
-    <div class="total-article bar-right">
-      Page:6/7
     </div>
-  </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。</p>
+<hr>
+<p>以 <a href="https://github.com/senjianlu/rab_python_packages">rab_python_packages</a> 项目为例，文件结构也可直接参考。</p>
+<p><strong>1、建立 Dockerfile 文件</strong><br>
+文件内容：</p>
+<pre><code class="language-Dockerfile"># 基础镜像系统版本为 CentOS:7
+FROM centos:7
+
+# 维护者信息
+LABEL maintainer=&quot;Rabbir admin@cs.cheap&quot;
+
+# Docker 内用户切换到 root
+USER root
+# 设置时区为东八区
+RUN echo &quot;Asia/shanghai&quot; &gt; /etc/timezone
+
+# 在基础镜像内安装 Git 和 Python3
+WORKDIR /root
+RUN yum -y install git
+RUN curl -s https://gitee.com/senjianlu/one-click-scripts/raw/main/CentOS7%20%E4%B8%8B%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%20Python3%20%E7%8E%AF%E5%A2%83/install.sh | bash
+
+# 在 /root/GitHub 目录下克隆 rab_python_packages 项目
+RUN mkdir /root/GitHub
+RUN mkdir /root/GitHub/rab_python_packages
+WORKDIR /root/GitHub/rab_python_packages
+# 将宿主机当前目录下的所有文件拷贝至镜像内的 /root/GitHub/rab_python_packages 文件夹中
+COPY . .
+
+# 配置环境
+RUN python3 rab_env.py
+RUN python3 rab_env.py rab_chrome
+
+# 删除无用文件
+RUN rm -r chromedriver_linux64.zip
+RUN rm -r google-chrome-stable_current_x86_64.rpm
+
+# 启动容器时不指定命令则执行以下的默认命令，只取最后一行 CMD 命令生效
+CMD cd /root/GitHub/rab_python_packages &amp;&amp; python3 rab_logging.py
+</code></pre>
+<p><strong>2、测试 Dockerfile</strong><br>
+在 Dockerfile 同目录下执行：</p>
+<pre><code class="language-bash"># 镜像名自行替换
+docker build -t rabbir/rab_python_packages:latest .
+</code></pre>
+<p><strong>3、建立 GitHub Action 流程</strong><br>
+在项目根目录下新建 .github/workflows/ 文件夹并创建 main.yaml 文件：</p>
+<pre><code class="language-bash">mkdir .github
+mkdir .github/workflows
+cd .github/workflows
+vi main.py
+</code></pre>
+<p>文件内容：<br>
+<em>注：以下文件可以直接复制使用，只需要更改倒数第 4 行的镜像名即可。</em></p>
+<pre><code class="language-yaml"># 将项目构建镜像并发布至 Docker Hub
+name: CI to Docker Hub
+
+# 在 Push 到 main 分支后启动该流程
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 在 GitHub Action 的服务器上 Check Out 源码（整体流程结束后会重置服务器环境因此不需要担心泄露）
+      - name: Check Out Repo 
+        uses: actions/checkout@v2
+      # 登录至 Docker Hub，账户密码需要在 Settings -&gt; Secrets 中设置
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      # 设置 Buildx 为构建镜像做准备
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+      # 构建并发布（执行项目路径下的 Dockerfile 文件）
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/rab_python_packages:latest
+      # 完成
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
+</code></pre>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2021/10/github-action-push-to-docker-hub/" title="GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub" target="_blank" rel="external">https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2021/10/k3s-note-04/" title="K3s 学习（四）CentOS7 下挂载腾讯云 COS 为 K3s 集群提供持久化存储 PV"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
 </nav>
 
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -632,6 +522,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>

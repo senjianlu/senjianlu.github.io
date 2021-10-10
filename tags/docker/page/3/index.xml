@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/docker/</link>
     <description>Recent content in Docker on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 07 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Oct 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PVE 下 LEDE&#43;爱快 双软路由部署</title>
+      <link>https://senjianlu.com/2020/01/pve-lede-ikuai/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/01/pve-lede-ikuai/</guid>
+      <description>起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200</description>
+    </item>
     
     <item>
       <title>Windows 下 PicGo&#43;GitHub 搭建个人图床工具</title>
