@@ -24,7 +24,7 @@
   
   
   <meta name="description" content="临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric" />
-  <meta name="generator" content="Hugo 0.83.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.88.1 with theme pure" />
   <title>Nginx 学习（三）配置基础的用户登录验证以保护站点 - 森见鹿的博客 </title>
   
   
@@ -36,12 +36,12 @@
 <meta property="og:description" content="临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://senjianlu.com/2021/10/nginx-note-03/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-10-01T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-10-01T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2021-10-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-01T00:00:00+00:00" />
 
 <meta itemprop="name" content="Nginx 学习（三）配置基础的用户登录验证以保护站点">
-<meta itemprop="description" content="临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric"><meta itemprop="datePublished" content="2021-10-01T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-10-01T00:00:00&#43;00:00" />
+<meta itemprop="description" content="临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric"><meta itemprop="datePublished" content="2021-10-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-10-01T00:00:00+00:00" />
 <meta itemprop="wordCount" content="223">
 <meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nginx 学习（三）配置基础的用户登录验证以保护站点"/>
@@ -166,8 +166,8 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">17</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">22</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">18</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">23</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">6</span></li>
         </ul>
     </div>
@@ -182,6 +182,10 @@
                     class="tag-list-count">5</span></li>
             
             
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/game/" class="tag-list-link">game</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/java/" class="tag-list-link">java</a><span
                     class="tag-list-count">1</span></li>
             
@@ -190,8 +194,12 @@
                     class="tag-list-count">5</span></li>
             
             
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/lgsm/" class="tag-list-link">lgsm</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">17</span></li>
+                    class="tag-list-count">18</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
@@ -211,7 +219,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">3</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
@@ -226,6 +234,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/10/openwrt-note-01/" class="title">定制 OpenWrt 软路由系统（一）从源码开始编译第一个系统固件</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-10-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-23</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -263,16 +281,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-10-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-06</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/10/k3s-note-03/" class="title">K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-10-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-01</time>
                     </p>
                 </div>
             </li>
