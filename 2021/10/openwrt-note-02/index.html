@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        CentOS7 下 MinIO 的安装和配置 - 森见鹿的博客 
+        定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘" />
+  <meta name="description" content="首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件" />
   <meta name="generator" content="Hugo 0.88.1 with theme pure" />
-  <title>CentOS7 下 MinIO 的安装和配置 - 森见鹿的博客 </title>
+  <title>定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="CentOS7 下 MinIO 的安装和配置" />
-<meta property="og:description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘" />
+  <meta property="og:title" content="定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash" />
+<meta property="og:description" content="首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/07/centos7-minio/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-07-19T00:00:00+00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/10/openwrt-note-02/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-24T00:00:00+00:00" />
 
-<meta itemprop="name" content="CentOS7 下 MinIO 的安装和配置">
-<meta itemprop="description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘"><meta itemprop="datePublished" content="2021-07-19T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-07-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="823">
-<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CentOS7 下 MinIO 的安装和配置"/>
-<meta name="twitter:description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘"/>
+<meta itemprop="name" content="定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash">
+<meta itemprop="description" content="首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件"><meta itemprop="datePublished" content="2021-10-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-10-24T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1106">
+<meta itemprop="keywords" content="硬件," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash"/>
+<meta name="twitter:description" content="首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -300,8 +300,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2021/07/centos7-minio/"
-    >CentOS7 下 MinIO 的安装和配置</a
+    href="/2021/10/openwrt-note-02/"
+    >定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash</a
   >
 </h1>
 
@@ -309,120 +309,127 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/07/centos7-minio/" class="article-date">
-  <time datetime="2021-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-19</time>
+<a href="https://senjianlu.com/2021/10/openwrt-note-02/" class="article-date">
+  <time datetime="2021-10-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-24</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
+  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
+    <a class="article-tag-link" href="/tags/%E7%A1%AC%E4%BB%B6/"> 硬件 </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-minio/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/10/openwrt-note-02/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 823字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1106字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。</p>
+      <p>首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件）都取消勾选、重新编译出干净的系统，再进行 Clash 的安装。</p>
 <blockquote>
-<p><strong>顺便把 BuyVM 挂载硬盘的流程一起记下：</strong><br>
-1、购买后去<a href="https://manage.buyvm.net">控制台</a>把 Block Storage 附加到（Attached To）对应的 VPS 上。<br>
-2、在 VPS 里查看数据块编号，类似 scsi-0BUYVM_SLAB_VOLUME-1331 的就是存储块。</p>
-<pre><code class="language-bash">ls /dev/disk/by-id/
-</code></pre>
-<p>3、格式化。</p>
-<pre><code class="language-bash">mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-1331
-</code></pre>
-<p>4、新建文件夹并挂载，这里以根目录下的 /storage 为例：</p>
-<pre><code class="language-bash">mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-1331 /storage
-</code></pre>
-<p>5、设置开机自动挂载，完成。</p>
-<pre><code class="language-bash">echo '/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-1331 /storage ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
-</code></pre>
+<p>顺带贴一下 Clash 和 OpenClash 这两个插件的区别（来源于<a href="https://www.youtube.com/watch?v=B6ULhXrk4CE">悟空的 YouTube 视频</a>）：
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024133520.png" alt="区别"><br>
+这里我的机场主要都是 SSR 协议，因此必须选择 clashr 的内核（目前 clashr 内核已经合并到了 clash 内核内），而能更改内核的 Clash 路由器插件也只有 Clash 这个版本的了。</p>
 </blockquote>
 <hr>
-<p>MinIO 的安装也没有任何难度，因为有现成编译好的版本，直接下载运行就行了。</p>
-<p>1、我是用的是 CentOS7 系统，所以选择 linux-amd64 版本：</p>
-<pre><code class="language-bash">wget https://dl.minio.io/server/minio/release/linux-amd64/minio
+<p><strong>1、首先重新配置软路由系统镜像内的插件</strong></p>
+<pre><code class="language-bash"># 清空之前的配置
+rm -rf ./tmp &amp;&amp; rm -rf .config
+# 生成配置文件
+make menuconfig
 </code></pre>
-<p>2、下载下来的文件加上权限就能运行，但是为了方便管理还是放到 /usr/local 路径下：</p>
-<pre><code class="language-bash">mv minio /usr/local/
-chmod +x /usr/local/minio
+<p>对照这页面上的插件按钮和左下角的链接，在 LuCI → Applications 内将不需要的插件一个个删除，嫌麻烦的话可以直接参照下方列表进行删除：</p>
+<pre><code class="language-bash"># 服务 → 上网时间控制
+luci-app-accesscontrol
+# 服务 → 广告屏蔽大师 Plus+
+luci-app-adbyby-plus
+# 服务 → 动态 DNS
+luci-app-ddns
+# 网络存储 → qBittorrent
+luci-app-qbittorrent
+# 服务 → 解锁网易云灰色歌曲
+luci-app-unblockmusic
+# 服务 → UPnP
+luci-app-upnp
+# 服务 → UU 游戏加速器
+luci-app-uugamebooster
+# 服务 → KMS 服务器
+luci-app-vlmcsd
+# 服务 → 网络唤醒
+luci-app-wol
+# 服务 → 迅雷快鸟
+luci-app-xlnetacc
 </code></pre>
-<p>测试启动一下：</p>
-<pre><code class="language-bash">/usr/local/minio server /stroage --address &quot;:9000&quot; --console-address &quot;:9001&quot;
+<p>之后保存退出。</p>
+<p><strong>2、二次编译</strong><br>
+由于我是在 WSL2 下进行编译的，防止存在带空格的 Windows 目录而导致的编译失败，使用以下命令：</p>
+<pre><code class="language-bash">PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j$(($(nproc) + 1)) V=s
 </code></pre>
-<p>启动成功，默认账号密码都是：minioadmin<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210719212837.png" alt="启动成功"></p>
-<p>3、修改账号密码。<br>
-最新版本的 MinIO 已经停用从配置文件中读取账号密码启动的功能，因此现在只能将用户信息配置在系统的环境变量中。<br>
-以下命令仅可用来测试，在终端关闭后就会失效。</p>
-<pre><code class="language-bash">export MINIO_ROOT_USER=username
-export MINIO_ROOT_PASSWORD=password
+<p><strong>3、安装新编译后的系统</strong><br>
+写成一个新的启动盘 disk-2：</p>
+<pre><code class="language-bash">./img2kvm openwrt-x86-64-generic-squashfs-combined-efi.img 103 vm-103-disk-2
 </code></pre>
-<p>永久配置请参照这个命令，修改 /etc/profile 文件：</p>
-<pre><code class="language-bash">vi /etc/profile
-</code></pre>
-<p>并在空白处添加：</p>
-<pre><code class="language-bash">export MINIO_ROOT_USER=username
-export MINIO_ROOT_PASSWORD=password
-</code></pre>
-<p>使其生效：</p>
-<pre><code class="language-bash">source /etc/profile
-</code></pre>
-<p>4、开机启动。<br>
-这里用最简单的方法实现开机启动：</p>
-<pre><code class="language-bash">crontab -e
-</code></pre>
-<pre><code class="language-bash"># MinIO 开机启动
-# . /etc/profile; 作用为先读取环境变量，不配置无法读取账号密码。
-@reboot . /etc/profile;/usr/local/minio server /storage --address &quot;:9000&quot; --console-address &quot;:9001&quot;
-</code></pre>
-<pre><code class="language-bash">service crond restart
-</code></pre>
+<p>之后更改虚拟机的引导顺序为使用新盘启动，然后<strong>将软路由断电重启</strong>。<br>
+重启后修改一下 IP 和用户密码，然后再重启，结束后再进去页面菜单应该就相当干净了：</p>
+<p><strong>4、配置 OpenWrt 系统的网络</strong><br>
+这一步仅供参考，目的是为了使这个 OpenWrt 系统能连上网以便进行后续 opkg 的升级和插件安装，每个人的网络拓跋不一样，我的前置路由是用以拨号的爱快，因此只需要修改下这个 OpenWrt 的网关和 DNS 即可：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024150746.png" alt="修改网关和 DNS"><br>
+再强制 DHCP 功能由其提供：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024150943.png" alt="强制 DHCP">
+成功联网：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024151020.png" alt="成功联网"></p>
+<p><strong>5、安装 Clash 插件</strong><br>
+将<a href="https://github.com/frainzy1477/luci-app-clash"> luci-app-clash </a>的<a href="https://github.com/frainzy1477/luci-app-clash/releases/download/v1.7.5.7/luci-app-clash_v1.7.5.7_all.ipk"> .ipk 安装文件</a>上传：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024145029.png" alt="上传"><br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024145225.png" alt="上传成功"><br>
+然后更新软件包以方便 Clash 下载依赖，点击刷新列表：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024214810.png" alt="点击刷新列表"></p>
 <blockquote>
-<p>如果重启后 MinIO 没有自启动的话，请自行查看 log，crontab 的配置头上可能需要加上 3 行：</p>
-<pre><code class="language-bash">SHELL=/bin/bash
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
-MAILTO=root
+<p>如果出现以下错误</p>
+<pre><code class="language-bash">...
+...
+Downloading https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/x86_64/luci/Packages.sig
+Signature check failed.
+Remove wrong Signature file.
+...
+...
 </code></pre>
-<p>这些是用来选择语言、可执行文件目录和用户的，具体情况还是看日志处理。</p>
+<p>在 OPKG 配置处用 # 注销掉 option check_signature 即可：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024153035.png" alt="注销"></p>
 </blockquote>
-<p>5、Nginx 上传文件的配置。<br>
-我至今遇到了两个错误：</p>
-<ol>
-<li><a href="https://blog.csdn.net/Twostring/article/details/111190396">413 Request Entity Too Large</a> 修改上传文件最大大小解决。</li>
-<li><a href="http://zuori.gitee.io/zaker/2020/08/04/Nginx%E9%85%8D%E7%BD%AEminio%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">文件下载报错 403 SignatureDoesNotMatch</a> 就很巧全是大家碰到过的问题，修改 headers 传递解决。</li>
-</ol>
-<p>最后的 Nginx 配置如下：</p>
-<pre><code class="language-bash">        ...
-
-        location / {
-            proxy_pass http://127.0.0.1:9001;
-            # MinIO 上传最大大小 1 GB
-            client_max_body_size 1024m;
-            proxy_http_version 1.1;
-            # headers 传递
-            proxy_set_header Host $host;
-            proxy_set_header Connection &quot;upgrade&quot;;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-Proto $scheme;
-        }
-
-        ...
-</code></pre>
-<p>至此结束。</p>
+<p>接着执行安装：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024214947.png" alt="执行安装"><br>
+看见日志最后有 Configuring luci-app-clash. 就说明安装成功了，如果失败的话请多尝试几次，我至少也是执行了 2 次才成功的。</p>
 <blockquote>
-<p>2021/07/21 更新<br>
-回滚以解决部分错误：<a href="https://senjianlu.com/2021/07/centos7-minio-error/">MinIO 9000 端口强制跳转 9001 端口且报 This &lsquo;admin&rsquo; API is not supported by server in &lsquo;mode-server-fs&rsquo;、An error occurred, please try again 和 The server side encryption configuration was not found 错误</a></p>
+<p>当前你也可以选择使用命令行执行安装：</p>
+<pre><code class="language-bash">mv /tmp/upload/luci-app-clash_v1.7.5.7_all.ipk /tmp
+cd /tmp
+opkg update
+opkg install luci-app-clash_v1.7.5.7_all.ipk
+# 无视部分报警安装（极端情况下可以使用，能用此命令安装成功基础功能也就能使用）
+opkg install luci-app-clash_v1.7.5.7_all.ipk --force-depends
+</code></pre>
 </blockquote>
+<p><strong>6、测试使用</strong><br>
+使用之前还需要配置下内核，安装包内不带内核需要自行下载：<a href="https://github.com/frainzy1477/clash_dev/releases/tag/v1.1.0">https://github.com/frainzy1477/clash_dev/releases/tag/v1.1.0</a><br>
+下载完成之后上传：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024215444.png" alt="上传"><br>
+接着从你的机场复制订阅链接并下载配置：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024215821.png" alt="下载配置"><br>
+选择并使用配置：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024215908.png" alt="使用配置"><br>
+再启用客户端：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024215947.png" alt="启用客户端"><br>
+此时就已经完成了 Clash 的启动了： 
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024220120.png" alt="外部地址"></p>
+<blockquote>
+<p>如果你出现国内网站能够访问，但是国外网站不能访问的情况，你又同时能确定线路没问题，那么请尝试更改本机获取 IP 的方式，从固定 IP 改为 DHCP 获取，或许能解决这个问题。</p>
+</blockquote>
+<p>结束。</p>
 
     </div>
     <div class="article-footer">
@@ -430,7 +437,7 @@ MAILTO=root
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/07/centos7-minio/" title="CentOS7 下 MinIO 的安装和配置" target="_blank" rel="external">https://senjianlu.com/2021/07/centos7-minio/</a>
+      <a href="https://senjianlu.com/2021/10/openwrt-note-02/" title="定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash" target="_blank" rel="external">https://senjianlu.com/2021/10/openwrt-note-02/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -447,13 +454,13 @@ MAILTO=root
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/07/centos7-docker-zabbix/" title="CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统"><i
+                <a href="https://senjianlu.com/2021/10/openwrt-note-01/" title="定制 OpenWrt 软路由系统（一）从源码开始编译第一个系统固件"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://senjianlu.com/2021/07/linux-command-01/"
-                    title="Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭"><span>上一篇&nbsp;&nbsp;</span><i
+                <a href="https://senjianlu.com/2021/10/pve-openwrt-ikuai/"
+                    title="PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
