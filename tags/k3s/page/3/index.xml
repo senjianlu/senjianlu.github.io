@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>CentOS7 下安装 Java 环境（JDK11）</title>
+      <link>https://senjianlu.com/2020/12/centos7-jdk/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/12/centos7-jdk/</guid>
+      <description>为了在 CentOS7 服务器下部署 Java Web 项目和使用 RabbitMQ 所留的笔记。 1、首先检查服务器当前 OpenJDK 版本，如果不是需要的版本请先卸载。 java -version 由于这次我们使用的是下载压缩包</description>
+    </item>
+    
+    <item>
       <title>CentOS7 下安装 RabbitMQ</title>
       <link>https://senjianlu.com/2020/12/centos7-install-rabbitmq/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
