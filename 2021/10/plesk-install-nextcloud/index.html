@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        PostgreSQL 学习笔记（二）psql 工具的使用 - 森见鹿的博客 
+        Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统 - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习" />
+  <meta name="description" content="维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且当初没有配置邮箱信息导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流程。 注" />
   <meta name="generator" content="Hugo 0.88.1 with theme pure" />
-  <title>PostgreSQL 学习笔记（二）psql 工具的使用 - 森见鹿的博客 </title>
+  <title>Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统 - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="PostgreSQL 学习笔记（二）psql 工具的使用" />
-<meta property="og:description" content="psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习" />
+  <meta property="og:title" content="Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统" />
+<meta property="og:description" content="维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且当初没有配置邮箱信息导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流程。 注" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2020/02/postgresql-note-02/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-02-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-02-03T00:00:00+00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/10/plesk-install-nextcloud/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-31T00:00:00+00:00" />
 
-<meta itemprop="name" content="PostgreSQL 学习笔记（二）psql 工具的使用">
-<meta itemprop="description" content="psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习"><meta itemprop="datePublished" content="2020-02-03T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-02-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="375">
-<meta itemprop="keywords" content="PostgreSQL," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PostgreSQL 学习笔记（二）psql 工具的使用"/>
-<meta name="twitter:description" content="psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习"/>
+<meta itemprop="name" content="Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统">
+<meta itemprop="description" content="维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且当初没有配置邮箱信息导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流程。 注"><meta itemprop="datePublished" content="2021-10-31T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-10-31T00:00:00+00:00" />
+<meta itemprop="wordCount" content="750">
+<meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统"/>
+<meta name="twitter:description" content="维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且当初没有配置邮箱信息导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流程。 注"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -304,8 +304,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/02/postgresql-note-02/"
-    >PostgreSQL 学习笔记（二）psql 工具的使用</a
+    href="/2021/10/plesk-install-nextcloud/"
+    >Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统</a
   >
 </h1>
 
@@ -313,68 +313,98 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/02/postgresql-note-02/" class="article-date">
-  <time datetime="2020-02-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-03</time>
+<a href="https://senjianlu.com/2021/10/plesk-install-nextcloud/" class="article-date">
+  <time datetime="2021-10-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-31</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
+    <a class="article-tag-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"> 网站建设 </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/postgresql-note-02/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/10/plesk-install-nextcloud/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 375字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 750字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。<br>
-既然是从头开始学习，当然也把这一部分再巩固下为佳。</p>
+      <p>维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且当初没有配置邮箱信息导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流程。</p>
 <hr>
-<p><strong>进入 psql 命令行的方法</strong></p>
-<pre><code class="language-bash">su - postgres
-psql
+<p><em>注：所有安装流程截图均已 Plesk 为例，不同虚拟主机请自行探索实际操作方法。</em></p>
+<p><strong>1、下载 Nextcloud 安装包</strong><br>
+官方下载地址：<a href="https://nextcloud.com/install/#instructions-server">Download for server</a><br>
+选择 Web Installer：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031174515.png" alt="Web Installer"><br>
+接着上传到虚拟主机空间内，放在对应域名文件夹的根目录下即可：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031175530.png" alt="上传"></p>
+<p><strong>2、配置域名解析和为安装清空至少 500MB 空间</strong><br>
+域名解析自行配置。<br>
+安装需要至少 500MB 空间，云服务商的空间监控一般是不包括垃圾站内文件的，但是实际垃圾站内容量也会算进虚拟空间总限制容量内，因此也请清空。</p>
+<blockquote>
+<p>像下图一样的情况实际上就是安装失败，日志内容大概为：</p>
+<pre><code class="language-log">Warning: ZipArchive::extractTo(): Invalid or uninitialized Zip object in /var/www/vhosts/.../.../setup-nextcloud.php on line 156  
+Warning: ZipArchive::close(): Invalid or uninitialized Zip object in /var/www/vhosts/.../.../setup-nextcloud.php on line 157  
+Warning: scandir(tmp-nextcloud1635676707/nextcloud): failed to open dir: No such file or directory in /var/www/vhosts/.../.../setup-nextcloud.php on line 161  
+Warning: scandir(): (errno 2): No such file or directory in /var/www/vhosts/.../.../setup-nextcloud.php on line 161  
+Warning: array_diff(): Expected parameter 1 to be an array, bool given in /var/www/vhosts/.../.../setup-nextcloud.php on line 161  
+Warning: Invalid argument supplied for foreach() in /var/www/vhosts/.../.../setup-nextcloud.php on line 161  
+Warning: rmdir(tmp-nextcloud1635676707/nextcloud): No such file or directory in /var/www/vhosts/.../.../setup-nextcloud.php on line 164  
 </code></pre>
-<p>当显示 postgres=# 时就说明已经进入 psql 工具下了。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203123949.png" alt="psql"></p>
-<hr>
-<h4 id="基础命令">基础命令</h4>
-<p>1、查看所有数据库</p>
-<pre><code class="language-bash">\l
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203124544.png" alt="1"></p>
-<p>2、切换数据库</p>
-<pre><code class="language-bash">\c testdb
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203124712.png" alt="2"></p>
-<p>3、查看此数据库下的表</p>
-<pre><code class="language-bash">\d
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203125045.png" alt="3" title="只能看到此当前数据库下的表！"></p>
-<p>4、查看表的属性</p>
-<pre><code class="language-bash">\d [表名]
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203125316.png" alt="4"><br>
-\d 的用法很多，不仅可以查看表，也可以查看表的索引或是带上通配符查询</p>
-<pre><code class="language-bash">\d student_pkey
-\d s*
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203130252.png" alt="4"></p>
-<p>而扩展的 \d 命令则包含了更多功能</p>
-<pre><code class="language-bash">\dn         # 列出所有schema
-\db         # 显示所有表空间
-\du         # 列出所有的数据库用户
-\dp [表名]  # 显示表权限分配情况
-......
-</code></pre>
-<p>更多的指令在输入 \d 后再补两个 Tab 键即可查询出来，同期 \t 之类的也类似。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203130855.png" alt="4"></p>
-<p>psql 的学习到这目前就够用了，因为开发中主要还是用 Navicat 来的高效一点，既然刚刚涉及到权限查看了，正好手头上有个多表不同用户的项目，那就下一章先学下权限管理好了。</p>
+<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031180328.png" alt="错误"><br>
+三个原因都有可能造成失败：</p>
+<ol>
+<li>空间不够。</li>
+<li>与安装界面断连导致程序异常出错，这在使用境外虚拟空间安装时很常见。</li>
+<li>部分文件下载出错，主要以下面几个文件为主，你可以提前下载了放在目录下（目录 . 意为 setup-nextcloud.php 所在目录）：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>路径</th>
+<th>下载地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nc.zip</td>
+<td>.</td>
+<td><a href="https://download.nextcloud.com/server/releases/latest.zip">https://download.nextcloud.com/server/releases/latest.zip</a></td>
+</tr>
+</tbody>
+</table>
+<p>因此请提前清理好空间并准备好代理。</p>
+</blockquote>
+<p><strong>3、开始安装</strong><br>
+访问：<strong>你的域名 + /setup-nextcloud.php</strong><br>
+选择 Next：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031175653.png" alt="setup-nextcloud.php"><br>
+选择目录，我这里选了 . 即为安装在当前 pan.cscheap.com/ 目录下：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031175752.png" alt="目录"><br>
+安装成功：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031205246.png" alt="成功"><br>
+配置管理员账户密码并使用 SQLite：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031210510.png" alt="配置管理员账户密码"><br>
+完成！<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031210608.png" alt="完成"></p>
+<blockquote>
+<p>当然你也可以使用外置的数据库，我不使用的原因是这家的数据库容易出现断连，导致安装不断卡在管理员账号配置阶段。<br>
+Plesk 新建数据库方式如下：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031180017.png" alt="数据库"><br>
+输入数据库名后缀、用户名后缀和密码：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031180126.png" alt="配置"><br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031180233.png" alt="成功"><br>
+创建成功后前往 Nextcloud 管理员配置界面选择外置数据库即可：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031205553.png" alt="外置数据库"></p>
+</blockquote>
+<p>最后提醒虚拟空间的网盘请定时压缩备份到本地，这是维基主机 2021 年 6 月份出的事故，虽然补偿到位，但是数据对某些人是无价的：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031211056.png" alt="补偿"></p>
+<p>结束。</p>
 
     </div>
     <div class="article-footer">
@@ -382,7 +412,7 @@ psql
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2020/02/postgresql-note-02/" title="PostgreSQL 学习笔记（二）psql 工具的使用" target="_blank" rel="external">https://senjianlu.com/2020/02/postgresql-note-02/</a>
+      <a href="https://senjianlu.com/2021/10/plesk-install-nextcloud/" title="Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统" target="_blank" rel="external">https://senjianlu.com/2021/10/plesk-install-nextcloud/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -399,14 +429,9 @@ psql
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2020/02/postgresql-note-01/" title="PostgreSQL 学习笔记（一） 数据库的安装与环境配置"><i
+                <a href="https://senjianlu.com/2021/10/centos7-nezha-monitor/" title="CentOS7 下哪吒监控面板的搭建的监控端的安装"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
-            </li>
-            <li class="next">
-                <a href="https://senjianlu.com/2020/02/postgresql-note-03/"
-                    title="PostgreSQL 学习笔记（三）用户权限的管理控制"><span>上一篇&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
         </ul>

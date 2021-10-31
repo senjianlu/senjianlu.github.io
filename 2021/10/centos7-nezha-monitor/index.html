@@ -42,7 +42,7 @@
 <meta itemprop="name" content="CentOS7 下哪吒监控面板的搭建的监控端的安装">
 <meta itemprop="description" content="部分境外代理用服务器连入 Zabbix 实在是太吃资源了，过高的延迟也使得连接进程一直被阻断，于是决定把边缘业务用的服务器全用哪吒监控吧。 1、首先注册一个"><meta itemprop="datePublished" content="2021-10-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-10-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="755">
+<meta itemprop="wordCount" content="829">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS7 下哪吒监控面板的搭建的监控端的安装"/>
 <meta name="twitter:description" content="部分境外代理用服务器连入 Zabbix 实在是太吃资源了，过高的延迟也使得连接进程一直被阻断，于是决定把边缘业务用的服务器全用哪吒监控吧。 1、首先注册一个"/>
@@ -167,7 +167,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">23</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">26</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">27</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">6</span></li>
         </ul>
     </div>
@@ -227,7 +227,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">6</span></li>
+                    class="tag-list-count">7</span></li>
             
         </ul>
 
@@ -238,6 +238,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/10/plesk-install-nextcloud/" class="title">Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-10-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-31</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -272,16 +282,6 @@
                 <div class="item-inner">
                     <p class="item-title">
                         <a href="https://senjianlu.com/2021/10/centos7-shadowsocks-server/" class="title">CentOS7 下安装 Shadowsocks 服务端</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-10-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-25</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/10/postgresql-note-05/" class="title">PostgreSQL 学习笔记（五）找回被遗忘的 postgres 密码</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2021-10-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-25</time>
@@ -328,7 +328,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/10/centos7-nezha-monitor/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 755字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 829字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
@@ -356,6 +356,15 @@
 <pre><code class="language-bash">curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh  -o nezha.sh &amp;&amp; chmod +x nezha.sh
 sudo ./nezha.sh
 </code></pre>
+<blockquote>
+<p>境内服务器安装使用加速源：</p>
+<pre><code class="language-bash">curl -L https://cdn.jsdelivr.net/gh/naiba/nezha@master/script/install.sh -o nezha.sh &amp;&amp; chmod +x nezha.sh
+sudo ./nezha.sh
+</code></pre>
+<p>依旧无法下载脚本或端安装文件的情况下，请使用临时代理（代理请自行准备，关闭连接后此配置会失效）：</p>
+<pre><code class="language-bash">export http_proxy=socks5://C993A:3586I@63.223.91.54:45066
+</code></pre>
+</blockquote>
 <p>选择安装面板端：<br>
 <img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028202438.png" alt="安装面板端"><br>
 期间需要安装 Docker，之后以此输入 Client ID、Client Secret 和 GitHub 用户名和站点标题即可，端口用默认的就行：<br>
@@ -465,6 +474,11 @@ sudo ./nezha.sh
                 <a href="https://senjianlu.com/2021/10/mongodb-note-01/" title="MongoDB 学习笔记（一） CentOS7 下安装 MongoDB"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://senjianlu.com/2021/10/plesk-install-nextcloud/"
+                    title="Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
         </ul>
