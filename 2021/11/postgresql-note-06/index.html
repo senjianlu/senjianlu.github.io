@@ -42,7 +42,7 @@
 <meta itemprop="name" content="PostgreSQL 学习笔记（六）对 JSONB 类型字段的增删改查操作">
 <meta itemprop="description" content="苦 JSONB 久矣。 介绍下实验用表 item 的表结构： 名 类型 长度 小数点 不是 null 键 注释 id int4 32 0 √ 🔑 商品 ID name varchar 255 0 商品名 property jsonb 0 0 属性 表中数据： id name property 1 毛巾 {&ldquo;price&rdquo;: 5.88, &ldquo;num&rdquo;: 20, &ldquo;type&rdquo;:"><meta itemprop="datePublished" content="2021-11-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-11-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1610">
+<meta itemprop="wordCount" content="1686">
 <meta itemprop="keywords" content="PostgreSQL," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PostgreSQL 学习笔记（六）对 JSONB 类型字段的增删改查操作"/>
 <meta name="twitter:description" content="苦 JSONB 久矣。 介绍下实验用表 item 的表结构： 名 类型 长度 小数点 不是 null 键 注释 id int4 32 0 √ 🔑 商品 ID name varchar 255 0 商品名 property jsonb 0 0 属性 表中数据： id name property 1 毛巾 {&ldquo;price&rdquo;: 5.88, &ldquo;num&rdquo;: 20, &ldquo;type&rdquo;:"/>
@@ -328,7 +328,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/11/postgresql-note-06/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1610字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1686字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
       </div>
     </div>
@@ -425,19 +425,11 @@
 <td>饼干</td>
 <td>{&ldquo;num&rdquo;: 55, &ldquo;type&rdquo;: &ldquo;食品&rdquo;, &ldquo;price&rdquo;: 3.00, &ldquo;discount&rdquo;: true, &ldquo;discount_percent&rdquo;: &ldquo;90%&quot;}</td>
 </tr>
-<tr>
-<td>② 使用 <strong>jsonb_insert</strong> 这个函数。</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>官方对这个函数的介绍：</td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 </blockquote>
+<p>② 使用 <strong>jsonb_insert</strong> 这个函数。<br>
+官方对这个函数的介绍：</p>
 <pre><code class="language-postgresql">jsonb_insert(target jsonb, path text[], new_value jsonb [, insert_after boolean])
 </code></pre>
 <p>第一个参数 target 为需要插入新属性的 JSONB 类型的对象；<br>
@@ -518,6 +510,8 @@ UPDATE item SET property = jsonb_set(property, '{discount_percent}', '&quot;100%
 UPDATE item SET property = jsonb_set(property, '{price}', '4.88'::JSONB, false) WHERE id = 1;  
 -- 对更深层的值进行修改
 UPDATE item SET property = jsonb_set(property, '{&quot;from&quot;, &quot;city&quot;}', '&quot;Suzhou&quot;'::JSONB, false) WHERE id = 1;  
+-- 用一个新的 JSONB 类型数据来更新表中的字段，重复的键会使用新的数据，不重复的键值对会被添加（这里是添加符号 || 的另一种用法）
+UPDATE item SET property = property || '{&quot;num&quot;: 108, &quot;sell_num&quot;: 1}'::JSONB WHERE id = 1;
 </code></pre>
 <blockquote>
 <table>
@@ -532,7 +526,7 @@ UPDATE item SET property = jsonb_set(property, '{&quot;from&quot;, &quot;city&qu
 <tr>
 <td>1</td>
 <td>毛巾</td>
-<td>{&ldquo;num&rdquo;: 20, &ldquo;from&rdquo;: {&ldquo;city&rdquo;: &ldquo;Suzhou&rdquo;, &ldquo;country&rdquo;: &ldquo;China&rdquo;}, &ldquo;price&rdquo;: 4.88, &ldquo;oriented&rdquo;: [&ldquo;老人&rdquo;, &ldquo;小孩&rdquo;, &ldquo;青年&rdquo;], &ldquo;discount_percent&rdquo;: &ldquo;100%&quot;}</td>
+<td>{&ldquo;num&rdquo;: 108, &ldquo;sell_num&rdquo;: 1, &ldquo;from&rdquo;: {&ldquo;city&rdquo;: &ldquo;Suzhou&rdquo;, &ldquo;country&rdquo;: &ldquo;China&rdquo;}, &ldquo;price&rdquo;: 4.88, &ldquo;oriented&rdquo;: [&ldquo;老人&rdquo;, &ldquo;小孩&rdquo;, &ldquo;青年&rdquo;], &ldquo;discount_percent&rdquo;: &ldquo;100%&quot;}</td>
 </tr>
 </tbody>
 </table>
