@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/posts/</link>
     <description>Recent content in Posts on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PostgreSQL 学习笔记（六）对 JSONB 类型字段的增删改查操作</title>
+      <link>https://senjianlu.com/2021/11/postgresql-note-06/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/postgresql-note-06/</guid>
+      <description>苦 JSONB 久矣。 介绍下实验用表 item 的表结构： 名 类型 长度 小数点 不是 null 键 注释 id int4 32 0 √ 🔑 商品 ID name varchar 255 0 商品名 property jsonb 0 0 属性 表中数据： id name property 1 毛巾 {&amp;ldquo;price&amp;rdquo;: 5.88, &amp;ldquo;num&amp;rdquo;: 20, &amp;ldquo;type&amp;rdquo;:</description>
+    </item>
+    
+    <item>
+      <title>Cloudflare 四种 SSL/TLS 加密模式的功能解析及实践</title>
+      <link>https://senjianlu.com/2021/11/cloudflare-ssl-tls/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/cloudflare-ssl-tls/</guid>
+      <description>在没套 Cloudflare 之前有在 Nginx 中配置 HTTP 访问 301 重定向到 HTTPS 的习惯，但是在套了 CF 之后常常出现 301 重定向次数过多的情况，不明白原理地瞎调试走了很多弯路，重新实践一</description>
+    </item>
     
     <item>
       <title>Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统</title>
@@ -16,7 +34,7 @@
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://senjianlu.com/2021/10/plesk-install-nextcloud/</guid>
-      <description>维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且当初没有配置邮箱信息导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流程。 注</description>
+      <description>维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且因为当初没有配置邮箱信息，导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流</description>
     </item>
     
     <item>
@@ -25,7 +43,7 @@
       <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://senjianlu.com/2021/10/centos7-nezha-monitor/</guid>
-      <description>部分境外代理用服务器连入 Zabbix 实在是太吃资源了，过高的延迟也使得连接进程一直被阻断，于是决定把边缘业务用的服务器全用哪吒监控吧。 1、首先注册一个</description>
+      <description>部分境外代理用的服务器连入 Zabbix 实在是太吃资源了，过高的延迟也使得连接一直中断，考虑了一下决定将边缘业务用的服务器全抽离出来，单独用哪吒监控做管</description>
     </item>
     
     <item>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/09/k3s-note-02-02/</guid>
       <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 考虑到作为 Docker 容器运行的 Rancher 重启较为安全简单，不再使用</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题</title>
-      <link>https://senjianlu.com/2021/09/centos7-openssl-ca/</link>
-      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/centos7-openssl-ca/</guid>
-      <description>主要是两个步骤：1、生成 SSL 私钥（.key 文件）和证书签发请求文件（.csr 文件）；2、自己充当证书颁发机构（CA）进行签发生成证书（.crt</description>
-    </item>
-    
-    <item>
-      <title>K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）</title>
-      <link>https://senjianlu.com/2021/09/k3s-note-02-01/</link>
-      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/k3s-note-02-01/</guid>
-      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs</description>
     </item>
     
   </channel>

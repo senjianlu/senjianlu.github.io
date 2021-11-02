@@ -11,6 +11,24 @@
     
     
     <item>
+      <title>CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题</title>
+      <link>https://senjianlu.com/2021/09/centos7-openssl-ca/</link>
+      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/centos7-openssl-ca/</guid>
+      <description>主要是两个步骤：1、生成 SSL 私钥（.key 文件）和证书签发请求文件（.csr 文件）；2、自己充当证书颁发机构（CA）进行签发生成证书（.crt</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）</title>
+      <link>https://senjianlu.com/2021/09/k3s-note-02-01/</link>
+      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/k3s-note-02-01/</guid>
+      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs</description>
+    </item>
+    
+    <item>
       <title>K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点</title>
       <link>https://senjianlu.com/2021/09/k3s-note-01/</link>
       <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/07/centos7-swap/</guid>
       <description>明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&amp;hellip;&amp;hellip; 看了下现在的这些容器基本都</description>
-    </item>
-    
-    <item>
-      <title>日语学习 「こそあど系統」</title>
-      <link>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</link>
-      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</guid>
-      <description>Notion 链接：https://www.notion.so/rabbir/1a25e9f6a26d4551902af651915117d7</description>
-    </item>
-    
-    <item>
-      <title>日语学习 格助词「を」在自动词前的使用</title>
-      <link>https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</link>
-      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</guid>
-      <description>Notion 链接：https://www.notion.so/rabbir/a24f7acbdba44e0ebe290fd0c3dd1907</description>
     </item>
     
   </channel>
