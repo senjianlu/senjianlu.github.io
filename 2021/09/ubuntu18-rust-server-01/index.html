@@ -42,7 +42,7 @@
 <meta itemprop="name" content="RUST 开服（一）Ubuntu18 下通过 LinuxGSM 搭建 RUST Server 游戏服务器端">
 <meta itemprop="description" content="LinuxGSM (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。 注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一"><meta itemprop="datePublished" content="2021-09-24T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-09-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="753">
+<meta itemprop="wordCount" content="1174">
 <meta itemprop="keywords" content="Linux,游戏," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="RUST 开服（一）Ubuntu18 下通过 LinuxGSM 搭建 RUST Server 游戏服务器端"/>
 <meta name="twitter:description" content="LinuxGSM (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。 注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一"/>
@@ -166,7 +166,7 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">25</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">26</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">27</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">6</span></li>
         </ul>
@@ -179,7 +179,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">3</span></li>
+                    class="tag-list-count">4</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
@@ -241,6 +241,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/11/clash-note-02/" class="title">Clash 学习（二）在 Clash 中配置使用 SS 协议的 Shadowsocks 节点</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-11-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-03</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/11/postgresql-note-06/" class="title">PostgreSQL 学习笔记（六）对 JSONB 类型字段的增删改查操作</a>
                     </p>
                     <p class="item-date">
@@ -275,16 +285,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-10-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-28</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/10/mongodb-note-01/" class="title">MongoDB 学习笔记（一） CentOS7 下安装 MongoDB</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-10-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-27</time>
                     </p>
                 </div>
             </li>
@@ -329,14 +329,36 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/ubuntu18-rust-server-01/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 753字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1174字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <p><a href="https://linuxgsm.com/">LinuxGSM</a> (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。<br>
 <em>注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一遍过后，卡在了<a href="https://github.com/GameServerManagers/LinuxGSM/issues/3312"> Yum 无法安装 Python3.6 </a>的问题上，因此本教程选择 Ubuntu18 系统。</em></p>
 <hr>
+<blockquote>
+<p><strong>注意：最低的服务器配置需求为 2H4G，低于 4G 内存请不用尝试了。且如果你使用的是境内服务器，我推荐你设置好代理，以保证安装脚本能顺利的从 GitHub 下载所需文件：</strong></p>
+<pre><code class="language-bash"># 仅供参考格式用
+export http_proxy=socks5://99999:22222@63.225.10.10:20800
+git config --global http.proxy socks5://99999:22222@63.225.10.10:20800
+git config --global https.proxy socks5://99999:22222@63.225.10.10:20800
+</code></pre>
+<p>如果你没有代理，也可以试试修改 hosts，但这并不能保证 100% 解决你的问题：</p>
+<pre><code class="language-bash">vi /etc/hosts
+</code></pre>
+<pre><code class="language-bash">...
+···
+199.232.4.133 raw.githubusercontent.com
+</code></pre>
+</blockquote>
+<p><strong>1、安装所需依赖和下载 LinuxGSM</strong><br>
+先更新软件源：</p>
+<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre>
+<p>接着安装<a href="https://linuxgsm.com/lgsm/rustserver/"> LinuxGSM 所需依赖</a>：</p>
+<pre><code class="language-bash">sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux netcat lib32gcc1 lib32stdc++6 libsdl2-2.0-0:i386 steamcmd lib32z1
+</code></pre>
 <blockquote>
 <p>官方文档推荐为每个游戏服务器都新建一个系统用户，我这里新建了 rustserver 用户：</p>
 <pre><code class="language-bash"># 切换到 root 管理员用户下
@@ -348,30 +370,14 @@ passwd rustserver
 # 切换到这个用户
 su - rustserver
 </code></pre>
-<p>之后除了 Yum 环境依赖安装和 hosts 修改的操作之外，其他都是在这个用户和 /home/rustserver 目录下执行的。</p>
+<p>之后的操作都是在这个用户和 /home/rustserver 目录下执行的。</p>
 </blockquote>
-<p><strong>1、安装所需依赖和下载 LinuxGSM</strong><br>
-先更新软件源：</p>
-<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
-</code></pre>
-<p>接着安装<a href="https://linuxgsm.com/lgsm/rustserver/"> LinuxGSM 所需依赖</a>：</p>
-<pre><code class="language-bash">sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux netcat lib32gcc1 lib32stdc++6 libsdl2-2.0-0:i386 steamcmd lib32z1
-</code></pre>
 <p>下载 LinuxGSM：</p>
 <pre><code class="language-bash"># 下载 LinuxGSM
 wget -O linuxgsm.sh https://linuxgsm.sh
 # 赋予其执行权限
 chmod +x linuxgsm.sh
 </code></pre>
-<blockquote>
-<p>如果你的服务器在境内，那么我推荐你设置下 hosts 以防止出现 raw.githubusercontent.com 访问失败的问题：</p>
-<pre><code class="language-bash">vi /etc/hosts
-</code></pre>
-<pre><code class="language-bash">...
-···
-199.232.4.133 raw.githubusercontent.com
-</code></pre>
-</blockquote>
 <p><strong>2、安装 RUST 服务器</strong><br>
 准备服务器安装所需内容：</p>
 <pre><code class="language-bash">bash linuxgsm.sh rustserver
@@ -409,8 +415,8 @@ vi rustserver.cfg
 <pre><code class="language-bash">...
 ...
 ## Predefined Parameters | https://docs.linuxgsm.com/configuration/start-parameters
-# 服务器公网 IP
-ip=&quot;101.34.255.255&quot;
+# 允许所有 IP 地址连接此服务器
+ip=&quot;0.0.0.0&quot;
 # 服务器端口
 port=&quot;28015&quot;
 # 管理端口
@@ -441,6 +447,24 @@ cd /home/rustserver
 # 启动服务器
 ./rustserver start
 </code></pre>
+<p>看到如下信息说明服务器启动完成：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211104144522.png" alt="启动完成"></p>
+<blockquote>
+<p><strong>几个需要注意的点：</strong><br>
+① 记得开发防火墙和安全组的对应端口，我这里贪省事直接关闭了防火墙：</p>
+<pre><code class="language-bash">sudo ufw disable
+</code></pre>
+<p>② 服务器的启动需要时间，大概在 5 到 10 分钟左右。如何判断服务器是否启动成功可以通过监控，在 2H4G 的云服务器，RustDedicated 大概会吃 50% 的 CPU 资源和 90% 的内存资源，长时间稳定这个占用的话基本就算是启动成功了。<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211104143145.png" alt="top"><br>
+③ 如果发现 kswapd0 长时间占用几乎 100% 的 CPU 资源，那说明你服务器的内存不足以启动 Rust 服务器，系统开始使用硬盘做虚拟内存了，你可以选择多花钱升级服务器的内存或者提前设置好虚拟内存供开服使用，教程在这里：<a href="https://senjianlu.com/2021/07/centos7-swap/">CentOS7 下建立 SWaP 分区以增加虚拟内存</a>（命令可以完全照搬，CentOS7 和 Ubuntu18.04 通用）</p>
+</blockquote>
+<p>最后到游戏中，按下 F1 并输入：</p>
+<pre><code class="language-bash"># IP 和端口自行替换
+connect 127.0.0.30:28015
+</code></pre>
+<p>连接到服务器即可！
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211104143009.png" alt="连接成功"></p>
+<p>结束。</p>
 
     </div>
     <div class="article-footer">

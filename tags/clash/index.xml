@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/clash/</link>
     <description>Recent content in Clash on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/clash/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Clash 学习（二）在 Clash 中配置使用 SS 协议的 Shadowsocks 节点</title>
+      <link>https://senjianlu.com/2021/11/clash-note-02/</link>
+      <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/clash-note-02/</guid>
+      <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 官方配置文件模板中的代码片段： proxies: # Shadowsocks # The supported ciphers (encryption methods): # aes-128-gcm aes-192-gcm aes-256-gcm # aes-128-cfb aes-192-cfb aes-256-cfb # aes-128-ctr aes-192-ctr aes-256-ctr # rc4-md5 chacha20-ietf xchacha20 # chacha20-ietf-poly1305 xchacha20-ietf-poly1305 - name: &amp;quot;ss1&amp;quot; type:</description>
+    </item>
     
     <item>
       <title>PostgreSQL 学习笔记（六）对 JSONB 类型字段的增删改查操作</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/09/centos7-iptables/</guid>
       <description>一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT</description>
-    </item>
-    
-    <item>
-      <title>K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）</title>
-      <link>https://senjianlu.com/2021/09/k3s-note-02-02/</link>
-      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/k3s-note-02-02/</guid>
-      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 考虑到作为 Docker 容器运行的 Rancher 重启较为安全简单，不再使用</description>
     </item>
     
   </channel>
