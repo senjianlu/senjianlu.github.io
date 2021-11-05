@@ -5,18 +5,36 @@
     <link>https://senjianlu.com/posts/</link>
     <description>Recent content in Posts on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Clash 学习（二）在 Clash 中配置使用 SS 协议的 Shadowsocks 节点</title>
+      <title>Fiddler 学习（一）安装、配置和尝试抓取 UWP 版网易云音乐的请求域名</title>
+      <link>https://senjianlu.com/2021/11/fiddler-note-01/</link>
+      <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/fiddler-note-01/</guid>
+      <description>在路由器上的 Clash 中配置网易云音乐灰歌解锁的时候发现：UWP 版的网易云音乐请求指向的似乎不是 music.163.com 等域名（事实上走的是 music.163.com 域名，只是我 Clash 配置的有问题罢</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下用 Docker 部署 UnblockNeteaseMusic 并在 Clash 中配置分流以在局域网内解锁网易云音乐变灰的歌曲</title>
+      <link>https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</guid>
+      <description>之前也是部署过这个项目的，但是后来嫌 PC 端和手机端的网易云音乐都要手动配置有点麻烦，于是就放弃了。 现在在路由器上安装了 Clash，想到既然它能</description>
+    </item>
+    
+    <item>
+      <title>Clash 学习（二）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点</title>
       <link>https://senjianlu.com/2021/11/clash-note-02/</link>
-      <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://senjianlu.com/2021/11/clash-note-02/</guid>
-      <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 官方配置文件模板中的代码片段： proxies: # Shadowsocks # The supported ciphers (encryption methods): # aes-128-gcm aes-192-gcm aes-256-gcm # aes-128-cfb aes-192-cfb aes-256-cfb # aes-128-ctr aes-192-ctr aes-256-ctr # rc4-md5 chacha20-ietf xchacha20 # chacha20-ietf-poly1305 xchacha20-ietf-poly1305 - name: &amp;quot;ss1&amp;quot; type:</description>
+      <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 官方配置文件模板中的代码片段： proxies: # http - name: &amp;quot;http&amp;quot; type: http server: server port: 443 # username: username # password: password # tls: true</description>
     </item>
     
     <item>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/k3s-note-03/</guid>
       <description>将 server + agent 的集群导入 Docker 安装的 Rancher 中以进行管理。 1、从面板导入现有集群 添加集群： 导入： 输入集群名词后创建： 复制命令前往集群执行： 我是在节点的主 server 节</description>
-    </item>
-    
-    <item>
-      <title>Nginx 学习（三）配置基础的用户登录验证以保护站点</title>
-      <link>https://senjianlu.com/2021/10/nginx-note-03/</link>
-      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/nginx-note-03/</guid>
-      <description>临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下的一些 iptables 实用配置</title>
-      <link>https://senjianlu.com/2021/09/centos7-iptables/</link>
-      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/centos7-iptables/</guid>
-      <description>一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT</description>
     </item>
     
   </channel>

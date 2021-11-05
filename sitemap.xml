@@ -4,49 +4,84 @@
   
   <url>
     <loc>https://senjianlu.com/categories/</loc>
-    <lastmod>2021-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/clash/</loc>
-    <lastmod>2021-11-03T00:00:00+00:00</lastmod>
+    <loc>https://senjianlu.com/tags/fiddler/</loc>
+    <lastmod>2021-11-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/clash-note-02/</loc>
-    <lastmod>2021-11-03T00:00:00+00:00</lastmod>
+    <loc>https://senjianlu.com/2021/11/fiddler-note-01/</loc>
+    <lastmod>2021-11-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://senjianlu.com/posts/</loc>
-    <lastmod>2021-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://senjianlu.com/tags/</loc>
-    <lastmod>2021-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://senjianlu.com/</loc>
-    <lastmod>2021-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-05T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/tags/clash/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/11/clash-note-02/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/tags/docker/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -81,13 +116,6 @@
   
   <url>
     <loc>https://senjianlu.com/2021/10/plesk-install-nextcloud/</loc>
-    <lastmod>2021-10-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
     <lastmod>2021-10-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -173,13 +201,6 @@
   <url>
     <loc>https://senjianlu.com/2021/10/openwrt-note-01/</loc>
     <lastmod>2021-10-23T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/tags/docker/</loc>
-    <lastmod>2021-10-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -528,20 +549,6 @@
   </url>
   
   <url>
-    <loc>https://senjianlu.com/series/</loc>
-    <lastmod>2020-01-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/series/themes-guide/</loc>
-    <lastmod>2020-01-12T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://senjianlu.com/2020/01/picgo-github/</loc>
     <lastmod>2020-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -572,6 +579,12 @@
   <url>
     <loc>https://senjianlu.com/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/series/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
