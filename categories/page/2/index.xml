@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/</link>
     <description>Recent content in Categories on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用</title>
+      <link>https://senjianlu.com/2021/10/k3s-note-03/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/k3s-note-03/</guid>
+      <description>将 server + agent 的集群导入 Docker 安装的 Rancher 中以进行管理。 1、从面板导入现有集群 添加集群： 导入： 输入集群名词后创建： 复制命令前往集群执行： 我是在节点的主 server 节</description>
+    </item>
     
     <item>
       <title>Nginx 学习（三）配置基础的用户登录验证以保护站点</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/07/centos7-docker-zabbix/</guid>
       <description>又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的</description>
-    </item>
-    
-    <item>
-      <title>Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法</title>
-      <link>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</link>
-      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</guid>
-      <description>新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的</description>
     </item>
     
   </channel>

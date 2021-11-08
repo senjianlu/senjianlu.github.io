@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/</link>
     <description>Recent content in Categories on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则</title>
+      <link>https://senjianlu.com/2021/11/clash-note-03/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/clash-note-03/</guid>
+      <description>1、定时更新机场节点 注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。 不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读</description>
+    </item>
     
     <item>
       <title>Fiddler 学习（一）安装、配置和尝试抓取 UWP 版网易云音乐的请求域名</title>
@@ -29,11 +38,11 @@
     </item>
     
     <item>
-      <title>Clash 学习（二）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点</title>
-      <link>https://senjianlu.com/2021/11/clash-note-02/</link>
+      <title>Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点</title>
+      <link>https://senjianlu.com/2021/11/clash-note-04/</link>
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/11/clash-note-02/</guid>
+      <guid>https://senjianlu.com/2021/11/clash-note-04/</guid>
       <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 官方配置文件模板中的代码片段： proxies: # http - name: &amp;quot;http&amp;quot; type: http server: server port: 443 # username: username # password: password # tls: true</description>
     </item>
     
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</guid>
       <description>这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：</description>
-    </item>
-    
-    <item>
-      <title>K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用</title>
-      <link>https://senjianlu.com/2021/10/k3s-note-03/</link>
-      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/k3s-note-03/</guid>
-      <description>将 server + agent 的集群导入 Docker 安装的 Rancher 中以进行管理。 1、从面板导入现有集群 添加集群： 导入： 输入集群名词后创建： 复制命令前往集群执行： 我是在节点的主 server 节</description>
     </item>
     
   </channel>

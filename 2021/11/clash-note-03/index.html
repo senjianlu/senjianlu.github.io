@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        森见鹿的博客 </title>
+        Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则 - 森见鹿的博客 
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="1、定时更新机场节点 注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。 不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读" />
   <meta name="generator" content="Hugo 0.88.1 with theme pure" />
-  <title>森见鹿的博客 </title>
+  <title>Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则 - 森见鹿的博客 </title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://senjianlu.com/index.xml" title="森见鹿的博客 " />
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="森见鹿的博客 " />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://senjianlu.com/" />
+  <meta property="og:title" content="Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则" />
+<meta property="og:description" content="1、定时更新机场节点 注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。 不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2021/11/clash-note-03/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-08T00:00:00+00:00" />
 
-<meta itemprop="name" content="森见鹿的博客 ">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="森见鹿的博客 "/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则">
+<meta itemprop="description" content="1、定时更新机场节点 注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。 不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读"><meta itemprop="datePublished" content="2021-11-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-11-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1086">
+<meta itemprop="keywords" content="Clash," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则"/>
+<meta name="twitter:description" content="1、定时更新机场节点 注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。 不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -65,7 +70,7 @@
   
   
 
-  <body class="main-center theme-black main-center theme-black main-center theme-black main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="slimContent">
       <div class="navbar-header">
         <div class="profile-block text-center">
@@ -295,34 +300,25 @@
 
     
     
-
-<main class="main" role="main">
-  
-  <div class="content article-list">
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
     
-    
-    
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
+    <div class="article-header">
+      <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2021/10/nginx-note-03/"
-    >Nginx 学习（三）配置基础的用户登录验证以保护站点</a
+    href="/2021/11/clash-note-03/"
+    >Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则</a
   >
 </h1>
 
-      </div>
-      <div class="article-entry text-muted" itemprop="description">临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric</div>
-      <p class="article-meta">
+      <div class="article-meta">
+        
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/10/nginx-note-03/" class="">
-  <time datetime="2021-10-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-01</time>
+<a href="https://senjianlu.com/2021/11/clash-note-03/" class="article-date">
+  <time datetime="2021-11-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-08</time>
 </a>
 </span>
 <span class="article-category">
@@ -331,258 +327,173 @@
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"> 网站建设 </a>
+    <a class="article-tag-link" href="/tags/clash/"> Clash </a>
   </span>
 
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 223字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/09/centos7-iptables/"
-    >CentOS7 下的一些 iptables 实用配置</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/centos7-iptables/" class="">
-  <time datetime="2021-09-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-30</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 166字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/09/k3s-note-02-02/"
-    >K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 考虑到作为 Docker 容器运行的 Rancher 重启较为安全简单，不再使用</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/k3s-note-02-02/" class="">
-  <time datetime="2021-09-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-29</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
-    <a class="article-tag-link" href="/tags/k3s/"> K3s </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 526字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/09/centos7-openssl-ca/"
-    >CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">主要是两个步骤：1、生成 SSL 私钥（.key 文件）和证书签发请求文件（.csr 文件）；2、自己充当证书颁发机构（CA）进行签发生成证书（.crt</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/centos7-openssl-ca/" class="">
-  <time datetime="2021-09-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-28</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 784字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/09/k3s-note-02-01/"
-    >K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/k3s-note-02-01/" class="">
-  <time datetime="2021-09-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-28</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
-    <a class="article-tag-link" href="/tags/k3s/"> K3s </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 808字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/09/k3s-note-01/"
-    >K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/k3s-note-01/" class="">
-  <time datetime="2021-09-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-27</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
-    <a class="article-tag-link" href="/tags/k3s/"> K3s </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1211字</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/11/clash-note-03/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1086字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/09/postgresql-note-04/"
-    >PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数</a
-  >
-</h1>
-
       </div>
-      <div class="article-entry text-muted" itemprop="description">我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/postgresql-note-04/" class="">
-  <time datetime="2021-09-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-25</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 640字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article></div>
-  
-<nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    <ul class="pager pull-left"><li class="prev">
-        <a href="/page/3/">
-          <i class="icon icon-angle-left"></i>
-          
-        </a>
-      </li><li class="next">
-        <a href="/page/5/">
-          <i class="icon icon-angle-right"></i>
-          
-        </a>
-      </li>
-    </ul>
-    <div class="total-article bar-right">
-      Page:4/9
     </div>
-  </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><strong>1、定时更新机场节点</strong><br>
+<strong>注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。</strong><br>
+不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读取，就连一般机场提供的加密的 Clash 订阅链接也不行，必须经过订阅转换为配置文件形式才能生效。</p>
+<blockquote>
+<p><strong>两种转换方法：</strong><br>
+① 在线订阅地址转换<br>
+常用：<a href="https://id9.cc/">品云订阅转换</a>（部分地区被墙）<br>
+<em>注；推荐这个只是因为我也在用，如果出问题一起当受害者&hellip;&hellip;</em><br>
+② 自建订阅转换<br>
+项目：<a href="https://github.com/tindy2013/subconverter">tindy2013/subconverter</a><br>
+使用 Docker 部署（官方文档：<a href="https://github.com/tindy2013/subconverter/blob/master/README-docker.md">README-docker.md</a>）：</p>
+<pre><code class="language-bash"># 下载镜像
+docker pull tindy2013/subconverter:latest
+# 部署
+docker run -d --restart=always -p 25500:25500 tindy2013/subconverter:latest
+# 测试是否部署成功
+curl http://localhost:25500/version
+</code></pre>
+<p>外部访问：https://sub.example.com/sub?target=clash&amp;url=https%3A%2F%2Fmojie.info%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D4fxxxxxxxxxxxxxxxxxxx4c6f6&amp;insert=false 以获取转换完成的配置文件，简单地说明一下参数（官方详细文档：<a href="https://github.com/tindy2013/subconverter/blob/master/README-cn.md">README-cn.md</a>）：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>解析</th>
+<th>样例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>指想要生成的配置类型。</td>
+<td>clash</td>
+</tr>
+<tr>
+<td>url</td>
+<td>经过<a href="https://www.urlencoder.org/"> URLEncode </a>处理后的订阅链接。</td>
+<td>https%3A%2F%2Fmojie.info%2&hellip;&hellip;</td>
+</tr>
+<tr>
+<td>insert</td>
+<td>用于设置是否将配置文件中的 insert_url 插入（意义不明，我的理解是是否引入其他外部节点）。</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<pre><code class="language-yaml">...
+...
+# 代理提供商
+proxy-providers:
+  # 机场-魔戒所用订阅
+  Mojie-sub:
+    # 对订阅地址的访问方式
+    type: http
+    # 订阅地址
+    url: &quot;https://sub.id9.cc/sub?target=clash&amp;url=https%3A%2F%2Fmojie.info%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D4fxxxxxxxxxxxxxxxxxxx4c6f6&amp;insert=false&quot;
+    # 订阅后节点存放用的配置文件（不同机场需使用不同文件）
+    path: ./sub/Mojie.yaml
+    # 更新订阅间隔时间（秒）
+    interval: 3600
+    # 节点检查
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+...
+...
+# 节点组
+proxy-groups:
+  # 手动选择
+  - name: 手动选择
+    type: select
+    proxies:
+      - 奇异之旅
+      - 魔戒
+  # 机场-魔戒
+  - name: 魔戒
+    type: select
+    # 注意：这里使用订阅的动作为 use
+    use:
+      - Mojie-sub
+...
+...
+</code></pre>
+<p>重启后，到控制台就能看见自动更新的节点了：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211108222220.png" alt="自动更新的节点"></p>
+<p><strong>2、导入外部规则</strong><br>
+大佬们写的规则基本都是适配大众需求的，例如流媒体等。小众规则还是自己动手吧！<br>
+推荐的外部规则开源项目：<a href="https://github.com/Loyalsoldier/clash-rules">Loyalsoldier/clash-rules</a><br>
+参照格式：</p>
+<pre><code class="language-yaml">...
+...
+# 规则提供商
+rule-providers:
+  # 规则集的名字
+  google:
+    # 对外部规则的访问方式
+    type: http
+    # 朴素规则（无查询优化）
+    behavior: classical
+    # 外部规则地址
+    url: &quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt&quot;
+    # 规则文件存放路径
+    path: ./ruleset/google.yaml
+    # 更新规则间隔时间（秒）
+    interval: 86400
+
+# 规则
+rules:
+  ...
+  ...
+  # 使用外部规则，中间填规则集的名字
+  - RULE-SET,google,奇异之旅
+  # 境内站点
+  - GEOIP,CN,直连
+  # 境外站点
+  - MATCH,奇异之旅
+</code></pre>
+<blockquote>
+<p>如果对 behavior 这个参数有困惑，你可以参考以下这个 Issue：<a href="https://github.com/Dreamacro/clash/issues/1165">请问用rule-providers时behavior如何选择？ classical/ipcidr/domain 三者又有什么区别？</a></p>
+</blockquote>
+<p>很可惜的是 OpenWrt 上的 Clash 暂时不支持 RULE-SET 规则，就不做具体演示了。
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211108222024.png" alt="不支持"></p>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2021/11/clash-note-03/" title="Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则" target="_blank" rel="external">https://senjianlu.com/2021/11/clash-note-03/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2021/11/fiddler-note-01/" title="Fiddler 学习（一）安装、配置和尝试抓取 UWP 版网易云音乐的请求域名"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
 </nav>
 
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -659,6 +570,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>
