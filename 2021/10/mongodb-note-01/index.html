@@ -166,9 +166,9 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">28</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">29</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">28</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
     </div>
 </div>
@@ -199,7 +199,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">20</span></li>
+                    class="tag-list-count">21</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
@@ -207,7 +207,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
-                    class="tag-list-count">6</span></li>
+                    class="tag-list-count">7</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/python/" class="tag-list-link">python</a><span
@@ -245,6 +245,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/11/postgresql-note-01-supplement/" class="title">PostgreSQL 学习笔记（一） 补足：CentOS7 下 12.8 版本数据库的安装</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-11-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-15</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/11/clash-note-03/" class="title">Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则</a>
                     </p>
                     <p class="item-date">
@@ -279,16 +289,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-11-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-04</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/11/postgresql-note-06/" class="title">PostgreSQL 学习笔记（六）对 JSONB 类型字段的增删改查操作</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-11-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-02</time>
                     </p>
                 </div>
             </li>
@@ -340,12 +340,12 @@
       <p>在和舍友交流之后才发现拿 JSONB 存储历史价格信息的我可能是个天才吧&hellip;&hellip;<br>
 回去检查了一下 PostgreSQL 中的对应字段，果然达到了 65535 字节的最大限制，赶紧着手迁移数据。</p>
 <hr>
-<p>选 MongoDB 最主要的原因是它的一个集合（与 PostgreSQL 中的表同概念）可以被当作一个队列，无限制的插入 JSON 个数的数据，放下图方便理解：<br>
+<p>选 MongoDB 最主要的原因是它的一个集合（与 PostgreSQL 中的表同概念）可以被当作一个队列，无限制的插入 JSON 格式的数据，放下图方便理解：<br>
 <img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211027200818.png" alt="列表类型"><br>
 这对存储未知长度的历史价格数据真的很友好，并且根据日期建立索引后，查询的速度也会很快。</p>
 <hr>
 <p>话不多说开始安装，官方文档：<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/">Install MongoDB Community Edition on Red Hat or CentOS</a></p>
-<p><strong>1、配置 repo 仓库为 YUM 安装提供源</strong><br>
+<p><strong>1、配置 repo 仓库为 Yum 安装提供源</strong><br>
 创建 mongodb-org-5.0.repo：</p>
 <pre><code class="language-bash">vi /etc/yum.repos.d/mongodb-org-5.0.repo
 </code></pre>
@@ -357,7 +357,7 @@ gpgcheck=1
 enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc
 </code></pre>
-<p><strong>2、使用 YUM 进行安装</strong><br>
+<p><strong>2、使用 Yum 进行安装</strong><br>
 执行：</p>
 <pre><code class="language-bash">sudo yum install -y mongodb-org
 </code></pre>
