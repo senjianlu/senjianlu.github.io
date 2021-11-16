@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>PVE 下 LEDE&#43;爱快 双软路由部署（旧）</title>
+      <link>https://senjianlu.com/2020/01/pve-lede-ikuai-bak/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/01/pve-lede-ikuai-bak/</guid>
+      <description>此教程由于初版结构混乱，已废弃，请参考新版（更新于 2021-10-24）：PVE 下 OpenWrt 纯净系统 + 爱快双软路由部署配置文件的整理 起因仅仅是不满足</description>
+    </item>
+    
+    <item>
       <title>Windows 下 PicGo&#43;GitHub 搭建个人图床工具</title>
       <link>https://senjianlu.com/2020/01/picgo-github/</link>
       <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>

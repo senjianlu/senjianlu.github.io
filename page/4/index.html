@@ -161,7 +161,7 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">29</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">30</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">28</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -175,6 +175,10 @@
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
                     class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
+                    class="tag-list-count">1</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
@@ -240,10 +244,30 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/11/datax-note-01/" class="title">DataX 实践（一）构建 DataX 的 Docker 容器镜像并测试运行</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-11-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-15</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/11/postgresql-note-01-supplement/" class="title">PostgreSQL 学习笔记（一） 补足：CentOS7 下 12.8 版本数据库的安装</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2021-11-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-15</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/11/vscode-github-push-error/" class="title">VS Code 使用 Remote 连接服务器并 Push 到 GitHub 私有仓库时报错：Missing or invalid credentials. 的解决办法</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-11-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-14</time>
                     </p>
                 </div>
             </li>
@@ -267,26 +291,6 @@
                     </p>
                 </div>
             </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/" class="title">CentOS7 下用 Docker 部署 UnblockNeteaseMusic 并在 Clash 中配置分流以在局域网内解锁网易云音乐变灰的歌曲</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-11-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-04</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/11/clash-note-04/" class="title">Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-11-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-04</time>
-                    </p>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
@@ -302,6 +306,81 @@
     
     
     
+    <article
+      class="article article-type-page"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <div class="article-header">
+        <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/10/centos7-docker/"
+    >CentOS7 下使用 Docker 的一些实用指令</a
+  >
+</h1>
+
+      </div>
+      <div class="article-entry text-muted" itemprop="description">官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`</div>
+      <p class="article-meta">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://senjianlu.com/2021/10/centos7-docker/" class="">
+  <time datetime="2021-10-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-07</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/docker/"> Docker </a>
+    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
+  </span>
+
+        
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 41字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
+      </p>
+    </article>
+    <article
+      class="article article-type-page"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <div class="article-header">
+        <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/10/centos7-docker-zabbix-fix-font/"
+    >CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题</a
+  >
+</h1>
+
+      </div>
+      <div class="article-entry text-muted" itemprop="description">这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：</div>
+      <p class="article-meta">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/" class="">
+  <time datetime="2021-10-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-06</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/docker/"> Docker </a>
+  </span>
+
+        
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 239字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
+      </p>
+    </article>
     <article
       class="article article-type-page"
       itemscope
@@ -487,82 +566,6 @@
         
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 784字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/09/k3s-note-02-01/"
-    >K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/k3s-note-02-01/" class="">
-  <time datetime="2021-09-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-28</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
-    <a class="article-tag-link" href="/tags/k3s/"> K3s </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 808字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/09/k3s-note-01/"
-    >K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/k3s-note-01/" class="">
-  <time datetime="2021-09-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-27</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
-    <a class="article-tag-link" href="/tags/k3s/"> K3s </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1211字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
       </p>
     </article></div>
   
