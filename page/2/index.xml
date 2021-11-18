@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/</link>
     <description>Recent content on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub</title>
+      <link>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</guid>
+      <description>首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。 以 rab_python_packages 项目为例，文件结构也可直接参</description>
+    </item>
     
     <item>
       <title>K3s 学习（四）CentOS7 下挂载腾讯云 COS 为 K3s 集群提供持久化存储 PV</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/07/centos7-code-server/</guid>
       <description>记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转</description>
-    </item>
-    
-    <item>
-      <title>MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误</title>
-      <link>https://senjianlu.com/2021/07/centos7-minio-error/</link>
-      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/centos7-minio-error/</guid>
-      <description>刚装完 MinIO 测试的时候其实就发现了部分页面会出错，但是看了下错误基本都是认证错误，响应代码为 500，觉得可能是 Nginx 配置有误，实则不然&amp;hellip</description>
     </item>
     
   </channel>

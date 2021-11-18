@@ -161,7 +161,7 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">30</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">28</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -178,7 +178,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
-                    class="tag-list-count">1</span></li>
+                    class="tag-list-count">2</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
@@ -244,6 +244,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/11/datax-note-02/" class="title">DataX 实践（二）从 PostgreSQL 读数据库全量同步表到 PostgreSQL 写数据库</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-16</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/11/datax-note-01/" class="title">DataX 实践（一）构建 DataX 的 Docker 容器镜像并测试运行</a>
                     </p>
                     <p class="item-date">
@@ -281,16 +291,6 @@
                     </p>
                 </div>
             </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/11/fiddler-note-01/" class="title">Fiddler 学习（一）安装、配置和尝试抓取 UWP 版网易云音乐的请求域名</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-11-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-05</time>
-                    </p>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
@@ -306,6 +306,44 @@
     
     
     
+    <article
+      class="article article-type-page"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <div class="article-header">
+        <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/10/k3s-note-04/"
+    >K3s 学习（四）CentOS7 下挂载腾讯云 COS 为 K3s 集群提供持久化存储 PV</a
+  >
+</h1>
+
+      </div>
+      <div class="article-entry text-muted" itemprop="description">考虑到之后的项目有日志记录和分析的功能需求，提前准一下用以日志存储的 PV，虽然说挂载到服务器本地路径也可以，但这样的话服务器到期时就会有点麻</div>
+      <p class="article-meta">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://senjianlu.com/2021/10/k3s-note-04/" class="">
+  <time datetime="2021-10-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-10-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
+    <a class="article-tag-link" href="/tags/k3s/"> K3s </a>
+  </span>
+
+        
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1154字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </p>
+    </article>
     <article
       class="article article-type-page"
       itemscope
@@ -528,43 +566,6 @@
 
         
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 526字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2021/09/centos7-openssl-ca/"
-    >CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">主要是两个步骤：1、生成 SSL 私钥（.key 文件）和证书签发请求文件（.csr 文件）；2、自己充当证书颁发机构（CA）进行签发生成证书（.crt</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/centos7-openssl-ca/" class="">
-  <time datetime="2021-09-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-28</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 784字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </p>
     </article></div>

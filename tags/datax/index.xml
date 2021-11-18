@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/datax/</link>
     <description>Recent content in DataX on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Nov 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/datax/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DataX 实践（二）从 PostgreSQL 读数据库全量同步表到 PostgreSQL 写数据库</title>
+      <link>https://senjianlu.com/2021/11/datax-note-02/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/datax-note-02/</guid>
+      <description>在开展 PostgreSQL 增量同步到 MongoDB 的工作之前，先尝试个简单点的全量同步，也能熟悉一下 DataX 的各个配置项和其作用。 附下 DataX 的工作原理： 官方文档中也给了一个 MySQL 同步到</description>
+    </item>
     
     <item>
       <title>DataX 实践（一）构建 DataX 的 Docker 容器镜像并测试运行</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/openwrt-note-01/</guid>
       <description>第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后</description>
-    </item>
-    
-    <item>
-      <title>GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub</title>
-      <link>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</guid>
-      <description>首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。 以 rab_python_packages 项目为例，文件结构也可直接参</description>
     </item>
     
   </channel>
