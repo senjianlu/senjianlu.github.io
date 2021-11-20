@@ -4,7 +4,70 @@
   
   <url>
     <loc>https://senjianlu.com/categories/</loc>
-    <lastmod>2021-11-16T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/tags/mongodb/</loc>
+    <lastmod>2021-11-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/11/mongodb-note-02/</loc>
+    <lastmod>2021-11-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/posts/</loc>
+    <lastmod>2021-11-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/tags/</loc>
+    <lastmod>2021-11-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-11-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/</loc>
+    <lastmod>2021-11-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/2021/11/windows11-android/</loc>
+    <lastmod>2021-11-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
+    <lastmod>2021-11-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/</loc>
+    <lastmod>2021-11-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,35 +80,14 @@
   </url>
   
   <url>
+    <loc>https://senjianlu.com/2021/11/datax-note-03/</loc>
+    <lastmod>2021-11-16T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://senjianlu.com/2021/11/datax-note-02/</loc>
-    <lastmod>2021-11-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/posts/</loc>
-    <lastmod>2021-11-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/tags/</loc>
-    <lastmod>2021-11-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-11-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/</loc>
     <lastmod>2021-11-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -143,13 +185,6 @@
   </url>
   
   <url>
-    <loc>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
-    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://senjianlu.com/2021/11/postgresql-note-06/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -185,13 +220,6 @@
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/mongodb/</loc>
-    <lastmod>2021-10-27T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://senjianlu.com/2021/10/mongodb-note-01/</loc>
     <lastmod>2021-10-27T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -221,13 +249,6 @@
   
   <url>
     <loc>https://senjianlu.com/2021/10/openwrt-note-03/</loc>
-    <lastmod>2021-10-25T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/</loc>
     <lastmod>2021-10-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
