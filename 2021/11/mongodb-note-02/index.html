@@ -42,7 +42,7 @@
 <meta itemprop="name" content="MongoDB 学习笔记（二） MongoDB 层级关系的梳理和基础操作">
 <meta itemprop="description" content="第一次接触 MongoDB 这种非关系型数据库的表结构设计。 MongoDB 的层级名词翻译过来会有点难理解，所以我将它和 PostgreSQL 数据库的对应起来： PostgreSQL MongoDB Database（数据库）"><meta itemprop="datePublished" content="2021-11-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-11-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2067">
+<meta itemprop="wordCount" content="2068">
 <meta itemprop="keywords" content="MongoDB," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MongoDB 学习笔记（二） MongoDB 层级关系的梳理和基础操作"/>
 <meta name="twitter:description" content="第一次接触 MongoDB 这种非关系型数据库的表结构设计。 MongoDB 的层级名词翻译过来会有点难理解，所以我将它和 PostgreSQL 数据库的对应起来： PostgreSQL MongoDB Database（数据库）"/>
@@ -336,7 +336,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/11/mongodb-note-02/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2067字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2068字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5分 </span>
       </div>
     </div>
@@ -371,14 +371,14 @@
 </tbody>
 </table>
 <hr>
-<p>参考博客：<a href="https://www.cnblogs.com/jing99/p/7436122.html">MongoDB的文档、集合、数据库</a></p>
+<p>参考文章：<a href="https://www.cnblogs.com/jing99/p/7436122.html">MongoDB 的文档、集合、数据库</a></p>
 <h3 id="一database-数据库">一、Database 数据库</h3>
-<p>多个文档构成集合，多个集合组成数据库。一个 MongoDB 实例可以承载多个数据库，每个数据库可以拥有0到多个集合。<br>
+<p>多个文档构成集合，多个集合组成数据库。一个 MongoDB 实例可以承载多个数据库，每个数据库可以拥有 0 到多个集合。<br>
 官方文档：<a href="https://docs.mongodb.com/manual/core/databases-and-collections/#databases">Databases</a></p>
 <p><strong>1、说明</strong></p>
 <ol>
 <li>每个数据库有相应的数据文件和命名空间文件。文件的前缀是数据库的名称，后缀 .ns 表示命名空间文件，后缀以 0、1 等数字结尾的，表示数据文件。</li>
-<li>数据文件的大小从 64MB 开始，新的数据文件大小是上一个文件的 2 倍。所以能看到，下图中 chen.0 的大小是 64MB，chen.1 的大小是 128MB，chen.2是 256MB。</li>
+<li>数据文件的大小从 64MB 开始，新的数据文件大小是上一个文件的 2 倍。所以能看到，下图中 chen.0 的大小是 64MB，chen.1 的大小是 128MB，chen.2 的是 256MB。</li>
 <li>文件使用MAP进行内存映射，会将所有的数据文件映射到内存中，但是只是虚拟内存，只有访问到这块数据时才会交换到物理内存中。</li>
 <li>每个数据文件会被分成一个一个的数据块，块与块之间用双向链表链接。</li>
 <li>在命名空间文件中，保存了每个命名空间的存储信息元数据，包括其大小、块数、第一块的位置、最后一块的位置、被删除的块的链表以及索引信息。　</li>
