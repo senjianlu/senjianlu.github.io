@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/posts/</link>
     <description>Recent content in Posts on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染</title>
+      <link>https://senjianlu.com/2021/12/hugo-google-adsense/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/hugo-google-adsense/</guid>
+      <description>有且只在这篇博文内添加广告作为样例。 (adsbygoogle = window.adsbygoogle || []).push({}); 1、注册 Google AdSense 官方链接：Google AdSense 填入链接和邮箱： 接着使用 Google 账号登录以完成绑定： 2、选择合适</description>
+    </item>
     
     <item>
       <title>MongoDB 学习笔记（二） MongoDB 层级关系的梳理和基础操作</title>
@@ -106,7 +115,7 @@
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://senjianlu.com/2021/11/clash-note-04/</guid>
-      <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 官方配置文件模板中的代码片段： proxies: # http - name: &amp;quot;http&amp;quot; type: http server: server port: 443 # username: username # password: password # tls: true</description>
+      <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 服务器端安装脚本：CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务 curl -s ht</description>
     </item>
     
     <item>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/postgresql-note-05/</guid>
       <description>这应该也算学习笔记吧&amp;hellip;&amp;hellip; 1、信任所有的本地连接 修改配置文件： vi /var/lib/pgsql/12/data/pg_hba.conf 从 md5 的认证方式改为 trust ... ... # &amp;quot;local&amp;quot; is for Unix domain socket connections only local all all</description>
-    </item>
-    
-    <item>
-      <title>定制 OpenWrt 软路由系统（三）编译适用于自己 OpenWrt 软路由系统的 Clash 插件</title>
-      <link>https://senjianlu.com/2021/10/openwrt-note-03/</link>
-      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/openwrt-note-03/</guid>
-      <description>这里插件的编译还是以 Clash 为例，官方版本为 v1.7.5.7，但实际上已经能编译出更新的版本，当前这里的编译请主要参考流程，插件除非是因为 OpenWrt 系统更</description>
     </item>
     
   </channel>

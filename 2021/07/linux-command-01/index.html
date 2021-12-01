@@ -42,7 +42,7 @@
 <meta itemprop="name" content="Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭">
 <meta itemprop="description" content="Linux 命令笔记，方便查找。 系统硬件 1、内存 SWaP 查看： free -m 2、系统内核查看： uname -a 3、SELinux 关闭： # 临时关闭 setenforce 0 修改 /etc/selinux/config 文件： # 永久关闭 vi /etc/selinux/config 将 SELINUX=enforcing"><meta itemprop="datePublished" content="2021-07-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-07-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="282">
+<meta itemprop="wordCount" content="397">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭"/>
 <meta name="twitter:description" content="Linux 命令笔记，方便查找。 系统硬件 1、内存 SWaP 查看： free -m 2、系统内核查看： uname -a 3、SELinux 关闭： # 临时关闭 setenforce 0 修改 /etc/selinux/config 文件： # 永久关闭 vi /etc/selinux/config 将 SELINUX=enforcing"/>
@@ -167,7 +167,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">33</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">29</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">30</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
     </div>
@@ -222,6 +222,10 @@
                     class="tag-list-count">1</span></li>
             
             
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%BB%BA%E7%AB%99/" class="tag-list-link">建站</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
                     class="tag-list-count">4</span></li>
             
@@ -246,6 +250,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/hugo-google-adsense/" class="title">申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-01</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -283,16 +297,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-16</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/11/datax-note-01/" class="title">DataX 实践（一）构建 DataX 的 Docker 容器镜像并测试运行</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-11-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-15</time>
                     </p>
                 </div>
             </li>
@@ -336,7 +340,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/linux-command-01/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 282字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 397字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
       </div>
     </div>
@@ -396,6 +400,25 @@ service iptables save
 systemctl stop iptables.service
 systemctl disable iptables.service
 chkconfig iptables off
+</code></pre>
+<hr>
+<p><strong>代理相关</strong><br>
+1、设置临时代理（只在当前终端中生效，SSH 断开后失效）：</p>
+<pre><code class="language-bash"># HTTP 代理
+export http_proxy=http://$username:$password@$host:$port
+# SOCKS5 代理
+export http_proxy=socks5://$username:$password@$host:$port
+</code></pre>
+<p>2、为 Git 设置代理（<code>git clone</code> 等操作会使用该代理）：</p>
+<pre><code class="language-bash"># 设置 SOCKS5 代理
+git config --global http.proxy socks5://$username:$password@$host:$port
+git config --global https.proxy socks5://$username:$password@$host:$port
+# 查看代理
+git config --global --get http.proxy
+git config --global --get https.proxy
+# 取消代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
 </code></pre>
 
     </div>

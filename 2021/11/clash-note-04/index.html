@@ -23,7 +23,7 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 官方配置文件模板中的代码片段： proxies: # http - name: &amp;quot;http&amp;quot; type: http server: server port: 443 # username: username # password: password # tls: true" />
+  <meta name="description" content="只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 服务器端安装脚本：CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务 curl -s ht" />
   <meta name="generator" content="Hugo 0.88.1 with theme pure" />
   <title>Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点 - 森见鹿的博客 </title>
   
@@ -33,19 +33,19 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
   <meta property="og:title" content="Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点" />
-<meta property="og:description" content="只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 官方配置文件模板中的代码片段： proxies: # http - name: &quot;http&quot; type: http server: server port: 443 # username: username # password: password # tls: true" />
+<meta property="og:description" content="只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 服务器端安装脚本：CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务 curl -s ht" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://senjianlu.com/2021/11/clash-note-04/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-11-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-11-04T00:00:00+00:00" />
 
 <meta itemprop="name" content="Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点">
-<meta itemprop="description" content="只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 官方配置文件模板中的代码片段： proxies: # http - name: &quot;http&quot; type: http server: server port: 443 # username: username # password: password # tls: true"><meta itemprop="datePublished" content="2021-11-04T00:00:00+00:00" />
+<meta itemprop="description" content="只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 服务器端安装脚本：CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务 curl -s ht"><meta itemprop="datePublished" content="2021-11-04T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-11-04T00:00:00+00:00" />
-<meta itemprop="wordCount" content="771">
+<meta itemprop="wordCount" content="932">
 <meta itemprop="keywords" content="Clash," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点"/>
-<meta name="twitter:description" content="只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 官方配置文件模板中的代码片段： proxies: # http - name: &quot;http&quot; type: http server: server port: 443 # username: username # password: password # tls: true"/>
+<meta name="twitter:description" content="只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 服务器端安装脚本：CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务 curl -s ht"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -167,7 +167,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">33</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">29</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">30</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
     </div>
@@ -222,6 +222,10 @@
                     class="tag-list-count">1</span></li>
             
             
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%BB%BA%E7%AB%99/" class="tag-list-link">建站</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
                     class="tag-list-count">4</span></li>
             
@@ -246,6 +250,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/hugo-google-adsense/" class="title">申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-01</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -283,16 +297,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-11-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-16</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/11/datax-note-01/" class="title">DataX 实践（一）构建 DataX 的 Docker 容器镜像并测试运行</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-11-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-15</time>
                     </p>
                 </div>
             </li>
@@ -336,15 +340,20 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/11/clash-note-04/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 771字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 932字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <p>只描述对节点订阅信息的解码和在 Clash 中的配置方法。</p>
 <hr>
-<p><strong>1、HTTP 协议的节点</strong><br>
-<strong><a href="https://github.com/Dreamacro/clash/wiki/configuration">官方配置文件模板</a>中的代码片段：</strong></p>
+<p><strong>1、HTTP 协议的节点</strong></p>
+<blockquote>
+<p>服务器端安装脚本：<a href="https://github.com/senjianlu/one-click-scripts/tree/main/CentOS7%20%E4%B8%8B%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%20GOST%20%E5%B9%B6%E5%90%AF%E5%8A%A8%20HTTP%20%E5%92%8C%20SOCKS5%20%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1">CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务</a></p>
+<pre><code class="language-bash">curl -s https://gitee.com/senjianlu/one-click-scripts/raw/main/CentOS7%20下一键安装%20GOST%20并启动%20HTTP%20和%20SOCKS5%20代理服务/install.sh | bash -s $proxy_port $proxy_username $proxy_password
+</code></pre>
+</blockquote>
+<p><strong><a href="https://github.com/Dreamacro/clash/wiki/configuration">官方配置文件模板</a>中的代码片段：</strong></p>
 <pre><code class="language-yaml">proxies:
   # http
   - name: &quot;http&quot;

@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/posts/</link>
     <description>Recent content in Posts on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>定制 OpenWrt 软路由系统（三）编译适用于自己 OpenWrt 软路由系统的 Clash 插件</title>
+      <link>https://senjianlu.com/2021/10/openwrt-note-03/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/openwrt-note-03/</guid>
+      <description>这里插件的编译还是以 Clash 为例，官方版本为 v1.7.5.7，但实际上已经能编译出更新的版本，当前这里的编译请主要参考流程，插件除非是因为 OpenWrt 系统更</description>
+    </item>
     
     <item>
       <title>PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/09/centos7-gun-screen/</guid>
       <description>持续更新。 Screen 环境变量的配置使其能读取类似 /usr/bin 下的脚本。 vi /etc/screenrc 取消注释 ... shell -$SHELL ...</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下解决 Python3 使用 Matplotlib 生成图表时中文乱码的问题</title>
-      <link>https://senjianlu.com/2021/09/centos7-matplotlib-chinese/</link>
-      <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/centos7-matplotlib-chinese/</guid>
-      <description>不需要 Yum 安装任何其他软件，也不需要修改 Matplotlib 包的配置文件，实测是最简单的方法了。 全程使用 HostVDS 新开的服务器并只安装了 Python3.8.2 以保证教程正确。 1、首先看下没</description>
     </item>
     
   </channel>
