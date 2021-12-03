@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/posts/</link>
     <description>Recent content in Posts on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别</title>
+      <link>https://senjianlu.com/2020/12/nginx-note-01/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/12/nginx-note-01/</guid>
+      <description>因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&amp;hellip</description>
+    </item>
     
     <item>
       <title>Windows 下 Hugo 静态博客一键推送发布</title>

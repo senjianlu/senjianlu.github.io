@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/linux/</link>
     <description>Recent content in Linux on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PostgreSQL 学习笔记（五）找回被遗忘的 postgres 密码</title>
+      <link>https://senjianlu.com/2021/10/postgresql-note-05/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/postgresql-note-05/</guid>
+      <description>这应该也算学习笔记吧&amp;hellip;&amp;hellip; 1、信任所有的本地连接 修改配置文件： vi /var/lib/pgsql/12/data/pg_hba.conf 从 md5 的认证方式改为 trust ... ... # &amp;quot;local&amp;quot; is for Unix domain socket connections only local all all</description>
+    </item>
     
     <item>
       <title>定制 OpenWrt 软路由系统（三）编译适用于自己 OpenWrt 软路由系统的 Clash 插件</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/09/nextcloud-google-analytics/</guid>
       <description>作为长期手搓 JS 的后端，对前端的安全规则几乎是一点都不熟悉，Java Spring 都是 Security 一把梭，这次给 PHP 语言编写的 Nextcloud 添加几行代码真的是要了我的老命了，赶紧</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 关于使用 GNU Screen 的笔记</title>
-      <link>https://senjianlu.com/2021/09/centos7-gun-screen/</link>
-      <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/centos7-gun-screen/</guid>
-      <description>持续更新。 Screen 环境变量的配置使其能读取类似 /usr/bin 下的脚本。 vi /etc/screenrc 取消注释 ... shell -$SHELL ...</description>
     </item>
     
   </channel>

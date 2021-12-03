@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/</link>
     <description>Recent content in 网站建设 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 01 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gullo 2 美刀年付 NAT 主机的基础操作和玩法</title>
+      <link>https://senjianlu.com/2021/12/gullo-nat-vps/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/gullo-nat-vps/</guid>
+      <description>这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其</description>
+    </item>
     
     <item>
       <title>申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染</title>
@@ -16,7 +25,7 @@
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://senjianlu.com/2021/12/hugo-google-adsense/</guid>
-      <description>有且只在这篇博文内添加广告作为样例。 (adsbygoogle = window.adsbygoogle || []).push({}); 1、注册 Google AdSense 官方链接：Google AdSense 填入链接和邮箱： 接着使用 Google 账号登录以完成绑定： 2、选择合适</description>
+      <description>本博客有且只有在这篇博文末尾插入广告作为样例。 1、注册 Google AdSense 官方链接：Google AdSense 填入链接和邮箱： 接着使用 Google 账号登录以完成绑定： 2、选择合适</description>
     </item>
     
     <item>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/centos7-shadowsocks-server/</guid>
       <description>安装个 Shadowsocks 给新买的隧道用。 1、配置 repo 仓库给后面 YUM 安装使用 注：原仓库已经删除，现在只剩备份仓库，使用的 repo 源是备用仓库中 README.md 中记载的，应该是可信的，</description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL 学习笔记（五）找回被遗忘的 postgres 密码</title>
-      <link>https://senjianlu.com/2021/10/postgresql-note-05/</link>
-      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/postgresql-note-05/</guid>
-      <description>这应该也算学习笔记吧&amp;hellip;&amp;hellip; 1、信任所有的本地连接 修改配置文件： vi /var/lib/pgsql/12/data/pg_hba.conf 从 md5 的认证方式改为 trust ... ... # &amp;quot;local&amp;quot; is for Unix domain socket connections only local all all</description>
     </item>
     
   </channel>
