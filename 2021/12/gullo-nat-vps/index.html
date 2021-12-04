@@ -42,7 +42,7 @@
 <meta itemprop="name" content="Gullo 2 美刀年付 NAT 主机的基础操作和玩法">
 <meta itemprop="description" content="这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其"><meta itemprop="datePublished" content="2021-12-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1579">
+<meta itemprop="wordCount" content="1595">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gullo 2 美刀年付 NAT 主机的基础操作和玩法"/>
 <meta name="twitter:description" content="这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其"/>
@@ -64,6 +64,8 @@
     gtag('js', new Date());
     gtag('config', 'G-KY7RM5P6Z1');
   </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
   </head>
 
@@ -336,7 +338,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/12/gullo-nat-vps/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1579字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1595字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
       </div>
     </div>
@@ -409,7 +411,9 @@ service nginx start
 <img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211202195448.png" alt="DNS 解析"><br>
 稍等片刻后访问页面测试一下：<br>
 <img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211203200622.png" alt="测试"><br>
-你也可以通过 <a href="http://ipv6-test.com/validate.php">ipv6-test</a> 来测试你的站点对 IPv6 的支持情况：<br>
+再用只有 IPv4 地址的主机访问一下：<br>
+<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211204112806.png" alt="用只有 IPv4 的主机访问"><br>
+IPv4 都支持了，那么 IPv6 更不用说了，通过 <a href="http://ipv6-test.com/validate.php">ipv6-test</a> 测试一下：<br>
 <img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211203200703.png" alt="ipv6-test"></p>
 <blockquote>
 <p>Gullo 部分机房存在阻断 Cloudflare 流量来源的问题（我实践后发现起码纽约机房是阻断的），这会导致你不套 CF 使用 IPv6 可以访问网站，但是套了后出现 522 的错误，具体的讨论可以看这个：<a href="https://www.lowendtalk.com/discussion/174851/gullos-hosting-in-ny-blocking-cloudflare">Gullos hosting in NY blocking cloudflare ?</a><br>
