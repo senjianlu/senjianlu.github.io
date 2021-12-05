@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/</link>
     <description>Recent content in Categories on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下安装 Shadowsocks 服务端</title>
+      <link>https://senjianlu.com/2021/10/centos7-shadowsocks-server/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-shadowsocks-server/</guid>
+      <description>安装个 Shadowsocks 给新买的隧道用。 1、配置 repo 仓库给后面 YUM 安装使用 注：原仓库已经删除，现在只剩备份仓库，使用的 repo 源是备用仓库中 README.md 中记载的，应该是可信的，</description>
+    </item>
     
     <item>
       <title>PostgreSQL 学习笔记（五）找回被遗忘的 postgres 密码</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/09/ubuntu18-rust-server-01/</guid>
       <description>LinuxGSM (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。 注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一</description>
-    </item>
-    
-    <item>
-      <title>Nextcloud 前端页面插入 JS 代码以使用 Google Analytics 分析</title>
-      <link>https://senjianlu.com/2021/09/nextcloud-google-analytics/</link>
-      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/nextcloud-google-analytics/</guid>
-      <description>作为长期手搓 JS 的后端，对前端的安全规则几乎是一点都不熟悉，Java Spring 都是 Security 一把梭，这次给 PHP 语言编写的 Nextcloud 添加几行代码真的是要了我的老命了，赶紧</description>
     </item>
     
   </channel>

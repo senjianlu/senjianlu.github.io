@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>CentOS7 下安装 RabbitMQ</title>
+      <link>https://senjianlu.com/2020/12/centos7-install-rabbitmq/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/12/centos7-install-rabbitmq/</guid>
+      <description>最近的新项目考虑到有分布式的需要，感觉加入消息队列不仅能增强各系统直接的协调性，对服务器资源也能提高利用效率，决定试下 RabbitMQ，于是</description>
+    </item>
+    
+    <item>
       <title>Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别</title>
       <link>https://senjianlu.com/2020/12/nginx-note-01/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
