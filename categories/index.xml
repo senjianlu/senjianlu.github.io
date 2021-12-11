@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/</link>
     <description>Recent content in Categories on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MongoDB 学习笔记（三） MongoDB 数据库远程连接 GUI 工具 MongoDB Compass 的使用</title>
+      <link>https://senjianlu.com/2021/12/mongodb-note-03/</link>
+      <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/mongodb-note-03/</guid>
+      <description>本来是准备买 Navicat 的，但是不巧错过了永久版 7 折的优惠&amp;hellip;&amp;hellip;意外发现 MongoDB 官方居然也有可视化工具：MongoDB Compas</description>
+    </item>
     
     <item>
       <title>Windows11 时钟 Clock 的使用体验</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/mongodb-note-01/</guid>
       <description>在和舍友交流之后才发现拿 JSONB 存储历史价格信息的我可能是个天才吧&amp;hellip;&amp;hellip; 回去检查了一下 PostgreSQL 中的对应字段，果然达到了 65535 字节的</description>
-    </item>
-    
-    <item>
-      <title>Clash 学习（一）配置文件各项在实际使用中的用处和创建自己的第一个配置文件</title>
-      <link>https://senjianlu.com/2021/10/clash-note-01/</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/clash-note-01/</guid>
-      <description>Clash 的优点太多了不赘述了，我选择它的理由是 OpenWrt 的 Clash 插件可以在软路由层面将流量分流到不同节点，比如说：YouTube 使用香港节点、Netflix 走</description>
     </item>
     
   </channel>

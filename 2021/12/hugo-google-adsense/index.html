@@ -42,7 +42,7 @@
 <meta itemprop="name" content="申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染">
 <meta itemprop="description" content="本博客有且只有在该文章末尾添加了测试用的广告。 1、注册 Google AdSense 官方链接：Google AdSense 填入链接和邮箱： 接着使用 Google 账号登录以完成绑定： 2、确认网站"><meta itemprop="datePublished" content="2021-12-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-01T00:00:00+00:00" />
-<meta itemprop="wordCount" content="989">
+<meta itemprop="wordCount" content="997">
 <meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染"/>
 <meta name="twitter:description" content="本博客有且只有在该文章末尾添加了测试用的广告。 1、注册 Google AdSense 官方链接：Google AdSense 填入链接和邮箱： 接着使用 Google 账号登录以完成绑定： 2、确认网站"/>
@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">33</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">34</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">30</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -210,7 +210,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">3</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
@@ -256,6 +256,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/mongodb-note-03/" class="title">MongoDB 学习笔记（三） MongoDB 数据库远程连接 GUI 工具 MongoDB Compass 的使用</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2021/12/windows11-clock/" class="title">Windows11 时钟 Clock 的使用体验</a>
                     </p>
                     <p class="item-date">
@@ -290,16 +300,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-11-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-20</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/11/windows11-android/" class="title">Windows11 抢先体验 Android 虚拟机并安装第三方应用</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-11-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-11-19</time>
                     </p>
                 </div>
             </li>
@@ -343,7 +343,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/12/hugo-google-adsense/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 989字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 997字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
@@ -397,8 +397,9 @@ Hugo Shortcodes 官方介绍：<a href="https://gohugo.io/content-management/sho
 <p>即优先使用主目录下的模板。<br>
 知道了模板存放路径，那么命名呢？命名也很简单，模板的 <code>.html</code> 文件名字可以自定义，在 Markdown 中书写的时候使用相同的名字就行了，例如我创建了 <code>google-adsense.html</code> 这个模板：<br>
 <img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211201235953.png" alt="google-adsense.html"><br>
-那么我在文章的 <code>.md</code> 文件中这样调用，后期 Hugo 就会自动渲染了：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211202000641.png" alt="调用"></p>
+那么我在文章的 <code>.md</code> 文件中这样调用，后期 Hugo 就会自动渲染了：</p>
+<pre><code class="language-bash">{{&lt; google-adsense &gt;}}
+</code></pre>
 <p>把刚刚的 Google AdSense 的广告代码复制过来，并将部分值设定为用参数传入， <code>google-adsense.html</code> 的内容就变成了这个样子：</p>
 <pre><code class="language-html">&lt;script async src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-{{ index .Params 0 }}&quot;
      crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
@@ -413,8 +414,9 @@ Hugo Shortcodes 官方介绍：<a href="https://gohugo.io/content-management/sho
      (adsbygoogle = window.adsbygoogle || []).push({});
 &lt;/script&gt;
 </code></pre>
-<p>调用：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211202000711.png" alt="调用"></p>
+<p>调用：</p>
+<pre><code class="language-bash">{{&lt; google-adsense 7999470995937770 3998950649 &gt;}}
+</code></pre>
 <p>广告测试样例：</p>
 <hr>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7999470995937770"

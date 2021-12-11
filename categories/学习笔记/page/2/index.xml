@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 学习笔记 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Clash 学习（一）配置文件各项在实际使用中的用处和创建自己的第一个配置文件</title>
+      <link>https://senjianlu.com/2021/10/clash-note-01/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/clash-note-01/</guid>
+      <description>Clash 的优点太多了不赘述了，我选择它的理由是 OpenWrt 的 Clash 插件可以在软路由层面将流量分流到不同节点，比如说：YouTube 使用香港节点、Netflix 走</description>
+    </item>
     
     <item>
       <title>CentOS7 下安装 Shadowsocks 服务端</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/09/centos7-jupyter/</guid>
       <description>因为 Linux 系统下用 code-server 作为编译器预览 Matplotlib 图表实在过于麻烦，于是决定多装一个 Jupyter 作为数据分析图表预览用工具。 安装较为简单，但是开机启动碰到了一些问题，但</description>
-    </item>
-    
-    <item>
-      <title>Rust 开服（一）Ubuntu18 下通过 LinuxGSM 搭建 Rust Server 游戏服务器端</title>
-      <link>https://senjianlu.com/2021/09/ubuntu18-rust-server-01/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/ubuntu18-rust-server-01/</guid>
-      <description>LinuxGSM (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。 注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一</description>
     </item>
     
   </channel>
