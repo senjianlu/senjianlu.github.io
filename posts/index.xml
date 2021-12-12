@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/posts/</link>
     <description>Recent content in Posts on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基于太坊 ETH 的智能合约学习（一）下载和使用小狐狸钱包 MetaMask（Chrome 插件版）</title>
+      <link>https://senjianlu.com/2021/12/smart-contracts-note-01/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/smart-contracts-note-01/</guid>
+      <description>翻出了刚开始交易时候的收益图，不到 1600 USDT 均价的 ETH 忍痛割肉，现在涨到了 4000 U 左右，抱着困惑去重新了解了一遍 Ethereum 的愿景是什么、怎么运作和如何基于它开发</description>
+    </item>
     
     <item>
       <title>MongoDB 学习笔记（三） MongoDB 数据库远程连接 GUI 工具 MongoDB Compass 的使用</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/centos7-nezha-monitor/</guid>
       <description>部分境外代理用的服务器连入 Zabbix 实在是太吃资源了，过高的延迟也使得连接一直中断，考虑了一下决定将边缘业务用的服务器全抽离出来，单独用哪吒监控做管</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 学习笔记（一） CentOS7 下安装 MongoDB</title>
-      <link>https://senjianlu.com/2021/10/mongodb-note-01/</link>
-      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/mongodb-note-01/</guid>
-      <description>在和舍友交流之后才发现拿 JSONB 存储历史价格信息的我可能是个天才吧&amp;hellip;&amp;hellip; 回去检查了一下 PostgreSQL 中的对应字段，果然达到了 65535 字节的</description>
     </item>
     
   </channel>

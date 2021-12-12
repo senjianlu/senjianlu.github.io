@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/</link>
     <description>Recent content in Categories on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 11 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MongoDB 学习笔记（一） CentOS7 下安装 MongoDB</title>
+      <link>https://senjianlu.com/2021/10/mongodb-note-01/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/mongodb-note-01/</guid>
+      <description>在和舍友交流之后才发现拿 JSONB 存储历史价格信息的我可能是个天才吧&amp;hellip;&amp;hellip; 回去检查了一下 PostgreSQL 中的对应字段，果然达到了 65535 字节的</description>
+    </item>
     
     <item>
       <title>Clash 学习（一）配置文件各项在实际使用中的用处和创建自己的第一个配置文件</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/09/postgresql-note-04/</guid>
       <description>我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下安装 Jupyter</title>
-      <link>https://senjianlu.com/2021/09/centos7-jupyter/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/centos7-jupyter/</guid>
-      <description>因为 Linux 系统下用 code-server 作为编译器预览 Matplotlib 图表实在过于麻烦，于是决定多装一个 Jupyter 作为数据分析图表预览用工具。 安装较为简单，但是开机启动碰到了一些问题，但</description>
     </item>
     
   </channel>
