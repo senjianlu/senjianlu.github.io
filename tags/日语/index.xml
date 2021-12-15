@@ -11,7 +11,16 @@
     
     
     <item>
-      <title>基于太坊 ETH 的智能合约学习（一）下载和使用小狐狸钱包 MetaMask（Chrome 插件版）</title>
+      <title>CentOS7 下用 Docker 部署 Firefox 以实现浏览器套浏览器访问被屏蔽的网站</title>
+      <link>https://senjianlu.com/2021/12/centos7-docker-firefox-in-browser/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/centos7-docker-firefox-in-browser/</guid>
+      <description>公司用的日本专线，狡猾的日本人为了防止上班摸鱼把博客园都屏蔽了，使用中文搜索问题检索结果永远只有 CSDN 和内容农场&amp;hellip;&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>基于太坊 ETH 的智能合约学习（一）下载和使用小狐狸钱包 MetaMask（Chrome 插件版）并添加 BSC 主网络进行 BNB 转账</title>
       <link>https://senjianlu.com/2021/12/smart-contracts-note-01/</link>
       <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/plesk-install-nextcloud/</guid>
       <description>维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且因为当初没有配置邮箱信息，导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下哪吒监控面板的搭建的监控端的安装</title>
-      <link>https://senjianlu.com/2021/10/centos7-nezha-monitor/</link>
-      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/centos7-nezha-monitor/</guid>
-      <description>部分境外代理用的服务器连入 Zabbix 实在是太吃资源了，过高的延迟也使得连接一直中断，考虑了一下决定将边缘业务用的服务器全抽离出来，单独用哪吒监控做管</description>
     </item>
     
   </channel>

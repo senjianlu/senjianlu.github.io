@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/</link>
     <description>Recent content on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下哪吒监控面板的搭建的监控端的安装</title>
+      <link>https://senjianlu.com/2021/10/centos7-nezha-monitor/</link>
+      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-nezha-monitor/</guid>
+      <description>部分境外代理用的服务器连入 Zabbix 实在是太吃资源了，过高的延迟也使得连接一直中断，考虑了一下决定将边缘业务用的服务器全抽离出来，单独用哪吒监控做管</description>
+    </item>
     
     <item>
       <title>MongoDB 学习笔记（一） CentOS7 下安装 MongoDB</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/09/k3s-note-01/</guid>
       <description>之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的</description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数</title>
-      <link>https://senjianlu.com/2021/09/postgresql-note-04/</link>
-      <pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/postgresql-note-04/</guid>
-      <description>我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展</description>
     </item>
     
   </channel>
