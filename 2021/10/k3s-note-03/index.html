@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -357,13 +357,13 @@
 <hr>
 <p>1、从面板导入现有集群<br>
 添加集群：
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001141655.png" alt="添加集群"><br>
+<img src="https://img.senjianlu.com/20211001141655.png" alt="添加集群"><br>
 导入：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001141738.png" alt="导入"><br>
+<img src="https://img.senjianlu.com/20211001141738.png" alt="导入"><br>
 输入集群名词后创建：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001141839.png" alt="创建"><br>
+<img src="https://img.senjianlu.com/20211001141839.png" alt="创建"><br>
 复制命令前往集群执行：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001141935.png" alt="复制"><br>
+<img src="https://img.senjianlu.com/20211001141935.png" alt="复制"><br>
 我是在节点的主 server 节点执行的，执行完后返回的信息：</p>
 <pre><code class="language-bash">clusterrole.rbac.authorization.k8s.io/proxy-clusterrole-kubeapiserver created
 clusterrolebinding.rbac.authorization.k8s.io/proxy-role-binding-kubernetes-master created
@@ -376,7 +376,7 @@ clusterrole.rbac.authorization.k8s.io/cattle-admin created
 deployment.apps/cattle-cluster-agent created
 </code></pre>
 <p>再回到页面上看见正在等待：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001142215.png" alt="等待"></p>
+<img src="https://img.senjianlu.com/20211001142215.png" alt="等待"></p>
 <blockquote>
 <p>在这一步我等了 10 分钟左右还没有导入成功，看了下日志：</p>
 <pre><code class="language-bash">[root@server-01 ~]# kubectl -n cattle-system logs -l app=cattle-cluster-agent -f
@@ -414,24 +414,24 @@ pong
 </code></pre>
 </blockquote>
 <p>再回到 Rancher 页面应该就导入成功了：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001153652.png" alt="导入成功"></p>
+<img src="https://img.senjianlu.com/20211001153652.png" alt="导入成功"></p>
 <p>2、创建一个容器应用<br>
 我这里选择了新建一个 Nginx 容器，也正好能测试下外网对容器内服务的访问情况。<br>
 选择命名空间：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001223429.png" alt="选择命名空间"><br>
+<img src="https://img.senjianlu.com/20211001223429.png" alt="选择命名空间"><br>
 部署服务：
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001223525.png" alt="部署服务"><br>
+<img src="https://img.senjianlu.com/20211001223525.png" alt="部署服务"><br>
 填写对应的信息，这里的 Docker 镜像会默认从 <a href="https://hub.docker.com/">hub.docker.com</a> 下载，例如我这里填的是 nginx，那么后台会执行 docker pull nginx 这个操作。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001223959.png" alt="填写对应的信息"><br>
+<img src="https://img.senjianlu.com/20211001223959.png" alt="填写对应的信息"><br>
 下拉点击创建后，就可以看见这个服务因为没有容器而更新了：
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001224117.png" alt="更新"><br>
+<img src="https://img.senjianlu.com/20211001224117.png" alt="更新"><br>
 稍等片刻更新完成：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001224145.png" alt="完成"></p>
+<img src="https://img.senjianlu.com/20211001224145.png" alt="完成"></p>
 <p>3、容器的访问<br>
 点进刚刚创建的服务内，因为选择的是创建一个无状态服务，因此会随机在一个节点（服务器）上建立服务，这里看到是 server-02 这个节点：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001224346.png" alt="服务"><br>
+<img src="https://img.senjianlu.com/20211001224346.png" alt="服务"><br>
 用 server-02 节点的公网 IP 搭配映射的 30080 端口进行访问：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211001224613.png" alt="成功"></p>
+<img src="https://img.senjianlu.com/20211001224613.png" alt="成功"></p>
 <p>结束。</p>
 <blockquote>
 <p><strong>附加：</strong>

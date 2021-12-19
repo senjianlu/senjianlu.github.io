@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -417,7 +417,7 @@ print(response.content)
 HTTP 属于应用层，而 SOCKS5 属于会话层，这就意味着 SOCKS5 所能代理的范围会比 HTTP 协议更广。<br>
 而 SOCKS5H 与 SOCKS5 的区别则是：SOCKS5 在本地解析 Hostname，而 SOCKS5H 则有 SOCKS5 代理所部署的服务器解析 Hostname。<br>
 换句话说，SOCKS5 适合本地能够解析目标主机域名（比如 GitHub）但是访问速度慢的域名来提高下载速度，而 SOCKS5H 则可以用来代理本地不能解析的网站（比如 Google），由服务器解析目标主机域名。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200704010936.png" alt=""></p>
+<img src="https://img.senjianlu.com/20200704010936.png" alt=""></p>
 <p>最后附上服务端代理的搭建脚本：<br>
 HTTP 代理：<a href="https://github.com/senjianlu/one-click-scripts/tree/main/CentOS7%20%E4%B8%8B%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%20Tinyproxy%20%E4%BB%A3%E7%90%86">CentOS7 下一键安装 Tinyproxy 代理</a><br>
 SOCKS5 代理：<a href="https://github.com/senjianlu/one-click-scripts/tree/main/CentOS7%20%E4%B8%8B%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%20SOCKS5%20%E4%BB%A3%E7%90%86">CentOS7 下一键安装 SOCKS5 代理</a><br>

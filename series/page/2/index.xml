@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统</title>
+      <link>https://senjianlu.com/2021/10/plesk-install-nextcloud/</link>
+      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/plesk-install-nextcloud/</guid>
+      <description>维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且因为当初没有配置邮箱信息，导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流</description>
+    </item>
+    
+    <item>
       <title>CentOS7 下哪吒监控面板的搭建的监控端的安装</title>
       <link>https://senjianlu.com/2021/10/centos7-nezha-monitor/</link>
       <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
@@ -178,15 +187,6 @@
       
       <guid>https://senjianlu.com/2021/09/k3s-note-02-01/</guid>
       <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs</description>
-    </item>
-    
-    <item>
-      <title>K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点</title>
-      <link>https://senjianlu.com/2021/09/k3s-note-01/</link>
-      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/k3s-note-01/</guid>
-      <description>之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的</description>
     </item>
     
   </channel>

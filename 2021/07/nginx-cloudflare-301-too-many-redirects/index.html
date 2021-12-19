@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -406,7 +406,7 @@ service nginx restart
 <p><strong>原因</strong><br>
 因为在 Cloudflare 的 SSL/TLS 设置选项中，如果你选择了 Flexible ，那么所有对你的服务器的请求都是通过 HTTP 发送的，而如果服务器上已经设置了将 HTTP 重定向到 HTTPS 的话，就会发生重定向循环。</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210717151750.png" alt=""><br>
+<p><img src="https://img.senjianlu.com/20210717151750.png" alt=""><br>
 如图更改即可。</p>
 <p>3、<strong>注意事项：</strong><br>
 上述操作结束后，如果服务器 Nginx 配置项中一个域名同时有 HTTP 和 HTTPS 两个 server 配置内容的话，所有 HTTP 访问会无视其对应配置而改为 HTTPS 协议并遵循 HTTPS 的 server 配置内容，这会引起最大的问题就是类似 Let&rsquo;s Encrypt SSL 证书申请时所采取的：在服务器某一位置生成认证文件并用 HTTP 协议访问它以完成验证这一措施失效。<br>

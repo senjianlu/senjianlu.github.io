@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -371,14 +371,14 @@
 </code></pre>
 <p>在这里我一般情况下使用 CREATE USER，因为这样默认出来的用户是有 &ldquo;Login&rdquo; 权限的，不需要再去额外设置一下了。用户的其他属性用两种方法创建出来不会有任何不同。<br>
 上面命令中的 &ldquo;option&rdquo; 就是用户创建时被赋予的权限了，可以是如下内容：<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203175847.png" alt="01"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203175919.png" alt="02"></p>
+<img src="https://img.senjianlu.com/20200203175847.png" alt="01"><br>
+<img src="https://img.senjianlu.com/20200203175919.png" alt="02"></p>
 <p>举个实际的例子，比如我现在有一个新的项目要启动，需要创建对应的用户和数据库：</p>
 <pre><code class="language-bash">CREATE USER new_project_user CREATEDB;
 ALTER USER new_project_user PASSWORD '12345';       # 修改登录密码
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203184537.png" alt="创建"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203184432.png" alt="测试"><br>
+<p><img src="https://img.senjianlu.com/20200203184537.png" alt="创建"><br>
+<img src="https://img.senjianlu.com/20200203184432.png" alt="测试"><br>
 这样一个可创建项目数据库的用户就创建完成了！当然这种情况下，创建的用户其他是没有其他数据库及表的访问权限的。</p>
 <p>2、修改权限<br>
 之前说过的5项权限中，存在包含超级用户、创建数据库权限和 Login 在内的特殊权限，在修改权限或者说管理权限时，使用的命令是与一般权限不同的：</p>
@@ -398,12 +398,12 @@ GRANT some_privileges ON database_object_type object_name TO username
 <p>比如说我现在需要将 &ldquo;testdb&rdquo; 模式中的 &ldquo;student&rdquo; 表查看权限赋予刚刚我们创建的 &ldquo;new_project_user&rdquo; 用户：</p>
 <pre><code class="language-bash">GRANT SELECT ON table student TO new_project_user;
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203226.png" alt="table student"><br>
+<p><img src="https://img.senjianlu.com/20200203203226.png" alt="table student"><br>
 这个时候再用 Navicat 连接后去查看 &ldquo;student&quot;表，可以正常访问了。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203344.png" alt="访问正常"></p>
+<img src="https://img.senjianlu.com/20200203203344.png" alt="访问正常"></p>
 <p>具体的权限贴在下放以作记录，如果需要同时赋予多个权限，除了 &ldquo;ALL PRIVILEGES&rdquo; 以外，只需要在多个权限中用 &ldquo;,&rdquo; 隔开就行了。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203607.png" alt="权限01"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200203203708.png" alt="权限02"></p>
+<img src="https://img.senjianlu.com/20200203203607.png" alt="权限01"><br>
+<img src="https://img.senjianlu.com/20200203203708.png" alt="权限02"></p>
 <hr>
 <p><strong>这里是后面学习时候的修修补补：</strong></p>
 <ol>

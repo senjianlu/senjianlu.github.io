@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -493,26 +493,26 @@ rancher.crt  rancher.csr  rancher.key  ext.ini
     ...
 </code></pre>
 <p>通过 HTTPS 访问仍然会显示不安全，查看下证书发现生效了但是因为是自签的所以不受信任：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210928223115.png" alt=""></p>
+<img src="https://img.senjianlu.com/20210928223115.png" alt=""></p>
 <p>7、Windows 本地信任证书</p>
 <pre><code class="language-bash"># cmd 键入 mmc 打开控制台
 mmc
 </code></pre>
 <p>添加/删除单元：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210928223755.png" alt="添加/删除单元"><br>
+<img src="https://img.senjianlu.com/20210928223755.png" alt="添加/删除单元"><br>
 为根节点添加证书选项，弹出框选择当前用户即可：
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210928223951.png" alt="为根节点添加证书选项"><br>
+<img src="https://img.senjianlu.com/20210928223951.png" alt="为根节点添加证书选项"><br>
 根目录中导入证书：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210928224218.png" alt="根目录中导入证书"><br>
+<img src="https://img.senjianlu.com/20210928224218.png" alt="根目录中导入证书"><br>
 将服务上的 .crt 文件下载到本地，导入一路选择“是”即可完成导入：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210928224541.png" alt="导入成功"><br>
+<img src="https://img.senjianlu.com/20210928224541.png" alt="导入成功"><br>
 回页面看一眼证书现在已经被信任了：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210928225304.png" alt="被信任"></p>
+<img src="https://img.senjianlu.com/20210928225304.png" alt="被信任"></p>
 <p>8、Chrome 信任证书<br>
 存在一些情况 Edge 已经信任证书，但是 Chrome 还不信任：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210928232944.png" alt="Chrome 还不信任"><br>
+<img src="https://img.senjianlu.com/20210928232944.png" alt="Chrome 还不信任"><br>
 前往 Chrome 高级设置里的证书处导入即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210928233152.png" alt="Chrome 导入"></p>
+<img src="https://img.senjianlu.com/20210928233152.png" alt="Chrome 导入"></p>
 <p>结束。</p>
 
     </div>

@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -388,7 +388,7 @@ docker update --restart=always some-zabbix-web-nginx-pgsql
 </code></pre>
 <blockquote>
 <p>中文界面开启方式：
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210719225053.png" alt="中文界面"></p>
+<img src="https://img.senjianlu.com/20210719225053.png" alt="中文界面"></p>
 </blockquote>
 <p>3、agent 端。<br>
 官方 Docker 镜像：<a href="https://hub.docker.com/r/zabbix/zabbix-agent">zabbix-agent</a><br>
@@ -400,11 +400,11 @@ docker run --name some-zabbix-agent -p 10050:10050 -e ZBX_HOSTNAME=&quot;$hostna
 </code></pre>
 <blockquote>
 <p>选择创建主机，
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210719224633.png" alt="选择创建主机"><br>
+<img src="https://img.senjianlu.com/20210719224633.png" alt="选择创建主机"><br>
 主机名称就是 hostname，需要注意的是不能有汉字。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210719224756.png" alt="主机配置"><br>
+<img src="https://img.senjianlu.com/20210719224756.png" alt="主机配置"><br>
 主机群组选 Zabbix servers 即可，后续自行更改。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210719224924.png" alt="主机群组"></p>
+<img src="https://img.senjianlu.com/20210719224924.png" alt="主机群组"></p>
 </blockquote>
 <pre><code class="language-bash"># 查看 log
 docker logs some-zabbix-agent
@@ -412,9 +412,9 @@ docker logs some-zabbix-agent
 docker update --restart=always some-zabbix-agent
 </code></pre>
 <p>没有问题的话去前端检查一下 ZBX 是否可用，<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210719225335.png" alt=""><br>
+<img src="https://img.senjianlu.com/20210719225335.png" alt=""><br>
 如果可用的话，再去看下监控图形，
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210719225602.png" alt="图形"><br>
+<img src="https://img.senjianlu.com/20210719225602.png" alt="图形"><br>
 如果都没问题的话，Zabbix 的安装就结束了，以上。</p>
 
     </div>

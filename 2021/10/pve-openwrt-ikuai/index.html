@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -354,7 +354,7 @@
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <p>被自己写的第一篇教程恶心到了&hellip;&hellip;<br>
 重新确定下拓扑，黑群晖系统不动，将其他两个软路由重新部署下。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024194202.png" alt="拓扑"></p>
+<img src="https://img.senjianlu.com/20211024194202.png" alt="拓扑"></p>
 <hr>
 <p>首选说明几个重要的 IP 地址：  </p>
 <table>
@@ -394,35 +394,35 @@ address 配置了 PVE 的 IP，于是就成了 PVE 管理面板的专属网口�
 netmask 子网掩码不用多说了，照着填就行了。<br>
 gateway 网关为你爱快所在的 IP 地址。<br>
 <em>注：即使配置了网关现在 PVE 也是无法连接外网的，考虑到没有需求我也没再折腾。</em><br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024225810.png" alt="主机网络的配置"></p>
+<img src="https://img.senjianlu.com/20211024225810.png" alt="主机网络的配置"></p>
 <p>2、管理面板的配置<br>
 网桥和网口一一配对，PVE 管理口配置 CIDR 和网关。<br>
 到这拓扑就一定要确定了，结合我上面的拓扑也能知道我将 PVE 的管理口 vmbr0 同时设定为爱快主路由和 OpenWrt 旁路由的连接口，而 vmbr4 则作为 WAN 口接入入网线。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024230504.png" alt="管理面板的配置"></p>
+<img src="https://img.senjianlu.com/20211024230504.png" alt="管理面板的配置"></p>
 <hr>
 <p><strong>爱快的配置</strong></p>
 <p>1、管理面板的配置<br>
 net0 作为和 OpenWrt 连接的网口，net1 作为 WAN 口。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024230912.png" alt="管理面板的配置"></p>
+<img src="https://img.senjianlu.com/20211024230912.png" alt="管理面板的配置"></p>
 <p>2、爱快内部配置<br>
 默认就配置好了的 LAN 口（比对 MAC 地址发现就是上面的 net0）：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024231353.png" alt="默认就配置好了的 LAN 口"><br>
+<img src="https://img.senjianlu.com/20211024231353.png" alt="默认就配置好了的 LAN 口"><br>
 需要自己配置的 WAN 口，只需要配置绑定剩下的 WAN 口并拨号即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024231507.png" alt="WAN 口"><br>
+<img src="https://img.senjianlu.com/20211024231507.png" alt="WAN 口"><br>
 DHCP 服务端，这里把网关配置为 OpenWrt 地址即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024231603.png" alt="DHCP 服务端"></p>
+<img src="https://img.senjianlu.com/20211024231603.png" alt="DHCP 服务端"></p>
 <hr>
 <p><strong>OpenWrt 的配置</strong></p>
 <p>1、管理面板的配置<br>
 除了那个 WAN 口（vmbr4）其他都配置上。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024231801.png" alt="管理面板的配置 "></p>
+<img src="https://img.senjianlu.com/20211024231801.png" alt="管理面板的配置 "></p>
 <p>2、OpenWrt 内部配置<br>
 只保留 LAN 口配置：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024231944.png" alt="只保留 LAN 口配置"><br>
+<img src="https://img.senjianlu.com/20211024231944.png" alt="只保留 LAN 口配置"><br>
 LAN 口内的基本设置中，将网关指回给爱快：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024232053.png" alt="将网关指回给爱快"><br>
+<img src="https://img.senjianlu.com/20211024232053.png" alt="将网关指回给爱快"><br>
 物理设备中勾选所有网口：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024232151.png" alt="物理设备中勾选所有网口"></p>
+<img src="https://img.senjianlu.com/20211024232151.png" alt="物理设备中勾选所有网口"></p>
 <p>结束。</p>
 
     </div>

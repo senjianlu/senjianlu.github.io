@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -357,16 +357,16 @@
 <p><strong>1、首先注册一个新的 GitHub 应用</strong><br>
 哪吒监控管理员后台的登录认证使用的是 GitHub OAuth，即：将认证步骤交给 GitHub，面板只负责接收回调并判断是否是本人。<br>
 注册新的应用：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028201105.png" alt="注册新的应用"><br>
+<img src="https://img.senjianlu.com/20211028201105.png" alt="注册新的应用"><br>
 回调地址在域名基础上加上 /oauth2/callback 即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028201338.png" alt=""><br>
+<img src="https://img.senjianlu.com/20211028201338.png" alt=""><br>
 接着创建一下私钥：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028201453.png" alt="创建私钥"><br>
+<img src="https://img.senjianlu.com/20211028201453.png" alt="创建私钥"><br>
 将 Client ID 和新建的 Client secret 都保存一下，<strong>Client secret 之后就再也不会完整出现了！</strong>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028201722.png" alt="保存"></p>
+<img src="https://img.senjianlu.com/20211028201722.png" alt="保存"></p>
 <blockquote>
 <p>注：OAuth 不同于部分应用对你 GitHub 账号的绑定，OAuth 是不会像下面的图一样向你请求仓库的权限的:<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028200651.png" alt=""><br>
+<img src="https://img.senjianlu.com/20211028200651.png" alt=""><br>
 它只会需要一些个人公开信息（第 2 步面板端安装结束后有截图），因此使用上可以放心。<br>
 更多详情请参照：<a href="https://docs.github.com/cn/developers/apps/building-oauth-apps/authorizing-oauth-apps">授权 OAuth 应用程序</a></p>
 </blockquote>
@@ -385,11 +385,11 @@ sudo ./nezha.sh
 </code></pre>
 </blockquote>
 <p>选择安装面板端：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028202438.png" alt="安装面板端"><br>
+<img src="https://img.senjianlu.com/20211028202438.png" alt="安装面板端"><br>
 期间需要安装 Docker，之后以此输入 Client ID、Client Secret 和 GitHub 用户名和站点标题即可，端口用默认的就行：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028202926.png" alt="输入信息"><br>
+<img src="https://img.senjianlu.com/20211028202926.png" alt="输入信息"><br>
 <strong>别忘了开放防火墙和安全组</strong>，之后启动面板即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028205531.png" alt="启动"></p>
+<img src="https://img.senjianlu.com/20211028205531.png" alt="启动"></p>
 <blockquote>
 <p>如果你和我一样是使用 Certbot 申请免费的 
 Let&rsquo;s encrypt 证书，且使用的是在网站目录下放验证文件的方法，那么可以直接参考我的 Nginx 配置：</p>
@@ -451,20 +451,20 @@ server {
 </code></pre>
 </blockquote>
 <p>前往页面授权登录即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028211555.png" alt="登录"></p>
+<img src="https://img.senjianlu.com/20211028211555.png" alt="登录"></p>
 <p><strong>3、安装被监控端（即 Zabbix agent 端）</strong><br>
 首先在管理面板新建被监控服务器：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028212619.png" alt="新建"><br>
+<img src="https://img.senjianlu.com/20211028212619.png" alt="新建"><br>
 获取密钥留用：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028212717.png" alt="密钥">
+<img src="https://img.senjianlu.com/20211028212717.png" alt="密钥">
 接着前往被监控服务器，执行的命令和面板端的一样：</p>
 <pre><code class="language-bash">curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh  -o nezha.sh &amp;&amp; chmod +x nezha.sh
 sudo ./nezha.sh
 </code></pre>
 <p>这里的域名可以直接输入监控端的外网 IP 而不一定要是域名，反正不是套 CDN 就行了：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028212859.png" alt="监控端配置"><br>
+<img src="https://img.senjianlu.com/20211028212859.png" alt="监控端配置"><br>
 回到页面上，就能看到服务器数据了：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211028223643.png" alt="服务器数据"></p>
+<img src="https://img.senjianlu.com/20211028223643.png" alt="服务器数据"></p>
 <p>结束。</p>
 
     </div>

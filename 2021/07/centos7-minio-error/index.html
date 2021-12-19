@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -356,7 +356,7 @@
 <hr>
 <p>具体见帖子：<a href="http://slack.minio.org.cn/question/708">windows 启动之后minio之后。访问127.0.0.1:9000 跳转到了 127.0.0.1:9001 是什么原因</a></p>
 <p>1、最直观的表现就是最新版本的 MinIO 9000 端口会强制被转到 9001 的控制台端口，登录页面是这样的：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721214310.png" alt="控制台"></p>
+<img src="https://img.senjianlu.com/20210721214310.png" alt="控制台"></p>
 <p>2、<strong>操作过程中，会出现部分错误：</strong><br>
 ① 查看存储桶具体信息时<br>
 页面报错：</p>
@@ -368,7 +368,7 @@
 original error -&gt; (user_buckets.go:123: error server side encryption configuration not found)
 friendly error: The server side encryption configuration was not found
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721214352.png" alt=""></p>
+<p><img src="https://img.senjianlu.com/20210721214352.png" alt=""></p>
 <p>② 分享文件时<br>
 页面报错：</p>
 <blockquote>
@@ -378,7 +378,7 @@ friendly error: The server side encryption configuration was not found
 <pre><code>...
 original error -&gt; (user_objects.go:51: A header you provided implies functionality that is not implemented)
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721214742.png" alt=""></p>
+<p><img src="https://img.senjianlu.com/20210721214742.png" alt=""></p>
 <p>3、<strong>解决方法：</strong><br>
 和帖子里讲的一样，回退版本，我出错的版本是 2021/07/18 更新的版本，是通过：</p>
 <pre><code class="language-bash">wget https://dl.minio.io/server/minio/release/linux-amd64/minio
@@ -389,7 +389,7 @@ original error -&gt; (user_objects.go:51: A header you provided implies function
 </code></pre>
 <blockquote>
 <p>Unable to initialize OpenID: found invalid keys (client_secret= redirect_uri= ) for &lsquo;identity_openid&rsquo; sub-system, use &lsquo;mc admin config reset myminio identity_openid&rsquo; to fix invalid keys (*fmt.wrapError)
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721223253.png" alt="错误"><br>
+<img src="https://img.senjianlu.com/20210721223253.png" alt="错误"><br>
 启动时你有可能会和我一样碰到上面的报错，你可以忽略它，在我的测试下即使有错误 MinIO 的所有功能也都正常。<br>
 如果你是强迫症，那么请遵循下面的步骤来解决它：</p>
 <ol>
@@ -406,7 +406,7 @@ mc config host add myminio http://$minio_host $root_user $root_password --api s3
 <ol start="4">
 <li>再启动，理论上就已经不报错了，如果还有错误请花时间对照文档修复吧：<a href="http://docs.minio.org.cn/docs/master/minio-client-complete-guide">MinIO Client 完全指南</a></li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210721231307.png" alt="完成"></p>
+<p><img src="https://img.senjianlu.com/20210721231307.png" alt="完成"></p>
 </blockquote>
 <p>小声逼逼，挺离谱的&hellip;&hellip;</p>
 

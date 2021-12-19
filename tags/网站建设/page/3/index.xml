@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/</link>
     <description>Recent content in 网站建设 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点</title>
+      <link>https://senjianlu.com/2021/09/k3s-note-01/</link>
+      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/k3s-note-01/</guid>
+      <description>之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的</description>
+    </item>
     
     <item>
       <title>PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</guid>
       <description>Notion 链接：https://www.notion.so/rabbir/a24f7acbdba44e0ebe290fd0c3dd1907</description>
-    </item>
-    
-    <item>
-      <title>日语学习 日语词类划分整理</title>
-      <link>https://senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/</link>
-      <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/</guid>
-      <description>Notion 链接：https://www.notion.so/rabbir/e0d5da57af9c47c5a58df377cc4ac558</description>
     </item>
     
   </channel>

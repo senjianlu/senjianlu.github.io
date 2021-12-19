@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -358,9 +358,9 @@
 <p><strong>1、下载 Nextcloud 安装包</strong><br>
 官方下载地址：<a href="https://nextcloud.com/install/#instructions-server">Download for server</a><br>
 选择 Web Installer：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031174515.png" alt="Web Installer"><br>
+<img src="https://img.senjianlu.com/20211031174515.png" alt="Web Installer"><br>
 接着上传到虚拟主机空间内，放在对应域名文件夹的根目录下即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031175530.png" alt="上传"></p>
+<img src="https://img.senjianlu.com/20211031175530.png" alt="上传"></p>
 <p><strong>2、配置域名解析和为安装清空至少 500MB 空间</strong><br>
 域名解析自行配置。<br>
 安装需要至少 500MB 空间，云服务商的空间监控一般是不包括垃圾站内文件的，但是实际垃圾站内容量也会算进虚拟空间总限制容量内，因此也请清空。</p>
@@ -374,7 +374,7 @@ Warning: array_diff(): Expected parameter 1 to be an array, bool given in /var/w
 Warning: Invalid argument supplied for foreach() in /var/www/vhosts/.../.../setup-nextcloud.php on line 161  
 Warning: rmdir(tmp-nextcloud1635676707/nextcloud): No such file or directory in /var/www/vhosts/.../.../setup-nextcloud.php on line 164  
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031180328.png" alt="错误"><br>
+<p><img src="https://img.senjianlu.com/20211031180328.png" alt="错误"><br>
 三个原因都有可能造成失败：</p>
 <ol>
 <li>空间不够。</li>
@@ -402,27 +402,27 @@ Warning: rmdir(tmp-nextcloud1635676707/nextcloud): No such file or directory in 
 <p><strong>3、开始安装</strong><br>
 访问：<strong>你的域名 + /setup-nextcloud.php</strong><br>
 选择 Next：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031175653.png" alt="setup-nextcloud.php"><br>
+<img src="https://img.senjianlu.com/20211031175653.png" alt="setup-nextcloud.php"><br>
 选择目录，我这里选了 . 即为安装在当前 pan.cscheap.com/ 目录下：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031175752.png" alt="目录"><br>
+<img src="https://img.senjianlu.com/20211031175752.png" alt="目录"><br>
 安装成功：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031205246.png" alt="成功"><br>
+<img src="https://img.senjianlu.com/20211031205246.png" alt="成功"><br>
 配置管理员账户密码并使用 SQLite：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031210510.png" alt="配置管理员账户密码"><br>
+<img src="https://img.senjianlu.com/20211031210510.png" alt="配置管理员账户密码"><br>
 完成！<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031210608.png" alt="完成"></p>
+<img src="https://img.senjianlu.com/20211031210608.png" alt="完成"></p>
 <blockquote>
 <p>当然你也可以使用外置的数据库，我不使用的原因是这家的数据库容易出现断连，导致安装不断卡在管理员账号配置阶段。<br>
 Plesk 新建数据库方式如下：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031180017.png" alt="数据库"><br>
+<img src="https://img.senjianlu.com/20211031180017.png" alt="数据库"><br>
 输入数据库名后缀、用户名后缀和密码：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031180126.png" alt="配置"><br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031180233.png" alt="成功"><br>
+<img src="https://img.senjianlu.com/20211031180126.png" alt="配置"><br>
+<img src="https://img.senjianlu.com/20211031180233.png" alt="成功"><br>
 创建成功后前往 Nextcloud 管理员配置界面选择外置数据库即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031205553.png" alt="外置数据库"></p>
+<img src="https://img.senjianlu.com/20211031205553.png" alt="外置数据库"></p>
 </blockquote>
 <p>最后提醒虚拟空间的网盘请定时压缩备份到本地，这是维基主机 2021 年 6 月份出的事故，补偿虽然蛮到位的，但是数据对某些人是无价的：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211031211056.png" alt="补偿"></p>
+<img src="https://img.senjianlu.com/20211031211056.png" alt="补偿"></p>
 <p>结束。</p>
 
     </div>

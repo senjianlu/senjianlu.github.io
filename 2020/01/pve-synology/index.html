@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -367,32 +367,32 @@
 <p><strong>黑群晖的安装和配置比较简单，不需要设置网卡之类的，所以直接开始就行了。</strong></p>
 <p>1、首先在 PVE 下新建虚拟机作为黑群晖的容器。<br>
 先将 .iso 光盘镜像文件 (XPEnoboot_DS3615xs_5.2-5967.1..iso) 上传，这个将作为虚拟机的启动引导。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122225316.png" alt="上传"><br>
+<img src="https://img.senjianlu.com/20200122225316.png" alt="上传"><br>
 接着创建虚拟机，并将其编号按顺序设置为 102，注意这个编号要记住，之后挂载硬盘的时候会用到。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122225547.png" alt="创建虚拟机"><br>
+<img src="https://img.senjianlu.com/20200122225547.png" alt="创建虚拟机"><br>
 操作系统界面选择刚刚上传的 .iso 文件作为引导。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122225710.png" alt="引导"><br>
+<img src="https://img.senjianlu.com/20200122225710.png" alt="引导"><br>
 硬盘的配置默认即可，如果你的系统硬盘只有 32G 的话可以缩小，反正也不会用来做存储盘。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122225751.png" alt="硬盘设置"><br>
+<img src="https://img.senjianlu.com/20200122225751.png" alt="硬盘设置"><br>
 如果黑群晖只用来做文件存储而不装大量套件的话，CPU 设置一核心即可。<br>
 <em>亲测即使是传输大量照片等小文件的情况下，200ge 的一核占用也只在 50% 左右。</em>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122230156.png" alt="CPU"><br>
+<img src="https://img.senjianlu.com/20200122230156.png" alt="CPU"><br>
 内存同理，看需求情况，但是2G确实已经很够用了。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122230257.png" alt="内存"><br>
+<img src="https://img.senjianlu.com/20200122230257.png" alt="内存"><br>
 <strong>这一步需要注意</strong>：桥接的端口千万不要设置在之前进网的 WAN 口上，而设置在其他任意端口都没有问题！<br>
 网卡则选择 E1000 因为部分黑群晖系统不支持半虚拟化的识别。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122230349.png" alt="网络"><br>
+<img src="https://img.senjianlu.com/20200122230349.png" alt="网络"><br>
 确认无误完成即可。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122230606.png" alt="完成"></p>
+<img src="https://img.senjianlu.com/20200122230606.png" alt="完成"></p>
 <p>2、接着开始机械磁盘的挂载。<br>
 视频教程中并没有这一步，但是这一步是需要放在安装黑群晖系统之前的，不然安装完再挂载会出现进不去系统等玄学问题。<br>
 用 Xshell6 连接PVE后台，当然用上一篇的 MobaX 是一样的。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122230856.png" alt="连接信息" title="注意连接的PVE的后台"><br>
+<img src="https://img.senjianlu.com/20200122230856.png" alt="连接信息" title="注意连接的PVE的后台"><br>
 进去后直接输入</p>
 <pre><code class="language-bash">ls -l /dev/disk/by-id/
 </code></pre>
 <p>查看当前系统连接的硬盘情况。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122231239.png" alt="硬盘情况"><br>
+<img src="https://img.senjianlu.com/20200122231239.png" alt="硬盘情况"><br>
 只需要 ata 开头的即可，我挂载的是西数的机械，因此就是下面那两块了。<br>
 接着复制这两块硬盘的完整信息。</p>
 <blockquote>
@@ -401,58 +401,58 @@ ata-WDC_WD10EJRX-89N74Y0_WD-WCC4J4LZF6VT</p>
 </blockquote>
 <p>然后在其前面加上 &ldquo;qm set 102 &ndash;sata2 &quot; 运行即可。<br>
 <em>注：102 代表的是你虚拟机的编号；sata2 则是之后会显示在黑群晖盘符，自己设置即可</em><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122231855.png" alt="挂载"><br>
+<img src="https://img.senjianlu.com/20200122231855.png" alt="挂载"><br>
 之后再回虚拟机的硬件页面，就可以看见新增的这两块硬盘了。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122232031.png" alt="挂载完成" title="偷张图大概就是这样了"></p>
+<img src="https://img.senjianlu.com/20200122232031.png" alt="挂载完成" title="偷张图大概就是这样了"></p>
 <p>3、然后开始安装黑群晖系统。<br>
 首先更改启动顺序，将 CD 设置为第一启动项，即我们刚刚上传的 .iso
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122232144.png" alt="启动"><br>
+<img src="https://img.senjianlu.com/20200122232144.png" alt="启动"><br>
 接着点击启动虚拟机，启动完成后注意下后台地址。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122232505.png" alt="后台地址"><br>
+<img src="https://img.senjianlu.com/20200122232505.png" alt="后台地址"><br>
 浏览器地址栏输入，进入后台页面。<br>
 这里选择手动安装，并上传 .pat 文件，文件我也提供了下载。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122232755.png" alt="pat"><br>
+<img src="https://img.senjianlu.com/20200122232755.png" alt="pat"><br>
 弹出的会清空硬盘直接同意即可，这里注意二次确认清空盘的个数是否和你挂载的盘加上一个系统盘的总个数相同。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122232822.png" alt="确认"><br>
+<img src="https://img.senjianlu.com/20200122232822.png" alt="确认"><br>
 等待其安装完成自动重启即可。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122232957.png" alt="重启"><br>
+<img src="https://img.senjianlu.com/20200122232957.png" alt="重启"><br>
 之后的配置就比较简单了，用户名密码自己设置即可，由于是黑群晖，联网内容全部跳过。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122233042.png" alt="1"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122233136.png" alt="2"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122233151.png" alt="3"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122233204.png" alt="4"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122233323.png" alt="5"><br>
+<img src="https://img.senjianlu.com/20200122233042.png" alt="1"><br>
+<img src="https://img.senjianlu.com/20200122233136.png" alt="2"><br>
+<img src="https://img.senjianlu.com/20200122233151.png" alt="3"><br>
+<img src="https://img.senjianlu.com/20200122233204.png" alt="4"><br>
+<img src="https://img.senjianlu.com/20200122233323.png" alt="5"><br>
 <strong>至此，黑群晖的安装配置就完成了。</strong></p>
 <p>4、最后就是组 RAID，这个比较简单。<br>
 点击左上角的菜单，再选择存储空间管理员。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122233536.png" alt="存储"><br>
+<img src="https://img.senjianlu.com/20200122233536.png" alt="存储"><br>
 选择存储空间<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122233644.png" alt="存储空间"><br>
+<img src="https://img.senjianlu.com/20200122233644.png" alt="存储空间"><br>
 选择自定义<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122233722.png" alt="自定义"><br>
+<img src="https://img.senjianlu.com/20200122233722.png" alt="自定义"><br>
 选择组成群组
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122233816.png" alt="群组"><br>
+<img src="https://img.senjianlu.com/20200122233816.png" alt="群组"><br>
 选择你需要组 RAID 的两块硬盘，我这里因为组完了也上传了文件，就用的论坛的图。<br>
 跳出的删除数据提醒，直接确认即可。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234101.png" alt="选择"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234221.png" alt="跳过"><br>
+<img src="https://img.senjianlu.com/20200122234101.png" alt="选择"><br>
+<img src="https://img.senjianlu.com/20200122234221.png" alt="跳过"><br>
 我们这里选你需要的 RAID 模式，推荐 RAID1<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234240.png" alt="raid1"><br>
+<img src="https://img.senjianlu.com/20200122234240.png" alt="raid1"><br>
 直接应用即可<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234324.png" alt="跳过"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234344.png" alt="应用"><br>
+<img src="https://img.senjianlu.com/20200122234324.png" alt="跳过"><br>
+<img src="https://img.senjianlu.com/20200122234344.png" alt="应用"><br>
 然后你就可以看见新建的正常的存储空间了。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234432.png" alt="完成"></p>
+<img src="https://img.senjianlu.com/20200122234432.png" alt="完成"></p>
 <p>5、为其配置局域网的共享文件夹。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234609.png" alt="新增"><br>
+<img src="https://img.senjianlu.com/20200122234609.png" alt="新增"><br>
 填入文件夹名族，确认即可。<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234637.png" alt="文件夹名"><br>
+<img src="https://img.senjianlu.com/20200122234637.png" alt="文件夹名"><br>
 选择 此电脑 右键，选择 映射网络驱动器<br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234826.png" alt="映射"><br>
+<img src="https://img.senjianlu.com/20200122234826.png" alt="映射"><br>
 填入你的期望盘符和网络文件夹路径即可。<br>
 <em>注：路径的格式由 IP+文件夹名组成</em><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122234922.png" alt="配置"><br>
-<img src="https://raw.githubusercontent.com/m18018230731/RabbirPic/master/20200122235037.png" alt="访问"></p>
+<img src="https://img.senjianlu.com/20200122234922.png" alt="配置"><br>
+<img src="https://img.senjianlu.com/20200122235037.png" alt="访问"></p>
 <p><strong>黑群晖的安装真的比软路由简单太多了，只需要拿钱堆硬盘就可以了。</strong><br>
 顺便说一句，在组 RAID 方面，群晖提供了很方便的操作，勤整理，RAID0 和 RAID1 分开是一个很好的习惯。<br>
 附上对 RAID5 等安全性怀疑的讨论：<a href="https://www.zhihu.com/question/20164654">RAID5 磁盘阵列真的不安全么？</a><br>

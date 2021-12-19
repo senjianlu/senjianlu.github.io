@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -357,41 +357,41 @@
 <p><strong>1、将系统地区切换至美国并开启虚拟化</strong><br>
 因为是系统层面的配置因此放在一起讲。<br>
 ① 设置 -&gt; 时间和语言 -&gt; 语言 &amp; 区域 -&gt; 国家或地区 -&gt; 切换到美国<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119152305.png" alt="切换"></p>
+<img src="https://img.senjianlu.com/20211119152305.png" alt="切换"></p>
 <blockquote>
 <p>不切换地区结果如下：
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119152349.png" alt="错误"></p>
+<img src="https://img.senjianlu.com/20211119152349.png" alt="错误"></p>
 </blockquote>
 <p>② 开启 Windows 虚拟化<br>
 这里只需要开启 <code>Windows 虚拟机监控程序平台</code> 和 <code>虚拟机平台</code> 就够了，<strong>没有 <code>Hyper-V</code> 不勾选也没有关系，对实际运行不会有影响</strong>：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119163216.png" alt="开启虚拟化"></p>
+<img src="https://img.senjianlu.com/20211119163216.png" alt="开启虚拟化"></p>
 <p><strong>2、安装安卓子系统</strong><br>
 当前在微软商店安装<a href="http://aka.ms/AmazonAppstore"> Amazon Appstore </a>会自动帮你下载安卓子系统，考虑到我已经在路由器上配置了代理，能正常访问亚马逊服务，便采用这个较为官方的方式：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119153126.png" alt="Amazon Appstore"></p>
+<img src="https://img.senjianlu.com/20211119153126.png" alt="Amazon Appstore"></p>
 <blockquote>
 <p>如果你并不想安装 Amazon Appstore，并且后续只准备在安卓虚拟机中安装一些有 <code>.apk</code> 安装文件提供的国产应用，那么也可以直接前往：<a href="https://www.microsoft.com/store/productId/9P3395VX91NR">Windows Subsystem for Android™ with Amazon Appstore</a> 进行下载：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119153456.png" alt="Windows Subsystem for Android™ with Amazon Appstore"></p>
+<img src="https://img.senjianlu.com/20211119153456.png" alt="Windows Subsystem for Android™ with Amazon Appstore"></p>
 </blockquote>
 <p><strong>3、配置安卓子系统</strong><br>
 打开其系统设置：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119155304.png" alt="打开其系统设置"><br>
+<img src="https://img.senjianlu.com/20211119155304.png" alt="打开其系统设置"><br>
 配置需做如下修改：</p>
 <p>① 将子系统资源改为<code>连续</code>以进行第三方应用安装（安装完之后可改回<code>按需要</code>）<br>
 ② 开启<code>开发人员模式</code>并记录下连接用的信息<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119155454.png" alt="修改配置"></p>
+<img src="https://img.senjianlu.com/20211119155454.png" alt="修改配置"></p>
 <p><strong>4、从 <code>.apk</code> 文件安装应用</strong><br>
 这里就不演示从官方 Amazon Appstore 安装应用了，没有意义。<br>
 我需要安装的网易 UU 加速器，用来控制同一网络环境下 OpenWrt 上的 UU 加速器路由器插件，以此为例。</p>
 <p>① 从官方下得安装文件<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119153934.png" alt="获取安装文件"></p>
+<img src="https://img.senjianlu.com/20211119153934.png" alt="获取安装文件"></p>
 <p>② 下载安装 ADB 工具</p>
 <blockquote>
 <p>官方描述：Android SDK Platform Tools 是 Android SDK 的一个组件。它包含与 Android 平台进行交互的工具，例如 adb、fastboot 和 systrace。开发 Android 应用时需要使用这些工具。如果您想要解锁设备的引导加载程序并为其刷入新的系统映像，同样需要使用这些工具。</p>
 </blockquote>
 <p>下载地址：<a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">platform-tools-latest-windows.zip</a><br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119154803.png" alt="下载"><br>
+<img src="https://img.senjianlu.com/20211119154803.png" alt="下载"><br>
 将解压后的文件夹移至任意位置：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119155015.png" alt="移动"></p>
+<img src="https://img.senjianlu.com/20211119155015.png" alt="移动"></p>
 <p>③ 使用 ADB 连接安卓虚拟机<br>
 在 ADB 工具包目录下启动 Windows 终端，并连接至安卓虚拟机（地址为你开启开发人员模式时记录的那个）：</p>
 <pre><code class="language-bash"># 查看当前是否有能连接的设备
@@ -399,16 +399,16 @@ adb devices
 # 连接至安卓虚拟机
 adb connect 127.0.0.1:58526
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119162434.png" alt="连接"></p>
+<p><img src="https://img.senjianlu.com/20211119162434.png" alt="连接"></p>
 <p>④ 安装应用<br>
 找到你 <code>.apk</code> 存放的路径并作为参数传入：</p>
 <pre><code class="language-bash">.\adb install C:\Users\m112233\Downloads\uu-6.2.6.1115.apk
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119162708.png" alt="安装"><br>
+<p><img src="https://img.senjianlu.com/20211119162708.png" alt="安装"><br>
 完成后，就能在你最近添加的项目处看见了：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119162828.png" alt="最近添加的项目"><br>
+<img src="https://img.senjianlu.com/20211119162828.png" alt="最近添加的项目"><br>
 正常打开没有问题：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211119162933.png" alt="没有问题"></p>
+<img src="https://img.senjianlu.com/20211119162933.png" alt="没有问题"></p>
 <p>之后你可以把地区改回中国、虚拟机子系统改回<code>按需求</code>（这样 Android 虚拟机不会一直在后台运行着）。<br>
 <strong>再安装其他软件时如果出现连不上虚拟机的问题，需要将步骤 3 的配置重新做一遍。</strong></p>
 <p>结束。</p>

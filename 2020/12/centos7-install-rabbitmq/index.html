@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -365,7 +365,7 @@ yum install build-essential openssl openssl-devel unixODBC unixODBC-devel make g
 <pre><code class="language-bash">yum -y install erlang
 </code></pre>
 <p>安装 Erlang，而这样默认安装的版本是 03.18.el7，虽然看起来没有对应版本的 RabbitMQ 可以安装，但是实测至少 3.6.5 版本的 RabbitMQ 实际上是可以验证 Erlang 版本通过并安装，后续的使用也没有问题。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210614192829.png" alt="3.6.5.1"></p>
+<img src="https://img.senjianlu.com/20210614192829.png" alt="3.6.5.1"></p>
 </blockquote>
 <p>但是在这里我还是选择安装最新的版本，反正是个人项目，在新特性和版本稳定之间有选择的情况下，前项对我的吸引力开始更大，反正记了笔记大不了回退就是了。</p>
 <pre><code class="language-bash"># 更新 yum 源至最新
@@ -377,10 +377,10 @@ yum install erlang
 <p>完成后检查 Erlang 版本</p>
 <pre><code class="language-bash">yum info erlang
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210614195432.png" alt="Erlang 版本"></p>
+<p><img src="https://img.senjianlu.com/20210614195432.png" alt="Erlang 版本"></p>
 <p>3、安装 RabbitMQ。<br>
 Erlang 版本为最新的话，理论上 RabbitMQ 的版本可以随便挑，这里我就挑当前最新的吧。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210614195513.png" alt="3.8.17"></p>
+<img src="https://img.senjianlu.com/20210614195513.png" alt="3.8.17"></p>
 <pre><code class="language-bash">wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.17/rabbitmq-server-3.8.17-1.el7.noarch.rpm
 yum -y install socat
 rpm -ivh rabbitmq-server-3.8.17-1.el7.noarch.rpm
@@ -389,7 +389,7 @@ rpm -ivh rabbitmq-server-3.8.17-1.el7.noarch.rpm
 结束后检查一下</p>
 <pre><code class="language-bash">rabbitmq-server status
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210614200809.png" alt="检查"><br>
+<p><img src="https://img.senjianlu.com/20210614200809.png" alt="检查"><br>
 没有问题的话将可视化管理界面一并安装：</p>
 <pre><code class="language-bash">rabbitmq-plugins enable rabbitmq_management
 </code></pre>
@@ -399,7 +399,7 @@ rpm -ivh rabbitmq-server-3.8.17-1.el7.noarch.rpm
 rabbitmqctl status
 </code></pre>
 <p>然后开放防火墙和端口组，来确保可视化管理界面也运行成功，默认地址及端口：<a href="http://127.0.0.1:1567">http://127.0.0.1:15672</a>，IP 请自行替换，出现以下界面说明启动成功。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210614201342.png" alt="启动成功"><br>
+<img src="https://img.senjianlu.com/20210614201342.png" alt="启动成功"><br>
 接下来配置用户，指令如下：</p>
 <pre><code class="language-bash">#添加新用户，用户名为&quot;root&quot;，密码为&quot;root&quot;
 rabbitmqctl add_user root root
@@ -408,7 +408,7 @@ rabbitmqctl set_user_tags root administrator
 #授权远程访问    
 rabbitmqctl set_permissions -p / root &quot;.&quot; &quot;.&quot; &quot;.*&quot;  
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210614201611.png" alt="登录成功后的页面"></p>
+<p><img src="https://img.senjianlu.com/20210614201611.png" alt="登录成功后的页面"></p>
 <p>5、设置为开机自启动。</p>
 <pre><code>systemctl enable rabbitmq-server
 </code></pre>

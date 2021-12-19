@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -398,13 +398,13 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 ...
 ...
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211115215122.png" alt="Java 配置"><br>
+<p><img src="https://img.senjianlu.com/20211115215122.png" alt="Java 配置"><br>
 使配置生效：</p>
 <pre><code class="language-bash">source ~/.bashrc
 # 确认 Java 版本
 java -version
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211115212310.png" alt="Java 版本"></p>
+<p><img src="https://img.senjianlu.com/20211115212310.png" alt="Java 版本"></p>
 <p>③ 安装 Apache Maven：</p>
 <pre><code class="language-bash"># 安装位置
 cd /usr/local/
@@ -426,13 +426,13 @@ export PATH=$PATH:$MAVEN_HOME/bin
 ...
 ...
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211115215150.png" alt="Maven 配置"><br>
+<p><img src="https://img.senjianlu.com/20211115215150.png" alt="Maven 配置"><br>
 使配置生效：</p>
 <pre><code class="language-bash">source ~/.bashrc
 # 确认 Java 版本
 mvn -v
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211115215320.png" alt="Maven 版本"><br>
+<p><img src="https://img.senjianlu.com/20211115215320.png" alt="Maven 版本"><br>
 至此环境安装和配置完成。</p>
 <p><strong>2、下载并编译 DataX</strong><br>
 官方文档：<a href="https://github.com/alibaba/DataX/blob/master/userGuid.md#quick-start">Quick Start</a></p>
@@ -461,14 +461,14 @@ mvn -U clean package assembly:assembly -Dmaven.test.skip=true
 </code></pre>
 </blockquote>
 <p>Docker 容器性能受限，整体编译大概需要 10 分钟左右（我是因为出了错重新编译跳过了编译成功的包，所以只用了 3 分钟）。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211116080615.png" alt="编译完成"><br>
+<img src="https://img.senjianlu.com/20211116080615.png" alt="编译完成"><br>
 编译完成后，DataX 的可运行的 .py 文件会在 /usr/local/DataX/target/datax/datax/bin/ 路径下，测试一下：</p>
 <pre><code class="language-bash">cd /usr/local/DataX/target/datax/datax/bin/
 # 查看配置模板
 python datax.py -r streamreader -w streamwriter
 </code></pre>
 <p>如下输出说明 DataX 安装完成：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211116081154.png" alt="安装完成"></p>
+<img src="https://img.senjianlu.com/20211116081154.png" alt="安装完成"></p>
 <p><strong>3、构建 Docker 容器镜像并运行</strong><br>
 ① 首先写个正常能跑的测试用配置文件：</p>
 <pre><code class="language-bash"># 放在不同路径下
@@ -520,7 +520,7 @@ vi /root/stream2stream.json
 python /usr/local/DataX/target/datax/datax/bin/datax.py stream2stream.json
 </code></pre>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211116081816.png" alt="测试配置文件"></p>
+<p><img src="https://img.senjianlu.com/20211116081816.png" alt="测试配置文件"></p>
 <p>② 将上述所有命令写入 Dockerfile（部分命令如环境变量的配置会有所不同）：</p>
 <pre><code class="language-Dockerfile"># 基础镜像系统版本为 CentOS:7
 FROM centos:7
@@ -594,8 +594,8 @@ CMD [&quot;&quot;]
 <p>解释：配置文件在宿主机内的完整路径为：/rab/docker/datax/data/test/stream2stream.json，那么通过映射它在容器内的路径则为：/data/test/stream2stream.json，此时就只需要传入 test/stream2stream.json 作为参数就可以了。</p>
 </blockquote>
 <p>运行完后容器会自动退出：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211116163001.png" alt="运行完成"><br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211116162931.png" alt="自动退出"></p>
+<img src="https://img.senjianlu.com/20211116163001.png" alt="运行完成"><br>
+<img src="https://img.senjianlu.com/20211116162931.png" alt="自动退出"></p>
 <p>本章结束。</p>
 
     </div>

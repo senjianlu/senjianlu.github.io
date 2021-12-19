@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/</link>
     <description>Recent content in Tags on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</title>
+      <link>https://senjianlu.com/2021/12/cloudflare-workers-image/</link>
+      <pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/cloudflare-workers-image/</guid>
+      <description>虽然一直都知道存在无法在境内正常加载文章中图片的问题，但是嫌麻烦一直就拖着。最近接触到了 Cloudflare Workers，实践反代的时候发现异常简单，顺便就</description>
+    </item>
     
     <item>
       <title>CentOS7 下用 Docker 部署 Firefox 以实现浏览器套浏览器访问被屏蔽的网站</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/11/cloudflare-ssl-tls/</guid>
       <description>在没套 Cloudflare 之前有在 Nginx 中配置 HTTP 访问 301 重定向到 HTTPS 的习惯，但是在套了 CF 之后常常出现 301 重定向次数过多的情况，不明白原理地瞎调试走了很多弯路，重新实践一</description>
-    </item>
-    
-    <item>
-      <title>Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统</title>
-      <link>https://senjianlu.com/2021/10/plesk-install-nextcloud/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/plesk-install-nextcloud/</guid>
-      <description>维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且因为当初没有配置邮箱信息，导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流</description>
     </item>
     
   </channel>

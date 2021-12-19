@@ -43,7 +43,7 @@
 <meta itemprop="description" content="第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后"><meta itemprop="datePublished" content="2021-10-23T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-10-23T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1721">
-<meta itemprop="keywords" content="硬件," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Clash,硬件," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="定制 OpenWrt 软路由系统（一）从源码开始编译第一个系统固件"/>
 <meta name="twitter:description" content="第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后"/>
 
@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -297,16 +307,6 @@
                     </p>
                 </div>
             </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
-                    </p>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
@@ -342,6 +342,7 @@
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/clash/"> Clash </a>
     <a class="article-tag-link" href="/tags/%E7%A1%AC%E4%BB%B6/"> 硬件 </a>
   </span>
 
@@ -371,16 +372,16 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 </code></pre>
 <ol start="2">
 <li>在微软商店搜索并下载 Ubuntu 20.04 TLS 系统（发行版可根据自己需求更换）：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211023221421.png" alt="搜索"></li>
+<img src="https://img.senjianlu.com/20211023221421.png" alt="搜索"></li>
 <li>安装、打开，然后设置用户密码：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211023221616.png" alt="打开"></li>
+<img src="https://img.senjianlu.com/20211023221616.png" alt="打开"></li>
 <li>设置磁盘映射，Linux 子系统默认的路径如下（用户和 Linux 发行版自行替换）：<br>
 <strong>注意：在这个目录下你会看到一个磁盘映射文件，因为涉及到文件编码格式的不同，官方是不推荐跨系统做文件管理的，但单纯的从 Linux 子系统中拷贝编译后的文件出来是没问题的。</strong></li>
 </ol>
 <pre><code class="language-bash">C:\Users\$用户\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState
 </code></pre>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211023221824.png" alt="用户目录"></p>
+<p><img src="https://img.senjianlu.com/20211023221824.png" alt="用户目录"></p>
 <p><strong>2、更新软件源并安装编译所需依赖</strong><br>
 需要注意的是部分包境内下载速度缓慢，这一步最好在全局科学情况下执行。<br>
 更新软件源：</p>
@@ -404,7 +405,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 <pre><code class="language-bash">make menuconfig
 </code></pre>
 <p>到图形化界面，发现前 3 项已经配置好了 x86_64 的架构设置，那么就不用动了，保存退出即可。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211023223812.png" alt=""></p>
+<img src="https://img.senjianlu.com/20211023223812.png" alt=""></p>
 <p><strong>6、下载 dl 库</strong></p>
 <pre><code class="language-bash">make -j8 download V=s
 </code></pre>
@@ -419,15 +420,15 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 </code></pre>
 </blockquote>
 <p>我的 CPU 是 3700X，这一步的单线程编译了 6 个小时左右，最后如下图显示就说明编译结束了：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024102151.png" alt="编译结束"></p>
+<img src="https://img.senjianlu.com/20211024102151.png" alt="编译结束"></p>
 <p><strong>8、拷贝编译完的固件</strong><br>
 Window11 的 ESL2 会自动生成磁盘映射方便访问，直接进入即可。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024102617.png" alt="磁盘映射"><br>
+<img src="https://img.senjianlu.com/20211024102617.png" alt="磁盘映射"><br>
 路径如下（用户名请自行替换）：</p>
 <pre><code class="language-bash">\\wsl.localhost\Ubuntu-20.04\home\$用户\lede\bin\targets\x86\64
 </code></pre>
 <p>选 openwrt-x86-64-generic-squashfs-combined-efi.img 即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024102852.png" alt="成果物"><br>
+<img src="https://img.senjianlu.com/20211024102852.png" alt="成果物"><br>
 因为我的软路由系统是跑在 PVE 平台上的，因此使用 Xftp 上传下即可，因为是 .img 文件，还需要做一次 img2kvm 直接写成可挂载硬盘的操作，直接上传至 /root 目录下即可。</p>
 <blockquote>
 <p>附带说一句，PVE 下用以存储 .iso 文件的路径如下：</p>
@@ -437,29 +438,29 @@ Window11 的 ESL2 会自动生成磁盘映射方便访问，直接进入即可�
 </blockquote>
 <p><strong>9、测试安装</strong><br>
 先在 PVE 端创建个操作系统不使用任何介质、先不配置任何网络设备的空虚拟机：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024112535.png" alt="空虚拟机"><br>
+<img src="https://img.senjianlu.com/20211024112535.png" alt="空虚拟机"><br>
 再使用 img2kvm 工具将编译后的系统镜像写成可挂载硬盘：</p>
 <pre><code class="language-bash">./img2kvm openwrt-x86-64-generic-squashfs-combined-efi.img 103 vm-103-disk-1
 </code></pre>
 <p>写完之后会看见一个新盘被挂载到了虚拟机，直接添加，然后在选项 → 引导顺序中更改为从新盘启动：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024113030.png" alt="引导顺序"><br>
+<img src="https://img.senjianlu.com/20211024113030.png" alt="引导顺序"><br>
 接着启动虚拟机并切换至控制台准备更改管理面板 IP（这里可能需要按下回车）：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024113236.png" alt="准备更改管理面板 IP"><br>
+<img src="https://img.senjianlu.com/20211024113236.png" alt="准备更改管理面板 IP"><br>
 更新配置文件：</p>
 <pre><code class="language-bash">vi /etc/config/network
 </code></pre>
 <p>将第 15 行的 192.168.1.1 更改为你需要的 IP 地址即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024113457.png" alt="第 15 行"><br>
+<img src="https://img.senjianlu.com/20211024113457.png" alt="第 15 行"><br>
 之后重启。<br>
 最后看下你之前 LEDE 软路由的网络设备是什么样的配置，抄一份在硬件处添加：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211024121327.png" alt="添加网络设备"><br>
+<img src="https://img.senjianlu.com/20211024121327.png" alt="添加网络设备"><br>
 接着重启并访问配置了的 IP 地址：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-10-24%20120915.png" alt="访问"><br>
+<img src="https://img.senjianlu.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-10-24%20120915.png" alt="访问"><br>
 这里的密码需要去控制台里更改：</p>
 <pre><code class="language-bash">passwd root
 </code></pre>
 <p>接着登录即可：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-10-24%20121019.png" alt="登录"><br>
+<img src="https://img.senjianlu.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-10-24%20121019.png" alt="登录"><br>
 看到还是有一些插件被默认添加了，下一章对插件的自定义会尝试去除。</p>
 <p>本章结束。</p>
 

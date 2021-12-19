@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -357,7 +357,7 @@
 <hr>
 <p>首先需要明确的是 Nextcloud 使用了严格的 CSP (Content Security Policy) 配置，如果你想从外部引用任何 CSS 或者 JS 都应该第一时间去做对该来源信任的配置，本文就以添加 Google Analytics 的 Script 元素为例。</p>
 <p>1、从 Google Analytics 官网获取站点的统计代码<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210912112409.png" alt="获取 Google Analytics 代码">
+<img src="https://img.senjianlu.com/20210912112409.png" alt="获取 Google Analytics 代码">
 样例如下：</p>
 <pre><code class="language-javascript">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
 &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-xxxxxxxxxx&quot;&gt;&lt;/script&gt;
@@ -374,7 +374,7 @@
 <pre><code class="language-bash">站点根目录/lib/public/AppFramework/Http/ContentSecurityPolicy.php
 </code></pre>
 <p>添加以下几行，功能包括：① 允许执行页面内嵌的标签和事件监听函数；② 信任 Google 脚本和连接源。<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210912111252.png" alt="添加信任源"></p>
+<img src="https://img.senjianlu.com/20210912111252.png" alt="添加信任源"></p>
 <p>3、添加 Google Analytics 代码到网站头<br>
 头生成 PHP 文件路径：</p>
 <pre><code class="language-bash">站点根目录/lib/private/legacy/template/functions.php
@@ -401,7 +401,7 @@ function emit_script_loading_tags($obj) {
 	...
 }
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20210912111703.png" alt=""></p>
+<p><img src="https://img.senjianlu.com/20210912111703.png" alt=""></p>
 <p>完成后刷新页面，就能去 Google Analytics 看到访问了，结束。</p>
 
     </div>

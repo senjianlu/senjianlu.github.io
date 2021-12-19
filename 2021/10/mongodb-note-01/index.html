@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">36</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">31</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
         </ul>
@@ -182,7 +182,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
-                    class="tag-list-count">9</span></li>
+                    class="tag-list-count">10</span></li>
             
         </ul>
 
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/cloudflare-workers-image/" class="title">Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-05</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="title">Gullo 2 美刀年付 NAT 主机的基础操作和玩法</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
                     </p>
                 </div>
             </li>
@@ -356,7 +356,7 @@
 回去检查了一下 PostgreSQL 中的对应字段，果然达到了 65535 字节的最大限制，赶紧着手迁移数据。</p>
 <hr>
 <p>选 MongoDB 最主要的原因是它的一个集合（与 PostgreSQL 中的表同概念）可以被当作一个队列，无限制的插入 JSON 格式的数据，放下图方便理解：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211027200818.png" alt="列表类型"><br>
+<img src="https://img.senjianlu.com/20211027200818.png" alt="列表类型"><br>
 这对存储未知长度的历史价格数据真的很友好，并且根据日期建立索引后，查询的速度也会很快。</p>
 <hr>
 <p>话不多说开始安装，官方文档：<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/">Install MongoDB Community Edition on Red Hat or CentOS</a></p>
@@ -377,13 +377,13 @@ gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc
 <pre><code class="language-bash">sudo yum install -y mongodb-org
 </code></pre>
 <p>安装完成会输出如下信息：<br>
-<img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211027210702.png" alt="完成"></p>
+<img src="https://img.senjianlu.com/20211027210702.png" alt="完成"></p>
 <blockquote>
 <p>你也可以使用以下命令验证是否安装成功：</p>
 <pre><code class="language-bash">rpm -qa |grep mongodb
 rpm -ql mongodb-org-server
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211027211006.png" alt="输出"></p>
+<p><img src="https://img.senjianlu.com/20211027211006.png" alt="输出"></p>
 </blockquote>
 <p><strong>3、启动 MongoDB</strong><br>
 启动：</p>
