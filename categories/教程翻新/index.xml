@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</link>
     <description>Recent content in 教程翻新 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>以太坊矿机搭建（二）安装 Mining OS（Minerstat OS）专业挖矿系统一键挖矿</title>
+      <link>https://senjianlu.com/2021/12/eth-miner-note-02/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/eth-miner-note-02/</guid>
+      <description>上一章讲了硬件选配和组装，这章讲适合小白的专业挖矿系统 Mining OS（Minerstat OS）的安装、矿软件的设置和启动，当然也包括路由器上（Ope</description>
+    </item>
+    
+    <item>
+      <title>以太坊矿机搭建（一）矿机平台的硬件挑选和组装</title>
+      <link>https://senjianlu.com/2021/12/eth-miner-note-01/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/eth-miner-note-01/</guid>
+      <description>趁着比价开始下跌，挖矿热潮暂退的间隙，开始组自己的第一台矿机了。并没有赚钱的打算，只是为了接触区块链最基础的一环来为自己的智能合约学习做铺垫</description>
+    </item>
     
     <item>
       <title>Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</title>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/11/clash-note-04/</guid>
       <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 服务器端安装脚本：CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务 curl -s ht</description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL 学习笔记（六）对 JSONB 类型字段的增删改查操作</title>
-      <link>https://senjianlu.com/2021/11/postgresql-note-06/</link>
-      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/postgresql-note-06/</guid>
-      <description>苦 JSONB 久矣。 介绍下实验用表 item 的表结构： 名 类型 长度 小数点 不是 null 键 注释 id int4 32 0 √ 🔑 商品 ID name varchar 255 0 商品名 property jsonb 0 0 属性 表中数据： id name property 1 毛巾 {&amp;ldquo;price&amp;rdquo;: 5.88, &amp;ldquo;num&amp;rdquo;: 20, &amp;ldquo;type&amp;rdquo;:</description>
-    </item>
-    
-    <item>
-      <title>Cloudflare 四种 SSL/TLS 加密模式的功能解析及实践</title>
-      <link>https://senjianlu.com/2021/11/cloudflare-ssl-tls/</link>
-      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/cloudflare-ssl-tls/</guid>
-      <description>在没套 Cloudflare 之前有在 Nginx 中配置 HTTP 访问 301 重定向到 HTTPS 的习惯，但是在套了 CF 之后常常出现 301 重定向次数过多的情况，不明白原理地瞎调试走了很多弯路，重新实践一</description>
     </item>
     
   </channel>
