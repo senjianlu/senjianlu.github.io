@@ -42,7 +42,7 @@
 <meta itemprop="name" content="以太坊矿机搭建（二）安装 Mining OS（Minerstat OS）专业挖矿系统一键挖矿">
 <meta itemprop="description" content="上一章讲了硬件选配和组装，这章讲适合小白的专业挖矿系统 Mining OS（Minerstat OS）的安装、矿软件的设置和启动，当然也包括路由器上（Ope"><meta itemprop="datePublished" content="2021-12-22T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1713">
+<meta itemprop="wordCount" content="1707">
 <meta itemprop="keywords" content="区块链," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="以太坊矿机搭建（二）安装 Mining OS（Minerstat OS）专业挖矿系统一键挖矿"/>
 <meta name="twitter:description" content="上一章讲了硬件选配和组装，这章讲适合小白的专业挖矿系统 Mining OS（Minerstat OS）的安装、矿软件的设置和启动，当然也包括路由器上（Ope"/>
@@ -347,7 +347,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/12/eth-miner-note-02/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1713字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1707字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
       </div>
     </div>
@@ -389,9 +389,9 @@ N 卡和其他 A 卡就下载普通版即可：<br>
 <p><strong>4、矿机通过 U 盘启动 msos-flasher 系统并将 Mining OS 安装到硬盘</strong><br>
 拔 U 盘插到矿机上，矿机开机后进入 BIOS，通过 U 盘 UEFI 引导启动，安装过程中无需做任何操作，出现以下界面说明开始将 msOS 写入硬盘了：<br>
 <em>关于 BIOS 具体设置可以参考知乎文章：<a href="https://zhuanlan.zhihu.com/p/299116873">怎么设置bios从u盘启动 bios设置u盘启动方法</a></em><br>
-<img src="https://img.senjianlu.com/286558515759960122.jpg" alt="开始写入硬盘"><br>
+<img src="https://img.senjianlu.com/1640446649(1).png" alt="开始写入硬盘"><br>
 稍等片刻后写入完成：<br>
-<img src="https://img.senjianlu.com/570252588869687267.jpg" alt="写入完成"><br>
+<img src="https://img.senjianlu.com/20211225233912.png" alt="写入完成"><br>
 之后输入 <code>poweroff</code> 关机、拔掉 U 盘并重新启动矿机即可。</p>
 <p><strong>5、设置矿机网络并绑定 Worker</strong><br>
 重启完成后会自动连接网络（前提是你的路由器开启了 DHCP 功能），之后会给出用来内网访问矿机的 VNC 地址： <br>
@@ -425,7 +425,7 @@ N 卡和其他 A 卡就下载普通版即可：<br>
 获取矿池连接信息：<br>
 <img src="https://img.senjianlu.com/20211225121520.png" alt="获取矿池连接信息"><br>
 拼接出完整的矿池连接命令：</p>
-<pre><code class="language-bash">-worker Worker-01-AMD⁣⁣ -pool asia1.ethermine.org:4444⁣ -pool asia2.ethermine.org:4444 -wal 0xD29eC2d3df499580699a98D532bE9Ad3AF6c0160.Worker-01-AMD⁣⁣ -eres 0 -log 0 -gbase 0⁣​
+<pre><code class="language-bash">-worker Worker-01-AMD⁣⁣ -pool asia1.ethermine.org:4444⁣ -pool asia2.ethermine.org:4444 -wal 0xD29exxxxxxxxxxxxxxxxxxxxxxxxxxxx60.Worker-01-AMD⁣⁣ -eres 0 -log 0 -gbase 0⁣​
 </code></pre>
 <blockquote>
 <p>Minerstat 官方示例：</p>
