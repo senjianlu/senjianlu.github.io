@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点</title>
+      <link>https://senjianlu.com/2021/11/clash-note-04/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/clash-note-04/</guid>
+      <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 服务器端安装脚本：CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务 curl -s ht</description>
+    </item>
+    
+    <item>
       <title>PostgreSQL 学习笔记（六）对 JSONB 类型字段的增删改查操作</title>
       <link>https://senjianlu.com/2021/11/postgresql-note-06/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
@@ -178,15 +187,6 @@
       
       <guid>https://senjianlu.com/2021/09/centos7-iptables/</guid>
       <description>一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT</description>
-    </item>
-    
-    <item>
-      <title>K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）</title>
-      <link>https://senjianlu.com/2021/09/k3s-note-02-02/</link>
-      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/09/k3s-note-02-02/</guid>
-      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 考虑到作为 Docker 容器运行的 Rancher 重启较为安全简单，不再使用</description>
     </item>
     
   </channel>

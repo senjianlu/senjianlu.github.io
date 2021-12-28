@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数 - 森见鹿的博客 
+        IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验 - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展" />
+  <meta name="description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这" />
   <meta name="generator" content="Hugo 0.88.1 with theme pure" />
-  <title>PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数 - 森见鹿的博客 </title>
+  <title>IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验 - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数" />
-<meta property="og:description" content="我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展" />
+  <meta property="og:title" content="IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验" />
+<meta property="og:description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/09/postgresql-note-04/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-09-25T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-09-25T00:00:00+00:00" />
+<meta property="og:url" content="https://senjianlu.com/2021/12/vps-iplc-01/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-26T00:00:00+00:00" />
 
-<meta itemprop="name" content="PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数">
-<meta itemprop="description" content="我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展"><meta itemprop="datePublished" content="2021-09-25T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-09-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="640">
-<meta itemprop="keywords" content="PostgreSQL," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数"/>
-<meta name="twitter:description" content="我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展"/>
+<meta itemprop="name" content="IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验">
+<meta itemprop="description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这"><meta itemprop="datePublished" content="2021-12-26T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-12-26T00:00:00+00:00" />
+<meta itemprop="wordCount" content="901">
+<meta itemprop="keywords" content="其他," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验"/>
+<meta name="twitter:description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -323,8 +323,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2021/09/postgresql-note-04/"
-    >PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数</a
+    href="/2021/12/vps-iplc-01/"
+    >IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验</a
   >
 </h1>
 
@@ -332,206 +332,94 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/09/postgresql-note-04/" class="article-date">
-  <time datetime="2021-09-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-09-25</time>
+<a href="https://senjianlu.com/2021/12/vps-iplc-01/" class="article-date">
+  <time datetime="2021-12-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-26</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+  <a class="article-category-link" href="/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/"> 使用体验 </a>
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/postgresql/"> PostgreSQL </a>
+    <a class="article-tag-link" href="/tags/%E5%85%B6%E4%BB%96/"> 其他 </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/postgresql-note-04/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/12/vps-iplc-01/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 640字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 901字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>我不想写 SQL。</p>
+      <p>随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。<br>
+这个系列单纯就用来记录我已经使用过一段时间的 IPLC 线路（机器）提供商，<strong>没有任何推荐或 AFF 内容，请确定好自己的需求并货比三家后再购买</strong>。</p>
 <hr>
-<p>1、首先安装 plpython3u 包<br>
-PostgreSQL 版本请自行更改，安装之前先前往 <a href="https://pkgs.org/search/?q=Postgresql12-plpython3">pkgs.org</a> 搜索以确定有对应的包。</p>
-<pre><code class="language-bash">yum install postgresql12-plpython3
+<p><strong>关于 IPLC</strong></p>
+<blockquote>
+<p><a href="https://wiki.mbalib.com/wiki/IPLC">百科</a>上的介绍：IPLC 是 &ldquo;International Private Leased Circuit&rdquo; 的缩写，即“国际私用出租线路”，是指用户专用的跨国的数据、话音等综合信息业务的通信线路。通俗地说，也就是指传统的专线，如 DDN、E1 等，用于互连两点之间的通信，只不过 IPLC 是跨国跨境的而已。</p>
+</blockquote>
+<p>简单来讲就是点到点的不过墙线路，延迟、隐私保护都极为优秀。</p>
+<hr>
+<p><strong>本章商家</strong>：<a href="https://idc.wiki/">wikihost（维基主机）</a></p>
+<p><strong>1、价格信息</strong><br>
+<strong>注意</strong>：维基家的流量转发计价方式为<strong>一次性设置费</strong> + <strong>流量按量付费</strong> + <strong>端口占用费</strong>，而带宽方面 IPLC 转发均为 80 Mbps。<br>
+① 一次性设置费（高价版本每个月会赠送一点 IPLC 流量）：<br>
+<img src="https://img.senjianlu.com/20211228205412.png" alt="一次性设置费"><br>
+② IPLC 流量费用：<br>
+<img src="https://img.senjianlu.com/20211228205547.png" alt="IPLC 流量费用"><br>
+③ 端口占用费：<br>
+<img src="https://img.senjianlu.com/20211228205639.png" alt="端口占用费"></p>
+<p><strong>2、配置（流量转发）</strong><br>
+<strong>注意：需要自备落地（即提前准备好搭建了代理服务的境外服务器）</strong><br>
+购买后在产品和服务处选择流量转发服务，点击<code>管理产品</code>：<br>
+<img src="https://img.senjianlu.com/20211228205800.png" alt="管理产品"><br>
+选择<code>添加 IPLC 转发</code>：<br>
+<img src="https://img.senjianlu.com/20211228205959.png" alt="添加 IPLC 转发"><br>
+假设你有一个 SOCKS5 代理运行在 <code>13.233.150.148</code> 服务器的 <code>2222</code> 端口上，那么如下配置即可（除了 HTTP 代理其他全支持转发）：<br>
+<img src="https://img.senjianlu.com/20211228210253.png" alt="具体配置"></p>
+<blockquote>
+<p>协议处可选 TCP 和 UDP，如果都选择了则会分别产生一条转发规则，端口占用收费会翻倍。</p>
+</blockquote>
+<p>创建需要一点时间：<br>
+<img src="https://img.senjianlu.com/20211228210609.png" alt="等待创建"><br>
+趁这个时间我们查看一下转发规则：<br>
+<img src="https://img.senjianlu.com/20211228210732.png" alt="转发规则"><br>
+使用方式则很简单，本来你是使用如下代理信息的：</p>
+<pre><code class="language-python">import requests
+
+proxies = {
+    &quot;http&quot;: &quot;socks5://username:password@13.233.150.148:2222&quot;,
+    &quot;https&quot;: &quot;socks5://username:password@13.233.150.148:2222&quot;,
+}
+r = requests.get(&quot;https://google.com&quot;, proxies=proxies)
 </code></pre>
-<p>2、为数据库添加扩展<br>
-切换到你需要安装 Python3 语言扩展的数据库并执行：</p>
-<pre><code class="language-pgsql">CREATE EXTENSION plpython3u;
+<p>直接将 <code>13.233.150.148:2222</code> 替换为 <code>211.xx.xxx.xx:49333</code>（IPLC 转发规则内的地址）即可：</p>
+<pre><code class="language-python">import requests
+
+# IPLC 转发
+proxies = {
+    &quot;http&quot;: &quot;socks5://username:password@211.xx.xxx.xx:49333&quot;,
+    &quot;https&quot;: &quot;socks5://username:password@211.xx.xxx.xx:49333&quot;,
+}
+r = requests.get(&quot;https://google.com&quot;, proxies=proxies)
 </code></pre>
-<p>3、测试是否安装成功<br>
-创建函数：</p>
-<pre><code class="language-pgsql">CREATE OR REPLACE FUNCTION &quot;public&quot;.&quot;python3_test&quot; (a integer, b integer)
-  RETURNS INT
-  LANGUAGE plpython3u
-AS $$
-  if a &gt; b:
-    return a
-  return b
-$$;
-</code></pre>
-<p>测试一下：</p>
-<pre><code class="language-pgsql">SELECT python3_test(1, 2)
-&gt; OK
-&gt; 时间: 0.058s
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>python3_test</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<p>没有问题。</p>
-<p>4、导入 Python3 包和在本数据库执行查询语句<br>
-<strong>注意：Python3 语句严格使用 4 空格进行缩进！</strong></p>
-<pre><code class="language-pgsql">CREATE OR REPLACE FUNCTION &quot;public&quot;.&quot;python3_test&quot;(str text)
-  RETURNS INT
-	LANGUAGE plpython3u
-AS $$
-    import random
-    # 获取字符串长度
-    # 使用 plpy.execute() 直接在本数据库执行 SQL 语句
-    select_result = plpy.execute(&quot;SELECT CHAR_LENGTH('{}');&quot;.format(str))
-    str_length = int(select_result[0][&quot;char_length&quot;])
-    # 随机数
-    random_int = random.randint(0, str_length)
-    return random_int
-$$;
-</code></pre>
-<p>运行：</p>
-<pre><code class="language-pgsql">SELECT python3_test('1234567890')
-&gt; OK
-&gt; 时间: 0.033s
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>python3_test</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>7</td>
-</tr>
-</tbody>
-</table>
-<p>5、第三方 Python 模块的安装和导入<br>
-<em>注：这里不修改配置文件，直接用最简单的方法在函数中添加包路径。</em><br>
-第三方模块的安装直接使用 pip3 install 即可，和平时使用 Python3 无异；导入则需要先找到模块安装路径，这里以 requests 为例：</p>
-<pre><code class="language-bash">[root@VM-8-12-centos ~]# pip3 show requests
-Name: requests
-Version: 2.26.0
-Summary: Python HTTP for Humans.
-Home-page: https://requests.readthedocs.io
-Author: Kenneth Reitz
-Author-email: me@kennethreitz.org
-License: Apache 2.0
-Location: /usr/local/lib/python3.6/site-packages
-Requires: urllib3, charset-normalizer, certifi, idna
-</code></pre>
-<p>那么 pip3 默认的安装路径则为：/usr/local/lib/python3.6/site-packages，在函数中进行导入：</p>
-<pre><code class="language-pgsql">CREATE OR REPLACE FUNCTION &quot;public&quot;.&quot;python3_test&quot;(url text)
-  RETURNS INT
-	LANGUAGE plpython3u
-AS $$
-    import sys
-    sys.path.append(&quot;/usr/local/lib/python3.6/site-packages/&quot;)
-    import requests
-    # 访问
-    response = requests.get(url)
-    return response.status_code
-$$;
-</code></pre>
-<p>运行：</p>
-<pre><code class="language-pgsql">SELECT python3_test('https://baidu.com')
-&gt; OK
-&gt; 时间: 0.526s
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>python3_test</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-</tr>
-</tbody>
-</table>
-<p>6、打印日志和返回表结构的数据</p>
-<pre><code class="language-pgsql">CREATE OR REPLACE FUNCTION &quot;public&quot;.&quot;python3_test&quot;(str text)
-  RETURNS TABLE(_varchar VARCHAR, _numeric NUMERIC, _boolean BOOLEAN)
-	LANGUAGE plpython3u
-AS $$
-    import sys
-    sys.path.append(&quot;/usr/local/lib/python3.6/site-packages/&quot;)
-    # 类
-    class return_class():
-        def __init__(self, _varchar, _numeric, _boolean):
-            self._varchar = _varchar
-            self._numeric = _numeric
-            self._boolean = _boolean
-    # 打印日志
-    plpy.debug(&quot;debug&quot;)
-    plpy.log(&quot;log&quot;)
-    plpy.info(&quot;info&quot;)
-    plpy.notice(&quot;notice&quot;)
-    plpy.warning(&quot;warning&quot;)
-    # 返回表结构（在声明了返回表的列名后只要以列为单位生成对象并放入数组返回即可）
-    return_classes = []
-    a_class = return_class(str, 1.00, True)
-    a_class._numeric = 0.01
-    return_classes.append(a_class)
-    return_classes.append(return_class(&quot;bb&quot;, 1.23, True))
-    return_classes.append(return_class(&quot;cc&quot;, 3.21, False))
-    return return_classes
-$$;
-</code></pre>
-<p>运行：</p>
-<pre><code class="language-bash">SELECT * FROM python3_test('test_log_table')
-&gt; INFO:  info
-&gt; NOTICE:  notice
-&gt; WARNING:  warning
-&gt; OK
-&gt; 时间: 0.115s
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>_varchar</th>
-<th>_numeric</th>
-<th>_boolean</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>test_log_table</td>
-<td>0.01</td>
-<td>t</td>
-</tr>
-<tr>
-<td>bb</td>
-<td>1.23</td>
-<td>t</td>
-</tr>
-<tr>
-<td>cc</td>
-<td>3.21</td>
-<td>f</td>
-</tr>
-</tbody>
-</table>
-<p>结束。</p>
+<p>你的请求会直接到 <code>211.xx.xxx.xx</code> 这台境内服务器，然后走隧道过墙直达 Google。</p>
+<p><strong>3、使用体验</strong><br>
+① 价格方面<br>
+设置费略贵，至少要花 150 才能使用 IPLC 线路，不过每个月赠送流量还是蛮好评的，虽然没多少，但是不看视频只查文档的话一个月 500 MB 是基本用不完的，这是我的购买日期：<br>
+<img src="https://img.senjianlu.com/20211228211747.png" alt="购买日期"><br>
+在 Clash 中配置了这条线路只接管 Google 和 GitHub 相关服务的流量，截至 12 月 28 日：<br>
+<img src="https://img.senjianlu.com/20211228212049.png" alt="12 月 28 日"><br>
+总共 3 个月花 9 块钱。<br>
+② 使用方面<br>
+除了 HTTP 外的代理协议全支持，并且晚高峰也绝对稳定。<br>
+Python3 100 次对 Google 的爬取：<br>
+<img src="https://img.senjianlu.com/20211228214206.png" alt="成功率"><br>
+YouTube 1080p 分辨率下秒加载：<br>
+<img src="https://img.senjianlu.com/20211228214023.png" alt="秒加载"><br>
+准确的延迟测量等有了专业工具再补。</p>
+<p>本章结束。</p>
 
     </div>
     <div class="article-footer">
@@ -539,7 +427,7 @@ $$;
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/09/postgresql-note-04/" title="PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数" target="_blank" rel="external">https://senjianlu.com/2021/09/postgresql-note-04/</a>
+      <a href="https://senjianlu.com/2021/12/vps-iplc-01/" title="IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验" target="_blank" rel="external">https://senjianlu.com/2021/12/vps-iplc-01/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -556,14 +444,9 @@ $$;
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/09/centos7-jupyter/" title="CentOS7 下安装 Jupyter"><i
+                <a href="https://senjianlu.com/2021/12/eth-miner-note-02/" title="以太坊矿机搭建（二）安装 Mining OS（Minerstat OS）专业挖矿系统一键挖矿"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
-            </li>
-            <li class="next">
-                <a href="https://senjianlu.com/2021/09/k3s-note-01/"
-                    title="K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点"><span>上一篇&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
         </ul>

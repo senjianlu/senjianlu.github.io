@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/</link>
     <description>Recent content in 其他 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验</title>
+      <link>https://senjianlu.com/2021/12/vps-iplc-01/</link>
+      <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/vps-iplc-01/</guid>
+      <description>随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这</description>
+    </item>
     
     <item>
       <title>以太坊矿机搭建（二）安装 Mining OS（Minerstat OS）专业挖矿系统一键挖矿</title>
@@ -47,7 +56,7 @@
     </item>
     
     <item>
-      <title>基于太坊 ETH 的智能合约学习（一）下载和使用小狐狸钱包 MetaMask（Chrome 插件版）并添加 BSC 主网络进行 BNB 转账</title>
+      <title>基于以太坊 ETH 的智能合约学习（一）下载和使用小狐狸钱包 MetaMask（Chrome 插件版）并添加 BSC 主网络进行 BNB 转账</title>
       <link>https://senjianlu.com/2021/12/smart-contracts-note-01/</link>
       <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</guid>
       <description>之前也是部署过这个项目的，但是后来嫌 PC 端和手机端的网易云音乐都要手动配置有点麻烦，于是就放弃了。 现在在路由器上安装了 Clash，想到既然它能</description>
-    </item>
-    
-    <item>
-      <title>Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点</title>
-      <link>https://senjianlu.com/2021/11/clash-note-04/</link>
-      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/clash-note-04/</guid>
-      <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 服务器端安装脚本：CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务 curl -s ht</description>
     </item>
     
   </channel>
