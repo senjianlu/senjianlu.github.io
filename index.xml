@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/</link>
     <description>Recent content on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 26 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IPLC 食用（二）PittQiao（彼得巧）家苏日 IPLC 线路 NAT 主机的使用体验</title>
+      <link>https://senjianlu.com/2021/12/vps-iplc-02/</link>
+      <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/vps-iplc-02/</guid>
+      <description>主职是日本客户做开发的，公司提供了专线因此个人服务器基本也都买在日本了，再加上现在住在江苏，考虑专门上一条 IPLC 专线来连接个人服务器，就相中了这</description>
+    </item>
     
     <item>
       <title>IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/11/fiddler-note-01/</guid>
       <description>在路由器上的 Clash 中配置网易云音乐灰歌解锁的时候发现：UWP 版的网易云音乐请求指向的似乎不是 music.163.com 等域名（事实上走的是 music.163.com 域名，只是我 Clash 配置的有问题罢</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下用 Docker 部署 UnblockNeteaseMusic 并在 Clash 中配置分流以在局域网内解锁网易云音乐变灰的歌曲</title>
-      <link>https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</link>
-      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</guid>
-      <description>之前也是部署过这个项目的，但是后来嫌 PC 端和手机端的网易云音乐都要手动配置有点麻烦，于是就放弃了。 现在在路由器上安装了 Clash，想到既然它能</description>
     </item>
     
   </channel>

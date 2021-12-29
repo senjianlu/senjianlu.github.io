@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>CentOS7 下的一些 iptables 实用配置</title>
+      <link>https://senjianlu.com/2021/09/centos7-iptables/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/centos7-iptables/</guid>
+      <description>一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT</description>
+    </item>
+    
+    <item>
       <title>K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）</title>
       <link>https://senjianlu.com/2021/09/k3s-note-02-02/</link>
       <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
@@ -178,15 +187,6 @@
       
       <guid>https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</guid>
       <description>腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一</description>
-    </item>
-    
-    <item>
-      <title>Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题</title>
-      <link>https://senjianlu.com/2021/07/nginx-note-02/</link>
-      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/nginx-note-02/</guid>
-      <description>给网站套上 Cloudflare 防止被打和缓存部分静态文件应该是常规操作了，但是想起来之前好像见到过的帖子：第一次知道 HTTPS 会暴露服务器 IP，在新的服务器上试验了一</description>
     </item>
     
   </channel>

@@ -42,7 +42,7 @@
 <meta itemprop="name" content="Cloudflare Workers 反代使用 GitHub 仓库搭建的图床">
 <meta itemprop="description" content="虽然一直都知道存在无法在境内正常加载文章中图片的问题，但是嫌麻烦一直就拖着。最近接触到了 Cloudflare Workers，实践反代的时候发现异常简单，顺便就"><meta itemprop="datePublished" content="2021-12-17T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-17T00:00:00+00:00" />
-<meta itemprop="wordCount" content="888">
+<meta itemprop="wordCount" content="955">
 <meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cloudflare Workers 反代使用 GitHub 仓库搭建的图床"/>
 <meta name="twitter:description" content="虽然一直都知道存在无法在境内正常加载文章中图片的问题，但是嫌麻烦一直就拖着。最近接触到了 Cloudflare Workers，实践反代的时候发现异常简单，顺便就"/>
@@ -168,7 +168,7 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">35</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">34</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
@@ -226,7 +226,7 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">3</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
@@ -257,6 +257,16 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/vps-iplc-02/" class="title">IPLC 食用（二）PittQiao（彼得巧）家苏日 IPLC 线路 NAT 主机的使用体验</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-29</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -294,16 +304,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2021-12-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-17</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2021/12/centos7-docker-firefox-in-browser/" class="title">CentOS7 下用 Docker 部署 Firefox 以实现浏览器套浏览器访问被屏蔽的网站</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2021-12-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-15</time>
                     </p>
                 </div>
             </li>
@@ -347,7 +347,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/12/cloudflare-workers-image/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 888字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 955字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
@@ -356,7 +356,7 @@
 <hr>
 <blockquote>
 <p>实现流程：<br>
-<strong>用户</strong> -(域名)-&gt; <strong>Cloudflare DNS</strong> -(解析)-&gt; <strong>Cloudflare Workers 分配的域名</strong> -(CF Workers 内部代码)-&gt; <strong>访问 GitHub 源文件并返回</strong></p>
+<strong>用户</strong> -(域名)-&gt; <strong>Cloudflare DNS</strong> -(解析)-&gt; <strong>Cloudflare Workers 分配的域名</strong> -(路由激活指定的 CF Workers)-&gt; <strong>CF Workers 内部代码运行：访问 GitHub 源文件并返回</strong></p>
 </blockquote>
 <p><strong>1、Cloudflare 开启 Workers</strong></p>
 <blockquote>
@@ -377,8 +377,8 @@
 看到以下页面说明创建成功：<br>
 <img src="https://img.senjianlu.com/20211219232116.png" alt="创建成功"></p>
 <p><strong>2、编写反代用的 Worker 代码</strong><br>
-Cloudflare Worker 中的代码用 JS 写就行，同时还有很多现场的好用的方法，具体的学习请参照官方文档：<a href="https://developers.cloudflare.com/workers/">Cloudflare Workers documentation</a><br>
-我这里要实现反代功能，那么就只需要将来源链接中的域名修改成 <code>raw.githubusercontent.com</code>，接着访问一下并返回 GitHub 文件内容即可，直接给上具体实现的代码：</p>
+Cloudflare Worker 中的代码用 JS 写就行，同时还有很多现成的好用的方法，具体的学习请参照官方文档：<a href="https://developers.cloudflare.com/workers/">Cloudflare Workers documentation</a><br>
+我这里要实现反代功能，那么就只需要将来源链接中的域名修改成 <code>raw.githubusercontent.com</code>，接着访问一下 GitHub 文件的内容并返回即可，直接上具体实现的代码：</p>
 <pre><code class="language-javascript">addEventListener(&quot;fetch&quot;, event =&gt; {
   event.respondWith(handleRequest(event.request))
 })
@@ -411,14 +411,15 @@ async function handleRequest(request) {
 <img src="https://img.senjianlu.com/20211219234604.png" alt="添加解析"><br>
 通过自己的子域名测试访问成功（没有 HTTPS 就是因为没使用 Cloudflare 的 DNS）：<br>
 <img src="https://img.senjianlu.com/20211219235311.png" alt="测试访问成功"></p>
-<p><strong>4、VSCode 中多文件内容使用全部替换</strong><br>
+<p><strong>4、VSCode 中多文件内容使用全部替换（以我博客实际域名 senjianlu.com 为例）</strong><br>
 把之前文章中的图片链接全都替换一下：<br>
 <img src="https://img.senjianlu.com/20211219235656.png" alt="替换 1"><br>
 <img src="https://img.senjianlu.com/20211219235747.png" alt="替换 2"><br>
-将 <code>](https://raw.githubusercontent.com/senjianlu/imgs/master</code> 替换为 <code>](https://img.cscheap.com</code> 即可：<br>
+将 <code>](https://raw.githubusercontent.com/senjianlu/imgs/master</code> 替换为 <code>](https://img.senjianlu.com</code> 即可：<br>
 <img src="https://img.senjianlu.com/20211220000308.png" alt="替换"></p>
-<p><strong>5、PicGo 中设置 GitHub 图床自定义域名</strong><br>
-<img src="https://img.senjianlu.com/20211220000434.png" alt="设定"></p>
+<p><strong>5、PicGo 中设置 GitHub 图床自定义域名（以我博客实际域名 senjianlu.com 为例）</strong><br>
+<img src="https://img.senjianlu.com/20211220000434.png" alt="设定"><br>
+这样每次上传 <code>Ctrl + Shift + P</code> 上传成功后，剪贴版里就是 img.senjianlu.com/xxxxxx.png 形式的图片链接了。</p>
 <p>结束。</p>
 
     </div>
