@@ -10,6 +10,24 @@
     
     
     <item>
+      <title>Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法</title>
+      <link>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</link>
+      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</guid>
+      <description>新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置</title>
+      <link>https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</link>
+      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</guid>
+      <description>腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一</description>
+    </item>
+    
+    <item>
       <title>Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题</title>
       <link>https://senjianlu.com/2021/07/nginx-note-02/</link>
       <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
@@ -169,24 +187,6 @@
       
       <guid>https://senjianlu.com/2020/01/hugo-github-pages/</guid>
       <description>确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo+GitHub Pages 免费搭建个静</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下 Nginx&#43;uWSGI 配置 Django 项目</title>
-      <link>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</guid>
-      <description>服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下配置 HTTP 和 SOCKS5 代理服务端，用以代理 HTPPS 解决爬虫 SSL 错误</title>
-      <link>https://senjianlu.com/2020/01/centos7-http-and-socks5-proxy/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/centos7-http-and-socks5-proxy/</guid>
-      <description>如果你急于解决爬虫 HTTP 代理池访问 HTPPS 出错，并且自己有境外服务器的话，我直接给出解决方案：服务器搭建 SOCKS5 代理并在代码中以 socks5h://账号:密</description>
     </item>
     
   </channel>

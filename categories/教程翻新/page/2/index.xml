@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</link>
     <description>Recent content in 教程翻新 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则</title>
+      <link>https://senjianlu.com/2021/11/clash-note-03/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/clash-note-03/</guid>
+      <description>1、定时更新机场节点 注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。 不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读</description>
+    </item>
+    
+    <item>
+      <title>Fiddler 学习（一）安装、配置和尝试抓取 UWP 版网易云音乐的请求域名</title>
+      <link>https://senjianlu.com/2021/11/fiddler-note-01/</link>
+      <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/fiddler-note-01/</guid>
+      <description>在路由器上的 Clash 中配置网易云音乐灰歌解锁的时候发现：UWP 版的网易云音乐请求指向的似乎不是 music.163.com 等域名（事实上走的是 music.163.com 域名，只是我 Clash 配置的有问题罢</description>
+    </item>
     
     <item>
       <title>CentOS7 下用 Docker 部署 UnblockNeteaseMusic 并在 Clash 中配置分流以在局域网内解锁网易云音乐变灰的歌曲</title>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</guid>
       <description>这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：</description>
-    </item>
-    
-    <item>
-      <title>K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用</title>
-      <link>https://senjianlu.com/2021/10/k3s-note-03/</link>
-      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/k3s-note-03/</guid>
-      <description>将 server + agent 的集群导入 Docker 安装的 Rancher 中以进行管理。 1、从面板导入现有集群 添加集群： 导入： 输入集群名词后创建： 复制命令前往集群执行： 我是在节点的主 server 节</description>
-    </item>
-    
-    <item>
-      <title>Nginx 学习（三）配置基础的用户登录验证以保护站点</title>
-      <link>https://senjianlu.com/2021/10/nginx-note-03/</link>
-      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/nginx-note-03/</guid>
-      <description>临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric</description>
     </item>
     
   </channel>

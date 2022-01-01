@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 学习笔记 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基于以太坊 ETH 的智能合约学习（二） 补足：CentOS7 下使用 Docker 安装 remix-ide 智能合约开发环境</title>
+      <link>https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/</guid>
+      <description>如果你不喜欢官方的 Remix 或是想使用自己的域名来访问在线 Remix，那么就请继续看下去吧！ 我并不推荐使用 npm 的安装方式，一方面是麻烦，另一方面官方 GitHub</description>
+    </item>
     
     <item>
       <title>IPLC 食用（二）PittQiao（彼得巧）家苏日 IPLC 线路 NAT 主机的使用体验</title>
@@ -17,6 +26,15 @@
       
       <guid>https://senjianlu.com/2021/12/vps-iplc-02/</guid>
       <description>主职是日本客户做开发的，公司提供了专线因此个人服务器基本也都买在日本了，再加上现在住在江苏，考虑专门上一条 IPLC 专线来连接个人服务器，就相中了这</description>
+    </item>
+    
+    <item>
+      <title>基于以太坊 ETH 的智能合约学习（二）使用官方的 Remix IDE 一键发币体验整体流程</title>
+      <link>https://senjianlu.com/2021/12/smart-contracts-note-02/</link>
+      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/12/smart-contracts-note-02/</guid>
+      <description>从零开始学习 Solidity 语言的时候突然回想起上大学对着键盘敲 C 的日子，老师明知道台下一半的学生出了校园甚至是这门课结束了就再也不会碰 C，却依然很负责任</description>
     </item>
     
     <item>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/11/vscode-github-push-error/</guid>
       <description>1、错误信息 Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } remote: Repository not found. fatal: Authentication failed for &#39;https://github.com/username/repo.git/&#39; 2、解决办法 参考文</description>
-    </item>
-    
-    <item>
-      <title>Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则</title>
-      <link>https://senjianlu.com/2021/11/clash-note-03/</link>
-      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/clash-note-03/</guid>
-      <description>1、定时更新机场节点 注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。 不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读</description>
-    </item>
-    
-    <item>
-      <title>Fiddler 学习（一）安装、配置和尝试抓取 UWP 版网易云音乐的请求域名</title>
-      <link>https://senjianlu.com/2021/11/fiddler-note-01/</link>
-      <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/fiddler-note-01/</guid>
-      <description>在路由器上的 Clash 中配置网易云音乐灰歌解锁的时候发现：UWP 版的网易云音乐请求指向的似乎不是 music.163.com 等域名（事实上走的是 music.163.com 域名，只是我 Clash 配置的有问题罢</description>
     </item>
     
   </channel>
