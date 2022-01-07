@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库 - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="优化之前组的 K3s 集群的时候，想到每次配置文件的小修小改都要重启一大堆容器实在麻烦，只怪最初没考虑完全，趁这次机会起一个配置中心来解决这个麻烦。" />
+  <meta name="generator" content="Hugo 0.88.1 with theme pure" />
+  <title>分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库 - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库" />
+<meta property="og:description" content="优化之前组的 K3s 集群的时候，想到每次配置文件的小修小改都要重启一大堆容器实在麻烦，只怪最初没考虑完全，趁这次机会起一个配置中心来解决这个麻烦。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2022/01/apollo-note-01/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-06T00:00:00+00:00" />
+
+<meta itemprop="name" content="分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库">
+<meta itemprop="description" content="优化之前组的 K3s 集群的时候，想到每次配置文件的小修小改都要重启一大堆容器实在麻烦，只怪最初没考虑完全，趁这次机会起一个配置中心来解决这个麻烦。"><meta itemprop="datePublished" content="2022-01-06T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-06T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1570">
+<meta itemprop="keywords" content="Apollo,Docker," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库"/>
+<meta name="twitter:description" content="优化之前组的 K3s 集群的时候，想到每次配置文件的小修小改都要重启一大堆容器实在麻烦，只怪最初没考虑完全，趁这次机会起一个配置中心来解决这个麻烦。"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>用来记录在工作中的一些问题和对应解决。</br>博客发布之前我会尽量检查，但是避免不了环境或是配置不同而造成的难以预测的问题，如有错误或疑问请 <a href='https://t.me/rabbirbot00'>Telegram</a> 联系我，感谢！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">37</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">35</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
+                    class="tag-list-count">6</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/java/" class="tag-list-link">java</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">22</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
+                    class="tag-list-count">10</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2022/01/apollo-note-01/" class="title">分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-01-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-06</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/" class="title">基于以太坊 ETH 的智能合约学习（二） 补足：CentOS7 下使用 Docker 部署 remix-ide 智能合约开发环境</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-30</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/vps-iplc-02/" class="title">IPLC 食用（二）PittQiao（彼得巧）家苏日 IPLC 线路 NAT 主机的使用体验</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-29</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/smart-contracts-note-02/" class="title">基于以太坊 ETH 的智能合约学习（二）使用官方的 Remix IDE 一键发币体验整体流程</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-28</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/vps-iplc-01/" class="title">IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-26</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2022/01/apollo-note-01/"
+    >分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://senjianlu.com/2022/01/apollo-note-01/" class="article-date">
+  <time datetime="2022-01-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-06</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/apollo/"> Apollo </a>
+    <a class="article-tag-link" href="/tags/docker/"> Docker </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2022/01/apollo-note-01/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1570字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>优化之前组的 K3s 集群的时候，想到每次配置文件的小修小改都要重启一大堆容器实在麻烦，只怪最初没考虑完全，趁这次机会起一个配置中心来解决这个麻烦。</p>
+<hr>
+<blockquote>
+<p>① 什么是配置中心？<br>
+配置中心将配置从各应用中剥离出来，对配置进行统一管理，应用自身不需要自己去管理配置，可以参考下图：<br>
+<img src="https://img.senjianlu.com/20220106145200.png" alt="配置中心"><br>
+② 为什么选择 Apollo？<br>
+携程开源且 GitHub 更新勤快，截止 2022 年 1 月 5 日还在更新。<br>
+具体可以参照这篇文章：<a href="https://developer.51cto.com/art/202102/645471.htm">分布式配置中心（Nacos、Apollo）选型比较</a></p>
+</blockquote>
+<hr>
+<p><strong>Apollo 的运行需要 8 GB 左右的内存，如果你的服务器配置低于 2 核 8 GB，那就不用尝试了。</strong><br>
+官方给了 2 种方式来部署 Apollo：在服务器中直接启动和使用 Docker 启动，在服务器中直接启动就不用说了，而官方所使用的 Docker 镜像：<a href="https://hub.docker.com/r/nobodyiam/apollo-quick-start">nobodyiam/apollo-quick-start</a> 是自带 MySQL 数据库的，我并不需要，于是就只能自己构建了。<br>
+我希望最终容器可以和 <a href="https://hub.docker.com/r/apolloconfig/apollo-configservice">apolloconfig/apollo-configservice</a> 启动命令一样（并不是官方镜像因此不使用），能够指定数据库连接。<br>
+我的 Dockerfile 文件：<a href="https://github.com/senjianlu/Apollo-docker">Apollo-docker</a><br>
+我构建完的 Docker 镜像：<a href="https://hub.docker.com/r/rabbir/apollo">rabbir/apollo</a></p>
+<p><strong>1、安装和配置 Apollo 运行环境</strong></p>
+<blockquote>
+<p>官方描述的运行环境：</p>
+<ul>
+<li>Linux</li>
+<li>JDK（1.8 以上，推荐 1.8）</li>
+<li>MySQL（5.65 及以上，<strong>我有外置的数据库因此不做安装</strong>）</li>
+</ul>
+</blockquote>
+<p>① 直接拉取一个 CentOS7 的镜像：</p>
+<pre><code class="language-bash"># 拉取镜像
+docker pull centos:centos7
+# 运行镜像
+docker run -it docker.io/centos:centos7 /bin/bash
+</code></pre>
+<p><strong>之后的命令都是在容器内执行！</strong></p>
+<p>② 安装 JDK1.8：</p>
+<pre><code class="language-bash"># 安装位置
+cd /usr/local/
+yum -y install wget
+# 下载压缩包
+wget --no-check-certificate --no-cookies --header &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;  http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+# 解压并重命名
+tar -zxvf jdk-8u131-linux-x64.tar.gz
+mv jdk1.8.0_131 jdk1.8
+# 删除压缩包
+rm -f jdk-8u131-linux-x64.tar.gz
+# 配置环境变量
+vi ~/.bashrc
+</code></pre>
+<p>新增以下两行：</p>
+<pre><code class="language-conf">...
+...
+# Java 相关
+export JAVA_HOME=/usr/local/jdk1.8
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+...
+...
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211115215122.png" alt="Java 配置"><br>
+使配置生效：</p>
+<pre><code class="language-bash">source ~/.bashrc
+# 确认 Java 版本
+java -version
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/senjianlu/imgs/master/20211115212310.png" alt="Java 版本"></p>
+<p><strong>2、下载 Apollo Quick Start 安装包</strong><br>
+官方文档中对应的位置：<a href="https://www.apolloconfig.com/#/zh/deployment/quick-start?id=_13-%e4%b8%8b%e8%bd%bdquick-start%e5%ae%89%e8%a3%85%e5%8c%85">下载 Quick Start 安装包</a><br>
+项目地址：<a href="https://github.com/nobodyiam/apollo-build-scripts">nobodyiam/apollo-build-scripts</a></p>
+<pre><code class="language-bash">yum -y install git
+# 克隆项目
+git clone https://github.com/nobodyiam/apollo-build-scripts
+</code></pre>
+<p>修改一下 demo.sh 使其能从环境变量中读取数据库连接信息：</p>
+<pre><code class="language-bash">sed -i 's#jdbc:mysql://localhost:3306/ApolloConfigDB?characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai#$APOLLO_CONFIG_DB_JDBC#' /usr/local/apollo-build-scripts/demo.sh
+sed -i 's#&quot;dbc:mysql://localhost:3306/ApolloPortalDB?characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai#$APOLLO_PORTAL_DB_JDBC#' /usr/local/apollo-build-scripts/demo.sh
+</code></pre>
+<blockquote>
+<p>原本的片段：</p>
+<pre><code class="language-bash"># apollo config db info
+apollo_config_db_url=&quot;jdbc:mysql://localhost:3306/ApolloConfigDB?characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai&quot;
+apollo_config_db_username=${APOLLO_CONFIG_DB_USERNAME:-root}
+apollo_config_db_password=${APOLLO_CONFIG_DB_PASSWORD:-}
+
+# apollo portal db info
+apollo_portal_db_url=&quot;jdbc:mysql://localhost:3306/ApolloPortalDB?characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai&quot;
+apollo_portal_db_username=${APOLLO_PORTAL_DB_USERNAME:-root}
+apollo_portal_db_password=${APOLLO_PORTAL_DB_PASSWORD:-}
+</code></pre>
+<p>修改后的片段：</p>
+<pre><code class="language-bash"># apollo config db info
+apollo_config_db_url=&quot;$APOLLO_CONFIG_DB_JDBC&quot;
+apollo_config_db_username=${APOLLO_CONFIG_DB_USERNAME:-root}
+apollo_config_db_password=${APOLLO_CONFIG_DB_PASSWORD:-}
+
+# apollo portal db info
+apollo_portal_db_url=&quot;$APOLLO_PORTAL_DB_JDBC&quot;
+apollo_portal_db_username=${APOLLO_PORTAL_DB_USERNAME:-root}
+apollo_portal_db_password=${APOLLO_PORTAL_DB_PASSWORD:-}
+</code></pre>
+</blockquote>
+<p><strong>3、构建 Docker 容器镜像并运行</strong><br>
+① 配置一下 Apollo 运行所需要的数据库结构，需要新增两个 DB：<a href="https://github.com/nobodyiam/apollo-build-scripts/blob/master/sql/apolloportaldb.sql">ApolloPortalDB</a> 和 <a href="https://github.com/apolloconfig/apollo-build-scripts/blob/master/sql/apolloconfigdb.sql">ApolloConfigDB</a>，文档中的位置：<a href="https://www.apolloconfig.com/#/zh/deployment/quick-start?id=_21-%e5%88%9b%e5%bb%ba%e6%95%b0%e6%8d%ae%e5%ba%93">2.1 创建数据库</a><br>
+我是买的腾讯云数据库，因此直接在网页端执行（需要手动创建数据库后选定数据库执行剩下的语句，部分 SET 语句出错可以跳过）：<br>
+<img src="https://img.senjianlu.com/20220106200136.png" alt="执行 SQL"> 
+之后检查一下：</p>
+<pre><code class="language-sql">-- 检查 ApolloPortalDB
+select `Id`, `AppId`, `Name` from ApolloPortalDB.App;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Id</th>
+<th>AppId</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SampleApp</td>
+<td>Sample App</td>
+</tr>
+<tr>
+<td>ApolloConfigDB 同理，创建数据库并建表之后检查：</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-sql">-- 检查 ApolloConfigDB
+select `NamespaceId`, `Key`, `Value`, `Comment` from ApolloConfigDB.Item;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>NamespaceId</th>
+<th>Key</th>
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>timeout</td>
+<td>100</td>
+<td>sample timeout配置</td>
+</tr>
+</tbody>
+</table>
+<p>② 将上述所有命令写入 Dockerfile（部分命令如环境变量的配置会有所不同）：</p>
+<pre><code class="language-Dockerfile"># 基础镜像系统版本为 CentOS:7
+FROM centos:7
+
+# 维护者信息
+LABEL maintainer=&quot;Rabbir admin@cs.cheap&quot;
+
+# Docker 内用户切换到 root
+USER root
+
+# 设置时区为东八区
+ENV TZ Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &gt; /etc/timezone
+
+# 安装 Git 和 Wget
+RUN yum -y install wget
+RUN yum -y install git
+
+# 切换到 /usr/local/ 目录下
+WORKDIR /usr/local/
+# 下载解压 JDK
+RUN wget --no-check-certificate --no-cookies --header &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;  http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+RUN tar -zxvf jdk-8u131-linux-x64.tar.gz
+RUN mv jdk1.8.0_131  jdk1.8
+RUN rm -f jdk-8u131-linux-x64.tar.gz
+
+# 添加容器内的永久环境变量
+RUN sed -i &quot;2 a export JAVA_HOME=/usr/local/jdk1.8&quot; /etc/profile
+RUN sed -i &quot;3 a export PATH=\$PATH:\$JAVA_HOME/bin&quot; /etc/profile
+RUN sed -i &quot;4 a export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar&quot; /etc/profile
+RUN source /etc/profile
+RUN sed -i '1 a source /etc/profile' ~/.bashrc
+RUN source ~/.bashrc
+
+# 添加构建用的临时环境变量
+ENV JAVA_HOME /usr/local/jdk1.8
+ENV PATH $PATH:$JAVA_HOME/bin
+ENV CLASSPATH .:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+# 克隆源码并修改 demo.sh 文件
+WORKDIR /usr/local/
+RUN git clone https://github.com/nobodyiam/apollo-build-scripts
+WORKDIR /usr/local/apollo-build-scripts/
+RUN sed -i 's#jdbc:mysql://localhost:3306/ApolloConfigDB?characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai#$APOLLO_CONFIG_DB_JDBC#' demo.sh
+RUN sed -i 's#jdbc:mysql://localhost:3306/ApolloPortalDB?characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai#$APOLLO_PORTAL_DB_JDBC#' demo.sh
+
+# 创建启动脚本
+RUN echo &quot;/bin/bash /usr/local/apollo-build-scripts/demo.sh start &amp;&amp; tail -f /dev/null&quot; &gt; start.sh
+
+# 启动命令
+ENTRYPOINT [&quot;/bin/bash&quot;, &quot;start.sh&quot;]
+CMD [&quot;&quot;]
+</code></pre>
+<p>构建（镜像名和版本自行替换）：</p>
+<pre><code class="language-bash">docker build -t rabbir/apollo:latest .
+</code></pre>
+<p>③ 启动并登录管理界面<br>
+Apollo 启动会用到三个端口：</p>
+<ul>
+<li>8070（Apollo Portal 管理界面端口）</li>
+<li>8080（提供配置的读取、推送等功能，服务对象是 Apollo 的各客户端）</li>
+<li>8090（提供配置的修改、发布等功能，服务对象是 Apollo Portal）</li>
+</ul>
+<p>暂时不做文件夹的映射，因此启动命令如下（数据库连接信息自行更改）：</p>
+<pre><code class="language-bash">docker run --name apollo -d \
+	-p 18070:8070 \
+    -p 18080:8080 \
+    -p 18090:8090 \
+    -e APOLLO_CONFIG_DB_JDBC=&quot;jdbc:mysql://127.0.0.1:3306/ApolloConfigDB?characterEncoding=utf8&quot; \
+    -e APOLLO_CONFIG_DB_USERNAME=&quot;myusername&quot; \
+    -e APOLLO_CONFIG_DB_PASSWORD=&quot;mypassword&quot; \
+    -e APOLLO_PORTAL_DB_JDBC=&quot;jdbc:mysql://127.0.0.1:3306/ApolloPortalDB?characterEncoding=utf8&quot; \
+    -e APOLLO_PORTAL_DB_USERNAME=&quot;myusername&quot; \
+    -e APOLLO_PORTAL_DB_PASSWORD=&quot;mypassword&quot; \
+	rabbir/apollo:latest
+</code></pre>
+<p>启动并查看日志：</p>
+<pre><code class="language-bash">docker logs apollo
+</code></pre>
+<p><img src="https://img.senjianlu.com/20220108000749.png" alt="启动成功"><br>
+显示如上则说明没有问题，确保防火墙和安全组开放的情况下就能去访问管理界面了，登录账号为 <code>apollo</code> 密码为 <code>admin</code>（我将容器的 8070 端口映射到了宿主机的 18070 端口上）：<br>
+<img src="https://img.senjianlu.com/20220108000844.png" alt="访问成功"><br>
+<img src="https://img.senjianlu.com/20220108000921.png" alt="登录成功"></p>
+<p>成功，结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2022/01/apollo-note-01/" title="分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库" target="_blank" rel="external">https://senjianlu.com/2022/01/apollo-note-01/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/" title="基于以太坊 ETH 的智能合约学习（二） 补足：CentOS7 下使用 Docker 部署 remix-ide 智能合约开发环境"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2022
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://senjianlu.com/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://senjianlu.com/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/senjianlu.com',
+            CONTENT_URL: 'https:\/\/senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://senjianlu.com/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

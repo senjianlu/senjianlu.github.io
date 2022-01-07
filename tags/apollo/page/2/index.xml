@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apollo on 森见鹿的博客 </title>
+    <link>https://senjianlu.com/tags/apollo/</link>
+    <description>Recent content in Apollo on 森见鹿的博客 </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://senjianlu.com/tags/apollo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VS Code 使用 Remote 连接服务器并 Push 到 GitHub 私有仓库时报错：Missing or invalid credentials. 的解决办法</title>
+      <link>https://senjianlu.com/2021/11/vscode-github-push-error/</link>
+      <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/vscode-github-push-error/</guid>
+      <description>1、错误信息 Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } remote: Repository not found. fatal: Authentication failed for &#39;https://github.com/username/repo.git/&#39; 2、解决办法 参考文</description>
+    </item>
+    
+    <item>
+      <title>Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则</title>
+      <link>https://senjianlu.com/2021/11/clash-note-03/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/clash-note-03/</guid>
+      <description>1、定时更新机场节点 注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。 不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读</description>
+    </item>
+    
+    <item>
+      <title>Fiddler 学习（一）安装、配置和尝试抓取 UWP 版网易云音乐的请求域名</title>
+      <link>https://senjianlu.com/2021/11/fiddler-note-01/</link>
+      <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/fiddler-note-01/</guid>
+      <description>在路由器上的 Clash 中配置网易云音乐灰歌解锁的时候发现：UWP 版的网易云音乐请求指向的似乎不是 music.163.com 等域名（事实上走的是 music.163.com 域名，只是我 Clash 配置的有问题罢</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下用 Docker 部署 UnblockNeteaseMusic 并在 Clash 中配置分流以在局域网内解锁网易云音乐变灰的歌曲</title>
+      <link>https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</guid>
+      <description>之前也是部署过这个项目的，但是后来嫌 PC 端和手机端的网易云音乐都要手动配置有点麻烦，于是就放弃了。 现在在路由器上安装了 Clash，想到既然它能</description>
+    </item>
+    
+    <item>
+      <title>Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点</title>
+      <link>https://senjianlu.com/2021/11/clash-note-04/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/clash-note-04/</guid>
+      <description>只描述对节点订阅信息的解码和在 Clash 中的配置方法。 1、HTTP 协议的节点 服务器端安装脚本：CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务 curl -s ht</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 学习笔记（六）对 JSONB 类型字段的增删改查操作</title>
+      <link>https://senjianlu.com/2021/11/postgresql-note-06/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/postgresql-note-06/</guid>
+      <description>苦 JSONB 久矣。 介绍下实验用表 item 的表结构： 名 类型 长度 小数点 不是 null 键 注释 id int4 32 0 √ 🔑 商品 ID name varchar 255 0 商品名 property jsonb 0 0 属性 表中数据： id name property 1 毛巾 {&amp;ldquo;price&amp;rdquo;: 5.88, &amp;ldquo;num&amp;rdquo;: 20, &amp;ldquo;type&amp;rdquo;:</description>
+    </item>
+    
+    <item>
+      <title>Cloudflare 四种 SSL/TLS 加密模式的功能解析及实践</title>
+      <link>https://senjianlu.com/2021/11/cloudflare-ssl-tls/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/cloudflare-ssl-tls/</guid>
+      <description>在没套 Cloudflare 之前有在 Nginx 中配置 HTTP 访问 301 重定向到 HTTPS 的习惯，但是在套了 CF 之后常常出现 301 重定向次数过多的情况，不明白原理地瞎调试走了很多弯路，重新实践一</description>
+    </item>
+    
+    <item>
+      <title>Plesk（虚拟主机空间）下安装 Nextcloud 网盘系统</title>
+      <link>https://senjianlu.com/2021/10/plesk-install-nextcloud/</link>
+      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/plesk-install-nextcloud/</guid>
+      <description>维基主机家 CN2 虚拟空间上的 Nextcloud 管理员密码忘了，并且因为当初没有配置邮箱信息，导致没法收到重置密码邮件，反正也没啥重要文件索性重装下，以此记录下流</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下哪吒监控面板的搭建的监控端的安装</title>
+      <link>https://senjianlu.com/2021/10/centos7-nezha-monitor/</link>
+      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-nezha-monitor/</guid>
+      <description>部分境外代理用的服务器连入 Zabbix 实在是太吃资源了，过高的延迟也使得连接一直中断，考虑了一下决定将边缘业务用的服务器全抽离出来，单独用哪吒监控做管</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 学习笔记（一） CentOS7 下安装 MongoDB</title>
+      <link>https://senjianlu.com/2021/10/mongodb-note-01/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/mongodb-note-01/</guid>
+      <description>在和舍友交流之后才发现拿 JSONB 存储历史价格信息的我可能是个天才吧&amp;hellip;&amp;hellip; 回去检查了一下 PostgreSQL 中的对应字段，果然达到了 65535 字节的</description>
+    </item>
+    
+    <item>
+      <title>Clash 学习（一）配置文件各项在实际使用中的用处和创建自己的第一个配置文件</title>
+      <link>https://senjianlu.com/2021/10/clash-note-01/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/clash-note-01/</guid>
+      <description>Clash 的优点太多了不赘述了，我选择它的理由是 OpenWrt 的 Clash 插件可以在软路由层面将流量分流到不同节点，比如说：YouTube 使用香港节点、Netflix 走</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下安装 Shadowsocks 服务端</title>
+      <link>https://senjianlu.com/2021/10/centos7-shadowsocks-server/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-shadowsocks-server/</guid>
+      <description>安装个 Shadowsocks 给新买的隧道用。 1、配置 repo 仓库给后面 YUM 安装使用 注：原仓库已经删除，现在只剩备份仓库，使用的 repo 源是备用仓库中 README.md 中记载的，应该是可信的，</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 学习笔记（五）找回被遗忘的 postgres 密码</title>
+      <link>https://senjianlu.com/2021/10/postgresql-note-05/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/postgresql-note-05/</guid>
+      <description>这应该也算学习笔记吧&amp;hellip;&amp;hellip; 1、信任所有的本地连接 修改配置文件： vi /var/lib/pgsql/12/data/pg_hba.conf 从 md5 的认证方式改为 trust ... ... # &amp;quot;local&amp;quot; is for Unix domain socket connections only local all all</description>
+    </item>
+    
+    <item>
+      <title>定制 OpenWrt 软路由系统（三）编译适用于自己 OpenWrt 软路由系统的 Clash 插件</title>
+      <link>https://senjianlu.com/2021/10/openwrt-note-03/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/openwrt-note-03/</guid>
+      <description>这里插件的编译还是以 Clash 为例，官方版本为 v1.7.5.7，但实际上已经能编译出更新的版本，当前这里的编译请主要参考流程，插件除非是因为 OpenWrt 系统更</description>
+    </item>
+    
+    <item>
+      <title>PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理</title>
+      <link>https://senjianlu.com/2021/10/pve-openwrt-ikuai/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/pve-openwrt-ikuai/</guid>
+      <description>被自己写的第一篇教程恶心到了&amp;hellip;&amp;hellip; 重新确定下拓扑，黑群晖系统不动，将其他两个软路由重新部署下。 首选说明几个重要的 IP</description>
+    </item>
+    
+    <item>
+      <title>定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash</title>
+      <link>https://senjianlu.com/2021/10/openwrt-note-02/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/openwrt-note-02/</guid>
+      <description>首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件</description>
+    </item>
+    
+    <item>
+      <title>定制 OpenWrt 软路由系统（一）从源码开始编译第一个系统固件</title>
+      <link>https://senjianlu.com/2021/10/openwrt-note-01/</link>
+      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/openwrt-note-01/</guid>
+      <description>第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后</description>
+    </item>
+    
+    <item>
+      <title>GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub</title>
+      <link>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</guid>
+      <description>首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。 以 rab_python_packages 项目为例，文件结构也可直接参</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（四）CentOS7 下挂载腾讯云 COS 为 K3s 集群提供持久化存储 PV</title>
+      <link>https://senjianlu.com/2021/10/k3s-note-04/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/k3s-note-04/</guid>
+      <description>考虑到之后的项目有日志记录和分析的功能需求，提前准一下用以日志存储的 PV，虽然说挂载到服务器本地路径也可以，但这样的话服务器到期时就会有点麻</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下使用 Docker 的一些实用指令</title>
+      <link>https://senjianlu.com/2021/10/centos7-docker/</link>
+      <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-docker/</guid>
+      <description>官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`</description>
+    </item>
+    
+  </channel>
+</rss>

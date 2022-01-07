@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/</link>
     <description>Recent content in Tags on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题</title>
+      <link>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</link>
+      <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</guid>
+      <description>这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：</description>
+    </item>
     
     <item>
       <title>K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/07/centos7-minio/</guid>
       <description>起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统</title>
-      <link>https://senjianlu.com/2021/07/centos7-docker-zabbix/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/centos7-docker-zabbix/</guid>
-      <description>又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的</description>
     </item>
     
   </channel>

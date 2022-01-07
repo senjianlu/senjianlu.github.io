@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/docker/</link>
     <description>Recent content in Docker on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VS Code 使用 Remote 连接服务器并 Push 到 GitHub 私有仓库时报错：Missing or invalid credentials. 的解决办法</title>
+      <link>https://senjianlu.com/2021/11/vscode-github-push-error/</link>
+      <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/vscode-github-push-error/</guid>
+      <description>1、错误信息 Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } remote: Repository not found. fatal: Authentication failed for &#39;https://github.com/username/repo.git/&#39; 2、解决办法 参考文</description>
+    </item>
     
     <item>
       <title>Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/centos7-docker/</guid>
       <description>官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题</title>
-      <link>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</link>
-      <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</guid>
-      <description>这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：</description>
     </item>
     
   </channel>

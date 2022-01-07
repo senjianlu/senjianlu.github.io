@@ -5,13 +5,22 @@
     <link>https://senjianlu.com/tags/</link>
     <description>Recent content in Tags on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>基于以太坊 ETH 的智能合约学习（二） 补足：CentOS7 下使用 Docker 安装 remix-ide 智能合约开发环境</title>
+      <title>分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库</title>
+      <link>https://senjianlu.com/2022/01/apollo-note-01/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/01/apollo-note-01/</guid>
+      <description>优化之前组的 K3s 集群的时候，想到每次配置文件的小修小改都要重启一大堆容器实在麻烦，只怪最初没考虑完全，趁这次机会起一个配置中心来解决这个麻烦。</description>
+    </item>
+    
+    <item>
+      <title>基于以太坊 ETH 的智能合约学习（二） 补足：CentOS7 下使用 Docker 部署 remix-ide 智能合约开发环境</title>
       <link>https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/</link>
       <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/11/postgresql-note-01-supplement/</guid>
       <description>虽然我很早之前就完成了数据库版本的升级（9.2.4 -&amp;gt; 12.8），但是由于考虑到教程对新手的友好就一直没有去更新第一章，这次作为补足放出吧。 新</description>
-    </item>
-    
-    <item>
-      <title>VS Code 使用 Remote 连接服务器并 Push 到 GitHub 私有仓库时报错：Missing or invalid credentials. 的解决办法</title>
-      <link>https://senjianlu.com/2021/11/vscode-github-push-error/</link>
-      <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/vscode-github-push-error/</guid>
-      <description>1、错误信息 Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } remote: Repository not found. fatal: Authentication failed for &#39;https://github.com/username/repo.git/&#39; 2、解决办法 参考文</description>
     </item>
     
   </channel>
