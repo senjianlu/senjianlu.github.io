@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置） - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="趁着周末把博客目前所有文章的标签重新整理了一下，虽然创立之初是为了记录自己工作中碰到的问题和解决的，但是 Clash 和科学相关的内容意外的多，索性整理" />
+  <meta name="generator" content="Hugo 0.88.1 with theme pure" />
+  <title>本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置） - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）" />
+<meta property="og:description" content="趁着周末把博客目前所有文章的标签重新整理了一下，虽然创立之初是为了记录自己工作中碰到的问题和解决的，但是 Clash 和科学相关的内容意外的多，索性整理" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2022/01/clash-contents/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-08T00:00:00+00:00" />
+
+<meta itemprop="name" content="本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）">
+<meta itemprop="description" content="趁着周末把博客目前所有文章的标签重新整理了一下，虽然创立之初是为了记录自己工作中碰到的问题和解决的，但是 Clash 和科学相关的内容意外的多，索性整理"><meta itemprop="datePublished" content="2022-01-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="879">
+<meta itemprop="keywords" content="Clash," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）"/>
+<meta name="twitter:description" content="趁着周末把博客目前所有文章的标签重新整理了一下，虽然创立之初是为了记录自己工作中碰到的问题和解决的，但是 Clash 和科学相关的内容意外的多，索性整理"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>用来记录在工作中的一些问题和对应解决。</br>博客发布之前我会尽量检查，但是避免不了环境或是配置不同而造成的难以预测的问题，如有错误或疑问请 <a href='https://t.me/rabbirbot00'>Telegram 联系我</a>，感谢！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">38</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">36</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">7</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/java/" class="tag-list-link">java</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">23</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
+                    class="tag-list-count">10</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/" class="title">CentOS7 下搭建 HTTP 和 SOCKS5 代理服务</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-01-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-08</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2022/01/clash-contents/" class="title">本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-01-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-08</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2022/01/apollo-note-01/" class="title">分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-01-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-06</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/" class="title">基于以太坊 ETH 的智能合约学习（二） 补足：CentOS7 下使用 Docker 部署 remix-ide 智能合约开发环境</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-30</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://senjianlu.com/2021/12/vps-iplc-02/" class="title">IPLC 食用（二）PittQiao（彼得巧）家苏日 IPLC 线路 NAT 主机的使用体验</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-12-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-29</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2022/01/clash-contents/"
+    >本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://senjianlu.com/2022/01/clash-contents/" class="article-date">
+  <time datetime="2022-01-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-08</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/clash/"> Clash </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2022/01/clash-contents/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 879字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>趁着周末把博客目前所有文章的标签重新整理了一下，虽然创立之初是为了记录自己工作中碰到的问题和解决的，但是 Clash 和科学相关的内容意外的多，索性整理成目录吧。<br>
+<em>注：删除线覆盖的为废弃文章，末尾带 <code>todo...</code> 的还在写。</em></p>
+<hr>
+<h3 id="clash-配置学习包含服务器上节点的搭建">Clash 配置学习（包含服务器上节点的搭建）</h3>
+<p><strong>1、<a href="https://senjianlu.com/2021/10/clash-note-01/">Clash 学习（一）配置文件各项在实际使用中的用处和创建自己的第一个配置文件</a></strong><br>
+<del><strong>2、Clash 学习（二）节点配置的两种格式：使用缩进的树形结构和类字典的扁平化结构</strong></del><br>
+<strong>3、<a href="https://senjianlu.com/2021/11/clash-note-03/">Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则</a></strong><br>
+<strong>4、<a href="https://senjianlu.com/2021/11/clash-note-04/">Clash 学习（四）在 Clash 中配置使用 HTTP 协议或 SOCKS5 协议的节点</a></strong></p>
+<blockquote>
+<p>服务器上节点的搭建教程：<a href="https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/">CentOS7 下搭建 HTTP 和 SOCKS5 代理服务</a></p>
+</blockquote>
+<p><strong>5、Clash 学习（五）在 Clash 中配置使用 SS 协议的 Shadowsocks 节点</strong><code>todo...</code></p>
+<blockquote>
+<p>服务器上节点的搭建教程：<a href="https://senjianlu.com/2021/10/centos7-shadowsocks-server/">CentOS7 下安装 Shadowsocks 服务端</a></p>
+</blockquote>
+<p><strong>6、Clash 学习（六）配置使用 SSR 协议的 ShadowsocksR 节点</strong> <code>todo...</code><br>
+<strong>7、Clash 学习（七）配置使用 VMess 协议的 V2Ray 节点</strong> <code>todo...</code><br>
+<strong>8、Clash 学习（八）配置使用 Trojan 协议的 Trojan 节点</strong> <code>todo...</code></p>
+<hr>
+<h3 id="openwrt-软路由系统与-clash-插件的安装相关">OpenWrt 软路由系统与 Clash 插件的安装相关</h3>
+<p><strong><a href="https://senjianlu.com/2021/10/openwrt-note-01/">定制 OpenWrt 软路由系统（一）从源码开始编译第一个系统固件</a></strong><br>
+<strong><a href="https://senjianlu.com/2021/10/openwrt-note-02/">定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash</a></strong><br>
+<strong><a href="https://senjianlu.com/2021/10/openwrt-note-03/">定制 OpenWrt 软路由系统（三）编译适用于自己 OpenWrt 软路由系统的 Clash 插件</a></strong><br>
+<strong><a href="https://senjianlu.com/2020/01/pve-lede-ikuai-bak/">PVE 下 LEDE+爱快 双软路由部署（旧）</a></strong></p>
+<blockquote>
+<p>这份教程是我的第一篇教程，写的很差劲因此你可以直接跳过。如果你想要学习如何在路由器上安装 OpenWrt 系统的话，可以 YouTube 搜索对应教程，视频所能承载的内容是比文字更多的，我当时参考的是以下三个视频：<br>
+<a href="https://www.youtube.com/watch?v=-ofQ3PgOIsI">【悟空5kong】PVE下部署 LEDE+黑群晖 NAS 双系统（J1900 软路由）</a><br>
+<a href="https://www.youtube.com/watch?v=wef8artq7lo">上集- PVE (Proxmox VE) 安装双软路由 爱快+LEDE 保姆级教程</a><br>
+<a href="https://www.youtube.com/watch?v=Yj7u97MISJg">下集- PVE (Proxmox VE) 安装双软路由 爱快+LEDE 保姆级教程</a></p>
+</blockquote>
+<p><strong><a href="https://senjianlu.com/2021/10/pve-openwrt-ikuai/">PVE 下 OpenWrt 纯净系统 + 爱快双软路由部署配置文件的整理</a></strong></p>
+<blockquote>
+<p>我的家用网络拓扑和部分软路由系统的配置。</p>
+</blockquote>
+<hr>
+<h3 id="各服务商-iplc-线路的使用体验">各服务商 IPLC 线路的使用体验</h3>
+<p><strong><a href="https://senjianlu.com/2021/12/vps-iplc-01/">IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验</a></strong><br>
+<strong><a href="https://senjianlu.com/2021/12/vps-iplc-02/">IPLC 食用（二）PittQiao（彼得巧）家苏日 IPLC 线路 NAT 主机的使用体验</a></strong></p>
+<hr>
+<h3 id="其他">其他</h3>
+<p><strong><a href="https://senjianlu.com/2021/06/centos7-socks5-gost/">CentOS7 下安装 SOCKS5 代理并使用 GOST 搭建加密中转隧道</a></strong><br>
+<strong><a href="https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/">CentOS7 下用 Docker 部署 UnblockNeteaseMusic 并在 Clash 中配置分流以在局域网内解锁网易云音乐变灰的歌曲</a></strong></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2022/01/clash-contents/" title="本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）" target="_blank" rel="external">https://senjianlu.com/2022/01/clash-contents/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2022/01/apollo-note-01/" title="分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/"
+                    title="CentOS7 下搭建 HTTP 和 SOCKS5 代理服务"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2022
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://senjianlu.com/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://senjianlu.com/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/senjianlu.com',
+            CONTENT_URL: 'https:\/\/senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://senjianlu.com/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

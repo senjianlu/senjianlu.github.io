@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/tags/</link>
     <description>Recent content in Tags on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下搭建 HTTP 和 SOCKS5 代理服务</title>
+      <link>https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/</link>
+      <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/</guid>
+      <description>如果你没有不过墙的 IPLC 线路的话，请不要在境外服务器上搭建 HTTP 或 SOCKS5 代理，连上以后流量稍微一大就会使 IP 被墙。 HTTP 和 SOCKS5 代理搭建的方式有很多：使用 Tinyproxy 搭建 HTTP</description>
+    </item>
+    
+    <item>
+      <title>本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）</title>
+      <link>https://senjianlu.com/2022/01/clash-contents/</link>
+      <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/01/clash-contents/</guid>
+      <description>趁着周末把博客目前所有文章的标签重新整理了一下，虽然创立之初是为了记录自己工作中碰到的问题和解决的，但是 Clash 和科学相关的内容意外的多，索性整理</description>
+    </item>
     
     <item>
       <title>分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库</title>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/11/datax-note-02/</guid>
       <description>在开展 PostgreSQL 增量同步到 MongoDB 的工作之前，先尝试个简单点的全量同步，也能熟悉一下 DataX 的各个配置项和其作用。 附下 DataX 的工作原理： 官方文档中也给了一个 MySQL 同步到</description>
-    </item>
-    
-    <item>
-      <title>DataX 实践（一）构建 DataX 的 Docker 容器镜像并测试运行</title>
-      <link>https://senjianlu.com/2021/11/datax-note-01/</link>
-      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/datax-note-01/</guid>
-      <description>需要从 PostgreSQL 同步数据到 MongoDB，看了一圈选择了 DataX 工具，阿里的开源项目还是蛮值得信赖的。 官方并未提供 Docker 镜像，但是考虑到我现在已经部署了 K3s 集群</description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL 学习笔记（一） 补足：CentOS7 下 12.8 版本数据库的安装</title>
-      <link>https://senjianlu.com/2021/11/postgresql-note-01-supplement/</link>
-      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/postgresql-note-01-supplement/</guid>
-      <description>虽然我很早之前就完成了数据库版本的升级（9.2.4 -&amp;gt; 12.8），但是由于考虑到教程对新手的友好就一直没有去更新第一章，这次作为补足放出吧。 新</description>
     </item>
     
   </channel>

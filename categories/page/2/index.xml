@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/categories/</link>
     <description>Recent content in Categories on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DataX 实践（一）构建 DataX 的 Docker 容器镜像并测试运行</title>
+      <link>https://senjianlu.com/2021/11/datax-note-01/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/datax-note-01/</guid>
+      <description>需要从 PostgreSQL 同步数据到 MongoDB，看了一圈选择了 DataX 工具，阿里的开源项目还是蛮值得信赖的。 官方并未提供 Docker 镜像，但是考虑到我现在已经部署了 K3s 集群</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 学习笔记（一） 补足：CentOS7 下 12.8 版本数据库的安装</title>
+      <link>https://senjianlu.com/2021/11/postgresql-note-01-supplement/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/postgresql-note-01-supplement/</guid>
+      <description>虽然我很早之前就完成了数据库版本的升级（9.2.4 -&amp;gt; 12.8），但是由于考虑到教程对新手的友好就一直没有去更新第一章，这次作为补足放出吧。 新</description>
+    </item>
     
     <item>
       <title>VS Code 使用 Remote 连接服务器并 Push 到 GitHub 私有仓库时报错：Missing or invalid credentials. 的解决办法</title>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</guid>
       <description>首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。 以 rab_python_packages 项目为例，文件结构也可直接参</description>
-    </item>
-    
-    <item>
-      <title>K3s 学习（四）CentOS7 下挂载腾讯云 COS 为 K3s 集群提供持久化存储 PV</title>
-      <link>https://senjianlu.com/2021/10/k3s-note-04/</link>
-      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/k3s-note-04/</guid>
-      <description>考虑到之后的项目有日志记录和分析的功能需求，提前准一下用以日志存储的 PV，虽然说挂载到服务器本地路径也可以，但这样的话服务器到期时就会有点麻</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下使用 Docker 的一些实用指令</title>
-      <link>https://senjianlu.com/2021/10/centos7-docker/</link>
-      <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/centos7-docker/</guid>
-      <description>官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`</description>
     </item>
     
   </channel>

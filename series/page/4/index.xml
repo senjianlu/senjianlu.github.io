@@ -10,6 +10,24 @@
     
     
     <item>
+      <title>Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭</title>
+      <link>https://senjianlu.com/2021/07/linux-command-01/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/linux-command-01/</guid>
+      <description>Linux 命令笔记，方便查找。 系统硬件 1、内存 SWaP 查看： free -m 2、系统内核查看： uname -a 3、SELinux 关闭： # 临时关闭 setenforce 0 修改 /etc/selinux/config 文件： # 永久关闭 vi /etc/selinux/config 将 SELINUX=enforcing</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下 MinIO 的安装和配置</title>
+      <link>https://senjianlu.com/2021/07/centos7-minio/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/centos7-minio/</guid>
+      <description>起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘</description>
+    </item>
+    
+    <item>
       <title>CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统</title>
       <link>https://senjianlu.com/2021/07/centos7-docker-zabbix/</link>
       <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
@@ -169,24 +187,6 @@
       
       <guid>https://senjianlu.com/2020/01/pve-synology/</guid>
       <description>突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本</description>
-    </item>
-    
-    <item>
-      <title>PVE 下 LEDE&#43;爱快 双软路由部署（旧）</title>
-      <link>https://senjianlu.com/2020/01/pve-lede-ikuai-bak/</link>
-      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/pve-lede-ikuai-bak/</guid>
-      <description>此教程由于初版结构混乱，已废弃，请参考新版（更新于 2021-10-24）：PVE 下 OpenWrt 纯净系统 + 爱快双软路由部署配置文件的整理 起因仅仅是不满足</description>
-    </item>
-    
-    <item>
-      <title>Windows 下 PicGo&#43;GitHub 搭建个人图床工具</title>
-      <link>https://senjianlu.com/2020/01/picgo-github/</link>
-      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/picgo-github/</guid>
-      <description>虽然也有免费的可以用，但是既然软路由已经配置了方便的上网环境，GitHub 访问起来比以前便利了许多，那就把图床直接部署在 GitHub 上好了，虽然隐私性</description>
     </item>
     
   </channel>
