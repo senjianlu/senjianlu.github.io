@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>CentOS7 下用 Docker 部署 Peer2Profit 出售流量赚取收益</title>
+      <link>https://senjianlu.com/2022/01/centos7-docker-peer2profit/</link>
+      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/01/centos7-docker-peer2profit/</guid>
+      <description>之前在主机论坛看到了这个帖子：挖 Peer2Profit 网赚回血保姆级教程 支持 Windows/Debian/Ubuntu/Android，想到自己还有 40 来台小鸡，</description>
+    </item>
+    
+    <item>
       <title>CentOS7 下搭建 HTTP 和 SOCKS5 代理服务</title>
       <link>https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/</link>
       <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
@@ -178,15 +187,6 @@
       
       <guid>https://senjianlu.com/2021/11/datax-note-03/</guid>
       <description>对价格字段进行增量同步。 简单阐述全量同步和增量同步区别： 全量同步：就是每天定时（避开业务高峰期）或者周期性全量把数据从一个地方拷贝到另外一个</description>
-    </item>
-    
-    <item>
-      <title>DataX 实践（二）从 PostgreSQL 读数据库全量同步表到 PostgreSQL 写数据库</title>
-      <link>https://senjianlu.com/2021/11/datax-note-02/</link>
-      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/datax-note-02/</guid>
-      <description>在开展 PostgreSQL 增量同步到 MongoDB 的工作之前，先尝试个简单点的全量同步，也能熟悉一下 DataX 的各个配置项和其作用。 附下 DataX 的工作原理： 官方文档中也给了一个 MySQL 同步到</description>
     </item>
     
   </channel>

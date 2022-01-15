@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</link>
     <description>Recent content in 教程翻新 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误</title>
+      <link>https://senjianlu.com/2021/07/centos7-minio-error/</link>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/centos7-minio-error/</guid>
+      <description>刚装完 MinIO 测试的时候其实就发现了部分页面会出错，但是看了下错误基本都是认证错误，响应代码为 500，觉得可能是 Nginx 配置有误，实则不然&amp;hellip</description>
+    </item>
     
     <item>
       <title>Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2020/02/postgresql-note-01/</guid>
       <description>由于在学校针对作业和毕设 MySQL 已经很够用了，因此也没有做更多对数据库的功课，只知道 Oracle 数据库适合企业，MySQL 适合小型项目，但是工作以后的第一个</description>
-    </item>
-    
-    <item>
-      <title>PVE 下黑群晖的安装和硬盘直通组 RAID1</title>
-      <link>https://senjianlu.com/2020/01/pve-synology/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/pve-synology/</guid>
-      <description>突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本</description>
     </item>
     
   </channel>
