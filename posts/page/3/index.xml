@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/posts/</link>
     <description>Recent content in Posts on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 15 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>定制 OpenWrt 软路由系统（一）从源码开始编译第一个系统固件</title>
+      <link>https://senjianlu.com/2021/10/openwrt-note-01/</link>
+      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/openwrt-note-01/</guid>
+      <description>第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后</description>
+    </item>
     
     <item>
       <title>GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/07/centos7-docker-command-proxy/</guid>
       <description>国内服务器访问不到各种官方镜像应该是老生常谈的问题了，Docker 也不例外，拉取官方镜像时各种 EOF 错误大概率就是墙的问题了，这篇文档不会记录 Linux</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下安装 code-server</title>
-      <link>https://senjianlu.com/2021/07/centos7-code-server/</link>
-      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/centos7-code-server/</guid>
-      <description>记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转</description>
     </item>
     
   </channel>

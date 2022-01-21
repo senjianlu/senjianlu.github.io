@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        CentOS7 下 MinIO 的安装和配置 - 森见鹿的博客 
+        Hugo 静态博客使用 utterances 来开启评论功能 - 森见鹿的博客 
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,29 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘" />
+  <meta name="description" content="在建设这个博客的初期本来是想开放评论功能的，但是由于第一次结束 Hugo 这样静态博客，页面上的内容都是通过模板生成，实在是生疏，稍微配置了一下发现不" />
   <meta name="generator" content="Hugo 0.88.1 with theme pure" />
-  <title>CentOS7 下 MinIO 的安装和配置 - 森见鹿的博客 </title>
+  <title>Hugo 静态博客使用 utterances 来开启评论功能 - 森见鹿的博客 </title>
   
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="CentOS7 下 MinIO 的安装和配置" />
-<meta property="og:description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘" />
+  <meta property="og:title" content="Hugo 静态博客使用 utterances 来开启评论功能" />
+<meta property="og:description" content="在建设这个博客的初期本来是想开放评论功能的，但是由于第一次结束 Hugo 这样静态博客，页面上的内容都是通过模板生成，实在是生疏，稍微配置了一下发现不" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/07/centos7-minio/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-07-19T00:00:00+00:00" />
+<meta property="og:url" content="https://senjianlu.com/2022/01/hugo-comment/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-21T00:00:00+00:00" />
 
-<meta itemprop="name" content="CentOS7 下 MinIO 的安装和配置">
-<meta itemprop="description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘"><meta itemprop="datePublished" content="2021-07-19T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-07-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="823">
-<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CentOS7 下 MinIO 的安装和配置"/>
-<meta name="twitter:description" content="起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘"/>
+<meta itemprop="name" content="Hugo 静态博客使用 utterances 来开启评论功能">
+<meta itemprop="description" content="在建设这个博客的初期本来是想开放评论功能的，但是由于第一次结束 Hugo 这样静态博客，页面上的内容都是通过模板生成，实在是生疏，稍微配置了一下发现不"><meta itemprop="datePublished" content="2022-01-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1004">
+<meta itemprop="keywords" content="网站建设," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo 静态博客使用 utterances 来开启评论功能"/>
+<meta name="twitter:description" content="在建设这个博客的初期本来是想开放评论功能的，但是由于第一次结束 Hugo 这样静态博客，页面上的内容都是通过模板生成，实在是生疏，稍微配置了一下发现不"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -327,8 +327,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2021/07/centos7-minio/"
-    >CentOS7 下 MinIO 的安装和配置</a
+    href="/2022/01/hugo-comment/"
+    >Hugo 静态博客使用 utterances 来开启评论功能</a
   >
 </h1>
 
@@ -336,8 +336,8 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/07/centos7-minio/" class="article-date">
-  <time datetime="2021-07-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-19</time>
+<a href="https://senjianlu.com/2022/01/hugo-comment/" class="article-date">
+  <time datetime="2022-01-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-21</time>
 </a>
 </span>
 <span class="article-category">
@@ -346,110 +346,106 @@
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
+    <a class="article-tag-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"> 网站建设 </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/07/centos7-minio/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2022/01/hugo-comment/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 823字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1004字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。</p>
-<blockquote>
-<p><strong>顺便把 BuyVM 挂载硬盘的流程一起记下：</strong><br>
-1、购买后去<a href="https://manage.buyvm.net">控制台</a>把 Block Storage 附加到（Attached To）对应的 VPS 上。<br>
-2、在 VPS 里查看数据块编号，类似 scsi-0BUYVM_SLAB_VOLUME-1331 的就是存储块。</p>
-<pre><code class="language-bash">ls /dev/disk/by-id/
-</code></pre>
-<p>3、格式化。</p>
-<pre><code class="language-bash">mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-1331
-</code></pre>
-<p>4、新建文件夹并挂载，这里以根目录下的 /storage 为例：</p>
-<pre><code class="language-bash">mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-1331 /storage
-</code></pre>
-<p>5、设置开机自动挂载，完成。</p>
-<pre><code class="language-bash">echo '/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-1331 /storage ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
-</code></pre>
-</blockquote>
+      <p>在建设这个博客的初期本来是想开放评论功能的，但是由于第一次结束 Hugo 这样静态博客，页面上的内容都是通过模板生成，实在是生疏，稍微配置了一下发现不行就放弃了。<br>
+一直到现在，想想还是再试一试吧，于是就有了这篇博文。</p>
 <hr>
-<p>MinIO 的安装也没有任何难度，因为有现成编译好的版本，直接下载运行就行了。</p>
-<p>1、我是用的是 CentOS7 系统，所以选择 linux-amd64 版本：</p>
-<pre><code class="language-bash">wget https://dl.minio.io/server/minio/release/linux-amd64/minio
-</code></pre>
-<p>2、下载下来的文件加上权限就能运行，但是为了方便管理还是放到 /usr/local 路径下：</p>
-<pre><code class="language-bash">mv minio /usr/local/
-chmod +x /usr/local/minio
-</code></pre>
-<p>测试启动一下：</p>
-<pre><code class="language-bash">/usr/local/minio server /stroage --address &quot;:9000&quot; --console-address &quot;:9001&quot;
-</code></pre>
-<p>启动成功，默认账号密码都是：minioadmin<br>
-<img src="https://img.senjianlu.com/20210719212837.png" alt="启动成功"></p>
-<p>3、修改账号密码。<br>
-最新版本的 MinIO 已经停用从配置文件中读取账号密码启动的功能，因此现在只能将用户信息配置在系统的环境变量中。<br>
-以下命令仅可用来测试，在终端关闭后就会失效。</p>
-<pre><code class="language-bash">export MINIO_ROOT_USER=username
-export MINIO_ROOT_PASSWORD=password
-</code></pre>
-<p>永久配置请参照这个命令，修改 /etc/profile 文件：</p>
-<pre><code class="language-bash">vi /etc/profile
-</code></pre>
-<p>并在空白处添加：</p>
-<pre><code class="language-bash">export MINIO_ROOT_USER=username
-export MINIO_ROOT_PASSWORD=password
-</code></pre>
-<p>使其生效：</p>
-<pre><code class="language-bash">source /etc/profile
-</code></pre>
-<p>4、开机启动。<br>
-这里用最简单的方法实现开机启动：</p>
-<pre><code class="language-bash">crontab -e
-</code></pre>
-<pre><code class="language-bash"># MinIO 开机启动
-# . /etc/profile; 作用为先读取环境变量，不配置无法读取账号密码。
-@reboot . /etc/profile;/usr/local/minio server /storage --address &quot;:9000&quot; --console-address &quot;:9001&quot;
-</code></pre>
-<pre><code class="language-bash">service crond restart
-</code></pre>
+<p><strong>我这里使用的是 <a href="https://utteranc.es/">utterances</a> 来实现评论功能，评论会被保存到你指定 GitHub 仓库（必须是公开的）的 <code>Issues</code> 内，由于任何人只要通过 GitHub OAuth 登录过后就可以进行评论，且官方没有敏感词等的过滤，因此担心污染仓库的话请慎用。</strong><br>
+而其他的评论配置和本文中的操作大同小异，基本都是在博文页面的模板中添加评论服务提供商给的评论页面元素模板，之后在配置文件中设置变量以开启评论功能。</p>
+<p><strong>1、安装 utterances</strong><br>
+utterances 的安装较为简单，直接在 GitHub App 上安装即可。</p>
 <blockquote>
-<p>如果重启后 MinIO 没有自启动的话，请自行查看 log，crontab 的配置头上可能需要加上 3 行：</p>
-<pre><code class="language-bash">SHELL=/bin/bash
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
-MAILTO=root
-</code></pre>
-<p>这些是用来选择语言、可执行文件目录和用户的，具体情况还是看日志处理。</p>
+<p>关于 GitHub App 的介绍可以看这篇文章：<a href="https://juejin.cn/post/6844903856980099086">详解 GitHub App 的玩法</a></p>
 </blockquote>
-<p>5、Nginx 上传文件的配置。<br>
-我至今遇到了两个错误：</p>
+<p>GitHub App 链接：<a href="https://github.com/apps/utterances">utterances</a><br>
+点击 <code>Install</code>：<br>
+<img src="https://img.senjianlu.com/20220121194719.png" alt="安装"><br>
+选择一个仓库并安装（我推荐用你 Hugo 博客所在的仓库，这样管理起来更方便）：<br>
+<img src="https://img.senjianlu.com/20220121194844.png" alt="选择仓库"><br>
+之后跳转到这个页面就说明安装成功了：<br>
+<img src="https://img.senjianlu.com/20220121195048.png" alt="安装成功"></p>
+<p><strong>2、获取 utterances 评论的代码片段并加入到博文模板中</strong><br>
+我这里就通过勾选官方页面给的选项来生成自己的代码片段吧（就在刚刚成功的页面上）：<br>
+<img src="https://img.senjianlu.com/20220121195724.png" alt="官方选项"></p>
 <ol>
-<li><a href="https://blog.csdn.net/Twostring/article/details/111190396">413 Request Entity Too Large</a> 修改上传文件最大大小解决。</li>
-<li><a href="http://zuori.gitee.io/zaker/2020/08/04/Nginx%E9%85%8D%E7%BD%AEminio%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">文件下载报错 403 SignatureDoesNotMatch</a> 就很巧全是大家碰到过的问题，修改 headers 传递解决。</li>
+<li>刚刚你配置 utterances 可读取写入的仓库名。</li>
+<li>Issue 标题的样式，我选的是以博文的路径作为标题，后面也有用博文 Url 和博文标题可选。</li>
+<li>评论 Issue 的标签。</li>
 </ol>
-<p>最后的 Nginx 配置如下：</p>
-<pre><code class="language-bash">        ...
-
-        location / {
-            proxy_pass http://127.0.0.1:9001;
-            # MinIO 上传最大大小 1 GB
-            client_max_body_size 1024m;
-            proxy_http_version 1.1;
-            # headers 传递
-            proxy_set_header Host $host;
-            proxy_set_header Connection &quot;upgrade&quot;;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-Proto $scheme;
-        }
-
-        ...
+<p>当然下面还有主题可选，完成后就能获得自己的代码片段了：</p>
+<pre><code class="language-bash">&lt;script src=&quot;https://utteranc.es/client.js&quot;
+        repo=&quot;senjianlu/senjianlu.github.io&quot;
+        issue-term=&quot;pathname&quot;
+        label=&quot;评论&quot;
+        theme=&quot;github-light&quot;
+        crossorigin=&quot;anonymous&quot;
+        async&gt;
+&lt;/script&gt;
 </code></pre>
-<p>至此结束。</p>
+<p><strong>3、写入博文模板</strong><br>
+各主题博文模板的路径可能不同，我 <a href="https://github.com/senjianlu/hugo-theme-pure">pure</a> 主题的路径为：<code>\pure\layouts\partials\article.html</code><br>
+<img src="https://img.senjianlu.com/20220121200617.png" alt="article"><br>
+有一个专门的评论模板，那么直接去那里面添加即可，添加前：<br>
+<img src="https://img.senjianlu.com/20220121200730.png" alt="添加前"><br>
+添加后：<br>
+<img src="https://img.senjianlu.com/20220121201552.png" alt="添加后"><br>
+内容：</p>
+<pre><code class="language-html">    ...
+    ...
+    {{- else if eq $comment.type &quot;utterances&quot; }}
+    &lt;script src=&quot;{{- $comment.utterances.src }}&quot; repo=&quot;{{- $comment.utterances.repo }}&quot; issue-term=&quot;{{- $comment.utterances.issue_term }}&quot; label=&quot;{{- $comment.utterances.label }}&quot; theme=&quot;{{- $comment.utterances.theme }}&quot; crossorigin=&quot;{{- $comment.utterances.crossorigin }}&quot; async&gt;&lt;/script&gt;
+    ...
+    ...
+</code></pre>
+<p>我这里将变量都值交给了配置文件去设置，你直接写死当然也是可以的，就是后面修改起来没有那么方便了。</p>
+<p><strong>4、在配置文件中设置变量</strong><br>
+比较简单，在 <code>config.toml</code>（你博客的配置文件而非主题的配置文件）里照着之前 <code>comment</code> 变量依葫芦画瓢即可：</p>
+<pre><code class="language-toml">[params]
+  ...
+  ...
+  [params.comment]
+  disqus = &quot;your_disqus_name&quot;
+  type = &quot;utterances&quot;
+    ...
+    ...
+    [params.comment.utterances]
+    src = &quot;https://utteranc.es/client.js&quot;
+    repo = &quot;senjianlu/senjianlu.github.io&quot;
+    issue_term = &quot;pathname&quot;
+    label = &quot;评论&quot;
+    theme = &quot;github-light&quot;
+    crossorigin = &quot;anonymous&quot;
+</code></pre>
+<p><strong>注意 <code>$comment.type</code> 变量不要忘掉！</strong></p>
+<p><strong>5、本地渲染测试</strong><br>
+本地启动看下（<code>pure</code> 为我的主题名，请自行替换）：</p>
+<pre><code class="language-bash">hugo server -t pure
+</code></pre>
+<p><img src="https://img.senjianlu.com/20220121202717.png" alt="本地测试"><br>
+选择登录：<br>
+<img src="https://img.senjianlu.com/20220121202851.png" alt="登录"><br>
+之后评论便能正常输入了：<br>
+<img src="https://img.senjianlu.com/20220121202959.png" alt="输入评论"><br>
+成功评论：<br>
+<img src="https://img.senjianlu.com/20220121203053.png" alt="成功评论"><br>
+同时 <code>Issues + 1</code>：
+<img src="https://img.senjianlu.com/20220121203134.png" alt="Issues + 1"><br>
+本地测试通过之后，正式发布理论上也不会有任何问题的，我这里就不演示了。</p>
 <blockquote>
-<p>2021/07/21 更新<br>
-回滚以解决部分错误：<a href="https://senjianlu.com/2021/07/centos7-minio-error/">MinIO 9000 端口强制跳转 9001 端口且报 This &lsquo;admin&rsquo; API is not supported by server in &lsquo;mode-server-fs&rsquo;、An error occurred, please try again 和 The server side encryption configuration was not found 错误</a></p>
+<p>需要停止评论功能的话，先停用 utterances App：
+<img src="https://img.senjianlu.com/20220121204438.png" alt="停用"><br>
+之后修改 <code>config.toml</code> 将 <code>$comment.type</code> 的值改为空即可。</p>
 </blockquote>
+<p>结束。</p>
 
     </div>
     <div class="article-footer">
@@ -457,7 +453,7 @@ MAILTO=root
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/07/centos7-minio/" title="CentOS7 下 MinIO 的安装和配置" target="_blank" rel="external">https://senjianlu.com/2021/07/centos7-minio/</a>
+      <a href="https://senjianlu.com/2022/01/hugo-comment/" title="Hugo 静态博客使用 utterances 来开启评论功能" target="_blank" rel="external">https://senjianlu.com/2022/01/hugo-comment/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -474,14 +470,9 @@ MAILTO=root
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/07/centos7-docker-zabbix/" title="CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统"><i
+                <a href="https://senjianlu.com/2022/01/centos7-docker-peer2profit/" title="CentOS7 下用 Docker 部署 Peer2Profit 出售流量赚取收益"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
-            </li>
-            <li class="next">
-                <a href="https://senjianlu.com/2021/07/linux-command-01/"
-                    title="Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭"><span>上一篇&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
         </ul>

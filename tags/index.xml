@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/</link>
     <description>Recent content in Tags on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 15 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo 静态博客使用 utterances 来开启评论功能</title>
+      <link>https://senjianlu.com/2022/01/hugo-comment/</link>
+      <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/01/hugo-comment/</guid>
+      <description>在建设这个博客的初期本来是想开放评论功能的，但是由于第一次结束 Hugo 这样静态博客，页面上的内容都是通过模板生成，实在是生疏，稍微配置了一下发现不</description>
+    </item>
     
     <item>
       <title>CentOS7 下用 Docker 部署 Peer2Profit 出售流量赚取收益</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/11/windows11-android/</guid>
       <description>应该也算硬件相关吧&amp;hellip;&amp;hellip; 1、将系统地区切换至美国并开启虚拟化 因为是系统层面的配置因此放在一起讲。 ① 设置 -&amp;gt; 时间和语言</description>
-    </item>
-    
-    <item>
-      <title>DataX 实践（三）从 PostgreSQL 读数据库增量同步表到 MongoDB 写数据库</title>
-      <link>https://senjianlu.com/2021/11/datax-note-03/</link>
-      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/datax-note-03/</guid>
-      <description>对价格字段进行增量同步。 简单阐述全量同步和增量同步区别： 全量同步：就是每天定时（避开业务高峰期）或者周期性全量把数据从一个地方拷贝到另外一个</description>
     </item>
     
   </channel>
