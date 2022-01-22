@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PostgreSQL on 森见鹿的博客 </title>
+    <title>postgresql on 森见鹿的博客 </title>
     <link>https://senjianlu.com/tags/postgresql/</link>
-    <description>Recent content in PostgreSQL on 森见鹿的博客 </description>
+    <description>Recent content in postgresql on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash</title>
+      <link>https://senjianlu.com/2021/10/openwrt-note-02/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/openwrt-note-02/</guid>
+      <description>首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件</description>
+    </item>
     
     <item>
       <title>定制 OpenWrt 软路由系统（一）从源码开始编译第一个系统固件</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</guid>
       <description>本来是很简单的一件事情，追求新版本又把自己坑了一次&amp;hellip;&amp;hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）</title>
-      <link>https://senjianlu.com/2021/07/centos7-docker-command-proxy/</link>
-      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/centos7-docker-command-proxy/</guid>
-      <description>国内服务器访问不到各种官方镜像应该是老生常谈的问题了，Docker 也不例外，拉取官方镜像时各种 EOF 错误大概率就是墙的问题了，这篇文档不会记录 Linux</description>
     </item>
     
   </channel>

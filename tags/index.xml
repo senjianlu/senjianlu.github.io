@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/</link>
     <description>Recent content in Tags on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 21 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mac 下 pip3 install psycopg2 出现的错误和解决</title>
+      <link>https://senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/</link>
+      <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/</guid>
+      <description>Mac 上配置开发环境时遇到的问题，留个记录。 1、Error: pg_config executable not found 具体错误为： ... ... Error: pg_config executable not found. Please add the directory containing pg_config to the PATH or specify the full executable path with the option: python setup.py build_ext --pg-config /path/to/pg_config build ...</description>
+    </item>
     
     <item>
       <title>Hugo 静态博客使用 utterances 来开启评论功能</title>
@@ -16,7 +25,7 @@
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://senjianlu.com/2022/01/hugo-comment/</guid>
-      <description>在建设这个博客的初期本来是想开放评论功能的，但是由于第一次结束 Hugo 这样静态博客，页面上的内容都是通过模板生成，实在是生疏，稍微配置了一下发现不</description>
+      <description>在建设这个博客的初期本来是想开放评论功能的，但是由于第一次接触 Hugo 这样静态博客，页面上的内容都是通过模板生成，实在是生疏，稍微配置了一下发现不</description>
     </item>
     
     <item>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/11/mongodb-note-02/</guid>
       <description>第一次接触 MongoDB 这种非关系型数据库的表结构设计。 MongoDB 的层级名词翻译过来会有点难理解，所以我将它和 PostgreSQL 数据库的对应起来： PostgreSQL MongoDB Database（数据库）</description>
-    </item>
-    
-    <item>
-      <title>Windows11 抢先体验 Android 虚拟机并安装第三方应用</title>
-      <link>https://senjianlu.com/2021/11/windows11-android/</link>
-      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/windows11-android/</guid>
-      <description>应该也算硬件相关吧&amp;hellip;&amp;hellip; 1、将系统地区切换至美国并开启虚拟化 因为是系统层面的配置因此放在一起讲。 ① 设置 -&amp;gt; 时间和语言</description>
     </item>
     
   </channel>

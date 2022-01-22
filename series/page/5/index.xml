@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>PostgreSQL 学习笔记（二）psql 工具的使用</title>
+      <link>https://senjianlu.com/2020/02/postgresql-note-02/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/02/postgresql-note-02/</guid>
+      <description>psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习</description>
+    </item>
+    
+    <item>
       <title>PostgreSQL 学习笔记（一） 数据库的安装与环境配置</title>
       <link>https://senjianlu.com/2020/02/postgresql-note-01/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>

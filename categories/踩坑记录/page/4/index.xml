@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
     <description>Recent content in 踩坑记录 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）</title>
+      <link>https://senjianlu.com/2021/07/centos7-docker-command-proxy/</link>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/07/centos7-docker-command-proxy/</guid>
+      <description>国内服务器访问不到各种官方镜像应该是老生常谈的问题了，Docker 也不例外，拉取官方镜像时各种 EOF 错误大概率就是墙的问题了，这篇文档不会记录 Linux</description>
+    </item>
     
     <item>
       <title>CentOS7 下安装 code-server</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2020/02/postgresql-note-03/</guid>
       <description>在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中</description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL 学习笔记（二）psql 工具的使用</title>
-      <link>https://senjianlu.com/2020/02/postgresql-note-02/</link>
-      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/02/postgresql-note-02/</guid>
-      <description>psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习</description>
     </item>
     
   </channel>
