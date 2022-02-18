@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Windows 下 Hugo 静态博客一键推送发布</title>
+      <link>https://senjianlu.com/2020/05/hugo-auto-build/</link>
+      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/05/hugo-auto-build/</guid>
+      <description>为了在东京奥运会期间应对临时封路，紧跟日本人赶了2个月的功能，终于能休息一阵了 :) 虽然是因为奥运会推迟而不是因为开发完成 总之又能学点新东西了，</description>
+    </item>
+    
+    <item>
       <title>PostgreSQL 学习笔记（三）用户权限的管理控制</title>
       <link>https://senjianlu.com/2020/02/postgresql-note-03/</link>
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>

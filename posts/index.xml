@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/posts/</link>
     <description>Recent content in Posts on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>以太坊矿机搭建（三）从 ethermine.org 矿池中将小额 ETH 收益提现</title>
+      <link>https://senjianlu.com/2022/02/eth-miner-note-03/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/02/eth-miner-note-03/</guid>
+      <description>虽然 ethermine.org 对以太坊主网这条链上的 ETH 设定的最低起提数量为 0.005，但是 需要支付 0.001 ETH 将近 20 块钱的矿工费，想想还是有些肉疼，听说走 Polygon 这条链的损耗较小</description>
+    </item>
     
     <item>
       <title>K3s 学习（五）四个月的使用中出现的问题、集群的重装升级和进阶配置</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/12/gullo-nat-vps/</guid>
       <description>这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其</description>
-    </item>
-    
-    <item>
-      <title>申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染</title>
-      <link>https://senjianlu.com/2021/12/hugo-google-adsense/</link>
-      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/12/hugo-google-adsense/</guid>
-      <description>本博客有且只有在该文章末尾添加了测试用的广告。 1、注册 Google AdSense 官方链接：Google AdSense 填入链接和邮箱： 接着使用 Google 账号登录以完成绑定： 2、确认网站</description>
     </item>
     
   </channel>
