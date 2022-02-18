@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/k3s/</link>
     <description>Recent content in K3s on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 10 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/k3s/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理</title>
+      <link>https://senjianlu.com/2021/10/pve-openwrt-ikuai/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/pve-openwrt-ikuai/</guid>
+      <description>被自己写的第一篇教程恶心到了&amp;hellip;&amp;hellip; 重新确定下拓扑，黑群晖系统不动，将其他两个软路由重新部署下。 首选说明几个重要的 IP</description>
+    </item>
     
     <item>
       <title>定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/09/centos7-matplotlib-chinese/</guid>
       <description>不需要 Yum 安装任何其他软件，也不需要修改 Matplotlib 包的配置文件，实测是最简单的方法了。 全程使用 HostVDS 新开的服务器并只安装了 Python3.8.2 以保证教程正确。 1、首先看下没</description>
-    </item>
-    
-    <item>
-      <title>VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发</title>
-      <link>https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</link>
-      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</guid>
-      <description>本来是很简单的一件事情，追求新版本又把自己坑了一次&amp;hellip;&amp;hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS</description>
     </item>
     
   </channel>

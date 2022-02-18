@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">38</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">39</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">38</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">8</span></li>
         </ul>
@@ -206,11 +206,11 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">23</span></li>
+                    class="tag-list-count">24</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
@@ -264,6 +264,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2022/02/k3s-note-05/" class="title">K3s 学习（五）四个月的使用中出现的问题、集群的重装升级和进阶配置</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-02-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/" class="title">Mac 下 pip3 install psycopg2 出现的错误和解决</a>
                     </p>
                     <p class="item-date">
@@ -295,16 +305,6 @@
                 <div class="item-inner">
                     <p class="item-title">
                         <a href="https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/" class="title">CentOS7 下搭建 HTTP 和 SOCKS5 代理服务</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-01-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-08</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/01/clash-contents/" class="title">本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-01-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-08</time>
@@ -359,7 +359,7 @@
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <p>将 server + agent 的集群导入 Docker 安装的 Rancher 中以进行管理。</p>
 <hr>
-<p>1、从面板导入现有集群<br>
+<p><strong>1、从面板导入现有集群</strong><br>
 添加集群：
 <img src="https://img.senjianlu.com/20211001141655.png" alt="添加集群"><br>
 导入：<br>
@@ -419,7 +419,7 @@ pong
 </blockquote>
 <p>再回到 Rancher 页面应该就导入成功了：<br>
 <img src="https://img.senjianlu.com/20211001153652.png" alt="导入成功"></p>
-<p>2、创建一个容器应用<br>
+<p><strong>2、创建一个容器应用</strong><br>
 我这里选择了新建一个 Nginx 容器，也正好能测试下外网对容器内服务的访问情况。<br>
 选择命名空间：<br>
 <img src="https://img.senjianlu.com/20211001223429.png" alt="选择命名空间"><br>
@@ -431,7 +431,7 @@ pong
 <img src="https://img.senjianlu.com/20211001224117.png" alt="更新"><br>
 稍等片刻更新完成：<br>
 <img src="https://img.senjianlu.com/20211001224145.png" alt="完成"></p>
-<p>3、容器的访问<br>
+<p><strong>3、容器的访问</strong><br>
 点进刚刚创建的服务内，因为选择的是创建一个无状态服务，因此会随机在一个节点（服务器）上建立服务，这里看到是 server-02 这个节点：<br>
 <img src="https://img.senjianlu.com/20211001224346.png" alt="服务"><br>
 用 server-02 节点的公网 IP 搭配映射的 30080 端口进行访问：<br>

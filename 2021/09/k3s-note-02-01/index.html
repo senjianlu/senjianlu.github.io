@@ -42,7 +42,7 @@
 <meta itemprop="name" content="K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）">
 <meta itemprop="description" content="第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs"><meta itemprop="datePublished" content="2021-09-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-09-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="808">
+<meta itemprop="wordCount" content="804">
 <meta itemprop="keywords" content="Linux,K3s," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）"/>
 <meta name="twitter:description" content="第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs"/>
@@ -169,7 +169,7 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">38</span></li>
+            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">39</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">38</span></li>
             <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">8</span></li>
         </ul>
@@ -206,11 +206,11 @@
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">23</span></li>
+                    class="tag-list-count">24</span></li>
             
             
             <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
@@ -264,6 +264,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://senjianlu.com/2022/02/k3s-note-05/" class="title">K3s 学习（五）四个月的使用中出现的问题、集群的重装升级和进阶配置</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-02-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/" class="title">Mac 下 pip3 install psycopg2 出现的错误和解决</a>
                     </p>
                     <p class="item-date">
@@ -295,16 +305,6 @@
                 <div class="item-inner">
                     <p class="item-title">
                         <a href="https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/" class="title">CentOS7 下搭建 HTTP 和 SOCKS5 代理服务</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-01-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-08</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/01/clash-contents/" class="title">本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-01-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-01-08</time>
@@ -352,7 +352,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2021/09/k3s-note-02-01/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 808字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 804字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
       </div>
     </div>
@@ -364,7 +364,7 @@
 </blockquote>
 <p><strong>注意：如果没有在 K3s 安装时修改 Ingress 监听端口，请不要在 server 或 agent 同服务器上安装，会造成 80 和 443 端口上起的服务无法正常访问！</strong></p>
 <hr>
-<p>1、首先安装 Kubernetes 的软件包管理工具：Helm<br>
+<p><strong>1、首先安装 Kubernetes 的软件包管理工具 Helm</strong><br>
 这也是<a href="https://docs.rancher.cn/docs/rancher2/installation/install-rancher-on-k8s/_index#cli"> Rancher 安装官方文档</a>所提示必要的模块，安装步骤参考<a href="https://helm.sh/docs/intro/install/"> Installing Helm</a>：</p>
 <pre><code class="language-bash"># 下载压缩包
 wget https://get.helm.sh/helm-v3.7.0-linux-amd64.tar.gz
@@ -385,10 +385,10 @@ version.BuildInfo{Version:&quot;v3.7.0&quot;, GitCommit:&quot;eeac83883cb40xxxxx
 <pre><code class="language-bash">helm repo add rancher-stable http://rancher-mirror.oss-cn-beijing.aliyuncs.com/server-charts/stable
 </code></pre>
 </blockquote>
-<p>2、为 Rancher 创建 Namespace</p>
+<p><strong>2、为 Rancher 创建 Namespace</strong></p>
 <pre><code class="language-bash">kubectl create namespace cattle-system
 </code></pre>
-<p>3、使用自签证书 安装 Rancher</p>
+<p><strong>3、使用自签证书 安装 Rancher</strong></p>
 <blockquote>
 <p>这一步官方给了 3 个选项：</p>
 <ul>

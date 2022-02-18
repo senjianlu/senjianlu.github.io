@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>PostgreSQL 学习笔记（三）用户权限的管理控制</title>
+      <link>https://senjianlu.com/2020/02/postgresql-note-03/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2020/02/postgresql-note-03/</guid>
+      <description>在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中</description>
+    </item>
+    
+    <item>
       <title>PostgreSQL 学习笔记（二）psql 工具的使用</title>
       <link>https://senjianlu.com/2020/02/postgresql-note-02/</link>
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>

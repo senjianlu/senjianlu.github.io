@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/</link>
     <description>Recent content on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>K3s 学习（五）四个月的使用中出现的问题、集群的重装升级和进阶配置</title>
+      <link>https://senjianlu.com/2022/02/k3s-note-05/</link>
+      <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/02/k3s-note-05/</guid>
+      <description>从 2021 年 10 月初开始将项目迁移到 K3s 集群，掐指一算到现在也四个月了，使用过程中基本是大问题没有、小问题不断&amp;hellip;&amp;hellip; 直到早上</description>
+    </item>
     
     <item>
       <title>Mac 下 pip3 install psycopg2 出现的错误和解决</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/12/hugo-google-adsense/</guid>
       <description>本博客有且只有在该文章末尾添加了测试用的广告。 1、注册 Google AdSense 官方链接：Google AdSense 填入链接和邮箱： 接着使用 Google 账号登录以完成绑定： 2、确认网站</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 学习笔记（二） MongoDB 层级关系的梳理和基础操作</title>
-      <link>https://senjianlu.com/2021/11/mongodb-note-02/</link>
-      <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/11/mongodb-note-02/</guid>
-      <description>第一次接触 MongoDB 这种非关系型数据库的表结构设计。 MongoDB 的层级名词翻译过来会有点难理解，所以我将它和 PostgreSQL 数据库的对应起来： PostgreSQL MongoDB Database（数据库）</description>
     </item>
     
   </channel>

@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/tags/</link>
     <description>Recent content in Tags on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MongoDB 学习笔记（二） MongoDB 层级关系的梳理和基础操作</title>
+      <link>https://senjianlu.com/2021/11/mongodb-note-02/</link>
+      <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/11/mongodb-note-02/</guid>
+      <description>第一次接触 MongoDB 这种非关系型数据库的表结构设计。 MongoDB 的层级名词翻译过来会有点难理解，所以我将它和 PostgreSQL 数据库的对应起来： PostgreSQL MongoDB Database（数据库）</description>
+    </item>
     
     <item>
       <title>Windows11 抢先体验 Android 虚拟机并安装第三方应用</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/10/openwrt-note-03/</guid>
       <description>这里插件的编译还是以 Clash 为例，官方版本为 v1.7.5.7，但实际上已经能编译出更新的版本，当前这里的编译请主要参考流程，插件除非是因为 OpenWrt 系统更</description>
-    </item>
-    
-    <item>
-      <title>PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理</title>
-      <link>https://senjianlu.com/2021/10/pve-openwrt-ikuai/</link>
-      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/10/pve-openwrt-ikuai/</guid>
-      <description>被自己写的第一篇教程恶心到了&amp;hellip;&amp;hellip; 重新确定下拓扑，黑群晖系统不动，将其他两个软路由重新部署下。 首选说明几个重要的 IP</description>
     </item>
     
   </channel>
