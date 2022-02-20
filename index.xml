@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/</link>
     <description>Recent content on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下用 Docker 部署 Odoo 开源 ERP 系统（企业资源规划及客户关系管理系统）</title>
+      <link>https://senjianlu.com/2022/02/centos7-docker-odoo/</link>
+      <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/02/centos7-docker-odoo/</guid>
+      <description>身边有个需求需要对接现有的进销存系统再做管理，于是就找了一下有无开源软件，发现了这个 24k Star 的项目 Odoo，文档完善且社区活跃，同时官方有提供付</description>
+    </item>
     
     <item>
       <title>以太坊矿机搭建（三）从 ethermine.org 矿池中将小额 ETH 收益提现</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/12/windows11-clock/</guid>
       <description>才发现 Windows11 添加了时钟应用，自带专注时段（可以直接理解为番茄时间）的规划功能，对于一直以来只有较大任务计划而导致在碎片时间内无法集中注意力的我来</description>
-    </item>
-    
-    <item>
-      <title>Gullo 2 美刀年付 NAT 主机的基础操作和玩法</title>
-      <link>https://senjianlu.com/2021/12/gullo-nat-vps/</link>
-      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/12/gullo-nat-vps/</guid>
-      <description>这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其</description>
     </item>
     
   </channel>
