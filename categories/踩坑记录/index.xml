@@ -5,10 +5,28 @@
     <link>https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
     <description>Recent content in 踩坑记录 on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</title>
+      <link>https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/</guid>
+      <description>自用的油猴脚本需要追加一个消息推送的功能，决定用 RabbitMQ 消费者的方式实现，但是看了下 JavaScript 连接 RabbitMQ 一般都是加装 STOMP 相关的插件使其支持 WebSocket 连接方式。 我的 RabbitMQ 是 Docker</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下 Docker 启动的 RabbitMQ 遇到 Virtual host / experienced an error on node rabbit@41xx9xx9xxc6 and may be inaccessible 问题的解决</title>
+      <link>https://senjianlu.com/2022/03/centos7-docker-rabbitmq-error/</link>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/03/centos7-docker-rabbitmq-error/</guid>
+      <description>消费者离线了两天，结果 RabbitMQ 就崩了&amp;hellip;&amp;hellip;. 1、错误情况 管理页面的错误消息如下： Virtual host / experienced an error on node rabbit@41xx9xx9xxc6 and may be inaccessible 2、调查 首先去</description>
+    </item>
     
     <item>
       <title>CentOS7 下用 Docker 部署 Odoo 开源 ERP 系统（企业资源规划及客户关系管理系统）</title>
@@ -170,24 +188,6 @@
       
       <guid>https://senjianlu.com/2021/12/smart-contracts-note-01/</guid>
       <description>翻出了刚开始交易时候的收益图，不到 1600 USDT 均价的 ETH 忍痛割肉，现在涨到了 4000 U 左右，抱着困惑去重新了解了一遍 Ethereum 的愿景是什么、怎么运作和如何基于它开发</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 学习笔记（三） MongoDB 数据库远程连接 GUI 工具 MongoDB Compass 的使用</title>
-      <link>https://senjianlu.com/2021/12/mongodb-note-03/</link>
-      <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/12/mongodb-note-03/</guid>
-      <description>本来是准备买 Navicat 的，但是不巧错过了永久版 7 折的优惠&amp;hellip;&amp;hellip;意外发现 MongoDB 官方居然也有可视化工具：MongoDB Compas</description>
-    </item>
-    
-    <item>
-      <title>Windows11 时钟 Clock 的使用体验</title>
-      <link>https://senjianlu.com/2021/12/windows11-clock/</link>
-      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/12/windows11-clock/</guid>
-      <description>才发现 Windows11 添加了时钟应用，自带专注时段（可以直接理解为番茄时间）的规划功能，对于一直以来只有较大任务计划而导致在碎片时间内无法集中注意力的我来</description>
     </item>
     
   </channel>

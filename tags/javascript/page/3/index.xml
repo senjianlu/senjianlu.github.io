@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on 森见鹿的博客 </title>
+    <link>https://senjianlu.com/tags/javascript/</link>
+    <description>Recent content in JavaScript on 森见鹿的博客 </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://senjianlu.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Clash 学习（一）配置文件各项在实际使用中的用处和创建自己的第一个配置文件</title>
+      <link>https://senjianlu.com/2021/10/clash-note-01/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/clash-note-01/</guid>
+      <description>Clash 的优点太多了不赘述了，我选择它的理由是 OpenWrt 的 Clash 插件可以在软路由层面将流量分流到不同节点，比如说：YouTube 使用香港节点、Netflix 走</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下安装 Shadowsocks 服务端</title>
+      <link>https://senjianlu.com/2021/10/centos7-shadowsocks-server/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-shadowsocks-server/</guid>
+      <description>安装个 Shadowsocks 给新买的隧道用。 1、配置 repo 仓库给后面 YUM 安装使用 注：原仓库已经删除，现在只剩备份仓库，使用的 repo 源是备用仓库中 README.md 中记载的，应该是可信的，</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 学习笔记（五）找回被遗忘的 postgres 密码</title>
+      <link>https://senjianlu.com/2021/10/postgresql-note-05/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/postgresql-note-05/</guid>
+      <description>这应该也算学习笔记吧&amp;hellip;&amp;hellip; 1、信任所有的本地连接 修改配置文件： vi /var/lib/pgsql/12/data/pg_hba.conf 从 md5 的认证方式改为 trust ... ... # &amp;quot;local&amp;quot; is for Unix domain socket connections only local all all</description>
+    </item>
+    
+    <item>
+      <title>定制 OpenWrt 软路由系统（三）编译适用于自己 OpenWrt 软路由系统的 Clash 插件</title>
+      <link>https://senjianlu.com/2021/10/openwrt-note-03/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/openwrt-note-03/</guid>
+      <description>这里插件的编译还是以 Clash 为例，官方版本为 v1.7.5.7，但实际上已经能编译出更新的版本，当前这里的编译请主要参考流程，插件除非是因为 OpenWrt 系统更</description>
+    </item>
+    
+    <item>
+      <title>PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理</title>
+      <link>https://senjianlu.com/2021/10/pve-openwrt-ikuai/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/pve-openwrt-ikuai/</guid>
+      <description>被自己写的第一篇教程恶心到了&amp;hellip;&amp;hellip; 重新确定下拓扑，黑群晖系统不动，将其他两个软路由重新部署下。 首选说明几个重要的 IP</description>
+    </item>
+    
+    <item>
+      <title>定制 OpenWrt 软路由系统（二）删除多余插件并安装 Clash</title>
+      <link>https://senjianlu.com/2021/10/openwrt-note-02/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/openwrt-note-02/</guid>
+      <description>首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件</description>
+    </item>
+    
+    <item>
+      <title>定制 OpenWrt 软路由系统（一）从源码开始编译第一个系统固件</title>
+      <link>https://senjianlu.com/2021/10/openwrt-note-01/</link>
+      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/openwrt-note-01/</guid>
+      <description>第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后</description>
+    </item>
+    
+    <item>
+      <title>GitHub Action 自动构建项目容器镜像并 Push 到官方 Docker Hub</title>
+      <link>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</guid>
+      <description>首先明确 Docker 镜像的构建流程由项目根目录下的 Dockerfile 文件管理，GitHub Action 自动推送流程则由项目根目录下的 .github/workflows/main.yaml 文件控制。 以 rab_python_packages 项目为例，文件结构也可直接参</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（四）CentOS7 下挂载腾讯云 COS 为 K3s 集群提供持久化存储 PV</title>
+      <link>https://senjianlu.com/2021/10/k3s-note-04/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/k3s-note-04/</guid>
+      <description>考虑到之后的项目有日志记录和分析的功能需求，提前准一下用以日志存储的 PV，虽然说挂载到服务器本地路径也可以，但这样的话服务器到期时就会有点麻</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下使用 Docker 的一些实用指令</title>
+      <link>https://senjianlu.com/2021/10/centos7-docker/</link>
+      <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-docker/</guid>
+      <description>官方文档 持续更新。 1、停止所有的容器 docker stop $(docker ps -aq) 2、停止指定镜像的容器 docker stop `docker ps -aq --filter ancestor=$image`</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题</title>
+      <link>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</link>
+      <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</guid>
+      <description>这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用</title>
+      <link>https://senjianlu.com/2021/10/k3s-note-03/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/k3s-note-03/</guid>
+      <description>将 server + agent 的集群导入 Docker 安装的 Rancher 中以进行管理。 1、从面板导入现有集群 添加集群： 导入： 输入集群名词后创建： 复制命令前往集群执行： 我是在节点的主 server 节</description>
+    </item>
+    
+    <item>
+      <title>Nginx 学习（三）配置基础的用户登录验证以保护站点</title>
+      <link>https://senjianlu.com/2021/10/nginx-note-03/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/10/nginx-note-03/</guid>
+      <description>临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下的一些 iptables 实用配置</title>
+      <link>https://senjianlu.com/2021/09/centos7-iptables/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/centos7-iptables/</guid>
+      <description>一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）</title>
+      <link>https://senjianlu.com/2021/09/k3s-note-02-02/</link>
+      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/k3s-note-02-02/</guid>
+      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 考虑到作为 Docker 容器运行的 Rancher 重启较为安全简单，不再使用</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题</title>
+      <link>https://senjianlu.com/2021/09/centos7-openssl-ca/</link>
+      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/centos7-openssl-ca/</guid>
+      <description>主要是两个步骤：1、生成 SSL 私钥（.key 文件）和证书签发请求文件（.csr 文件）；2、自己充当证书颁发机构（CA）进行签发生成证书（.crt</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）</title>
+      <link>https://senjianlu.com/2021/09/k3s-note-02-01/</link>
+      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/k3s-note-02-01/</guid>
+      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点</title>
+      <link>https://senjianlu.com/2021/09/k3s-note-01/</link>
+      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/k3s-note-01/</guid>
+      <description>之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数</title>
+      <link>https://senjianlu.com/2021/09/postgresql-note-04/</link>
+      <pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/postgresql-note-04/</guid>
+      <description>我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下安装 Jupyter</title>
+      <link>https://senjianlu.com/2021/09/centos7-jupyter/</link>
+      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2021/09/centos7-jupyter/</guid>
+      <description>因为 Linux 系统下用 code-server 作为编译器预览 Matplotlib 图表实在过于麻烦，于是决定多装一个 Jupyter 作为数据分析图表预览用工具。 安装较为简单，但是开机启动碰到了一些问题，但</description>
+    </item>
+    
+  </channel>
+</rss>
