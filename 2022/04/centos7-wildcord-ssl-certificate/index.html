@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        森见鹿的博客 </title>
+        CentOS7 下通配符 SSL 证书的购买和配置 - 森见鹿的博客 
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="一个边缘服务涉及到的服务器和子域名实在太多，自签证书在每个服务器上都配置一遍想想就觉得麻烦，而且有些子域名需要暴露给外部访问，在用户机器人上" />
   <meta name="generator" content="Hugo 0.88.1 with theme pure" />
-  <title>森见鹿的博客 </title>
+  <title>CentOS7 下通配符 SSL 证书的购买和配置 - 森见鹿的博客 </title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://senjianlu.com/index.xml" title="森见鹿的博客 " />
   
   <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="森见鹿的博客 " />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://senjianlu.com/" />
+  <meta property="og:title" content="CentOS7 下通配符 SSL 证书的购买和配置" />
+<meta property="og:description" content="一个边缘服务涉及到的服务器和子域名实在太多，自签证书在每个服务器上都配置一遍想想就觉得麻烦，而且有些子域名需要暴露给外部访问，在用户机器人上" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-16T00:00:00+00:00" />
 
-<meta itemprop="name" content="森见鹿的博客 ">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="森见鹿的博客 "/>
-<meta name="twitter:description" content=""/>
+<meta itemprop="name" content="CentOS7 下通配符 SSL 证书的购买和配置">
+<meta itemprop="description" content="一个边缘服务涉及到的服务器和子域名实在太多，自签证书在每个服务器上都配置一遍想想就觉得麻烦，而且有些子域名需要暴露给外部访问，在用户机器人上"><meta itemprop="datePublished" content="2022-04-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-04-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="601">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7 下通配符 SSL 证书的购买和配置"/>
+<meta name="twitter:description" content="一个边缘服务涉及到的服务器和子域名实在太多，自签证书在每个服务器上都配置一遍想想就觉得麻烦，而且有些子域名需要暴露给外部访问，在用户机器人上"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -67,7 +72,7 @@
   
   
 
-  <body class="main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="slimContent">
       <div class="navbar-header">
         <div class="profile-block text-center">
@@ -318,34 +323,25 @@
 
     
     
-
-<main class="main" role="main">
-  
-  <div class="content article-list">
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
     
-    
-    
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
+    <div class="article-header">
+      <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/01/hugo-github-pages/"
-    >Windows 下 Hugo &#43; GitHub Pages 搭建静态博客</a
+    href="/2022/04/centos7-wildcord-ssl-certificate/"
+    >CentOS7 下通配符 SSL 证书的购买和配置</a
   >
 </h1>
 
-      </div>
-      <div class="article-entry text-muted" itemprop="description">确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo+GitHub Pages 免费搭建个静</div>
-      <p class="article-meta">
+      <div class="article-meta">
+        
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/hugo-github-pages/" class="">
-  <time datetime="2020-01-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-11</time>
+<a href="https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="article-date">
+  <time datetime="2022-04-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-16</time>
 </a>
 </span>
 <span class="article-category">
@@ -354,102 +350,119 @@
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"> 网站建设 </a>
+    <a class="article-tag-link" href="/tags/linux/"> Linux </a>
   </span>
 
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1472字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/01/centos7-nginx-uwsgi-django/"
-    >CentOS7 下 Nginx&#43;uWSGI 配置 Django 项目</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/" class="">
-  <time datetime="2020-01-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-10</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/python/"> Python </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1284字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
-      </p>
-    </article>
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2020/01/centos7-ssl-error/"
-    >Python3 通过使用 SOCKS5H 来解决爬虫 SSL 错误和境内 DNS 污染的问题</a
-  >
-</h1>
-
-      </div>
-      <div class="article-entry text-muted" itemprop="description">如果你急于解决爬虫 HTTP 代理池访问 HTPPS 出错，并且自己有境外服务器的话，我直接给出解决方案：服务器搭建 SOCKS5 代理并在代码中以 socks5h://账号:密</div>
-      <p class="article-meta">
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/01/centos7-ssl-error/" class="">
-  <time datetime="2020-01-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-10</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"> 踩坑记录 </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/python/"> Python </a>
-  </span>
-
-        
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 699字</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2022/04/centos7-wildcord-ssl-certificate/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 601字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
-      </p>
-    </article></div>
-  
-<nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    <ul class="pager pull-left"><li class="prev">
-        <a href="/page/13/">
-          <i class="icon icon-angle-left"></i>
-          
-        </a>
-      </li>
-    </ul>
-    <div class="total-article bar-right">
-      Page:14/14
+      </div>
     </div>
-  </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>一个边缘服务涉及到的服务器和子域名实在太多，自签证书在每个服务器上都配置一遍想想就觉得麻烦，而且有些子域名需要暴露给外部访问，在用户机器人上安装证书也不太现实，索性购买下通配符证书来解决吧。</p>
+<hr>
+<p><strong>1、证书的购买</strong><br>
+选择在 <a href="https://www.namecheap.com/">Namecheap</a> 上进行购买，链接：<a href="https://www.namecheap.com/security/ssl-certificates/">https://www.namecheap.com/security/ssl-certificates/</a>，注意需要选择 <code>Wildcard</code> 类型的证书：<br>
+<img src="https://img.senjianlu.com/20220416112835.png" alt="证书"></p>
+<blockquote>
+<p>两年起购买更优惠。</p>
+</blockquote>
+<p><strong>2、证书的激活</strong><br>
+① 购买后的证书进入激活阶段时，需要你提供 <code>CSR</code>，我这里选择使用在线工具生成：<a href="https://myssl.com/csr_create.html">CSR在线生成工具</a><br>
+<img src="https://img.senjianlu.com/20220416114927.png" alt="通配符 1"><br>
+<strong>注意：生成后一定要下载 KEY 文件！生成后一定要下载 KEY 文件！生成后一定要下载 KEY 文件！同时因为你购买的是通配符域名，所以这里的域名要填写 <code>*.your_domain.com</code></strong>。<br>
+拷贝到激活页的框中，即可看到适配的域名也是通配符域名了：<br>
+<img src="https://img.senjianlu.com/20220416115109.png" alt="通配符 2"><br>
+② 选择添加 DNS 解析的方式来验证域名所有权：<br>
+<img src="https://img.senjianlu.com/20220416115310.png" alt="验证域名所有权"><br>
+③ 选择证书发送到哪个邮箱：<br>
+<img src="https://img.senjianlu.com/20220416115405.png" alt="证书发送到哪个邮箱"><br>
+④ 提交：<br>
+<img src="https://img.senjianlu.com/20220416115529.png" alt="提交"><br>
+⑤ 去添加 DNS 解析来等待审核：<br>
+<img src="https://img.senjianlu.com/20220416115854.png" alt="获取 DNS 记录 1"><br>
+<img src="https://img.senjianlu.com/20220416120002.png" alt="获取 DNS 记录 2"><br>
+<img src="https://img.senjianlu.com/20220416120143.png" alt="获取 DNS 记录 3"><br>
+<img src="https://img.senjianlu.com/20220416120236.png" alt="添加 CNAME 记录"><br>
+接着前往 <a href="https://mxtoolbox.com/CnameLookup.aspx">https://mxtoolbox.com/CnameLookup.aspx</a> 验证 CNAME 是否生效：<br>
+<img src="https://img.senjianlu.com/20220416120442.png" alt="生效">
+之后只需静等 15 到 30 分钟即可，审核通过后证书会发送至你的邮箱。</p>
+<p><strong>3、证书的配置</strong><br>
+发来的证书会有 2 个文件：<br>
+<img src="https://img.senjianlu.com/20220416124536.png" alt="证书"><br>
+拷贝至服务器后拼接为 <code>.crt</code> 文件：</p>
+<pre><code class="language-bash">cat STAR_xxxx_xxx.crt STAR_xxxx_xxx.ca-bundle &gt; xxxx_xxx.bundle.crt
+</code></pre>
+<p>接着把生成 <code>CSR</code> 时一起下载的 <code>.key</code> 文件放到服务器上，补齐完整的证书链：<br>
+<img src="https://img.senjianlu.com/20220416125636.png" alt="完整的证书链"><br>
+之后就能使用了，直接去 Nginx 中配置即可，样例：</p>
+<pre><code class="language-conf">   ...
+   ...
+   server {
+        listen       80;
+        server_name  test.xxxx.xxx;
+        root         /usr/share/nginx/html;
+
+        location / {
+            # 跳转 HTTPS
+            return 301   https://$host$request_uri;
+        }
+    }
+
+    server {
+        listen          443 ssl;
+        server_name     test.xxxx.xxx;
+
+        # SSL 配置
+        ssl_certificate             /rab/ssl/xxxx_xxx.bundle.crt;
+        ssl_certificate_key         /rab/ssl/private.key;
+        ssl_protocols               TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers                 ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+
+        location / {
+            root /usr/share/nginx/html;
+        }
+    }
+    ...
+    ...
+</code></pre>
+<p>访问确认证书生效：<br>
+<img src="https://img.senjianlu.com/20220416130459.png" alt="证书生效"></p>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" title="CentOS7 下通配符 SSL 证书的购买和配置" target="_blank" rel="external">https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" title="CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
 </nav>
 
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -526,6 +539,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>

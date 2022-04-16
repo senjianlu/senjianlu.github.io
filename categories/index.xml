@@ -5,10 +5,19 @@
     <link>https://senjianlu.com/categories/</link>
     <description>Recent content in Categories on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://senjianlu.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7 下通配符 SSL 证书的购买和配置</title>
+      <link>https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/</guid>
+      <description>一个边缘服务涉及到的服务器和子域名实在太多，自签证书在每个服务器上都配置一遍想想就觉得麻烦，而且有些子域名需要暴露给外部访问，在用户机器人上</description>
+    </item>
     
     <item>
       <title>CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</title>
@@ -179,15 +188,6 @@
       
       <guid>https://senjianlu.com/2021/12/centos7-docker-firefox-in-browser/</guid>
       <description>公司用的日本专线，狡猾的日本人为了防止上班摸鱼把博客园都屏蔽了，使用中文搜索问题检索结果永远只有 CSDN 和内容农场&amp;hellip;&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>基于以太坊 ETH 的智能合约学习（一）下载和使用小狐狸钱包 MetaMask（Chrome 插件版）并添加 BSC 主网络进行 BNB 转账</title>
-      <link>https://senjianlu.com/2021/12/smart-contracts-note-01/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/12/smart-contracts-note-01/</guid>
-      <description>翻出了刚开始交易时候的收益图，不到 1600 USDT 均价的 ETH 忍痛割肉，现在涨到了 4000 U 左右，抱着困惑去重新了解了一遍 Ethereum 的愿景是什么、怎么运作和如何基于它开发</description>
     </item>
     
   </channel>
