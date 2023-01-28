@@ -24,18 +24,18 @@
   
   
   <meta name="description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这" />
-  <meta name="generator" content="Hugo 0.88.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
   <title>IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验 - 森见鹿的博客 </title>
   
   
-  <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
   <meta property="og:title" content="IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验" />
 <meta property="og:description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/12/vps-iplc-01/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://bak.senjianlu.com/2021/12/vps-iplc-01/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-26T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-12-26T00:00:00+00:00" />
 
@@ -77,7 +77,7 @@
       <div class="navbar-header">
         <div class="profile-block text-center">
           <a id="avatar" href="https://github.com/senjianlu" target="_blank">
-            <img class="img-circle img-rotate" src="https://senjianlu.com/avatar.png" width="200" height="200">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
           </a>
           <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
@@ -158,7 +158,7 @@
     <h3 class="widget-title">公告</h3>
     <div class="widget-body">
         <div id="board">
-            <div class="content"><p>用来记录在工作中的一些问题和对应解决。</br>博客发布之前我会尽量检查，但是避免不了环境或是配置不同而造成的难以预测的问题，如有错误或疑问请 <a href='https://t.me/rabbirbot00'>Telegram 联系我</a>，感谢！</p>
+            <div class="content"><p>该主题的博客已进入归档状态，新博客地址：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
             </div>
         </div>
     </div>
@@ -168,10 +168,10 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">39</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">42</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
         </ul>
     </div>
 </div>
@@ -181,79 +181,87 @@
         <ul class="tag-list">
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">8</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
+                    class="tag-list-count">11</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
-                    class="tag-list-count">12</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">13</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/java/" class="tag-list-link">java</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/java/" class="tag-list-link">java</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
                     class="tag-list-count">6</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">25</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">26</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
-                    class="tag-list-count">3</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
+                    class="tag-list-count">4</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
                     class="tag-list-count">8</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/python/" class="tag-list-link">python</a><span
                     class="tag-list-count">4</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
-                    class="tag-list-count">3</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
-                    class="tag-list-count">6</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
-                    class="tag-list-count">4</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/redis/" class="tag-list-link">redis</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
                     class="tag-list-count">7</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="tag-list-link">小程序</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
                     class="tag-list-count">13</span></li>
             
         </ul>
@@ -268,7 +276,37 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
+                        <a href="https://bak.senjianlu.com/2022/09/dingding-applet-01/" class="title">钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-09-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-09-02</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/" class="title">CentOS7 下搭建 Trojan 服务端（附带搬瓦工机器的一些特殊配制）</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-07-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/" class="title">CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-04-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-16</time>
@@ -278,40 +316,10 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-04-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-01</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/03/centos7-docker-rabbitmq-error/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 遇到 Virtual host / experienced an error on node rabbit@41xx9xx9xxc6 and may be inaccessible 问题的解决</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-03-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-03-25</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/02/centos7-docker-odoo/" class="title">CentOS7 下用 Docker 部署 Odoo 开源 ERP 系统（企业资源规划及客户关系管理系统）</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-02-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-19</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/02/eth-miner-note-03/" class="title">以太坊矿机搭建（三）从 ethermine.org 矿池中将小额 ETH 收益提现</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-02-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-18</time>
                     </p>
                 </div>
             </li>
@@ -340,7 +348,7 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/12/vps-iplc-01/" class="article-date">
+<a href="https://bak.senjianlu.com/2021/12/vps-iplc-01/" class="article-date">
   <time datetime="2021-12-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-26</time>
 </a>
 </span>
@@ -373,26 +381,26 @@
 <p><strong>1、价格信息</strong><br>
 <strong>注意</strong>：维基家的流量转发计价方式为<strong>一次性设置费</strong> + <strong>流量按量付费</strong> + <strong>端口占用费</strong>，而带宽方面 IPLC 转发均为 80 Mbps。<br>
 ① 一次性设置费（高价版本每个月会赠送一点 IPLC 流量）：<br>
-<img src="https://img.senjianlu.com/20211228205412.png" alt="一次性设置费"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014967d02.png" alt="一次性设置费"><br>
 ② IPLC 流量费用：<br>
-<img src="https://img.senjianlu.com/20211228205547.png" alt="IPLC 流量费用"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014a3a353.png" alt="IPLC 流量费用"><br>
 ③ 端口占用费：<br>
-<img src="https://img.senjianlu.com/20211228205639.png" alt="端口占用费"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014ad8df4.png" alt="端口占用费"></p>
 <p><strong>2、配置（流量转发）</strong><br>
 <strong>注意：需要自备落地（即提前准备好搭建了代理服务的境外服务器）</strong><br>
 购买后在产品和服务处选择流量转发服务，点击<code>管理产品</code>：<br>
-<img src="https://img.senjianlu.com/20211228205800.png" alt="管理产品"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014b69a01.png" alt="管理产品"><br>
 选择<code>添加 IPLC 转发</code>：<br>
-<img src="https://img.senjianlu.com/20211228205959.png" alt="添加 IPLC 转发"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014c56b81.png" alt="添加 IPLC 转发"><br>
 假设你有一个 SOCKS5 代理运行在 <code>13.233.150.148</code> 服务器的 <code>2222</code> 端口上，那么如下配置即可（除了 HTTP 代理其他全支持转发）：<br>
-<img src="https://img.senjianlu.com/20211228210253.png" alt="具体配置"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014d22183.png" alt="具体配置"></p>
 <blockquote>
 <p>协议处可选 TCP 和 UDP，如果都选择了则会分别产生一条转发规则，端口占用收费会翻倍。</p>
 </blockquote>
 <p>创建需要一点时间：<br>
-<img src="https://img.senjianlu.com/20211228210609.png" alt="等待创建"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014dc63e3.png" alt="等待创建"><br>
 趁这个时间我们查看一下转发规则：<br>
-<img src="https://img.senjianlu.com/20211228210732.png" alt="转发规则"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014e46c45.png" alt="转发规则"><br>
 使用方式则很简单，本来你是使用如下代理信息的：</p>
 <pre><code class="language-python">import requests
 
@@ -416,16 +424,16 @@ r = requests.get(&quot;https://google.com&quot;, proxies=proxies)
 <p><strong>3、使用体验</strong><br>
 ① 价格方面<br>
 设置费略贵，至少要花 150 才能使用 IPLC 线路，不过每个月赠送流量还是蛮好评的，虽然没多少，但是不看视频只查文档的话一个月 500 MB 是基本用不完的，这是我的购买日期：<br>
-<img src="https://img.senjianlu.com/20211228211747.png" alt="购买日期"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014f24618.png" alt="购买日期"><br>
 在 Clash 中配置了这条线路只接管 Google 和 GitHub 相关服务的流量，截至 12 月 28 日：<br>
-<img src="https://img.senjianlu.com/20211228212049.png" alt="12 月 28 日"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014fa9790.png" alt="12 月 28 日"><br>
 总共 3 个月花 9 块钱。<br>
 ② 使用方面<br>
 除了 HTTP 外的代理协议全支持，并且晚高峰也绝对稳定。<br>
 Python3 100 次对 Google 的爬取：<br>
-<img src="https://img.senjianlu.com/20211228214206.png" alt="成功率"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2015194c56.png" alt="成功率"><br>
 YouTube 1080p 分辨率下秒加载：<br>
-<img src="https://img.senjianlu.com/20211228214023.png" alt="秒加载"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20150d4e8a.png" alt="秒加载"><br>
 准确的延迟测量等有了专业工具再补。</p>
 <p>本章结束。</p>
 
@@ -435,7 +443,7 @@ YouTube 1080p 分辨率下秒加载：<br>
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/12/vps-iplc-01/" title="IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验" target="_blank" rel="external">https://senjianlu.com/2021/12/vps-iplc-01/</a>
+      <a href="https://bak.senjianlu.com/2021/12/vps-iplc-01/" title="IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验" target="_blank" rel="external">https://bak.senjianlu.com/2021/12/vps-iplc-01/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -452,12 +460,12 @@ YouTube 1080p 分辨率下秒加载：<br>
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/12/eth-miner-note-02/" title="以太坊矿机搭建（二）安装 Mining OS（Minerstat OS）专业挖矿系统一键挖矿"><i
+                <a href="https://bak.senjianlu.com/2021/12/eth-miner-note-02-bak/" title="以太坊矿机搭建（二）安装 Mining OS 专业挖矿系统一键挖矿"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://senjianlu.com/2021/12/smart-contracts-note-02/"
+                <a href="https://bak.senjianlu.com/2021/12/smart-contracts-note-02/"
                     title="基于以太坊 ETH 的智能合约学习（二）使用官方的 Remix IDE 一键发币体验整体流程"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
@@ -472,12 +480,12 @@ YouTube 1080p 分辨率下秒加载：<br>
 <ul class="social-links">
     <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
             <i class="icon icon-github"></i></a></li>
-    <li><a href="https://senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
             <i class="icon icon-rss"></i></a></li>
 </ul>
   <div class="copyright">
     &copy;2019  -
-    2022
+    2023
     <div class="publishby">
         Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>
@@ -509,8 +517,8 @@ YouTube 1080p 分辨率下秒加载：<br>
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://senjianlu.com/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
-<script src="https://senjianlu.com/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
 
 <script>
     (function (window) {
@@ -522,13 +530,13 @@ YouTube 1080p 分辨率下秒加载：<br>
                 TAGS: '标签',
                 UNTITLED: '(未命名)',
             },
-            ROOT_URL: 'https:\/\/senjianlu.com',
-            CONTENT_URL: 'https:\/\/senjianlu.com\/searchindex.json ',
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
         };
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://senjianlu.com/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({

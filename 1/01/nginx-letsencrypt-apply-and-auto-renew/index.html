@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/nginx-letsencrypt-apply-and-auto-renew/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一">
+
+<meta itemprop="wordCount" content="847">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/nginx-letsencrypt-apply-and-auto-renew/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/nginx-letsencrypt-apply-and-auto-renew/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 847字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一下一劳永逸感觉会更方便一点，这样在后续的其他项目也能直接用。</p>
+<hr>
+<p>教程的顺序为我自己操作的顺序：<br>
+申请证书 → 配置 Nginx HTTPS 访问和放行 HTTP 下的证书路由 → 自动续签证书配置</p>
+<p>1、首先申请证书，由于我使用的是 CentOS7 系统，因此可以 yum 直接安装 Certbot：</p>
+<pre><code class="language-bash">yum -y install certbot
+</code></pre>
+<p>虽然一般教程接下来都是直接执行如下命令申请证书（example.com 替换为你自己的域名，也可是二级域名）</p>
+<pre><code class="language-bash">certbot certonly --webroot --agree-tos -v -t --email example@gmail.com -w /usr/share/nginx/ -d example.com
+</code></pre>
+<p>但是还是有几点需要在执行之前确认：</p>
+<ol>
+<li>防火墙和安全组放行 80 端口（后续配置 HTTPS 访问再自行放行 443 端口）</li>
+<li>确保 example.com 域名已经解析到了你在申请证书的服务器 IP 上</li>
+<li>确保 Nginx 配置无误，指：http://example.com/.well-known/acme-challenge/ 下临时生成的认证文件可以被访问到。</li>
+</ol>
+<p>2、Nginx 的配置可以像我下面这样（我选的验证文件临时目录为 /usr/share/nginx，server_name 等可以自行替换）：</p>
+<pre><code class="language-nginx">server {
+        listen       80;
+        listen       [::]:80;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        # Let's Encrypt 证书认证（优先级最高放在最前面）
+        location ~ /.well-known {
+            root /usr/share/nginx;
+            allow all;
+        }
+    }
+</code></pre>
+<p>在配置好后重启 Nginx：</p>
+<pre><code class="language-bash">nginx -s reload
+service nginx restart
+</code></pre>
+<p>然后执行上面证书申请的命令应该就可以申请到了，任何错误请依次确认上述 3 点事项。<br>
+<em>注：如果使用的是 Cloudflare DNS 解析，请在 SSL/TLS 处选为<strong>灵活</strong>模式，以防止强制 HTTPS 转换导致的文件无法验证。</em><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e7bd9bbc.png" alt="证书申请成功"></p>
+<p>3、证书自动续签。<br>
+Certbot 提供了方便的一键续签命令：</p>
+<pre><code class="language-bash">certbot renew
+</code></pre>
+<p>在证书到期时间小于 30 天的情况下，执行以上指令后会在原位置更新证书，接下来只要手动 Nginx 重新加载配置并重启就能使用新的证书了。<br>
+Certbot 很贴心的提供了钩子，以方便在 renew 操作前后执行其他命令，于是便可以直接使用下面的命令同时完成续签和重启 Nginx 操作：</p>
+<pre><code class="language-bash">certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;
+</code></pre>
+<p>接着以官方建议的每天 2 次频率将其加入到任务计划中：</p>
+<pre><code class="language-bash">crontab -e
+</code></pre>
+<pre><code class="language-bash">...
+# 每 12 小时执行一次
+0 */12 * * * certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;
+...
+</code></pre>
+<pre><code class="language-bash">service crond restart
+</code></pre>
+<p>理论上是没问题的，大概 60 天以后回来记录下自动续签是否生效。</p>
+<p>2021/07/17<br>
+todo&hellip;</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/nginx-letsencrypt-apply-and-auto-renew/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/nginx-letsencrypt-apply-and-auto-renew/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/nginx-note-01/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/nginx-cloudflare-301-too-many-redirects/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

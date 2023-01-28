@@ -24,18 +24,18 @@
   
   
   <meta name="description" content="这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其" />
-  <meta name="generator" content="Hugo 0.88.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
   <title>Gullo 2 美刀年付 NAT 主机的基础操作和玩法 - 森见鹿的博客 </title>
   
   
-  <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
   <meta property="og:title" content="Gullo 2 美刀年付 NAT 主机的基础操作和玩法" />
 <meta property="og:description" content="这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/12/gullo-nat-vps/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://bak.senjianlu.com/2021/12/gullo-nat-vps/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-12-02T00:00:00+00:00" />
 
@@ -77,7 +77,7 @@
       <div class="navbar-header">
         <div class="profile-block text-center">
           <a id="avatar" href="https://github.com/senjianlu" target="_blank">
-            <img class="img-circle img-rotate" src="https://senjianlu.com/avatar.png" width="200" height="200">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
           </a>
           <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
@@ -158,7 +158,7 @@
     <h3 class="widget-title">公告</h3>
     <div class="widget-body">
         <div id="board">
-            <div class="content"><p>用来记录在工作中的一些问题和对应解决。</br>博客发布之前我会尽量检查，但是避免不了环境或是配置不同而造成的难以预测的问题，如有错误或疑问请 <a href='https://t.me/rabbirbot00'>Telegram 联系我</a>，感谢！</p>
+            <div class="content"><p>该主题的博客已进入归档状态，新博客地址：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
             </div>
         </div>
     </div>
@@ -168,10 +168,10 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">39</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">42</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
         </ul>
     </div>
 </div>
@@ -181,79 +181,87 @@
         <ul class="tag-list">
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">8</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
+                    class="tag-list-count">11</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
-                    class="tag-list-count">12</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">13</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/java/" class="tag-list-link">java</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/java/" class="tag-list-link">java</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
                     class="tag-list-count">6</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">25</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">26</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
-                    class="tag-list-count">3</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
+                    class="tag-list-count">4</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
                     class="tag-list-count">8</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/python/" class="tag-list-link">python</a><span
                     class="tag-list-count">4</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
-                    class="tag-list-count">3</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
-                    class="tag-list-count">6</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
-                    class="tag-list-count">4</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/redis/" class="tag-list-link">redis</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
                     class="tag-list-count">7</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="tag-list-link">小程序</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
                     class="tag-list-count">13</span></li>
             
         </ul>
@@ -268,7 +276,37 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
+                        <a href="https://bak.senjianlu.com/2022/09/dingding-applet-01/" class="title">钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-09-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-09-02</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/" class="title">CentOS7 下搭建 Trojan 服务端（附带搬瓦工机器的一些特殊配制）</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-07-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/" class="title">CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-04-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-16</time>
@@ -278,40 +316,10 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-04-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-01</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/03/centos7-docker-rabbitmq-error/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 遇到 Virtual host / experienced an error on node rabbit@41xx9xx9xxc6 and may be inaccessible 问题的解决</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-03-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-03-25</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/02/centos7-docker-odoo/" class="title">CentOS7 下用 Docker 部署 Odoo 开源 ERP 系统（企业资源规划及客户关系管理系统）</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-02-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-19</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/02/eth-miner-note-03/" class="title">以太坊矿机搭建（三）从 ethermine.org 矿池中将小额 ETH 收益提现</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-02-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-18</time>
                     </p>
                 </div>
             </li>
@@ -340,7 +348,7 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/12/gullo-nat-vps/" class="article-date">
+<a href="https://bak.senjianlu.com/2021/12/gullo-nat-vps/" class="article-date">
   <time datetime="2021-12-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-02</time>
 </a>
 </span>
@@ -367,26 +375,26 @@
 Gullo 每台 NAT 主机的主键是其内网地址，网段为 <code>10.10.10.1</code> 到 <code>10.10.255.255</code>，SSH 登录信息都可以通过这个内网地址来获得，不过比较绕，我将买完机器后的各阶段操作都记录在下面，请自行参考。<br>
 ① 等待开机<br>
 Gullo 家的机器有很大一部分是老板手动开的（离谱），黑五我这一单 NAT IPv4 128MB Bundle 等了将近 30 小时才审核完开机，开机成功你的注册邮箱会收到这样的邮件：<br>
-<img src="https://img.senjianlu.com/20211202185254.png" alt="">
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20f6079619.png" alt="">
 收到登录信息的话你就可以直接跳到后面玩法部分了，但是如果你没收到或是漏收到了，那么跟着我往下一步步调查 SSH 登录信息吧。<br>
 ② 登录至 VPS 控制面板<br>
 地址：<a href="https://solusvm.gullo.me/">https://solusvm.gullo.me/</a><br>
 用户名我是在发来的少数 SSH 登录信息中找到的（如果你一个 NAT 机器的登录信息都没收到的话，发工单吧），密码则需要自己找回一下以重新设置：<br>
-<img src="https://img.senjianlu.com/20211202185428.png" alt="重设密码"><br>
-<img src="https://img.senjianlu.com/20211202185554.png" alt="重设密码的链接"><br>
-<img src="https://img.senjianlu.com/20211202185631.png" alt="新密码发送"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20b6f1a80e.png" alt="重设密码"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e455bf4c.png" alt="重设密码的链接"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20d401764f.png" alt="新密码发送"><br>
 回邮箱拿到新密码登录即可：<br>
-<img src="https://img.senjianlu.com/20211202185708.png" alt="新密码"><br>
-<img src="https://img.senjianlu.com/20211202185808.png" alt="登录成功"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20fb2959f7.png" alt="新密码"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ad6ae993.png" alt="登录成功"></p>
 <p>③ 获取 NAT 机器的外网 IPv4 地址（针对没收到 SSH 登录信息的 NAT 机器）<br>
 Gullo 提供的工具：<a href="https://hosting.gullo.me/plugin/support_manager/knowledgebase/view/23">NAT IPv4 Port Calculator</a><br>
 在控制面板选定机器，并使用上面的工具通过内网地址查询外网 IPv4 地址、可使用的 20 个端口和 SSH 连接端口：<br>
-<img src="https://img.senjianlu.com/20211202185945.png" alt="外网 IP 及端口"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20b3314d5a.png" alt="外网 IP 及端口"><br>
 ④ 重设 NAT 机器的密码（针对没收到 SSH 登录信息的 NAT 机器）<br>
 使用 Serial Console 临时连一下机器，选 1 小时时长即可：<br>
-<img src="https://img.senjianlu.com/20211202190050.png" alt="Serial Console"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20893c57cd.png" alt="Serial Console"><br>
 获取临时的 SSH 登录信息：<br>
-<img src="https://img.senjianlu.com/20211202190138.png" alt="临时链接信息"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ffa66ff1.png" alt="临时链接信息"></p>
 <blockquote>
 <p>这里如果一直连不上，重装下 NAT 机器的系统试一下，还不行的话就发工单吧，我有一台德国的机器就永远密码错误&hellip;&hellip;便宜机器问题确实多，但也正常。</p>
 </blockquote>
@@ -401,7 +409,7 @@ passwd root
 <p><strong>2、挂个探针</strong><br>
 NAT 机不配接入 Zabbix，这里用的是哪吒探针，搭建教程可以参考：<a href="https://senjianlu.com/2021/10/centos7-nezha-monitor/">CentOS7 下哪吒监控面板的搭建的监控端的安装</a><br>
 在面板后台新建机器，拷贝一键安装命令后直接取 NAT 主机上执行即可：<br>
-<img src="https://img.senjianlu.com/20211202192340.png" alt="哪吒探针"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20bbfa49fb.png" alt="哪吒探针"></p>
 <p><strong>3、搭个 SOCKS5 代理服务端</strong><br>
 一键脚本：<a href="https://github.com/senjianlu/one-click-scripts#centos7-%E4%B8%8B%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-gost-%E5%B9%B6%E5%90%AF%E5%8A%A8-http-%E5%92%8C-socks5-%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1">CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务</a><br>
 注意这里的端口得是你 20 个可用端口中的一个：</p>
@@ -410,7 +418,7 @@ NAT 机不配接入 Zabbix，这里用的是哪吒探针，搭建教程可以参
 <p>换台服务器测试一下代理是否生效：</p>
 <pre><code class="language-bash">curl -x socks5://$username:$password@$host:$port http://ip-api.com/json/?lang=zh-CN
 </code></pre>
-<p><img src="https://img.senjianlu.com/20211202194320.png" alt="可用"><br>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d20c0111542.png" alt="可用"><br>
 虽然共用的这个 IPv4 地址已经脏的不能再脏了，但就爬虫用用也还行。</p>
 <p><strong>4、套 Cloudflare 建个站</strong><br>
 Gullo 给每台 NAT 主机都提供了一个全端口的 IPv6 地址，建站就很方便了，直接在 DNS 中解析 AAAA 记录即可。但是考虑到部分用户是没有 IPv6 地址的，真要建站还需要套个 Cloudflare 的 CDN 做下中转。<br>
@@ -422,24 +430,24 @@ yum -y install nginx
 service nginx start
 </code></pre>
 <p>获取你 NAT 机器的 IPv6 地址：<br>
-<img src="https://img.senjianlu.com/20211202195141.png" alt="获取 IPv6 地址"><br>
-<img src="https://img.senjianlu.com/20211202195247.png" alt="IPv6 地址"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e2d529c6.png" alt="获取 IPv6 地址"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20f11a7882.png" alt="IPv6 地址"><br>
 在 Cloudflare 的 DNS 处解析，类型选 <code>AAAA</code>，SSL/TLS 选 <code>灵活</code> 让 CF 提供 SSL 证书：<br>
-<img src="https://img.senjianlu.com/20211202195448.png" alt="DNS 解析"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d206ba8ee40.png" alt="DNS 解析"><br>
 稍等片刻后访问页面测试一下：<br>
-<img src="https://img.senjianlu.com/20211203200622.png" alt="测试"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ce3eae6e.png" alt="测试"><br>
 再用只有 IPv4 地址的主机访问一下：<br>
-<img src="https://img.senjianlu.com/20211204112806.png" alt="用只有 IPv4 的主机访问"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d209ead246f.png" alt="用只有 IPv4 的主机访问"><br>
 IPv4 都支持了，那么 IPv6 更不用说了，通过 <a href="http://ipv6-test.com/validate.php">ipv6-test</a> 测试一下：<br>
-<img src="https://img.senjianlu.com/20211203200703.png" alt="ipv6-test"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d206fa7e290.png" alt="ipv6-test"></p>
 <blockquote>
 <p>Gullo 部分机房存在阻断 Cloudflare 流量来源的问题（我实践后发现起码纽约机房是阻断的），这会导致你不套 CF 使用 IPv6 可以访问网站，但是套了后出现 522 的错误，具体的讨论可以看这个：<a href="https://www.lowendtalk.com/discussion/174851/gullos-hosting-in-ny-blocking-cloudflare">Gullos hosting in NY blocking cloudflare ?</a><br>
 你也可以在服务器上通过以下命令来查看 Cloudflare 的流量是否顺利的回源了：</p>
 <pre><code class="language-bash">cat /var/log/nginx/access.log
 </code></pre>
-<p><img src="https://img.senjianlu.com/20211203200327.png" alt="来源"><br>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d20f6f600ee.png" alt="来源"><br>
 上面的 IPv6 地址属于 <a href="https://www.cloudflare.com/zh-cn/ips/">Cloudflare</a>，那么就说明回源成功了。<br>
-<img src="https://img.senjianlu.com/20211203200548.png" alt="Cloudflare IP"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d209fc341f6.png" alt="Cloudflare IP"></p>
 </blockquote>
 <p>结束。</p>
 
@@ -449,7 +457,7 @@ IPv4 都支持了，那么 IPv6 更不用说了，通过 <a href="http://ipv6-te
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/12/gullo-nat-vps/" title="Gullo 2 美刀年付 NAT 主机的基础操作和玩法" target="_blank" rel="external">https://senjianlu.com/2021/12/gullo-nat-vps/</a>
+      <a href="https://bak.senjianlu.com/2021/12/gullo-nat-vps/" title="Gullo 2 美刀年付 NAT 主机的基础操作和玩法" target="_blank" rel="external">https://bak.senjianlu.com/2021/12/gullo-nat-vps/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -466,12 +474,12 @@ IPv4 都支持了，那么 IPv6 更不用说了，通过 <a href="http://ipv6-te
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/12/hugo-google-adsense/" title="申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染"><i
+                <a href="https://bak.senjianlu.com/2021/12/hugo-google-adsense/" title="申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://senjianlu.com/2021/12/windows11-clock/"
+                <a href="https://bak.senjianlu.com/2021/12/windows11-clock/"
                     title="Windows11 时钟 Clock 的使用体验"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
@@ -486,12 +494,12 @@ IPv4 都支持了，那么 IPv6 更不用说了，通过 <a href="http://ipv6-te
 <ul class="social-links">
     <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
             <i class="icon icon-github"></i></a></li>
-    <li><a href="https://senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
             <i class="icon icon-rss"></i></a></li>
 </ul>
   <div class="copyright">
     &copy;2019  -
-    2022
+    2023
     <div class="publishby">
         Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>
@@ -523,8 +531,8 @@ IPv4 都支持了，那么 IPv6 更不用说了，通过 <a href="http://ipv6-te
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://senjianlu.com/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
-<script src="https://senjianlu.com/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
 
 <script>
     (function (window) {
@@ -536,13 +544,13 @@ IPv4 都支持了，那么 IPv6 更不用说了，通过 <a href="http://ipv6-te
                 TAGS: '标签',
                 UNTITLED: '(未命名)',
             },
-            ROOT_URL: 'https:\/\/senjianlu.com',
-            CONTENT_URL: 'https:\/\/senjianlu.com\/searchindex.json ',
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
         };
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://senjianlu.com/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({

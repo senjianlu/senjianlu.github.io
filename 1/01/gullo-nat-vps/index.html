@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/gullo-nat-vps/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其">
+
+<meta itemprop="wordCount" content="1595">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/gullo-nat-vps/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/gullo-nat-vps/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1595字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其他 20 来台基本都只装了个 SOCKS5 代理服务端，实在浪费&hellip;&hellip;<br>
+正巧看到这个帖子：<a href="https://hostloc.com/forum.php?mod=viewthread&amp;tid=928627&amp;highlight=gullo">Gullo 128M 套 CF 做网站很爽，还有更便宜的 NAT VPS 吗</a>，6 台不同地域的 NAT 主机总价为 12 美刀每年，折合每台才 2 刀，虽然每台主机只提供 20 个 IPv4 端口，且 IP 大概率是被墙的，但是便宜呀，果断入手玩下，顺便记录下 Gullo 控制面板一些折腾的地方。</p>
+<hr>
+<p><strong>1、开机并获取 SSH 登录信息</strong><br>
+Gullo 每台 NAT 主机的主键是其内网地址，网段为 <code>10.10.10.1</code> 到 <code>10.10.255.255</code>，SSH 登录信息都可以通过这个内网地址来获得，不过比较绕，我将买完机器后的各阶段操作都记录在下面，请自行参考。<br>
+① 等待开机<br>
+Gullo 家的机器有很大一部分是老板手动开的（离谱），黑五我这一单 NAT IPv4 128MB Bundle 等了将近 30 小时才审核完开机，开机成功你的注册邮箱会收到这样的邮件：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20f6079619.png" alt="">
+收到登录信息的话你就可以直接跳到后面玩法部分了，但是如果你没收到或是漏收到了，那么跟着我往下一步步调查 SSH 登录信息吧。<br>
+② 登录至 VPS 控制面板<br>
+地址：<a href="https://solusvm.gullo.me/">https://solusvm.gullo.me/</a><br>
+用户名我是在发来的少数 SSH 登录信息中找到的（如果你一个 NAT 机器的登录信息都没收到的话，发工单吧），密码则需要自己找回一下以重新设置：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20b6f1a80e.png" alt="重设密码"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e455bf4c.png" alt="重设密码的链接"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20d401764f.png" alt="新密码发送"><br>
+回邮箱拿到新密码登录即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20fb2959f7.png" alt="新密码"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ad6ae993.png" alt="登录成功"></p>
+<p>③ 获取 NAT 机器的外网 IPv4 地址（针对没收到 SSH 登录信息的 NAT 机器）<br>
+Gullo 提供的工具：<a href="https://hosting.gullo.me/plugin/support_manager/knowledgebase/view/23">NAT IPv4 Port Calculator</a><br>
+在控制面板选定机器，并使用上面的工具通过内网地址查询外网 IPv4 地址、可使用的 20 个端口和 SSH 连接端口：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20b3314d5a.png" alt="外网 IP 及端口"><br>
+④ 重设 NAT 机器的密码（针对没收到 SSH 登录信息的 NAT 机器）<br>
+使用 Serial Console 临时连一下机器，选 1 小时时长即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20893c57cd.png" alt="Serial Console"><br>
+获取临时的 SSH 登录信息：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ffa66ff1.png" alt="临时链接信息"></p>
+<blockquote>
+<p>这里如果一直连不上，重装下 NAT 机器的系统试一下，还不行的话就发工单吧，我有一台德国的机器就永远密码错误&hellip;&hellip;便宜机器问题确实多，但也正常。</p>
+</blockquote>
+<p>登录之后，安装一下 <code>passwd</code> 并重设密码：</p>
+<pre><code class="language-bash">yum -y install passwd
+# 重设 root 用户密码
+passwd root
+</code></pre>
+<p>之后在其他机器上连接即可，以 Linux 为例：</p>
+<pre><code class="language-bash">ssh -p $port root@$host
+</code></pre>
+<p><strong>2、挂个探针</strong><br>
+NAT 机不配接入 Zabbix，这里用的是哪吒探针，搭建教程可以参考：<a href="https://senjianlu.com/2021/10/centos7-nezha-monitor/">CentOS7 下哪吒监控面板的搭建的监控端的安装</a><br>
+在面板后台新建机器，拷贝一键安装命令后直接取 NAT 主机上执行即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20bbfa49fb.png" alt="哪吒探针"></p>
+<p><strong>3、搭个 SOCKS5 代理服务端</strong><br>
+一键脚本：<a href="https://github.com/senjianlu/one-click-scripts#centos7-%E4%B8%8B%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85-gost-%E5%B9%B6%E5%90%AF%E5%8A%A8-http-%E5%92%8C-socks5-%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1">CentOS7 下一键安装 GOST 并启动 HTTP 和 SOCKS5 代理服务</a><br>
+注意这里的端口得是你 20 个可用端口中的一个：</p>
+<pre><code class="language-bash">curl -s https://gitee.com/senjianlu/one-click-scripts/raw/main/CentOS7%20下一键安装%20GOST%20并启动%20HTTP%20和%20SOCKS5%20代理服务/install.sh | bash -s $proxy_port $proxy_username $proxy_password
+</code></pre>
+<p>换台服务器测试一下代理是否生效：</p>
+<pre><code class="language-bash">curl -x socks5://$username:$password@$host:$port http://ip-api.com/json/?lang=zh-CN
+</code></pre>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d20c0111542.png" alt="可用"><br>
+虽然共用的这个 IPv4 地址已经脏的不能再脏了，但就爬虫用用也还行。</p>
+<p><strong>4、套 Cloudflare 建个站</strong><br>
+Gullo 给每台 NAT 主机都提供了一个全端口的 IPv6 地址，建站就很方便了，直接在 DNS 中解析 AAAA 记录即可。但是考虑到部分用户是没有 IPv6 地址的，真要建站还需要套个 Cloudflare 的 CDN 做下中转。<br>
+这里就拿 Nginx 的默认页面举例，由于在 1.3 之后某个版本，Nginx 已经默认启用对 IPv6 地址访问的监听，因此无需做多余配置直接在 NAT 机器上安装：</p>
+<pre><code class="language-bash">yum -y install epel-release
+# 安装 Nginx
+yum -y install nginx
+# 启动 Nginx
+service nginx start
+</code></pre>
+<p>获取你 NAT 机器的 IPv6 地址：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e2d529c6.png" alt="获取 IPv6 地址"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20f11a7882.png" alt="IPv6 地址"><br>
+在 Cloudflare 的 DNS 处解析，类型选 <code>AAAA</code>，SSL/TLS 选 <code>灵活</code> 让 CF 提供 SSL 证书：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d206ba8ee40.png" alt="DNS 解析"><br>
+稍等片刻后访问页面测试一下：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ce3eae6e.png" alt="测试"><br>
+再用只有 IPv4 地址的主机访问一下：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d209ead246f.png" alt="用只有 IPv4 的主机访问"><br>
+IPv4 都支持了，那么 IPv6 更不用说了，通过 <a href="http://ipv6-test.com/validate.php">ipv6-test</a> 测试一下：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d206fa7e290.png" alt="ipv6-test"></p>
+<blockquote>
+<p>Gullo 部分机房存在阻断 Cloudflare 流量来源的问题（我实践后发现起码纽约机房是阻断的），这会导致你不套 CF 使用 IPv6 可以访问网站，但是套了后出现 522 的错误，具体的讨论可以看这个：<a href="https://www.lowendtalk.com/discussion/174851/gullos-hosting-in-ny-blocking-cloudflare">Gullos hosting in NY blocking cloudflare ?</a><br>
+你也可以在服务器上通过以下命令来查看 Cloudflare 的流量是否顺利的回源了：</p>
+<pre><code class="language-bash">cat /var/log/nginx/access.log
+</code></pre>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d20f6f600ee.png" alt="来源"><br>
+上面的 IPv6 地址属于 <a href="https://www.cloudflare.com/zh-cn/ips/">Cloudflare</a>，那么就说明回源成功了。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d209fc341f6.png" alt="Cloudflare IP"></p>
+</blockquote>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/gullo-nat-vps/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/gullo-nat-vps/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/hugo-auto-build/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/github-action-push-to-docker-hub/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

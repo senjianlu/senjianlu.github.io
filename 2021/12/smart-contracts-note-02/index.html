@@ -24,18 +24,18 @@
   
   
   <meta name="description" content="从零开始学习 Solidity 语言的时候突然回想起上大学对着键盘敲 C 的日子，老师明知道台下一半的学生出了校园甚至是这门课结束了就再也不会碰 C，却依然很负责任" />
-  <meta name="generator" content="Hugo 0.88.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
   <title>基于以太坊 ETH 的智能合约学习（二）使用官方的 Remix IDE 一键发币体验整体流程 - 森见鹿的博客 </title>
   
   
-  <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
   <meta property="og:title" content="基于以太坊 ETH 的智能合约学习（二）使用官方的 Remix IDE 一键发币体验整体流程" />
 <meta property="og:description" content="从零开始学习 Solidity 语言的时候突然回想起上大学对着键盘敲 C 的日子，老师明知道台下一半的学生出了校园甚至是这门课结束了就再也不会碰 C，却依然很负责任" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2021/12/smart-contracts-note-02/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://bak.senjianlu.com/2021/12/smart-contracts-note-02/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-12-28T00:00:00+00:00" />
 
@@ -77,7 +77,7 @@
       <div class="navbar-header">
         <div class="profile-block text-center">
           <a id="avatar" href="https://github.com/senjianlu" target="_blank">
-            <img class="img-circle img-rotate" src="https://senjianlu.com/avatar.png" width="200" height="200">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
           </a>
           <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
@@ -158,7 +158,7 @@
     <h3 class="widget-title">公告</h3>
     <div class="widget-body">
         <div id="board">
-            <div class="content"><p>用来记录在工作中的一些问题和对应解决。</br>博客发布之前我会尽量检查，但是避免不了环境或是配置不同而造成的难以预测的问题，如有错误或疑问请 <a href='https://t.me/rabbirbot00'>Telegram 联系我</a>，感谢！</p>
+            <div class="content"><p>该主题的博客已进入归档状态，新博客地址：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
             </div>
         </div>
     </div>
@@ -168,10 +168,10 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">39</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">42</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
         </ul>
     </div>
 </div>
@@ -181,79 +181,87 @@
         <ul class="tag-list">
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">8</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
+                    class="tag-list-count">11</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
-                    class="tag-list-count">12</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">13</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/java/" class="tag-list-link">java</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/java/" class="tag-list-link">java</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
                     class="tag-list-count">6</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">25</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">26</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
-                    class="tag-list-count">3</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
+                    class="tag-list-count">4</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
                     class="tag-list-count">8</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/python/" class="tag-list-link">python</a><span
                     class="tag-list-count">4</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
-                    class="tag-list-count">3</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
-                    class="tag-list-count">6</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
-                    class="tag-list-count">4</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/redis/" class="tag-list-link">redis</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
                     class="tag-list-count">7</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="tag-list-link">小程序</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
                     class="tag-list-count">13</span></li>
             
         </ul>
@@ -268,7 +276,37 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
+                        <a href="https://bak.senjianlu.com/2022/09/dingding-applet-01/" class="title">钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-09-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-09-02</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/" class="title">CentOS7 下搭建 Trojan 服务端（附带搬瓦工机器的一些特殊配制）</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-07-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/" class="title">CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-04-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-16</time>
@@ -278,40 +316,10 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-04-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-01</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/03/centos7-docker-rabbitmq-error/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 遇到 Virtual host / experienced an error on node rabbit@41xx9xx9xxc6 and may be inaccessible 问题的解决</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-03-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-03-25</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/02/centos7-docker-odoo/" class="title">CentOS7 下用 Docker 部署 Odoo 开源 ERP 系统（企业资源规划及客户关系管理系统）</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-02-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-19</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/02/eth-miner-note-03/" class="title">以太坊矿机搭建（三）从 ethermine.org 矿池中将小额 ETH 收益提现</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-02-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-18</time>
                     </p>
                 </div>
             </li>
@@ -340,7 +348,7 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2021/12/smart-contracts-note-02/" class="article-date">
+<a href="https://bak.senjianlu.com/2021/12/smart-contracts-note-02/" class="article-date">
   <time datetime="2021-12-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-12-28</time>
 </a>
 </span>
@@ -376,16 +384,16 @@
 <p><strong>2、切换至以太坊测试链并领取测试用 ETH</strong><br>
 由于暂时挖的 ETH 还不够部署合约，因此这里使用官方提供的 Ropsten 测试链，之后的发币操作也是在这条链上执行的。<br>
 在 MetaMask 上显示测试链：<br>
-<img src="https://img.senjianlu.com/20220101141322.png" alt="添加网络"><br>
-<img src="https://img.senjianlu.com/20220101141409.png" alt="高级"><br>
-<img src="https://img.senjianlu.com/20220101141440.png" alt="Show test networks"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20164b1176.png" alt="添加网络"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20165a3264.png" alt="高级"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20166624e3.png" alt="Show test networks"><br>
 之后切换到 Ropsten 测试网络：<br>
-<img src="https://img.senjianlu.com/20220101141541.png" alt="Ropsten 测试网络"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2016701546.png" alt="Ropsten 测试网络"><br>
 前往 <a href="https://faucet.metamask.io">https://faucet.metamask.io</a> 领取免费的测试用 ETH，点击 <code>request 1 ether from faucet</code> 按钮后连接 MetaMask 钱包：<br>
-<img src="https://img.senjianlu.com/20220101143153.png" alt="连接 MetaMask 钱包"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2016945195.png" alt="连接 MetaMask 钱包"><br>
 连接完成后就能看到下方的的交易记录了，一枚测试用以太坊就打入了你的钱包：<br>
-<img src="https://img.senjianlu.com/20220101144223.png" alt="交易记录"><br>
-<img src="https://img.senjianlu.com/20220101144428.png" alt="测试用以太坊"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2016a72d71.png" alt="交易记录"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e827796b.png" alt="测试用以太坊"></p>
 <blockquote>
 <p>如果领取失败的话，尝试关闭代理或使用私人代理，机场节点的 IP 一般都无法领取。<br>
 视频教程中的 <a href="https://faucet.ropsten.be">https://faucet.ropsten.be</a> 领取站点的钱包在我进行操作时已经没有 ETH 余额了，所以没用。</p>
@@ -393,22 +401,22 @@
 <p><strong>3、打开 Remix 智能合约开发环境并克隆现成的代币合约代码</strong><br>
 像写 Java 你会用 IDEA、写 Python 我会用 VS Code 一样，智能合约也有适合它的 IDE：<strong>Remix</strong>。<br>
 智能合约的运行依赖 Solidity 环境，如果你想用 VS Code 写的话当然也行，不过需要花费很多时间来<a href="https://solidity-cn.readthedocs.io/zh/develop/installing-solidity.html#npm-node-js">安装 Solidity 的编译环境</a>，Solidity 官方是推荐使用 Remix 进行合约开发的：<br>
-<img src="https://img.senjianlu.com/20211230215103.png" alt="官方推荐"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2015d7be28.png" alt="官方推荐"><br>
 且以太坊官方也提供了在线 Remix：<a href="https://remix.ethereum.org/">remix.ethereum.org</a>，那么我这里就直接用了。</p>
 <blockquote>
 <p>如果你想在自己的云服务器上安装 Remix 的话可以看我这篇文章：<a href="https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/">基于以太坊 ETH 的智能合约学习（二） 补足：CentOS7 下使用 Docker 安装 remix-ide 智能合约开发环境</a></p>
 </blockquote>
 <p>访问 <a href="https://remix.ethereum.org">https://remix.ethereum.org</a>：<br>
-<img src="https://img.senjianlu.com/20211230215403.png" alt="访问 remix.ethereum.org"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2015e5d10b.png" alt="访问 remix.ethereum.org"><br>
 选择从 GitHub 导入代码：<br>
-<img src="https://img.senjianlu.com/20211230221148.png" alt="从 GitHub 导入代码"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2015f455eb.png" alt="从 GitHub 导入代码"><br>
 这里用到的是这个仓库：<a href="https://github.com/ConsenSys/Tokens">ConsenSys/Tokens</a><br>
 而合约最主要的两份代码是：<br>
 主实现代码：<a href="https://github.com/ConsenSys/Tokens/blob/fdf687c69d998266a95f15216b1955a4965a0a6d/contracts/eip20/EIP20.sol">https://github.com/ConsenSys/Tokens/blob/fdf687c69d998266a95f15216b1955a4965a0a6d/contracts/eip20/EIP20.sol</a><br>
 接口类：<a href="https://github.com/ConsenSys/Tokens/blob/fdf687c69d998266a95f15216b1955a4965a0a6d/contracts/eip20/EIP20Interface.sol">https://github.com/ConsenSys/Tokens/blob/fdf687c69d998266a95f15216b1955a4965a0a6d/contracts/eip20/EIP20Interface.sol</a><br>
 都导入到项目中：<br>
-<img src="https://img.senjianlu.com/20211230221522.png" alt="导入"><br>
-<img src="https://img.senjianlu.com/20211230221601.png" alt="导入完成"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2016027af6.png" alt="导入"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20160ba8b4.png" alt="导入完成"></p>
 <blockquote>
 <p>参考<a href="https://blog.tedxiong.com/ERC-20_Token_Standard_and_Examples.html">以太坊 ERC20 Token 合约代码分析</a>一文，稍微对主实现代码做下解释：</p>
 <pre><code class="language-sol">/*
@@ -495,22 +503,22 @@ contract EIP20 is EIP20Interface {
 </blockquote>
 <p><strong>4、编译代码</strong><br>
 点击左侧的 <code>Solidity compiler</code> 按钮，并选择代码指定版本的编译器，点击编译：<br>
-<img src="https://img.senjianlu.com/20211230221827.png" alt="编译"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20161a32bd.png" alt="编译"><br>
 看到小绿钩出现代表编译完成了：<br>
-<img src="https://img.senjianlu.com/20211230222105.png" alt="编译完成"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20163327ff.png" alt="编译完成"></p>
 <p><strong>5、部署合约</strong><br>
 点击左侧的 <code>Deploy</code> 按钮，并检查你的 MetaMask 钱包当前是测试网络下的：<br>
-<img src="https://img.senjianlu.com/20220101145328.png" alt="Deploy"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ac31f7e7.png" alt="Deploy"><br>
 环境选择 <code>Injected Web3</code> 来连接 MetaMask 钱包：<br>
-<img src="https://img.senjianlu.com/20220101145446.png" alt="连接 MetaMask 钱包"><br>
-<img src="https://img.senjianlu.com/20220101145556.png" alt="MetaMask 钱包允许连接"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20dbc1dc40.png" alt="连接 MetaMask 钱包"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d210245cef7.png" alt="MetaMask 钱包允许连接"><br>
 连接完成后你就是合约创建者了：<br>
-<img src="https://img.senjianlu.com/20220101145653.png" alt="连接完成"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20cddbba8c.png" alt="连接完成"><br>
 其他的油费之类的不用管，直接做合约的进阶配置，还记得我在前面源码中标了注释的参数吗？就是要填那些！<br>
 展开：<br>
-<img src="https://img.senjianlu.com/20220101150014.png" alt="展开"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20f5086995.png" alt="展开"><br>
 参数和其解释：<br>
-<img src="https://img.senjianlu.com/20220101150111.png" alt="选项">  </p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e94f1702.png" alt="选项"> </p>
 <table>
 <thead>
 <tr>
@@ -543,26 +551,26 @@ contract EIP20 is EIP20Interface {
 </tbody>
 </table>
 <p>填写完成，确定没问题后点击 <code>transact</code> 按钮：<br>
-<img src="https://img.senjianlu.com/20220101150623.png" alt="点击 transact 按钮"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d208738c2c0.png" alt="点击 transact 按钮"><br>
 MetaMask 钱包会弹出并提示你部署这个合约需要的费用（没弹出的话请手动点击钱包）：<br>
-<img src="https://img.senjianlu.com/20220101150736.png" alt="合约费用"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20bd831dc6.png" alt="合约费用"><br>
 确认之后，稍等片刻看见钱包内余额少了，说明部署成功了：<br>
-<img src="https://img.senjianlu.com/20220101150838.png" alt="部署成功"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20861e8174.png" alt="部署成功"></p>
 <blockquote>
 <p>Remix 的控制台内也会打印成功信息：<br>
-<img src="https://img.senjianlu.com/20220101151006.png" alt="Remix 成功信息"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20b868ea29.png" alt="Remix 成功信息"></p>
 </blockquote>
 <p>点击 MetaMask 中的 <code>活动</code>：<br>
-<img src="https://img.senjianlu.com/20220101151120.png" alt="活动"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20f5c501f4.png" alt="活动"><br>
 点进刚刚的合约中，拉到下面点进最近的一条日志中：<br>
-<img src="https://img.senjianlu.com/20220101151210.png" alt="最近的一条日志"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20b650e375.png" alt="最近的一条日志"><br>
 这里的 To 就是你创建的智能合约（发的币）的地址了，复制一下：<br>
-<img src="https://img.senjianlu.com/20220101151334.png" alt="合约地址"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2017142476.png" alt="合约地址"><br>
 把这个合约地址（可以理解为币的种类）导入钱包即可：<br>
-<img src="https://img.senjianlu.com/20220101151454.png" alt="Import tokens"><br>
-<img src="https://img.senjianlu.com/20220101151558.png" alt="复制合约地址"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20171d83bd.png" alt="Import tokens"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20172b8d3d.png" alt="复制合约地址"><br>
 成功：<br>
-<img src="https://img.senjianlu.com/20220101151643.png" alt="成功"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201736e0e5.png" alt="成功"><br>
 说一句，转账币的操作消耗的是发起者的 ETH，因此玩的话还请留点测试 ETH 在钱包中。</p>
 <p>结束。</p>
 
@@ -572,7 +580,7 @@ MetaMask 钱包会弹出并提示你部署这个合约需要的费用（没弹�
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2021/12/smart-contracts-note-02/" title="基于以太坊 ETH 的智能合约学习（二）使用官方的 Remix IDE 一键发币体验整体流程" target="_blank" rel="external">https://senjianlu.com/2021/12/smart-contracts-note-02/</a>
+      <a href="https://bak.senjianlu.com/2021/12/smart-contracts-note-02/" title="基于以太坊 ETH 的智能合约学习（二）使用官方的 Remix IDE 一键发币体验整体流程" target="_blank" rel="external">https://bak.senjianlu.com/2021/12/smart-contracts-note-02/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -589,12 +597,12 @@ MetaMask 钱包会弹出并提示你部署这个合约需要的费用（没弹�
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2021/12/vps-iplc-01/" title="IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验"><i
+                <a href="https://bak.senjianlu.com/2021/12/vps-iplc-01/" title="IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://senjianlu.com/2021/12/vps-iplc-02/"
+                <a href="https://bak.senjianlu.com/2021/12/vps-iplc-02/"
                     title="IPLC 食用（二）PittQiao（彼得巧）家苏日 IPLC 线路 NAT 主机的使用体验"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
@@ -609,12 +617,12 @@ MetaMask 钱包会弹出并提示你部署这个合约需要的费用（没弹�
 <ul class="social-links">
     <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
             <i class="icon icon-github"></i></a></li>
-    <li><a href="https://senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
             <i class="icon icon-rss"></i></a></li>
 </ul>
   <div class="copyright">
     &copy;2019  -
-    2022
+    2023
     <div class="publishby">
         Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>
@@ -646,8 +654,8 @@ MetaMask 钱包会弹出并提示你部署这个合约需要的费用（没弹�
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://senjianlu.com/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
-<script src="https://senjianlu.com/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
 
 <script>
     (function (window) {
@@ -659,13 +667,13 @@ MetaMask 钱包会弹出并提示你部署这个合约需要的费用（没弹�
                 TAGS: '标签',
                 UNTITLED: '(未命名)',
             },
-            ROOT_URL: 'https:\/\/senjianlu.com',
-            CONTENT_URL: 'https:\/\/senjianlu.com\/searchindex.json ',
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
         };
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://senjianlu.com/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="1、安装 Nginx 并启动 安装 Nginx： yum -y install epel-release yum -y install nginx service nginx start # 设置开机启动 systemctl enable nginx 访问 IP 测试下是否能访问到页面，不能到话去开启下防火墙和安全组，搬瓦" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="1、安装 Nginx 并启动 安装 Nginx： yum -y install epel-release yum -y install nginx service nginx start # 设置开机启动 systemctl enable nginx 访问 IP 测试下是否能访问到页面，不能到话去开启下防火墙和安全组，搬瓦" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/centos7-trojan-server-for-bwg/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="1、安装 Nginx 并启动 安装 Nginx： yum -y install epel-release yum -y install nginx service nginx start # 设置开机启动 systemctl enable nginx 访问 IP 测试下是否能访问到页面，不能到话去开启下防火墙和安全组，搬瓦">
+
+<meta itemprop="wordCount" content="1190">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="1、安装 Nginx 并启动 安装 Nginx： yum -y install epel-release yum -y install nginx service nginx start # 设置开机启动 systemctl enable nginx 访问 IP 测试下是否能访问到页面，不能到话去开启下防火墙和安全组，搬瓦"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/centos7-trojan-server-for-bwg/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/centos7-trojan-server-for-bwg/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1190字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><strong>1、安装 Nginx 并启动</strong><br>
+安装 Nginx：</p>
+<pre><code class="language-bash">yum -y install epel-release
+yum -y install nginx
+service nginx start
+# 设置开机启动
+systemctl enable nginx
+</code></pre>
+<p>访问 IP 测试下是否能访问到页面，不能到话去开启下防火墙和安全组，搬瓦工不需要这些操作因此在本文中略过。<br>
+接着配置 Nginx：</p>
+<pre><code class="language-bash">cd /etc/nginx
+vi nginx.conf
+</code></pre>
+<pre><code class="language-bash"># nginx.conf
+    ...
+    ...
+    # ====== example.com ======
+    # === usa-bwg-01.example.com ===
+    server {
+        listen       80;
+        listen       [::]:80;
+        server_name  usa-bwg-01.example.com;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        # Let's Encrypt 证书认证（优先级最高放在最前面）
+        location ~ /.well-known {
+            root /usr/share/nginx;
+            allow all;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+        }
+    }
+    ...
+    ...
+</code></pre>
+<p>之后重启：</p>
+<pre><code class="language-bash">nginx -s reload
+service nginx restart
+</code></pre>
+<p><strong>2、安装 certbot 并申请证书</strong><br>
+安装：</p>
+<pre><code class="language-bash">yum -y install certbot
+</code></pre>
+<p>申请证书：</p>
+<pre><code class="language-bash">certbot certonly --webroot --agree-tos -v -t --email xxxxxx@qq.com -w /usr/share/nginx/ -d usa-bwg-01.example.com
+</code></pre>
+<blockquote>
+<p><strong>这里我出现过两个错误：</strong><br>
+① 搬瓦工上出现的证书过期错误：</p>
+<pre><code>...
+...
+    if 'timed out' in str(err) or 'did not complete (read)' in str(err):  # Python 2.6
+TypeError: __str__ returned non-string (type Error)
+An unexpected error occurred:
+TypeError: __str__ returned non-string (type Error)
+Please see the logfiles in /var/log/letsencrypt for more details.
+</code></pre>
+<p>想起来似乎是 2022 年上半年 Let&rsquo;s Encrypt 的证书过期过一次，于是检查了下服务器的根证书版本：</p>
+<pre><code class="language-bash">yum list updates -q | grep ca-certificates
+</code></pre>
+<p>返回的版本：</p>
+<pre><code class="language-bash">ca-certificates.noarch            2021.2.50-72.el7_9               updates
+</code></pre>
+<p>果然是过期了，更新下：</p>
+<pre><code class="language-bash"># 查看更新日志
+rpm -qa --changelog ca-certificates | head -n5
+# 安装更新
+yum -y update ca-certificates
+</code></pre>
+<p>之后再申请就会成功了。<br>
+② 阿里云上碰到的 python2 脚本相关导入出错：</p>
+<pre><code>...
+...
+  File &quot;/usr/lib/python2.7/site-packages/certbot/_internal/constants.py&quot;, line 6, in &lt;module&gt;
+    from acme import challenges
+  File &quot;/usr/lib/python2.7/site-packages/acme/challenges.py&quot;, line 11, in &lt;module&gt;
+    import requests
+  File &quot;/usr/lib/python2.7/site-packages/requests/__init__.py&quot;, line 58, in &lt;module&gt;
+    from . import utils
+  File &quot;/usr/lib/python2.7/site-packages/requests/utils.py&quot;, line 32, in &lt;module&gt;
+    from .exceptions import InvalidURL
+  File &quot;/usr/lib/python2.7/site-packages/requests/exceptions.py&quot;, line 10, in &lt;module&gt;
+    from urllib3.exceptions import HTTPError as BaseHTTPError
+  File &quot;/usr/lib/python2.7/site-packages/urllib3/__init__.py&quot;, line 10, in &lt;module&gt;
+    from .connectionpool import (
+  File &quot;/usr/lib/python2.7/site-packages/urllib3/connectionpool.py&quot;, line 31, in &lt;module&gt;
+    from .connection import (
+  File &quot;/usr/lib/python2.7/site-packages/urllib3/connection.py&quot;, line 45, in &lt;module&gt;
+    from .util.ssl_ import (
+  File &quot;/usr/lib/python2.7/site-packages/urllib3/util/__init__.py&quot;, line 4, in &lt;module&gt;
+    from .request import make_headers
+  File &quot;/usr/lib/python2.7/site-packages/urllib3/util/request.py&quot;, line 5, in &lt;module&gt;
+    from ..exceptions import UnrewindableBodyError
+ImportError: cannot import name UnrewindableBodyError
+</code></pre>
+<p>执行一下命令重新安装 python-requests 模块即可：</p>
+<pre><code>sudo pip uninstall requests
+sudo pip uninstall urllib3
+sudo yum remove python-urllib3
+sudo yum remove python-requests
+sudo yum install python-urllib3
+sudo yum install python-requests
+</code></pre>
+</blockquote>
+<p>申请完成后别忘记添加定时任务更新证书，防止 3 个月后证书过期：</p>
+<pre><code class="language-bash"># 配置定时任务
+crontab -e
+</code></pre>
+<pre><code class="language-bash"># 每 12 小时更新一下证书
+0 */12 * * * certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;
+</code></pre>
+<pre><code class="language-bash"># 刷新定时任务
+service crond restart
+</code></pre>
+<p><strong>3、安装 Trojan-Go</strong><br>
+<em>注：这里使用 Trojan-Go 的原因是其支持连接复用，比起普通的 Trojan 服务端<strong>建立连接</strong>会更快，当然对后续视频的下载速度不会有太大影响。Trojan 原版和 Go 版的安装配置可以说是一样的，如果你想要安装原版的话只需要切换下载压缩包的地址即可。</em><br>
+下载并解压：</p>
+<pre><code class="language-bash"># 下载
+yum -y install wget
+wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.10.6/trojan-go-linux-amd64.zip
+# 解压到 trojan-go 目录
+mkdir trojan-go
+yum -y install unzip
+unzip -d trojan-go/ trojan-go-linux-amd64.zip
+</code></pre>
+<blockquote>
+<p>原版：</p>
+<pre><code class="language-bash"># 下载
+yum -y install wget
+wget https://github.com/trojan-gfw/trojan/releases/download/v1.16.0/trojan-1.16.0-linux-amd64.tar.xz
+# 解压出 trojan 目录
+tar -xvf trojan-1.16.0-linux-amd64.tar.xz
+# 注意之后的操作中需要把 trojan-go 目录修改为 trojan
+</code></pre>
+</blockquote>
+<p>之后进入目录创建配置文件：</p>
+<pre><code class="language-bash">cd trojan-go
+vi config.json
+</code></pre>
+<p>配置内容在下方，修改下你的密码和域名即可，我这里的可执行文件 <code>trojan-go</code> 在 <code>/root/trojan-go/</code> 中，如果你和我不一样也请自己更改下：</p>
+<pre><code class="language-json">{
+  &quot;run_type&quot;: &quot;server&quot;,
+  &quot;local_addr&quot;: &quot;0.0.0.0&quot;,
+  &quot;local_port&quot;: 443,
+  &quot;remote_addr&quot;: &quot;127.0.0.1&quot;,
+  &quot;remote_port&quot;: 80,
+  &quot;log_level&quot;: 1,
+  &quot;log_file&quot;: &quot;/root/trojan-go/test.log&quot;,
+  &quot;password&quot;: [
+       &quot;YourPassword&quot;
+  ],
+  &quot;buffer_size&quot;: 32,
+  &quot;dns&quot;: [],
+  &quot;ssl&quot;: {
+    &quot;verify&quot;: true,
+    &quot;verify_hostname&quot;: true,
+      &quot;cert&quot;: &quot;/etc/letsencrypt/live/usa-bwg-01.example.com/fullchain.pem&quot;,
+      &quot;key&quot;: &quot;/etc/letsencrypt/live/usa-bwg-01.example.com/privkey.pem&quot;,
+    &quot;key_password&quot;: &quot;&quot;,
+    &quot;cipher&quot;: &quot;&quot;,
+    &quot;cipher_tls13&quot;: &quot;&quot;,
+    &quot;curves&quot;: &quot;&quot;,
+    &quot;prefer_server_cipher&quot;: false,
+    &quot;sni&quot;: &quot;usa-bwg-01.example.com&quot;,
+    &quot;alpn&quot;: [
+      &quot;http/1.1&quot;
+    ],
+    &quot;session_ticket&quot;: true,
+    &quot;reuse_session&quot;: true,
+    &quot;plain_http_response&quot;: &quot;&quot;,
+    &quot;fallback_port&quot;: 80,
+    &quot;fingerprint&quot;: &quot;firefox&quot;,
+    &quot;serve_plain_text&quot;: false
+  },
+  &quot;tcp&quot;: {
+    &quot;no_delay&quot;: true,
+    &quot;keep_alive&quot;: true,
+    &quot;reuse_port&quot;: false,
+    &quot;prefer_ipv4&quot;: false,
+    &quot;fast_open&quot;: false,
+    &quot;fast_open_qlen&quot;: 20
+  },
+  &quot;mux&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;concurrency&quot;: 8,
+    &quot;idle_timeout&quot;: 60
+  },
+  &quot;router&quot;: {
+    &quot;enabled&quot;: false,
+    &quot;bypass&quot;: [],
+    &quot;proxy&quot;: [],
+    &quot;block&quot;: [],
+    &quot;default_policy&quot;: &quot;proxy&quot;,
+    &quot;domain_strategy&quot;: &quot;as_is&quot;,
+    &quot;geoip&quot;: &quot;/root/trojan-go/geoip.dat&quot;,
+    &quot;geosite&quot;: &quot;/root/trojan-go/geosite.dat&quot;
+  },
+  &quot;websocket&quot;: {
+    &quot;enabled&quot;: false,
+    &quot;path&quot;: &quot;/&quot;,
+    &quot;hostname&quot;: &quot;usa-bwg-01.example.com&quot;,
+    &quot;obfuscation_password&quot;: &quot;&quot;,
+    &quot;double_tls&quot;: true,
+    &quot;ssl&quot;: {
+      &quot;verify&quot;: true,
+      &quot;verify_hostname&quot;: true,
+      &quot;cert&quot;: &quot;/etc/letsencrypt/live/usa-bwg-01.example.com/fullchain.pem&quot;,
+      &quot;key&quot;: &quot;/etc/letsencrypt/live/usa-bwg-01.example.com/privkey.pem&quot;,
+      &quot;key_password&quot;: &quot;&quot;,
+      &quot;prefer_server_cipher&quot;: false,
+      &quot;sni&quot;: &quot;usa-bwg-01.example.com&quot;,
+      &quot;session_ticket&quot;: true,
+      &quot;reuse_session&quot;: true,
+      &quot;plain_http_response&quot;: &quot;&quot;
+    }
+  }
+}
+</code></pre>
+<p>启动试下：</p>
+<pre><code class="language-bash">/root/trojan-go/trojan-go -config /root/trojan-go/config.json
+</code></pre>
+<blockquote>
+<p>如果跳出了请检查端口占用和日志。<br>
+端口占用查看：</p>
+<pre><code class="language-bash">yum -y install lsof
+lsof -i:443
+</code></pre>
+<p>日志:</p>
+<pre><code class="language-bash">cat /root/trojan-go/test.log
+</code></pre>
+</blockquote>
+<p>Clash 中的配置段：</p>
+<pre><code class="language-yaml">...
+...
+proxies:
+  - {name: Trojan-搬瓦工美国, type: trojan, server: usa-bwg-01.example.com, port: 443, password: YourPassword }
+...
+...
+</code></pre>
+<p><strong>4、将 Trojan-Go 注册为服务方便开机启动</strong><br>
+新建服务：</p>
+<pre><code class="language-bash">cd /usr/lib/systemd/system/
+vi trojan-go.service
+</code></pre>
+<p>内容：</p>
+<pre><code class="language-ini">[Unit]
+Description=trojan-go
+After=network.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/root/trojan-go/trojan-go -config /root/trojan-go/config.json
+Restart=on-failure
+RestartSec=10
+RestartPreventExitStatus=23
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>之后的控制命令就很简单了：</p>
+<pre><code class="language-bash"># 启动
+systemctl start trojan-go.service
+# 关闭
+systemctl stop trojan-go.service
+# 设置开机自启动
+systemctl enable trojan-go.service
+</code></pre>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/centos7-trojan-server-for-bwg/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/centos7-trojan-server-for-bwg/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/centos7-wildcord-ssl-certificate/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/centos7-swap/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具 - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="Redis Desktop Manager 在 Windows 下占用太多内存，且在 M1 版本的 Macbook 上安装老是出错，于是决定换成网页版的可视化工具。 注意：RedisInsight 无法配置账户密码认证，" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title>CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具 - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具" />
+<meta property="og:description" content="Redis Desktop Manager 在 Windows 下占用太多内存，且在 M1 版本的 Macbook 上安装老是出错，于是决定换成网页版的可视化工具。 注意：RedisInsight 无法配置账户密码认证，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-19T00:00:00+00:00" />
+
+<meta itemprop="name" content="CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具">
+<meta itemprop="description" content="Redis Desktop Manager 在 Windows 下占用太多内存，且在 M1 版本的 Macbook 上安装老是出错，于是决定换成网页版的可视化工具。 注意：RedisInsight 无法配置账户密码认证，"><meta itemprop="datePublished" content="2022-04-19T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-04-19T00:00:00+00:00" />
+<meta itemprop="wordCount" content="410">
+<meta itemprop="keywords" content="Docker,Redis," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具"/>
+<meta name="twitter:description" content="Redis Desktop Manager 在 Windows 下占用太多内存，且在 M1 版本的 Macbook 上安装老是出错，于是决定换成网页版的可视化工具。 注意：RedisInsight 无法配置账户密码认证，"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客地址：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
+                    class="tag-list-count">11</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">13</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/java/" class="tag-list-link">java</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
+                    class="tag-list-count">6</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">26</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/redis/" class="tag-list-link">redis</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="tag-list-link">小程序</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
+                    class="tag-list-count">13</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/09/dingding-applet-01/" class="title">钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-09-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-09-02</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/" class="title">CentOS7 下搭建 Trojan 服务端（附带搬瓦工机器的一些特殊配制）</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-07-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/" class="title">CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-16</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2022/04/centos7-docker-redisinsight/"
+    >CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/" class="article-date">
+  <time datetime="2022-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-19</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/"> 教程翻新 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/docker/"> Docker </a>
+    <a class="article-tag-link" href="/tags/redis/"> Redis </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2022/04/centos7-docker-redisinsight/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 410字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><a href="https://github.com/uglide/RedisDesktopManager">Redis Desktop Manager</a> 在 Windows 下占用太多内存，且在 M1 版本的 Macbook 上安装老是出错，于是决定换成网页版的可视化工具。<br>
+<strong>注意：RedisInsight 无法配置账户密码认证，因此请不要在公网服务器上部署！</strong></p>
+<hr>
+<p><strong>1、拉取 Docker 镜像</strong><br>
+Docker Hub 地址：<a href="https://hub.docker.com/r/redislabs/redisinsight/tags">https://hub.docker.com/r/redislabs/redisinsight/tags</a><br>
+执行：</p>
+<pre><code class="language-bash">docker pull redislabs/redisinsight:latest
+</code></pre>
+<p><strong>2、配置持久化和启动</strong><br>
+容器内的 <code>\db</code> 目录下会存放配置文件和数据，因此需要在宿主机上建立挂载用文件夹并映射以实现持久化：</p>
+<blockquote>
+<p>需要先设置好挂载用文件夹的权限，不然会出现 <code>PermissionError: [Errno 13] Permission denied: '/db/rsnaps'</code> 错误。</p>
+<pre><code class="language-bash">chown -R 1001 /rab/docker/redisinsight
+</code></pre>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d201c8ba35c.png" alt="PermissionError"></p>
+</blockquote>
+<pre><code class="language-bash">docker run --name redisinsight -d -v /rab/docker/redisinsight:/db -p 8001:8001 redislabs/redisinsight
+</code></pre>
+<p>启动后检查日志：</p>
+<pre><code class="language-bash">docker logs redisinsight
+</code></pre>
+<p>如果<strong>没有日志说明启动成功了</strong>，而出现了日志一般是出错了。</p>
+<p><strong>3、访问页面并连接至现有 Redis 数据库</strong><br>
+前往 <a href="http://127.0.0.1:8001">http://IP:8001</a> 访问可视化页面，第一次访问需要同意部分隐私条款：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201c998b63.png" alt="隐私条款"><br>
+选择我已经有 Redis 数据库：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201ca4f261.png" alt="我已经有 Redis 数据库"><br>
+我是在内网另一台服务器上自建的，因此选第一项：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201cb20c54.png" alt="选第一项"><br>
+填写连接信息：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201cbf093c.png" alt="填写连接信息"><br>
+之后就能看到该 Redis 数据库的运行情况了：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201cccd686.png" alt="运行情况"><br>
+可以编辑值或者运行命令：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201cdc0661.png" alt="编辑值"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201ce9e785.png" alt="运行命令"></p>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/" title="CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具" target="_blank" rel="external">https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" title="CentOS7 下通配符 SSL 证书的购买和配置"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/"
+                    title="CentOS7 下搭建 Trojan 服务端（附带搬瓦工机器的一些特殊配制）"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

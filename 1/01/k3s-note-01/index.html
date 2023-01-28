@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/k3s-note-01/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的">
+
+<meta itemprop="wordCount" content="1222">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/k3s-note-01/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/k3s-note-01/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1222字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的服务器，带上学生机组个集群，后面再把项目都做成 Docker 运行应该就能保证稳定性了。</p>
+<hr>
+<p>本次用来构建集群的服务器共有 4 台，另有 1 台用作面板安装。为什么不将面板部署到节点服务器是因为 K3s 安装时默认会安装 Ingress 做负载均衡，它会监听 80 和 443 端口并在 Nginx 之前就处理请求并返回“404 Page not found”，甚是烦人索性抽离出来，同时注意 Rancher 需要最小 2H4G 的配置来允许，不然会频繁 CPU 占用 100% 并出现 503 错误。<br>
+因为使用了外置数据库的原因，K3s server 节点不再需要安装 3 台（3 台的限制是为了保证内置数据库同步并推举出主节点），但是我还是习惯安装三台。
+<em>注：服务器间均通过内网建立连接。</em><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20054c66d3.png" alt="结构图"></p>
+<hr>
+<p><strong>开始安装前，我强烈建议您在安全组和防火墙处开放全部端口，K3s 的官方文档都结构混乱，您很难排查端口相关的错误。在后期全部安装完毕后您再进行针对性关闭危险端口也不迟！</strong></p>
+<p><strong>1、准备外部数据库连接</strong><br>
+我这里使用的外置的 MySQL 数据库，编辑环境变量以添加 server 用的数据库连接：</p>
+<pre><code class="language-bash">vi /etc/profile
+</code></pre>
+<pre><code class="language-bash">...
+# 在最末尾添加数据库连接
+# 自行替换数据库连接参数
+# MySQL
+export K3S_DATASTORE_ENDPOINT=&quot;mysql://$username:$password@tcp(127.0.0.1:3306)/$database&quot;
+# PostgreSQL
+export K3S_DATASTORE_ENDPOINT=&quot;postgres://$username:$password@127.0.0.1:5432/$database?sslmode=disable&quot;
+</code></pre>
+<pre><code class="language-bash"># 使环境变量生效
+source /etc/profile
+</code></pre>
+<blockquote>
+<p>PostgreSQL 连接不禁用 SSL 连接的话后续安装并启动 K3s 时会报以下错误：</p>
+<pre><code class="language-bash">...
+...
+-- Unit k3s.service has begun starting up.  
+Sep 27 20:46:52 VM-9-9-centos sh[5029]: + /usr/bin/systemctl is-enabled --quiet nm-cloud-setup.service  
+Sep 27 20:46:52 VM-9-9-centos sh[5029]: Failed to get unit file state for nm-cloud-setup.service: No such file or directory  
+Sep 27 20:46:52 VM-9-9-centos k3s[5036]: time=&quot;2021-09-27T20:46:52.707510605+08:00&quot; level=info msg=&quot;Starting k3s v1.21.4+k3s1 (3e250fdb)&quot;  
+Sep 27 20:46:52 VM-9-9-centos k3s[5036]: time=&quot;2021-09-27T20:46:52.714638844+08:00&quot; level=fatal msg=&quot;starting kubernetes: preparing server: creating storage endpoint: building kine: pq: SSL is not enabled on the server&quot;  
+Sep 27 20:46:52 VM-9-9-centos systemd[1]: k3s.service: main process exited, code=exited, status=1/FAILURE  
+Sep 27 20:46:52 VM-9-9-centos systemd[1]: Failed to start Lightweight Kubernetes.  
+-- Subject: Unit k3s.service has failed  
+-- Defined-By: systemd  
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-deve  
+...
+...
+</code></pre>
+</blockquote>
+<p><strong>2、安装 server 节点</strong><br>
+在设置好数据库连接环境变量之后开始安装，使用<a href="https://docs.rancher.cn/docs/k3s/installation/ha/_index#2-%E5%90%AF%E5%8A%A8-server-%E8%8A%82%E7%82%B9">官方提供的脚本</a>：<br>
+<em>注：这里安装时会自动读取环境中和 K3s 有关的变量，因此不再需要指定数据库连接。</em></p>
+<pre><code class="language-bash">curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.8+k3s1 sh -s - server
+</code></pre>
+<blockquote>
+<p>境内服务器使用 cnrancher.com 的源</p>
+<pre><code class="language-bash">curl -sfL http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn INSTALL_K3S_VERSION=v1.20.8+k3s1 sh -s - server
+</code></pre>
+</blockquote>
+<p>安装完后查看节点：</p>
+<pre><code class="language-bash">k3s kubectl get nodes
+</code></pre>
+<p>出现以下信息则说明安装完成。</p>
+<pre><code class="language-bash">NAME            STATUS   ROLES                  AGE   VERSION
+vm-9-9-centos   Ready    control-plane,master   18m   v1.21.4+k3s1
+</code></pre>
+<p>获取以下 node-token 方便之后部署其他节点：</p>
+<pre><code class="language-bash">cat /var/lib/rancher/k3s/server/node-token
+</code></pre>
+<pre><code class="language-bash">K1082501c0eaxxxxxxxx77059a4fff524xxx589b9::server:1f2d8a3xxxxx7a1e2e4xxx60
+</code></pre>
+<blockquote>
+<p>副 server 节点的安装不仅需要使用同一个数据库，还需要配置 node-token：</p>
+<pre><code class="language-bash"># K3s server 用 MySQL 数据库连接
+export K3S_DATASTORE_ENDPOINT=&quot;mysql://$username:$password@tcp(127.0.0.1:3306)/$database&quot;
+# 主节点的 Token
+export K3S_TOKEN=&quot;K1082501c0eaxxxxxxxx77059a4fff524xxx589b9::server:1f2d8a3xxxxx7a1e2e4xxx60&quot;
+</code></pre>
+</blockquote>
+<p><strong>3、安装 agent 节点</strong><br>
+仍然是先配置环境变量：</p>
+<pre><code class="language-bash">vi /etc/profile
+</code></pre>
+<p><strong>注意：agent 节点的环境变量中不需要配置数据库的连接信息！</strong></p>
+<pre><code class="language-bash">...
+# 在最末尾添加 server 节点的 node-token
+export K3S_TOKEN=&quot;K1082501c0eaxxxxxxxx77059a4fff524xxx589b9::server:1f2d8a3xxxxx7a1e2e4xxx60&quot;
+# server 节点的地址，端口默认为 6443
+# 必须使用 HTTPS 协议：Only https:// URLs are supported for K3S_URL ip address
+export K3S_URL=&quot;https://10.0.12.0:6443&quot;
+</code></pre>
+<pre><code class="language-bash"># 使环境变量生效
+source /etc/profile
+</code></pre>
+<p>使用和 server 一样的脚本进行安装，但是设置了 K3S_URL 这个环境变量，因此<a href="https://docs.rancher.cn/docs/k3s/installation/install-options/_index#%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85%E7%9A%84%E9%80%89%E9%A1%B9">默认选择为安装 agent 程序</a>：</p>
+<pre><code class="language-bash"># agent 节点安装
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.8+k3s1 sh -
+</code></pre>
+<blockquote>
+<p>境内服务器使用 cnrancher.com 的源</p>
+<pre><code class="language-bash">curl -sfL http://rancher-mirror.cnrancher.com/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn INSTALL_K3S_VERSION=v1.20.8+k3s1 sh -
+</code></pre>
+</blockquote>
+<p>安装完成后理论上会自己启动，这时回 server 节点再检查下总节点个数就能看到新的 agent 节点了：</p>
+<pre><code class="language-bash">[root@VM-9-9-centos CA]# kubectl get nodes
+NAME            STATUS   ROLES                  AGE     VERSION
+vm-9-8-centos   Ready    &lt;none&gt;                 3m18s   v1.21.4+k3s1
+vm-9-9-centos   Ready    control-plane,master   10h     v1.21.4+k3s1
+</code></pre>
+<p><strong>4、节点卸载</strong><br>
+server 节点</p>
+<pre><code class="language-bash">/usr/local/bin/k3s-uninstall.sh
+</code></pre>
+<p>agent 节点</p>
+<pre><code class="language-bash">/usr/local/bin/k3s-agent-uninstall.sh
+</code></pre>
+<p><strong>注意：卸载完之后清理残留以防止重装后出现“Unable to connect to the server: x509: certificate signed by unknown authority”的错误，如果出现的话请卸载、清理并重装以尝试解决！</strong></p>
+<pre><code class="language-bash">rm -rf $HOME/.kube
+</code></pre>
+<p><strong>5、一些可能用的到指令</strong><br>
+节点状态查看：</p>
+<pre><code class="language-bash">kubectl describe node $hostname
+</code></pre>
+<p>本章结束，下章安装 <a href="https://rancher.com/">Rancher Labs</a> 作为管理界面。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/k3s-note-01/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/k3s-note-01/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/k3s-note-02-01/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/japanese-shi-yi-bei-dong/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

@@ -3,861 +3,938 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://senjianlu.com/categories/</loc>
+    <loc>https://bak.senjianlu.com/categories/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/posts/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/tags/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2022/09/dingding-applet-01/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/tags/linux/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/</loc>
+    <lastmod>2022-04-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/tags/docker/</loc>
+    <lastmod>2022-04-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/tags/redis/</loc>
+    <lastmod>2022-04-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/</loc>
     <lastmod>2022-04-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/tags/linux/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/posts/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/tags/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/</loc>
-    <lastmod>2022-04-16T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/</loc>
+    <loc>https://bak.senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/</loc>
     <lastmod>2022-04-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/docker/</loc>
+    <loc>https://bak.senjianlu.com/tags/javascript/</loc>
     <lastmod>2022-04-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/javascript/</loc>
+    <loc>https://bak.senjianlu.com/tags/rabbitmq/</loc>
     <lastmod>2022-04-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/rabbitmq/</loc>
-    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/2022/03/centos7-docker-rabbitmq-error/</loc>
+    <loc>https://bak.senjianlu.com/2022/03/centos7-docker-rabbitmq-error/</loc>
     <lastmod>2022-03-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://bak.senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2022-03-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2022/02/centos7-docker-odoo/</loc>
+    <loc>https://bak.senjianlu.com/2022/02/centos7-docker-odoo/</loc>
     <lastmod>2022-02-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2022/02/eth-miner-note-03/</loc>
+    <loc>https://bak.senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
     <lastmod>2022-02-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <loc>https://bak.senjianlu.com/2022/02/eth-miner-note-03/</loc>
     <lastmod>2022-02-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/k3s/</loc>
+    <loc>https://bak.senjianlu.com/tags/k3s/</loc>
     <lastmod>2022-02-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2022/02/k3s-note-05/</loc>
+    <loc>https://bak.senjianlu.com/2022/02/k3s-note-05/</loc>
     <lastmod>2022-02-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-02-10T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/</loc>
+    <loc>https://bak.senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/</loc>
     <lastmod>2022-01-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/postgresql/</loc>
+    <loc>https://bak.senjianlu.com/tags/postgresql/</loc>
     <lastmod>2022-01-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/python/</loc>
+    <loc>https://bak.senjianlu.com/tags/python/</loc>
     <lastmod>2022-01-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2022/01/hugo-comment/</loc>
+    <loc>https://bak.senjianlu.com/2022/01/hugo-comment/</loc>
     <lastmod>2022-01-21T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/</loc>
+    <loc>https://bak.senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/</loc>
     <lastmod>2022-01-21T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2022/01/centos7-docker-peer2profit/</loc>
+    <loc>https://bak.senjianlu.com/2022/01/centos7-docker-peer2profit/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/</loc>
+    <loc>https://bak.senjianlu.com/2022/01/centos7-http-and-socks5-proxy/</loc>
     <lastmod>2022-01-08T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/clash/</loc>
+    <loc>https://bak.senjianlu.com/tags/clash/</loc>
     <lastmod>2022-01-08T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2022/01/clash-contents/</loc>
+    <loc>https://bak.senjianlu.com/2022/01/clash-contents/</loc>
     <lastmod>2022-01-08T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/apollo/</loc>
+    <loc>https://bak.senjianlu.com/tags/apollo/</loc>
     <lastmod>2022-01-06T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2022/01/apollo-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2022/01/apollo-note-01/</loc>
     <lastmod>2022-01-06T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/</loc>
+    <loc>https://bak.senjianlu.com/2022/01/mpd-video-download/</loc>
+    <lastmod>2022-01-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/tags/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2022-01-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2021/12/smart-contracts-note-02-supplement/</loc>
     <lastmod>2021-12-30T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/vps-iplc-02/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/vps-iplc-02/</loc>
     <lastmod>2021-12-29T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</loc>
+    <loc>https://bak.senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</loc>
     <lastmod>2021-12-29T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2021-12-29T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://senjianlu.com/2021/12/smart-contracts-note-02/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/smart-contracts-note-02/</loc>
     <lastmod>2021-12-28T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/vps-iplc-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/vps-iplc-01/</loc>
     <lastmod>2021-12-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/eth-miner-note-02/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/eth-miner-note-02-bak/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/eth-miner-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/eth-miner-note-02/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2021/12/eth-miner-note-01/</loc>
     <lastmod>2021-12-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/cloudflare-workers-image/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/cloudflare-workers-image/</loc>
     <lastmod>2021-12-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/centos7-docker-firefox-in-browser/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/centos7-docker-firefox-in-browser/</loc>
     <lastmod>2021-12-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/smart-contracts-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/smart-contracts-note-01/</loc>
     <lastmod>2021-12-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/mongodb/</loc>
+    <loc>https://bak.senjianlu.com/tags/mongodb/</loc>
     <lastmod>2021-12-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/mongodb-note-03/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/mongodb-note-03/</loc>
     <lastmod>2021-12-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/windows11-clock/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/windows11-clock/</loc>
     <lastmod>2021-12-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/gullo-nat-vps/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/gullo-nat-vps/</loc>
     <lastmod>2021-12-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/12/hugo-google-adsense/</loc>
+    <loc>https://bak.senjianlu.com/2021/12/hugo-google-adsense/</loc>
     <lastmod>2021-12-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/mongodb-note-02/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/mongodb-note-04/</loc>
+    <lastmod>2021-11-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2021/11/mongodb-note-02/</loc>
     <lastmod>2021-11-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/windows11-android/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/windows11-android/</loc>
     <lastmod>2021-11-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/</loc>
+    <loc>https://bak.senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/</loc>
     <lastmod>2021-11-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/datax/</loc>
+    <loc>https://bak.senjianlu.com/tags/datax/</loc>
     <lastmod>2021-11-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/datax-note-03/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/datax-note-02/</loc>
     <lastmod>2021-11-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/datax-note-02/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/datax-note-03/</loc>
     <lastmod>2021-11-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/datax-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/datax-note-01/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/postgresql-note-01-supplement/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/postgresql-note-01-supplement/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/vscode-github-push-error/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/vscode-github-push-error/</loc>
     <lastmod>2021-11-14T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/clash-note-03/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/clash-note-03/</loc>
     <lastmod>2021-11-08T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/fiddler/</loc>
+    <loc>https://bak.senjianlu.com/tags/fiddler/</loc>
     <lastmod>2021-11-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/fiddler-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/fiddler-note-01/</loc>
     <lastmod>2021-11-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/centos7-docker-unblock-netease-music/</loc>
     <lastmod>2021-11-04T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/clash-note-04/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/clash-note-04/</loc>
     <lastmod>2021-11-04T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/postgresql-note-06/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/clash-note-02/</loc>
+    <lastmod>2021-11-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2021/11/clash-note-05/</loc>
+    <lastmod>2021-11-03T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2021/11/postgresql-note-06/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/11/cloudflare-ssl-tls/</loc>
+    <loc>https://bak.senjianlu.com/2021/11/cloudflare-ssl-tls/</loc>
     <lastmod>2021-11-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/plesk-install-nextcloud/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/plesk-install-nextcloud/</loc>
     <lastmod>2021-10-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/centos7-nezha-monitor/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/centos7-nezha-monitor/</loc>
     <lastmod>2021-10-28T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/mongodb-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/mongodb-note-01/</loc>
     <lastmod>2021-10-27T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/clash-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/clash-note-01/</loc>
     <lastmod>2021-10-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/centos7-shadowsocks-server/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/centos7-shadowsocks-server/</loc>
     <lastmod>2021-10-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/postgresql-note-05/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/postgresql-note-05/</loc>
     <lastmod>2021-10-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/openwrt-note-03/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/openwrt-note-03/</loc>
     <lastmod>2021-10-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/pve-openwrt-ikuai/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/openwrt-note-04/</loc>
+    <lastmod>2021-10-25T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://bak.senjianlu.com/2021/10/pve-openwrt-ikuai/</loc>
     <lastmod>2021-10-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/openwrt-note-02/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/openwrt-note-02/</loc>
     <lastmod>2021-10-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/openwrt-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/openwrt-note-01/</loc>
     <lastmod>2021-10-23T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/github-action-push-to-docker-hub/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/github-action-push-to-docker-hub/</loc>
     <lastmod>2021-10-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/k3s-note-04/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/k3s-note-04/</loc>
     <lastmod>2021-10-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/centos7-docker/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/centos7-docker/</loc>
     <lastmod>2021-10-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</loc>
     <lastmod>2021-10-06T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/k3s-note-03/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/k3s-note-03/</loc>
     <lastmod>2021-10-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/10/nginx-note-03/</loc>
+    <loc>https://bak.senjianlu.com/2021/10/nginx-note-03/</loc>
     <lastmod>2021-10-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/centos7-iptables/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/centos7-iptables/</loc>
     <lastmod>2021-09-30T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/k3s-note-02-02/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/k3s-note-02-02/</loc>
     <lastmod>2021-09-29T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/centos7-openssl-ca/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/centos7-openssl-ca/</loc>
     <lastmod>2021-09-28T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/k3s-note-02-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/k3s-note-02-01/</loc>
     <lastmod>2021-09-28T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/k3s-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/k3s-note-01/</loc>
     <lastmod>2021-09-27T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/postgresql-note-04/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/postgresql-note-04/</loc>
     <lastmod>2021-09-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/centos7-jupyter/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/centos7-jupyter/</loc>
     <lastmod>2021-09-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/ubuntu18-rust-server-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/ubuntu18-rust-server-01/</loc>
     <lastmod>2021-09-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/%E6%B8%B8%E6%88%8F/</loc>
+    <loc>https://bak.senjianlu.com/tags/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2021-09-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/nextcloud-google-analytics/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/nextcloud-google-analytics/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/centos7-gun-screen/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/centos7-gnu-screen/</loc>
     <lastmod>2021-09-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/09/centos7-matplotlib-chinese/</loc>
+    <loc>https://bak.senjianlu.com/2021/09/centos7-matplotlib-chinese/</loc>
     <lastmod>2021-09-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/centos7-docker-command-proxy/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/centos7-docker-command-proxy/</loc>
     <lastmod>2021-07-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/centos7-code-server/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/centos7-code-server/</loc>
     <lastmod>2021-07-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/centos7-minio-error/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/centos7-minio-error/</loc>
     <lastmod>2021-07-21T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/linux-command-01/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/linux-command-01/</loc>
     <lastmod>2021-07-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/centos7-minio/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/centos7-minio/</loc>
     <lastmod>2021-07-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/centos7-docker-zabbix/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/centos7-docker-zabbix/</loc>
     <lastmod>2021-07-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</loc>
     <lastmod>2021-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</loc>
     <lastmod>2021-07-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/nginx-note-02/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/nginx-note-02/</loc>
     <lastmod>2021-07-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/07/centos7-swap/</loc>
+    <loc>https://bak.senjianlu.com/2021/07/centos7-swap/</loc>
     <lastmod>2021-07-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/</loc>
+    <loc>https://bak.senjianlu.com/tags/%E6%97%A5%E8%AF%AD/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</loc>
+    <loc>https://bak.senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</loc>
     <lastmod>2021-06-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</loc>
+    <loc>https://bak.senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</loc>
     <lastmod>2021-06-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/</loc>
+    <loc>https://bak.senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/</loc>
     <lastmod>2021-06-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/06/japanese-shi-yi-bei-dong/</loc>
+    <loc>https://bak.senjianlu.com/2021/06/japanese-shi-yi-bei-dong/</loc>
     <lastmod>2021-06-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2021/06/centos7-socks5-gost/</loc>
+    <loc>https://bak.senjianlu.com/2021/06/centos7-socks5-gost/</loc>
     <lastmod>2021-06-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/12/centos7-jdk/</loc>
+    <loc>https://bak.senjianlu.com/2020/12/centos7-jdk/</loc>
     <lastmod>2020-12-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/12/centos7-install-rabbitmq/</loc>
+    <loc>https://bak.senjianlu.com/2020/12/centos7-install-rabbitmq/</loc>
     <lastmod>2020-12-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/tags/java/</loc>
+    <loc>https://bak.senjianlu.com/tags/java/</loc>
     <lastmod>2020-12-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/12/nginx-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2020/12/nginx-note-01/</loc>
     <lastmod>2020-12-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/05/hugo-auto-build/</loc>
+    <loc>https://bak.senjianlu.com/2020/05/hugo-auto-build/</loc>
     <lastmod>2020-05-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/02/postgresql-note-03/</loc>
+    <loc>https://bak.senjianlu.com/2020/02/postgresql-note-02/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/02/postgresql-note-02/</loc>
+    <loc>https://bak.senjianlu.com/2020/02/postgresql-note-03/</loc>
     <lastmod>2020-02-03T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/02/postgresql-note-01/</loc>
+    <loc>https://bak.senjianlu.com/2020/02/postgresql-note-01/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/pve-synology/</loc>
+    <loc>https://bak.senjianlu.com/2020/01/pve-synology/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/pve-lede-ikuai-bak/</loc>
+    <loc>https://bak.senjianlu.com/2020/01/pve-lede-ikuai-bak/</loc>
     <lastmod>2020-01-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/picgo-github/</loc>
+    <loc>https://bak.senjianlu.com/2020/01/picgo-github/</loc>
     <lastmod>2020-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/hugo-github-pages/</loc>
+    <loc>https://bak.senjianlu.com/2020/01/hugo-github-pages/</loc>
     <lastmod>2020-01-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</loc>
+    <loc>https://bak.senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/2020/01/centos7-ssl-error/</loc>
+    <loc>https://bak.senjianlu.com/2020/01/centos7-ssl-error/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/about/</loc>
+    <loc>https://bak.senjianlu.com/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://senjianlu.com/series/</loc>
+    <loc>https://bak.senjianlu.com/series/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

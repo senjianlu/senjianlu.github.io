@@ -2,192 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apollo on 森见鹿的博客 </title>
-    <link>https://senjianlu.com/tags/apollo/</link>
+    <link>https://bak.senjianlu.com/tags/apollo/</link>
     <description>Recent content in Apollo on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://senjianlu.com/tags/apollo/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://bak.senjianlu.com/tags/apollo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部</title>
+      <link>https://bak.senjianlu.com/2022/09/dingding-applet-01/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2022/09/dingding-applet-01/</guid>
+      <description>外出跑业务的员工有在移动端操作管理系统内客户、商机的需求，考虑到目前企业内部使用的是钉钉作为 IM，做钉钉小程序很合适因此直接开干。 关于使用的</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下搭建 Trojan 服务端（附带搬瓦工机器的一些特殊配制）</title>
+      <link>https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/</guid>
+      <description>1、安装 Nginx 并启动 安装 Nginx： yum -y install epel-release yum -y install nginx service nginx start # 设置开机启动 systemctl enable nginx 访问 IP 测试下是否能访问到页面，不能到话去开启下防火墙和安全组，搬瓦</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具</title>
+      <link>https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/</link>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/</guid>
+      <description>Redis Desktop Manager 在 Windows 下占用太多内存，且在 M1 版本的 Macbook 上安装老是出错，于是决定换成网页版的可视化工具。 注意：RedisInsight 无法配置账户密码认证，</description>
+    </item>
+    
+    <item>
       <title>CentOS7 下通配符 SSL 证书的购买和配置</title>
-      <link>https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/</link>
+      <link>https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/</link>
       <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/</guid>
+      <guid>https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/</guid>
       <description>一个边缘服务涉及到的服务器和子域名实在太多，自签证书在每个服务器上都配置一遍想想就觉得麻烦，而且有些子域名需要暴露给外部访问，在用户机器人上</description>
     </item>
     
     <item>
       <title>CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</title>
-      <link>https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/</link>
+      <link>https://bak.senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/</link>
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/</guid>
+      <guid>https://bak.senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/</guid>
       <description>自用的油猴脚本需要追加一个消息推送的功能，决定用 RabbitMQ 消费者的方式实现，但是看了下 JavaScript 连接 RabbitMQ 一般都是加装 STOMP 相关的插件使其支持 WebSocket 连接方式。 我的 RabbitMQ 是 Docker</description>
     </item>
     
     <item>
       <title>CentOS7 下 Docker 启动的 RabbitMQ 遇到 Virtual host / experienced an error on node rabbit@41xx9xx9xxc6 and may be inaccessible 问题的解决</title>
-      <link>https://senjianlu.com/2022/03/centos7-docker-rabbitmq-error/</link>
+      <link>https://bak.senjianlu.com/2022/03/centos7-docker-rabbitmq-error/</link>
       <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/03/centos7-docker-rabbitmq-error/</guid>
+      <guid>https://bak.senjianlu.com/2022/03/centos7-docker-rabbitmq-error/</guid>
       <description>消费者离线了两天，结果 RabbitMQ 就崩了&amp;hellip;&amp;hellip;. 1、错误情况 管理页面的错误消息如下： Virtual host / experienced an error on node rabbit@41xx9xx9xxc6 and may be inaccessible 2、调查 首先去</description>
     </item>
     
     <item>
       <title>CentOS7 下用 Docker 部署 Odoo 开源 ERP 系统（企业资源规划及客户关系管理系统）</title>
-      <link>https://senjianlu.com/2022/02/centos7-docker-odoo/</link>
+      <link>https://bak.senjianlu.com/2022/02/centos7-docker-odoo/</link>
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/02/centos7-docker-odoo/</guid>
+      <guid>https://bak.senjianlu.com/2022/02/centos7-docker-odoo/</guid>
       <description>身边有个需求需要对接现有的进销存系统再做管理，于是就找了一下有无开源软件，发现了这个 24k Star 的项目 Odoo，文档完善且社区活跃，同时官方有提供付</description>
     </item>
     
     <item>
       <title>以太坊矿机搭建（三）从 ethermine.org 矿池中将小额 ETH 收益提现</title>
-      <link>https://senjianlu.com/2022/02/eth-miner-note-03/</link>
+      <link>https://bak.senjianlu.com/2022/02/eth-miner-note-03/</link>
       <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/02/eth-miner-note-03/</guid>
+      <guid>https://bak.senjianlu.com/2022/02/eth-miner-note-03/</guid>
       <description>虽然 ethermine.org 对以太坊主网这条链上的 ETH 设定的最低起提数量为 0.005，但是 需要支付 0.001 ETH 将近 20 块钱的矿工费，想想还是有些肉疼，听说走 Polygon 这条链的损耗较小</description>
     </item>
     
     <item>
       <title>K3s 学习（五）四个月的使用中出现的问题、集群的重装升级和进阶配置</title>
-      <link>https://senjianlu.com/2022/02/k3s-note-05/</link>
+      <link>https://bak.senjianlu.com/2022/02/k3s-note-05/</link>
       <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/02/k3s-note-05/</guid>
+      <guid>https://bak.senjianlu.com/2022/02/k3s-note-05/</guid>
       <description>从 2021 年 10 月初开始将项目迁移到 K3s 集群，掐指一算到现在也四个月了，使用过程中基本是大问题没有、小问题不断&amp;hellip;&amp;hellip; 直到早上</description>
     </item>
     
     <item>
       <title>Mac 下 pip3 install psycopg2 出现的错误和解决</title>
-      <link>https://senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/</link>
+      <link>https://bak.senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/</link>
       <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/</guid>
+      <guid>https://bak.senjianlu.com/2022/01/mac-pip3-install-psycopg2-error/</guid>
       <description>Mac 上配置开发环境时遇到的问题，留个记录。 1、Error: pg_config executable not found 具体错误为： ... ... Error: pg_config executable not found. Please add the directory containing pg_config to the PATH or specify the full executable path with the option: python setup.py build_ext --pg-config /path/to/pg_config build ...</description>
     </item>
     
     <item>
       <title>Hugo 静态博客使用 utterances 来开启评论功能</title>
-      <link>https://senjianlu.com/2022/01/hugo-comment/</link>
+      <link>https://bak.senjianlu.com/2022/01/hugo-comment/</link>
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/01/hugo-comment/</guid>
+      <guid>https://bak.senjianlu.com/2022/01/hugo-comment/</guid>
       <description>在建设这个博客的初期本来是想开放评论功能的，但是由于第一次接触 Hugo 这样静态博客，页面上的内容都是通过模板生成，实在是生疏，稍微配置了一下发现不</description>
     </item>
     
     <item>
       <title>CentOS7 下用 Docker 部署 Peer2Profit 出售流量赚取收益</title>
-      <link>https://senjianlu.com/2022/01/centos7-docker-peer2profit/</link>
+      <link>https://bak.senjianlu.com/2022/01/centos7-docker-peer2profit/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/01/centos7-docker-peer2profit/</guid>
+      <guid>https://bak.senjianlu.com/2022/01/centos7-docker-peer2profit/</guid>
       <description>之前在主机论坛看到了这个帖子：挖 Peer2Profit 网赚回血保姆级教程 支持 Windows/Debian/Ubuntu/Android，想到自己还有 40 来台小鸡，</description>
     </item>
     
     <item>
       <title>CentOS7 下搭建 HTTP 和 SOCKS5 代理服务</title>
-      <link>https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/</link>
+      <link>https://bak.senjianlu.com/2022/01/centos7-http-and-socks5-proxy/</link>
       <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/01/centos7-http-and-socks5-proxy/</guid>
+      <guid>https://bak.senjianlu.com/2022/01/centos7-http-and-socks5-proxy/</guid>
       <description>如果你没有不过墙的 IPLC 线路的话，请不要在境外服务器上搭建 HTTP 或 SOCKS5 代理，连上以后流量稍微一大就会使 IP 被墙。 HTTP 和 SOCKS5 代理搭建的方式有很多：使用 Tinyproxy 搭建 HTTP</description>
     </item>
     
     <item>
       <title>本博客关于 Clash 的博文的目录（OpenWrt 软路由系统下的 Clash 插件的安装、服务器上节点的搭建和 Clash 中的配置）</title>
-      <link>https://senjianlu.com/2022/01/clash-contents/</link>
+      <link>https://bak.senjianlu.com/2022/01/clash-contents/</link>
       <pubDate>Sat, 08 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/01/clash-contents/</guid>
+      <guid>https://bak.senjianlu.com/2022/01/clash-contents/</guid>
       <description>趁着周末把博客目前所有文章的标签重新整理了一下，虽然创立之初是为了记录自己工作中碰到的问题和解决的，但是 Clash 和科学相关的内容意外的多，索性整理</description>
     </item>
     
     <item>
       <title>分布式配置中心 Apollo 的使用（一）构建 Apollo 的 Docker 容器镜像并连接到现有数据库</title>
-      <link>https://senjianlu.com/2022/01/apollo-note-01/</link>
+      <link>https://bak.senjianlu.com/2022/01/apollo-note-01/</link>
       <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2022/01/apollo-note-01/</guid>
+      <guid>https://bak.senjianlu.com/2022/01/apollo-note-01/</guid>
       <description>优化之前组的 K3s 集群的时候，想到每次配置文件的小修小改都要重启一大堆容器实在麻烦，只怪最初没考虑完全，趁这次机会起一个配置中心来解决这个麻烦。</description>
     </item>
     
     <item>
+      <title>.pmd 和 .m4s 格式媒体流视频的下载和拼接</title>
+      <link>https://bak.senjianlu.com/2022/01/mpd-video-download/</link>
+      <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2022/01/mpd-video-download/</guid>
+      <description>教程网站买了会员还不让下载，索性自己爬了。 关于 MPD 这个流媒体传输格式的具体信息可以看这篇文章：自适应流媒体传输（四）——深入理解 MPD，本章只</description>
+    </item>
+    
+    <item>
       <title>基于以太坊 ETH 的智能合约学习（二） 补足：CentOS7 下使用 Docker 部署 remix-ide 智能合约开发环境</title>
-      <link>https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/</link>
+      <link>https://bak.senjianlu.com/2021/12/smart-contracts-note-02-supplement/</link>
       <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/12/smart-contracts-note-02-supplement/</guid>
+      <guid>https://bak.senjianlu.com/2021/12/smart-contracts-note-02-supplement/</guid>
       <description>如果你不喜欢官方的 Remix 或是想使用自己的域名来访问在线 Remix，那么就请继续看下去吧！ 我并不推荐使用 npm 的安装方式，一方面是麻烦，另一方面官方 GitHub</description>
     </item>
     
     <item>
       <title>IPLC 食用（二）PittQiao（彼得巧）家苏日 IPLC 线路 NAT 主机的使用体验</title>
-      <link>https://senjianlu.com/2021/12/vps-iplc-02/</link>
+      <link>https://bak.senjianlu.com/2021/12/vps-iplc-02/</link>
       <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/12/vps-iplc-02/</guid>
+      <guid>https://bak.senjianlu.com/2021/12/vps-iplc-02/</guid>
       <description>主职是日本客户做开发的，公司提供了专线因此个人服务器基本也都买在日本了，再加上现在住在江苏，考虑专门上一条 IPLC 专线来连接个人服务器，就相中了这</description>
     </item>
     
     <item>
       <title>基于以太坊 ETH 的智能合约学习（二）使用官方的 Remix IDE 一键发币体验整体流程</title>
-      <link>https://senjianlu.com/2021/12/smart-contracts-note-02/</link>
+      <link>https://bak.senjianlu.com/2021/12/smart-contracts-note-02/</link>
       <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/12/smart-contracts-note-02/</guid>
+      <guid>https://bak.senjianlu.com/2021/12/smart-contracts-note-02/</guid>
       <description>从零开始学习 Solidity 语言的时候突然回想起上大学对着键盘敲 C 的日子，老师明知道台下一半的学生出了校园甚至是这门课结束了就再也不会碰 C，却依然很负责任</description>
     </item>
     
     <item>
       <title>IPLC 食用（一）wikihost（维基主机）家 IPLC 线路流量转发的使用体验</title>
-      <link>https://senjianlu.com/2021/12/vps-iplc-01/</link>
+      <link>https://bak.senjianlu.com/2021/12/vps-iplc-01/</link>
       <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/12/vps-iplc-01/</guid>
+      <guid>https://bak.senjianlu.com/2021/12/vps-iplc-01/</guid>
       <description>随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这</description>
-    </item>
-    
-    <item>
-      <title>以太坊矿机搭建（二）安装 Mining OS（Minerstat OS）专业挖矿系统一键挖矿</title>
-      <link>https://senjianlu.com/2021/12/eth-miner-note-02/</link>
-      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/12/eth-miner-note-02/</guid>
-      <description>上一章讲了硬件选配和组装，这章讲适合小白的专业挖矿系统 Mining OS（Minerstat OS）的安装、矿软件的设置和启动，当然也包括路由器上（Ope</description>
-    </item>
-    
-    <item>
-      <title>以太坊矿机搭建（一）矿机平台的硬件挑选和组装</title>
-      <link>https://senjianlu.com/2021/12/eth-miner-note-01/</link>
-      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/12/eth-miner-note-01/</guid>
-      <description>趁着币价开始下跌，挖矿热潮暂退的间隙，开始组自己的第一台矿机了。并没有赚钱的打算，只是为了接触区块链最基础的一环来为自己的智能合约学习做铺垫</description>
-    </item>
-    
-    <item>
-      <title>Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</title>
-      <link>https://senjianlu.com/2021/12/cloudflare-workers-image/</link>
-      <pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/12/cloudflare-workers-image/</guid>
-      <description>虽然一直都知道存在无法在境内正常加载文章中图片的问题，但是嫌麻烦一直就拖着。最近接触到了 Cloudflare Workers，实践反代的时候发现异常简单，顺便就</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下用 Docker 部署 Firefox 以实现浏览器套浏览器访问被屏蔽的网站</title>
-      <link>https://senjianlu.com/2021/12/centos7-docker-firefox-in-browser/</link>
-      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/12/centos7-docker-firefox-in-browser/</guid>
-      <description>公司用的日本专线，狡猾的日本人为了防止上班摸鱼把博客园都屏蔽了，使用中文搜索问题检索结果永远只有 CSDN 和内容农场&amp;hellip;&amp;hellip;</description>
     </item>
     
   </channel>

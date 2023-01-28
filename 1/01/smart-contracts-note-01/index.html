@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="翻出了刚开始交易时候的收益图，不到 1600 USDT 均价的 ETH 忍痛割肉，现在涨到了 4000 U 左右，抱着困惑去重新了解了一遍 Ethereum 的愿景是什么、怎么运作和如何基于它开发" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="翻出了刚开始交易时候的收益图，不到 1600 USDT 均价的 ETH 忍痛割肉，现在涨到了 4000 U 左右，抱着困惑去重新了解了一遍 Ethereum 的愿景是什么、怎么运作和如何基于它开发" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/smart-contracts-note-01/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="翻出了刚开始交易时候的收益图，不到 1600 USDT 均价的 ETH 忍痛割肉，现在涨到了 4000 U 左右，抱着困惑去重新了解了一遍 Ethereum 的愿景是什么、怎么运作和如何基于它开发">
+
+<meta itemprop="wordCount" content="1218">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="翻出了刚开始交易时候的收益图，不到 1600 USDT 均价的 ETH 忍痛割肉，现在涨到了 4000 U 左右，抱着困惑去重新了解了一遍 Ethereum 的愿景是什么、怎么运作和如何基于它开发"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/smart-contracts-note-01/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/smart-contracts-note-01/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1218字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>翻出了刚开始交易时候的收益图，不到 1600 USDT 均价的 ETH 忍痛割肉，现在涨到了 4000 U 左右，抱着困惑去重新了解了一遍 Ethereum 的愿景是什么、怎么运作和如何基于它开发自己的智能合约，突然觉得这才互联网该有的样子：数以千计的以太坊客户端构建出稳定的运行环境，降低开发者的入行门槛；严格计算工作量来逼迫开发者精简功能和优化算法；去中心化以尽可能减少监管带来的影响&hellip;&hellip;<br>
+听起来真的是很美好，但是实践总是检验真理的唯一标准，何况 ETH 还推出了测试链供开发和调试，尝试自己写一下合约也是为未来做准备吧。</p>
+<hr>
+<p>本章只记录如何安装和使用 Chrome 插件版的 MetaMask 小狐狸钱包，它就是一个虚拟币的钱包，即使你不做智能合约的开发，单纯的进行币币交易那么也可以使用它。</p>
+<p><strong>1、下载和安装 MetaMask</strong><br>
+Chrome 插件市场：<a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN">Chrome 网上应用店</a><br>
+MetaMask 插件地址：<a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=zh-CN">MetaMask</a><br>
+直接点击<code>添加至 Chrome</code> 即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201053421f.png" alt="添加至 Chrome"><br>
+确认一下：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20106a62bc.png" alt="确认"><br>
+稍等片刻就添加好了：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2010728701.png" alt="添加成功"></p>
+<blockquote>
+<p>顺带一提，官方只提供了三种安装方式，Chrome 插件、IOS 客户端和安卓客户端：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201061cebb.png" alt="三种安装方式"><br>
+而点击了 <code>Install MetaMask for Chrome</code> 按钮后是直接跳转到 Chrome 插件市场的，也就是说官方并未提供过所谓的插件压缩包供手动安装使用。如果你无法科学访问 Google 服务但是想使用 MetaMask，<strong>请去解决科学的问题而不是使用别人提供的插件压缩包</strong>。</p>
+</blockquote>
+<p><strong>2、开始使用 MetaMask</strong><br>
+点击一下小狐狸：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20107a4df8.png" alt="点击"><br>
+第一次使用需要创建或是绑定钱包地址，你会看到如下页面：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201082845c.png" alt="第一次使用"><br>
+开始使用后选择创建钱包账户和助记词：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20108b18f4.png" alt="创建钱包账户和助记词"><br>
+选择同意：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2010945615.png" alt="选择同意"><br>
+初始化密码：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20109cfc7f.png" alt="初始化密码"><br>
+视频教程直接跳过即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2010a994d2.png" alt="跳过视频教程"><br>
+记录下助记词：</p>
+<blockquote>
+<p><strong>注意：助记词相当重要，请抄下后物理存储，并且不要告诉任何人，它是找回你 MetaMask 钱包账户的唯一关键。</strong></p>
+</blockquote>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d2010b37dd5.png" alt="记录助记词"><br>
+之后会有一次助记词的确认，我这里忘记截图了，确认后就能看到：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2010bc7f0a.png" alt="完成全部"><br>
+全部完成：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2010c7665a.png" alt="成功"><br>
+之后你再点击小狐狸插件，就可以直接看到钱包内容了：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2010d0824b.png" alt="钱包内容"></p>
+<p><strong>3、从交易所将 ETH 提至钱包</strong><br>
+有币了再写。</p>
+<p><strong>4、添加币安智能链并将 BNB 提至钱包</strong><br>
+在没有配置其他链（网络）之前，你只能在 MetaMask 钱包上进行以太坊主网络上币的转账等操作，而无法提取币安链上的 BNB 或波场链上的 USDT (TRC20) 到钱包。<br>
+这里以添加币安的链为例子，你在玩链游的时候可能会用到。<br>
+关于币安链和以太坊链的不同：<a href="https://academy.binance.com/zh/articles/binance-smart-chain-vs-ethereum-what-s-the-difference">币安智能链与以太坊有何不同？</a> <br>
+官方文档：<a href="https://academy.binance.com/zh/articles/connecting-metamask-to-binance-smart-chain">在币安智能链中关联MetaMask钱包</a><br>
+① 添加网络：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2010daa12c.png" alt="添加网络"><br>
+② 填入币安链的网络信息：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2010f5ab0e.png" alt="填入币安链的网络信息"></p>
+<blockquote>
+<p>官方文档中有记载：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2010e9b9ce.png" alt="币安链的网络信息"></p>
+</blockquote>
+<p>保存后看见 <code>Smart Chain</code> 网络就说明成功了：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2011015cd6.png" alt="Smart Chain 1"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201109a5e4.png" alt="Smart Chain 2"><br>
+③ 提取 BUSD 和 BNB 到钱包<br>
+选择 BUSD 提现：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20111a45f4.png" alt="BUSD 提现"><br>
+将 MetaMask 钱包上的地址复制到提币地址处：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2011289e88.png" alt=""><br>
+选择 <code>BSC</code> 网络：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201132a2f1.png" alt="BSC 网络"><br>
+校验：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20113bbb3a.png" alt="校验 1"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201145af49.png" alt="校验 2"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20114e6f61.png" alt="校验 3"></p>
+<blockquote>
+<p>校验也可以跳过，你可以通过确认 MetaMask 以太坊网络钱包地址和币安的相同来校验，虽然无法跨链转币，但是你可以通过相同的地址来找回币，具体参考币安官方文档对币安智能链的解释。</p>
+</blockquote>
+<p>输入数量后点击<code>提现</code>并通过验证码确认：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20115ba90f.png" alt="提现"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2011653831.png" alt="令牌等确认之后"><br>
+大概 2 分钟后币就到 MetaMask 钱包了：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20119be822.png" alt="提现成功"></p>
+<blockquote>
+<p>如果你的钱包里之前没有 BUSD 的话，可能需要添加下 Token：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20116e2754.png" alt="Import tokens"><br>
+输入 BUSD 的合约地址：<a href="https://bscscan.com/token/0xe9e7cea3dedca5984780bafc599bd69add087d56">0xe9e7cea3dedca5984780bafc599bd69add087d56</a> 并添加：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201185c738.png" alt="添加"><br>
+确认即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2011923670.png" alt="确认"></p>
+</blockquote>
+<p>BNB 同理：<br>
+<em>注：如果确认 BUSD 转账成功了，可以直接把地址保存到地址簿中，下次直接使用即可。</em><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2011aaff9e.png" alt="BNB 提现"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2011b42201.png" alt="BNB 提现成功"></p>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/smart-contracts-note-01/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/smart-contracts-note-01/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/smart-contracts-note-02-supplement/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/pve-synology/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

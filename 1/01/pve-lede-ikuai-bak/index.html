@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="此教程由于初版结构混乱，已废弃，请参考新版（更新于 2021-10-24）：PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理 起因仅仅是不满足" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="此教程由于初版结构混乱，已废弃，请参考新版（更新于 2021-10-24）：PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理 起因仅仅是不满足" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/pve-lede-ikuai-bak/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="此教程由于初版结构混乱，已废弃，请参考新版（更新于 2021-10-24）：PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理 起因仅仅是不满足">
+
+<meta itemprop="wordCount" content="3707">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="此教程由于初版结构混乱，已废弃，请参考新版（更新于 2021-10-24）：PVE 下 OpenWrt 纯净系统 &#43; 爱快双软路由部署配置文件的整理 起因仅仅是不满足"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/pve-lede-ikuai-bak/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/pve-lede-ikuai-bak/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3707字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>此教程由于初版结构混乱，已废弃，请参考新版（更新于 2021-10-24）：<a href="https://senjianlu.com/2021/10/pve-openwrt-ikuai/">PVE 下 OpenWrt 纯净系统 + 爱快双软路由部署配置文件的整理</a></p>
+<hr>
+<p>起因仅仅是不满足现在的科学上网速度，于是就花了点时间研究了下软路由，当然性能够的路由器是可以直接安装 LEDE 的，但是手头正好闲下来一块亮机的 200ge，索性就再组台小机器来当软路由吧。<br>
+不过我不推荐 200ge 作为软路由的cpu，不仅功耗大，而且只有2个核心，LEDE 和爱快各占用一个以后就不能再安装群晖或是其他虚拟机，容易造成性能浪费的情况。</p>
+<hr>
+<p><strong>环境</strong>：ProXmoX VE<br>
+<strong>需要时间</strong>：3小时左右<br>
+<strong>原教程</strong>：<a href="https://www.youtube.com/watch?v=-ofQ3PgOIsI">【悟空5kong】PVE下部署 LEDE+黑群晖 NAS 双系统（J1900 软路由）</a><br>
+<a href="https://www.youtube.com/watch?v=wef8artq7lo">上集- PVE (Proxmox VE) 安装双软路由 爱快+LEDE 保姆级教程</a><br>
+<a href="https://www.youtube.com/watch?v=Yj7u97MISJg">下集- PVE (Proxmox VE) 安装双软路由 爱快+LEDE 保姆级教程</a></p>
+<hr>
+<p><strong>配置单和价格</strong><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffea31a81.png" alt="配置"></p>
+<hr>
+<p><strong>所需的软件及下载地址</strong><br>
+所有文件 (Google Drive)：<a href="https://drive.google.com/open?id=1vKsXSHBc3etPTQ7tRx3AP1ZLK5Nt03qj">PVE 下 LEDE+爱快 双软路由部署 所需文件</a><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffeab83cc.png" alt="文件"></p>
+<hr>
+<p><strong>从这里正式开始操作系统的安装和配置过程。</strong><br>
+<strong>注意：除了软路由本机，你还需要一台自己的电脑包括显示器鼠标和键盘。同时如果你是拨号上网，你还需要知道自己的运营商账号密码！</strong><br>
+<em>注：操作系统及软路由的安装都较为简单，繁琐的主要是配置的过程，涉及到网卡上网口的切换以及同步 DNS 和网关的修改，推荐在看博文之前首先过一遍视频教程，PVE 和 LEDE 的安装参照悟空，而爱快和 LEDE 的网口映射参照 Video Talk。</em></p>
+<p>1、首先安装 PVE 系统，安装过程类似于 Windows 操作系统：下载 .iso 文件拷贝进 U 盘，然后开机过程中按 Del 键进入 BIOS，选择 U 盘启动来进行安装。<br>
+<img src="https://img.senjianlu.com/20200113215340.png" alt="选择第一个进行安装" title="选择第一个进行安装"><br>
+<img src="https://img.senjianlu.com/20200113215731.png" alt="安装到硬盘上" title="安装到硬盘上"><br>
+<img src="https://img.senjianlu.com/20200113215905.png" alt="选择中国" title="选择中国"><br>
+<img src="https://img.senjianlu.com/20200113215959.png" alt="设置密码和邮箱" title="设置密码和邮箱"></p>
+<ul>
+<li>Management Interface（网卡）：选默认的第一个，之后也做PVE的管理网口</li>
+<li>Hostname（域名）：可以瞎填</li>
+<li>IP Address：<strong>10.10.10.254</strong> 以后通过这个IP访问PVE系统，需要和网关同一网段</li>
+<li>Netmask（子网掩码）：<strong>255.255.255.0</strong> 即可，基本默认都是这个</li>
+<li>Getway（网关）：<strong>10.10.10.253</strong> 爱快的后台地址</li>
+<li>DNS Server：<strong>10.10.10.253</strong> 和网关设置一样的即可<br>
+<em>如果不想麻烦推荐和图片一样设置，后续配置可以照抄。</em></li>
+</ul>
+<p><img src="https://img.senjianlu.com/20200113220144.png" alt="网关等设置" title="网关等设置"><br>
+<img src="https://img.senjianlu.com/20200113221057.png" alt="安装完成后重启" title="安装完成后重启"><br>
+重启过程中拔下u盘，重启后出现以下界面即说明PVE操作系统已经安装完成。<br>
+<img src="https://img.senjianlu.com/20200113221308.png" alt="安装完成出现地址" title="安装完成出现地址"></p>
+<p>2、在 PVE 系统安装完成后，需要将电脑连接到软路由进行接下来的操作，网线的连接比较简单：一头连接正在使用的电脑，<strong>另一头连接刚刚配置的 PVE 连接网口</strong>，一般情况下是主板的网口，如果配置的是网卡上的网口，那么离 PCIe 连接口最远的一般就是一号网口。<br>
+物理连接完成后，还需要配置本机的 IP 和网关等才能进入 PVE 后台。<br>
+<img src="https://img.senjianlu.com/20200113.png" alt="打开网络属性" title="打开网络属性"></p>
+<ul>
+<li>IP 地址：保证和 PVE 虚拟机的 IP 在同一网段</li>
+<li>子网掩码：默认的 255.255.255.0</li>
+<li>默认网关：和 PVE 的相同</li>
+<li>DNS：不配置自动获取即可</li>
+</ul>
+<p><img src="https://img.senjianlu.com/20200113223540.png" alt="具体配置" title="具体配置"><br>
+打开浏览器，输入 PVE 安装完成后显示的地址，注意是 <strong>https</strong>://10.10.10.254:<strong>8006</strong>/ 前缀和端口号不要忘记。<br>
+<img src="https://img.senjianlu.com/20200113224105.png" alt="注意协议和端口号" title="注意协议和端口号"><br>
+<em>注：可能有安全提示，直接跳过即可。</em></p>
+<ul>
+<li>用户名：root</li>
+<li>密码：PVE 安装时设置的密码</li>
+<li>语言：默认英文，选择为中文</li>
+</ul>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffae01696.png" alt="登录"><br>
+进入系统的网口选项下，可以看见有一个桥接网口已经建立，端口从属显示与 enp1so 对应，就是第一个网口，意味着第一个网口就被占用了。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffaec7d82.png" alt="桥接网口为管理口"><br>
+接下来打开所有物理网口的自动启动。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffafb20aa.png" alt="打开网口的自动启动"><br>
+为其他所有的空余网口建立虚拟网口为桥接做准备。<br>
+建立的过程很简单，记住上面物理网口的名称，创建一个虚拟网口，<strong>只需要再桥接端口填入物理网卡名称即可</strong>。<br>
+<img src="https://img.senjianlu.com/20200113225152.png" alt="创建虚拟网口" title="创建虚拟网口"><br>
+<img src="https://img.senjianlu.com/20200113225302.png" alt="填写" title="只需要填桥接端口，其他不需要填写"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffb2597a7.png" alt="检查"><br>
+所有的网口都同样操作即可。一一对应检查完后网口就配置完成了。</p>
+<p>3、接下来开始创建虚拟机，原理和 Windows 上使用 VMware Workstation Player 等创建虚拟机一样。<br>
+首先来创建 LEDE 对应的虚拟机，这一部分参考悟空的视频教程更加简单。<br>
+点击创建虚拟机按钮。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffb337c21.png" alt="新建虚拟机">
+第一步没有需要特殊配置的。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffb3e0ddb.png" alt="一般"><br>
+选择不使用任何介质，这里的安装方法是 SSH 连接至 PVE 后直接命令行安装，然后将这个虚拟机挂载在安装完成的文件夹上，更加快捷。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffb478d2a.png" alt="操作系统"><br>
+硬盘不需要任何操作，反正等下不用这个盘。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffb5ab1a3.png" alt="硬盘"><br>
+CPU 核心一核就够了。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffb649e5a.png" alt="CPU"><br>
+内存推荐 2G。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffb6e0339.png" alt="内存"><br>
+桥接网口选择管理口即可，模型推荐 E1000，Video Talk 之后爱快等都会用E100进行配置。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffbaccf3e.png" alt="网络"><br>
+检查无误点击完成即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffb8b4b66.png" alt="确认"><br>
+接着进行<strong>添加网卡</strong>的操作，为所有虚拟网口在这台虚拟机中配置桥接。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffb9889ac.png" alt="添加"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffba45528.png" alt="配置"><br>
+接着在本机上下载安装 MobaXterm，准备连接 PVE 系统。<br>
+打开新建一个连接，截图是编辑但也啥差别。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffbc25686.png" alt="连接"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20a78d838b.png" alt="连接"><br>
+输入密码，点击 Yes 连接成功。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e8a2a5be.png" alt="输入密码"><br>
+拖拽虚拟机安装文件和转换工具进软路由系统中。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20c5e46d2e.png" alt="转移文件"><br>
+接下来</p>
+<pre><code class="language-bash">ls
+</code></pre>
+<p>确保文件转移成功，接着为 img2kvm 添加可执行权限，并开始执行 .img 文件的转换</p>
+<pre><code class="language-bash">chmod +x img2kvm
+./img2kvm lede.img 101 vm-101-disk-1
+</code></pre>
+<p><em>101 是虚拟机的序号</em><br>
+<img src="https://img.senjianlu.com/20200113235203.png" alt="具体界面" title="安装过程"><br>
+接下来回到浏览器的PVE后台界面，可以看到多出来一个未使用的磁盘，这就是刚刚转换完的，无视后缀是 disk-1 还是 disk-2 ，双击，选择添加即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20c8b556a4.png" alt="新增"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e300a64b.png" alt="新增"><br>
+接着选择 <strong>&ldquo;选项&rdquo;</strong>，<strong>&ldquo;引导顺序&rdquo;</strong> 更改为刚刚挂载上的新硬盘即可。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3c65a489.png" alt="引导顺序"><br>
+<strong>注意：接下来直接重启软路由，断电重启也可以！</strong><br>
+然后回来点击虚拟机，可能 LEDE 显示会没有反应，点击随意按一个键就可以了。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d21010bec8e.png" alt="完成"><br>
+<strong>至此，最有可能出错的 LEDE 安装完成，配置的事等到爱快配置完后进行。</strong><br>
+<em>如果你是光纤，不需要拨号，那可以跳过接下来的爱快的安装与配置。</em></p>
+<p>4、接下来开始安装爱快软路由。<br>
+一样新建虚拟机，此界面的名称可以自由更改，其他保持默认即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d206d15206c.png" alt="一般"><br>
+存储不用改，.iso 介质选刚刚上传的 iKuai 就可以了，类型 Linux 版本也不用变。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20fe7556dc.png" alt="iso"><br>
+硬盘 2G 就够了，配置如图。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e377daab.png" alt="硬盘"><br>
+CPU 配置也是一核就够了。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20fbf7b827.png" alt="CPU"><br>
+内存的设置要注意，新版本爱快最低 4G 内存，如果你的内存不够，需要选择较低版本。
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffc545086.png" alt="内存"><br>
+网络的配置和 LEDE 一样，管理口对应的虚拟网口和 E1000。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3cb7fd37.png" alt="网络"><br>
+核对后直接完成即可。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3cc56aca.png" alt="完成"><br>
+创建完成后，去虚拟机的硬件管理界面，当前只有一个默认网口，也是当时配置的PVE的管理网口，同时它也是只是一个 LAN 口，LAN 口通俗来讲就是出网的口，而 WAN 口是进网的口，爱快的作用是拨号，因此我们需要新建一个 WAN 口：选择添加网络设备。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffc7c5a81.png" alt="添加wan口"><br>
+选择最后一个端口，物理上就是离 PCIe 连接口最近的网口。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3ce8f6d6.png" alt="配置"><br>
+接着启动虚拟机即可。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3cf63a24.png" alt="启动虚拟机"><br>
+爱快的安装还没有结束，进入虚拟机页面，还需要选择安装，如图输入，等待安装完成后的自动重启。如果重启后没有画面或是端口显示断开，按下回车刷新就行了。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d036ccf.png" alt="安装"><br>
+<img src="https://img.senjianlu.com/20200114003234.png" alt="完成" title="启动完成"><br>
+进入系统后，设置 LAN 口 IP：<strong>10.10.10.253</strong><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d1d895b.png" alt="设置ip"><br>
+接着在浏览器地址栏输入 <strong>10.10.10.253</strong> 便可进去 iKuai 的后台了，账号密码均为 <strong>admin</strong><br>
+<em>登录后会提示修改管理员密码，改不改都无所谓</em><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d2bd957.png" alt="登录"><br>
+登录进去以后可以看到我们预先配置的两个网口，LAN 口是绿色的说明正在被正常使用，这个口就是我们设置的 PVE 管理口兼 LAN 口，而 WAN 口还是灰色的，需要我们点进去绑定以下刚刚新建的网卡。<br>
+<strong>注意：此时将家庭数据中心拉出来的网线接到设置的 WAN 口对应的物理网口上！准备进行拨号上网！</strong><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d39e08b.png" alt="绑定wan"><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d4631ac.png" alt="绑定即可"><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d5291fb.png" alt="拨号"><br>
+填入运营商账号密码，然后拨号。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d5ea787.png" alt="拨号"><br>
+这边显示已连接说明爱快已经拨号上网成功了。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d6c3417.png" alt="成功"><br>
+接下来配置 DHCP 服务端，选择 DHCP 设置 DHCP 服务端，进行填写。<br>
+<em>注：DHCP 协议的功能为集中的管理、分配 IP 地址。</em></p>
+<ul>
+<li>客户端地址：覆盖网段内的所有 IP 即可。</li>
+<li>子网掩码：默认的 255.255.255.0</li>
+<li>网关：10.10.10.252 就是 LEDE 的后台地址</li>
+<li>DNS：如果以科学上网为主选 8.8.8.8 不然就用网络所属运营商的</li>
+</ul>
+<p><img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d7901ac.png" alt="DHCP服务端"><br>
+保存后刷新页面，确认服务正常，爱快软路由的配置就全部完成了。
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d87b573.png" alt="服务正常"><br>
+<strong>总之，爱快主要负责拨号上网和提供 DHCP 服务，在配置完成之后，可以先验证下本机是否有网络在进行下一步操作。</strong></p>
+<p>5、配置 LEDE 软路由。首先回到 LEDE 的系统界面，输入以下命令去更改 LEDE 的 IP 地址。</p>
+<pre><code class="language-bash">vi /etc/config/network
+</code></pre>
+<p><img src="https://image.senjianlu.com/i/2023/01/26/63d1f3d99d33d.png" alt="更改ip"><br>
+方向键控制光标找到这一行，按以下 &ldquo;i&rdquo; 键进入编辑模式，更改成 <strong>10.10.10.252</strong> 就是你想要的 LEDE 的后台 IP 地址。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffd5e3cd6.png" alt="更改ip"><br>
+编辑完成后，按下 &ldquo;Esc&rdquo; 键，左下角有冒号出来后，输入 &ldquo;wq&rdquo; 保存并退出。
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffd6ca5bd.png" alt="编辑完成后退出"><br>
+<strong>之后输入</strong></p>
+<pre><code class="language-bash">reboot
+</code></pre>
+<p><strong>重启 LEDE 软路由。</strong>
+接着就可以在本机的浏览器上输入 10.10.10.252 进入 LEDE 软路由的后台了，默认密码是 <strong>koolshare</strong><br>
+进入后台后首先来配置网口。<br>
+<img src="https://img.senjianlu.com/20200114195904.png" alt="配置" title="选择 网络 接口"><br>
+选择 LAN 口这一行，点击 编辑。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffd947d86.png" alt="lan口"><br>
+首先在物理设置部分将所有的网口都勾选上，因为有爱快的情况下 LEDE 不需要 WAN 口。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffdb052b0.png" alt="勾选所有端口"><br>
+然后回到基本设置，如图设置。</p>
+<ul>
+<li>IP：LEDE 后台地址 10.10.10.252</li>
+<li>网关：爱快的后台地址 10.10.10.253</li>
+<li>DNS 服务器：和刚刚一样填写即可</li>
+</ul>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffdd25c41.png" alt="配置基本设置"><br>
+接着下滑，到 DHCP 服务器部分，因为 LEDE 是作为爱快下的二级路由存在的，我希望所有的 DHCP 服务都由 LEDE 来提供而不是不具有科学上网功能的爱快来提供，因此要去掉 <strong>忽略此接口</strong> 的勾选。然后还要去高级设置中，再把 <strong>强制</strong> 的勾勾上。<br>
+<img src="https://img.senjianlu.com/20200114200914.png" alt="去掉勾选" title="去掉勾选"><br>
+<img src="https://img.senjianlu.com/20200114201219.png" alt="勾上强制" title="勾上强制"><br>
+<strong>接着保存即可。</strong><br>
+由于 LEDE 用不到 WAN 口，所以将 WAN 口和 WAN6 的接口绑定到空的接口上就可以了。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffe07f515.png" alt="wan口"><br>
+<img src="https://img.senjianlu.com/20200114201518.png" alt="wan6口" title="绑定至空的接口即可"><br>
+<strong>至此 LEDE 的安装和配置就全部完成了，修改以下本机的网络设置，将 IP 和 DNS 都勾选至自动获取，看看能不能上网吧！</strong><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffe3b7772.png" alt="自动获取"></p>
+<p>6、确保可以上网后，我们回到 LEDE 的后台，准备进行科学上网等的配置操作。<br>
+点击左侧菜单中的 酷软中心，进入的时候如果提示更新，千万不要去更新，新版本会有大量的软件无法使用。
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffe48967b.png" alt="不更新"><br>
+一般情况下，即使你不更新进入酷软中心，也无法再在商城找到科学上网的工具，在 19 年 6 月份的更新中，酷软就将这几个插件删去了。你可以选择去下载网友提供的包离线安装，但很大几率上是不兼容新版本系统的，这里推荐使用酷软的系统备份还原，直接将系统回复至有插件的版本。<br>
+选择 系统 备份/升级<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffe7383cb.png" alt="备份"><br>
+选择我上面提供的老版本，再点击上传备份。上传之后系统会自动重启。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffe828884.png" alt="上传备份"><br>
+<strong>等待重启完成后，再进入酷软中心就可以看到消失的科学上网插件了！</strong><br>
+节点的配置就不再阐述了，SSR 和 SS 订阅的稳定性在我实际用下来后觉得并不好，不如只在电脑端开启相应代理，而 V2Ray 则比较稳定，基本全天 24 小时节点都不会出现断连情况。</p>
+<blockquote>
+<p>推荐2家供应商：<br>
+<a href="https://renzhe.cloud/auth/register?code=5IP7">忍者云</a> <em>有线路提供 V2Ray 代理，稳定</em><br>
+<a href="https://www.ustravel.cloud/aff.php?aff=3351">奇幻之旅</a> <em>便宜实在</em></p>
+</blockquote>
+<p><strong>至此，PVE 下 LEDE+爱快 双软路由的部署就全部完成了，好好享受世界吧！</strong></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/pve-lede-ikuai-bak/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/pve-lede-ikuai-bak/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/pve-openwrt-ikuai/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/postgresql-note-06/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

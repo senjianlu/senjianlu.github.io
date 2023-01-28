@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/pve-synology/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本">
+
+<meta itemprop="wordCount" content="1442">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/pve-synology/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/pve-synology/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1442字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本之间的文件共享。</p>
+<hr>
+<p><strong>环境</strong>：ProXmoX VE<br>
+<strong>需要时间</strong>：0.5 小时左右<br>
+<strong>原教程</strong>：<a href="https://www.youtube.com/watch?v=-ofQ3PgOIsI">【悟空5kong】PVE 下部署 LEDE+黑群晖 NAS 双系统（J1900 软路由）</a></p>
+<hr>
+<p><strong>配置方面</strong><br>
+在已经成型的软路由基础上，新增了两块西数 1T 的紫盘。<br>
+<strong>注意</strong>：紫盘主要用作监控存盘，只有 5400 转，普通家用上 7200 转的蓝盘组 RAID1 即可。</p>
+<p><strong>所需的软件及下载地址</strong><br>
+所有文件 (Google Drive)：<a href="https://drive.google.com/open?id=1qSgbXGAZt6OOBTFtc93eVRby-aQZO2Im">PVE 下 黑群晖安装所需文件</a></p>
+<hr>
+<p><strong>黑群晖的安装和配置比较简单，不需要设置网卡之类的，所以直接开始就行了。</strong></p>
+<p>1、首先在 PVE 下新建虚拟机作为黑群晖的容器。<br>
+先将 .iso 光盘镜像文件 (XPEnoboot_DS3615xs_5.2-5967.1..iso) 上传，这个将作为虚拟机的启动引导。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1fff3ce227.png" alt="上传"><br>
+接着创建虚拟机，并将其编号按顺序设置为 102，注意这个编号要记住，之后挂载硬盘的时候会用到。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1fff49d18e.png" alt="创建虚拟机"><br>
+操作系统界面选择刚刚上传的 .iso 文件作为引导。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1fff56dc98.png" alt="引导"><br>
+硬盘的配置默认即可，如果你的系统硬盘只有 32G 的话可以缩小，反正也不会用来做存储盘。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20cff98522.png" alt="硬盘设置"><br>
+如果黑群晖只用来做文件存储而不装大量套件的话，CPU 设置一核心即可。<br>
+<em>亲测即使是传输大量照片等小文件的情况下，200ge 的一核占用也只在 50% 左右。</em>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d209993e49f.png" alt="CPU"><br>
+内存同理，看需求情况，但是2G确实已经很够用了。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d205d715a44.png" alt="内存"><br>
+<strong>这一步需要注意</strong>：桥接的端口千万不要设置在之前进网的 WAN 口上，而设置在其他任意端口都没有问题！<br>
+网卡则选择 E1000 因为部分黑群晖系统不支持半虚拟化的识别。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20cf694bdf.png" alt="网络"><br>
+确认无误完成即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20dc438853.png" alt="完成"></p>
+<p>2、接着开始机械磁盘的挂载。<br>
+视频教程中并没有这一步，但是这一步是需要放在安装黑群晖系统之前的，不然安装完再挂载会出现进不去系统等玄学问题。<br>
+用 Xshell6 连接PVE后台，当然用上一篇的 MobaX 是一样的。<br>
+<img src="https://img.senjianlu.com/20200122230856.png" alt="连接信息" title="注意连接的PVE的后台"><br>
+进去后直接输入</p>
+<pre><code class="language-bash">ls -l /dev/disk/by-id/
+</code></pre>
+<p>查看当前系统连接的硬盘情况。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d208275ce89.png" alt="硬盘情况"><br>
+只需要 ata 开头的即可，我挂载的是西数的机械，因此就是下面那两块了。<br>
+接着复制这两块硬盘的完整信息。</p>
+<blockquote>
+<p>ata-WDC_WD10EJRX-89N74Y0_WD-WCC4J3FCD95S<br>
+ata-WDC_WD10EJRX-89N74Y0_WD-WCC4J4LZF6VT</p>
+</blockquote>
+<p>然后在其前面加上 &ldquo;qm set 102 &ndash;sata2 &quot; 运行即可。<br>
+<em>注：102 代表的是你虚拟机的编号；sata2 则是之后会显示在黑群晖盘符，自己设置即可</em><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ae85d19c.png" alt="挂载"><br>
+之后再回虚拟机的硬件页面，就可以看见新增的这两块硬盘了。<br>
+<img src="https://img.senjianlu.com/20200122232031.png" alt="挂载完成" title="偷张图大概就是这样了"></p>
+<p>3、然后开始安装黑群晖系统。<br>
+首先更改启动顺序，将 CD 设置为第一启动项，即我们刚刚上传的 .iso
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20a40363e6.png" alt="启动"><br>
+接着点击启动虚拟机，启动完成后注意下后台地址。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ffcb1bef.png" alt="后台地址"><br>
+浏览器地址栏输入，进入后台页面。<br>
+这里选择手动安装，并上传 .pat 文件，文件我也提供了下载。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2098fd6bc8.png" alt="pat"><br>
+弹出的会清空硬盘直接同意即可，这里注意二次确认清空盘的个数是否和你挂载的盘加上一个系统盘的总个数相同。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e8e5506a.png" alt="确认"><br>
+等待其安装完成自动重启即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ebe7af66.png" alt="重启"><br>
+之后的配置就比较简单了，用户名密码自己设置即可，由于是黑群晖，联网内容全部跳过。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ed13be31.png" alt="1"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20eb30b51c.png" alt="2"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20effafbae.png" alt="3"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d207a16e314.png" alt="4"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e6121ae6.png" alt="5"><br>
+<strong>至此，黑群晖的安装配置就完成了。</strong></p>
+<p>4、最后就是组 RAID，这个比较简单。<br>
+点击左上角的菜单，再选择存储空间管理员。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f4008422c.png" alt="存储"><br>
+选择存储空间<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20002ccd93.png" alt="存储空间"><br>
+选择自定义<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f402482d4.png" alt="自定义"><br>
+选择组成群组
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f4039cc60.png" alt="群组"><br>
+选择你需要组 RAID 的两块硬盘，我这里因为组完了也上传了文件，就用的论坛的图。<br>
+跳出的删除数据提醒，直接确认即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2000618d98.png" alt="选择"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20006b39fe.png" alt="跳过"><br>
+我们这里选你需要的 RAID 模式，推荐 RAID1<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f40553c3d.png" alt="raid1"><br>
+直接应用即可<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d200080931b.png" alt="跳过"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20008b3481.png" alt="应用"><br>
+然后你就可以看见新建的正常的存储空间了。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d200097c91c.png" alt="完成"></p>
+<p>5、为其配置局域网的共享文件夹。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2000ab1e08.png" alt="新增"><br>
+填入文件夹名族，确认即可。<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f408e0b7e.png" alt="文件夹名"><br>
+选择 此电脑 右键，选择 映射网络驱动器<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f409ca549.png" alt="映射"><br>
+填入你的期望盘符和网络文件夹路径即可。<br>
+<em>注：路径的格式由 IP+文件夹名组成</em><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2000d775c5.png" alt="配置"><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f40b15f36.png" alt="访问"></p>
+<p><strong>黑群晖的安装真的比软路由简单太多了，只需要拿钱堆硬盘就可以了。</strong><br>
+顺便说一句，在组 RAID 方面，群晖提供了很方便的操作，勤整理，RAID0 和 RAID1 分开是一个很好的习惯。<br>
+附上对 RAID5 等安全性怀疑的讨论：<a href="https://www.zhihu.com/question/20164654">RAID5 磁盘阵列真的不安全么？</a><br>
+没有什么存储方案是一劳永逸的。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/pve-synology/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/pve-synology/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/smart-contracts-note-01/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/pve-openwrt-ikuai/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

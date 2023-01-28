@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/openwrt-note-01/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后">
+
+<meta itemprop="wordCount" content="1721">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/openwrt-note-01/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/openwrt-note-01/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1721字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>第一次完全按照视频教程装了爱快和 LEDE 双软路由系统，当时只是为了实现功能而完全没有考虑安全性和整个系统是否过于臃肿的问题，但是在使用了近 2 年之后，看了下 LEDE 页面完全没有点开过的大半菜单选项，于是决定根据需求定制下属于自己的 OpenWrt 系统固件。<br>
+<strong>对于 OpenWrt 系统我的需求就两个：1、干净整洁；2、可以实现路由器端的科学上网，这里我选用的插件是 Clash。</strong><br>
+<em>小提一句，LEDE 是 OpenWrt 在 2016 年 5 月后被新建的一条分支，但是由于之后 OpenWrt 的大量开发人员选择参与 LEDE 项目，经历长时间的两边维护后，于 2018 年 2 月 LEDE 又合并回了 OpenWrt 的主分支内，因此现在编译 OpenWrt 即可，不用再去管 LEDE 了。</em></p>
+<hr>
+<p>本章主要参考教材为：<a href="https://www.youtube.com/watch?v=ZMh-AvQV8n0">打造一个专属于你的软路由系统，让它好用十倍！</a></p>
+<p><strong>1、安装一个 Ubuntu 系统</strong><br>
+截至 2021-10-23 GitHub 项目的 README.md 上已经开始推荐 Ubuntu 20.04 LTS x64 系统，因为升级了 Windows11 的关系，直接使用 WSL2 安装个 Linux 虚拟机即可。</p>
+<blockquote>
+<p>关于<a href="https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package"> Windows 11 如何开启 WSL2 </a>并安装 Linux 子系统，稍微记录一下。</p>
+<ol>
+<li>Win + X 键打开 Windos 终端（管理员）并执行：</li>
+</ol>
+<pre><code class="language-bash"># 开启 Linux 子系统功能
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+# 开启虚拟机功能
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+</code></pre>
+<ol start="2">
+<li>在微软商店搜索并下载 Ubuntu 20.04 TLS 系统（发行版可根据自己需求更换）：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d21015584a3.png" alt="搜索"></li>
+<li>安装、打开，然后设置用户密码：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d208f264040.png" alt="打开"></li>
+<li>设置磁盘映射，Linux 子系统默认的路径如下（用户和 Linux 发行版自行替换）：<br>
+<strong>注意：在这个目录下你会看到一个磁盘映射文件，因为涉及到文件编码格式的不同，官方是不推荐跨系统做文件管理的，但单纯的从 Linux 子系统中拷贝编译后的文件出来是没问题的。</strong></li>
+</ol>
+<pre><code class="language-bash">C:\Users\$用户\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState
+</code></pre>
+</blockquote>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d208d2b17a1.png" alt="用户目录"></p>
+<p><strong>2、更新软件源并安装编译所需依赖</strong><br>
+需要注意的是部分包境内下载速度缓慢，这一步最好在全局科学情况下执行。<br>
+更新软件源：</p>
+<pre><code class="language-bash">sudo apt-get update
+</code></pre>
+<p>安装编译所需依赖：</p>
+<pre><code class="language-bash">sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
+</code></pre>
+<p><strong>3、克隆代码</strong></p>
+<pre><code class="language-bash">git clone https://github.com/coolsnowwolf/lede
+</code></pre>
+<p><strong>4、执行编译前准备工作</strong><br>
+也都是官方文档的代码，直接拷贝执行：</p>
+<pre><code class="language-bash">cd lede
+./scripts/feeds update -a
+./scripts/feeds install -a
+</code></pre>
+<p><strong>5、接下来配置软路由系统</strong><br>
+这一步是较为关键的，直接决定了编译出来系统的架构和里面所包含的插件，因为是第一章只编译一个最基础的软路由系统固件，因此不会包含插件信息单单只做架构为 x86 的配置。<br>
+执行：</p>
+<pre><code class="language-bash">make menuconfig
+</code></pre>
+<p>到图形化界面，发现前 3 项已经配置好了 x86_64 的架构设置，那么就不用动了，保存退出即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20f3ecba1a.png" alt=""></p>
+<p><strong>6、下载 dl 库</strong></p>
+<pre><code class="language-bash">make -j8 download V=s
+</code></pre>
+<p><strong>7、打包编译</strong><br>
+-j1 参数意为单线程编译，官方文档推荐第一次使用单线程，但其实后续编译不再需要下很多包因此速度会提升很多，继续使用单线程也无妨。<br>
+执行：</p>
+<pre><code class="language-bash">make -j1 V=s
+</code></pre>
+<blockquote>
+<p>这里需要注意的是，如果你和我一样使用的是 WSL 或者 WSL2 进行编译，由于部分 PATH 中路径包含带空格的 Windows 路径，很可能会导致编译失败，因此请执行下面的命令：</p>
+<pre><code class="language-bash">PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j1 V=s
+</code></pre>
+</blockquote>
+<p>我的 CPU 是 3700X，这一步的单线程编译了 6 个小时左右，最后如下图显示就说明编译结束了：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20fc77cc5a.png" alt="编译结束"></p>
+<p><strong>8、拷贝编译完的固件</strong><br>
+Window11 的 ESL2 会自动生成磁盘映射方便访问，直接进入即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d207fb0079a.png" alt="磁盘映射"><br>
+路径如下（用户名请自行替换）：</p>
+<pre><code class="language-bash">\\wsl.localhost\Ubuntu-20.04\home\$用户\lede\bin\targets\x86\64
+</code></pre>
+<p>选 openwrt-x86-64-generic-squashfs-combined-efi.img 即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20b899f268.png" alt="成果物"><br>
+因为我的软路由系统是跑在 PVE 平台上的，因此使用 Xftp 上传下即可，因为是 .img 文件，还需要做一次 img2kvm 直接写成可挂载硬盘的操作，直接上传至 /root 目录下即可。</p>
+<blockquote>
+<p>附带说一句，PVE 下用以存储 .iso 文件的路径如下：</p>
+<pre><code class="language-bash">/var/lib/vz/template/iso/
+</code></pre>
+<p>这个目录下的操作系统镜像文件可以在 PVE 控制面板新建虚拟机时直接进行选择。</p>
+</blockquote>
+<p><strong>9、测试安装</strong><br>
+先在 PVE 端创建个操作系统不使用任何介质、先不配置任何网络设备的空虚拟机：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20d0542603.png" alt="空虚拟机"><br>
+再使用 img2kvm 工具将编译后的系统镜像写成可挂载硬盘：</p>
+<pre><code class="language-bash">./img2kvm openwrt-x86-64-generic-squashfs-combined-efi.img 103 vm-103-disk-1
+</code></pre>
+<p>写完之后会看见一个新盘被挂载到了虚拟机，直接添加，然后在选项 → 引导顺序中更改为从新盘启动：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20a0839751.png" alt="引导顺序"><br>
+接着启动虚拟机并切换至控制台准备更改管理面板 IP（这里可能需要按下回车）：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20bba55b02.png" alt="准备更改管理面板 IP"><br>
+更新配置文件：</p>
+<pre><code class="language-bash">vi /etc/config/network
+</code></pre>
+<p>将第 15 行的 192.168.1.1 更改为你需要的 IP 地址即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d200792ca3a.png" alt="第 15 行"><br>
+之后重启。<br>
+最后看下你之前 LEDE 软路由的网络设备是什么样的配置，抄一份在硬件处添加：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2007a4cb7d.png" alt="添加网络设备"><br>
+接着重启并访问配置了的 IP 地址：<br>
+<img src="https://img.senjianlu.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-10-24%20120915.png" alt="访问"><br>
+这里的密码需要去控制台里更改：</p>
+<pre><code class="language-bash">passwd root
+</code></pre>
+<p>接着登录即可：<br>
+<img src="https://img.senjianlu.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-10-24%20121019.png" alt="登录"><br>
+看到还是有一些插件被默认添加了，下一章对插件的自定义会尝试去除。</p>
+<p>本章结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/openwrt-note-01/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/openwrt-note-01/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/openwrt-note-02/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/nginx-note-03/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="在开展 PostgreSQL 增量同步到 MongoDB 的工作之前，先尝试个简单点的全量同步，也能熟悉一下 DataX 的各个配置项和其作用。 附下 DataX 的工作原理： 官方文档中也给了一个 MySQL 同步到" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="在开展 PostgreSQL 增量同步到 MongoDB 的工作之前，先尝试个简单点的全量同步，也能熟悉一下 DataX 的各个配置项和其作用。 附下 DataX 的工作原理： 官方文档中也给了一个 MySQL 同步到" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/datax-note-02/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="在开展 PostgreSQL 增量同步到 MongoDB 的工作之前，先尝试个简单点的全量同步，也能熟悉一下 DataX 的各个配置项和其作用。 附下 DataX 的工作原理： 官方文档中也给了一个 MySQL 同步到">
+
+<meta itemprop="wordCount" content="1549">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="在开展 PostgreSQL 增量同步到 MongoDB 的工作之前，先尝试个简单点的全量同步，也能熟悉一下 DataX 的各个配置项和其作用。 附下 DataX 的工作原理： 官方文档中也给了一个 MySQL 同步到"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/datax-note-02/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/datax-note-02/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1549字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>在开展 PostgreSQL 增量同步到 MongoDB 的工作之前，先尝试个简单点的全量同步，也能熟悉一下 DataX 的各个配置项和其作用。</p>
+<hr>
+<blockquote>
+<p>附下 DataX 的工作原理：<br>
+<img src="https://camo.githubusercontent.com/428558c1ab7705a4b39c032f45515f4e8104e5912835adcd46f67af595f187ae/687474703a2f2f6769742e636e2d68616e677a686f752e6f73732e616c6979756e2d696e632e636f6d2f75706c6f6164732f64617461782f64617461782f62353635326330343932633339343638343935383237323231396365333237632f696d6167652e706e67" alt="DataX 的工作原理"><br>
+官方文档中也给了一个 MySQL 同步到 HDFS 的例子，和上面的流程图一起看会更容易理解：
+<img src="https://cloud.githubusercontent.com/assets/1067175/17879884/ec7e36f4-6927-11e6-8f5f-ffc43d6a468b.png" alt="datax_framework_new"><br>
+DataX 本身作为离线数据同步框架，采用 Framework+plugin 架构构建。将数据源读取和写入抽象成为 Reader/Writer 插件，纳入到整个同步框架中。</p>
+<ul>
+<li>Reader：Reader 为数据采集模块，负责采集数据源的数据，将数据发送给 Framework。</li>
+<li>Writer： Writer 为数据写入模块，负责不断向 Framework 取数据，并将数据写入到目的端。</li>
+<li>Framework：Framework 用于连接 reader 和 writer，作为两者的数据传输通道，并处理缓冲，流控，并发，数据转换等核心技术问题。</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>1、基础的配置文件</strong><br>
+要实现不同的源数据库读取和目标数据库写入功能，只需要在配置文件中装载不同插件即可。<br>
+插件列表：<a href="https://github.com/alibaba/DataX#support-data-channels">Support Data Channels</a><br>
+这里以 PostgreSQL 读写为例，只要注意一下源列和目标列是靠索引对齐的，字段名可以不一样就行了：</p>
+<pre><code class="language-json">{
+    &quot;job&quot;: {
+        &quot;setting&quot;: {
+            &quot;speed&quot;: {
+                &quot;channel&quot;: 3
+            },
+            &quot;errorLimit&quot;: {
+                &quot;record&quot;: 2,
+                &quot;percentage&quot;: 0.02
+            }
+        },
+        &quot;content&quot;: [
+            {
+                &quot;reader&quot;: {
+                    &quot;name&quot;: &quot;postgresqlreader&quot;,
+                    &quot;parameter&quot;: {
+                        &quot;username&quot;: &quot;{from_username}&quot;,
+                        &quot;password&quot;: &quot;{from_password}&quot;,
+                        &quot;where&quot;: &quot;&quot;,
+                        &quot;column&quot;: [
+                            &quot;{from_column_01}&quot;,
+                            &quot;{from_column_02}&quot;
+                        ],
+                        &quot;connection&quot;: [
+                            {
+                                &quot;table&quot;: [
+                                    &quot;{from_table}&quot;
+                                ],
+                                &quot;jdbcUrl&quot;: [
+                                    &quot;jdbc:postgresql://{from_host}:{from_port}/{from_database}&quot;
+                                ]
+                            }
+                        ]
+                    }
+                },
+                &quot;writer&quot;: {
+                    &quot;name&quot;: &quot;postgresqlwriter&quot;,
+                    &quot;parameter&quot;: {
+                        &quot;username&quot;: &quot;{to_username}&quot;,
+                        &quot;password&quot;: &quot;{to_password}&quot;,
+                        &quot;column&quot;: [
+                            &quot;{from_column_01}&quot;,
+                            &quot;{from_column_02}&quot;
+                        ],
+                        &quot;preSql&quot;: [
+                            &quot;DELETE FROM {to_table};&quot;
+                        ],
+                        &quot;connection&quot;: [
+                            {
+                                &quot;jdbcUrl&quot;: &quot;jdbc:postgresql://{to_host}:{to_port}/{to_database}&quot;,
+                                &quot;table&quot;: [
+                                    &quot;{to_table}&quot;
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+<p>除开 Python3 能使用 <code>.format()</code> 方法直接替换的参数外，完整的参数介绍可以参照以下的官方文档。<br>
+PostgreSQL 读插件：<a href="https://github.com/alibaba/DataX/blob/master/postgresqlreader/doc/postgresqlreader.md#32-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E">PostgreSQLReader</a><br>
+PostgreSQL 写插件：<a href="https://github.com/alibaba/DataX/blob/master/postgresqlwriter/doc/postgresqlwriter.md#32-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E">PostgreSQLWriter</a></p>
+<p><strong>2、我的需求和解决</strong><br>
+我的需求很简单：定时同步整表数据，不需要什么搜索条件。<br>
+但是在我实际进行同步的时候，碰到了这个问题：</p>
+<pre><code class="language-bash">Exception in thread &quot;taskGroup-0&quot; com.alibaba.datax.common.exception.DataXException: Code:[DBUtilErrorCode-06], Description:[执行数据库 Sql 失败, 请检查您的配置的 column/table/where/querySql或者向 DBA 寻求帮助.].  - 执行的SQL为: select id,name,price,detail from test_table  具体错误信息为：com.alibaba.datax.common.exception.DataXException: Code:[DBUtilErrorCode-12], Description:[不支持的数据库类型. 请注意查看 DataX 已经支持的数据库类型以及数据库版本.].  - 您的配置文件中的列配置信息有误. 因为DataX 不支持数据库读取这种字段类型. 字段名:[detail], 字段名称:[1111], 字段Java类型:[java.lang.Object]. 请尝试使用数据库函数将其转换datax支持的类型 或者不同步该字段 .
+</code></pre>
+<p>检查了一下，<code>detail</code> 字段是 JSONB 类型的，无论是读还是写插件文档中都没有标注支持该类型，考虑了一下可能只有 4 个选择了：</p>
+<ol>
+<li>更改数据库字段类型</li>
+<li>在读的过程中使用函数将 JSONB 类型改为字符串，写的时候依靠 PosrgreSQL 自动将字符串类型转为 JSONB 存入数据库</li>
+<li>在读的过程中使用函数将 JSONB 类型改为字符串，写入临时列，等同步结束后再执行语句将临时列数据转为 JSONB 存回原列</li>
+<li><del>摆烂，不同步这个字段</del></li>
+</ol>
+<p>JSONB 存存无用信息很方便，且当前已经有很多基于 JSONB 特性写的 SQL 语句了，排除了 1。<br>
+在多次尝试之后发现无法实现，排除掉了 2。</p>
+<blockquote>
+<p>关于 2 的尝试，读的过程中类型转换是很顺利的，写入之前值已经是类似 <code>'{&quot;111&quot;: 222}'</code> 的格式了，但是到了正式写入：如果你不强制指定类型，那么会报 PostgreSQLWriter 插件不支持 JSON 类型写入的错误，猜测是读取了数据库中的列类型而并非直接读取值的类型；强制指定类型 <code>&quot;detail::VARCHAR&quot;</code> 之后又会报 PostgreSQL 插入错误，无法将 VARCHAR 类型的数据插入 JSONB 类型的列。</p>
+</blockquote>
+<p>最终只剩方案 3，庆幸在表设计之初就准备了备用字段，现在还有 2 个能用，并且后续如果 DataX 插件支持 JSONB 类型，只需要改配置文件就行了，很方便。<br>
+修改后的配置文件（加上了我自己表的结构信息）：</p>
+<pre><code class="language-json">{
+    &quot;job&quot;: {
+        &quot;setting&quot;: {
+            &quot;speed&quot;: {
+                &quot;channel&quot;: 10
+            },
+            &quot;errorLimit&quot;: {
+                &quot;record&quot;: 2,
+                &quot;percentage&quot;: 0.02
+            }
+        },
+        &quot;content&quot;: [
+            {
+                &quot;reader&quot;: {
+                    &quot;name&quot;: &quot;postgresqlreader&quot;,
+                    &quot;parameter&quot;: {
+                        &quot;username&quot;: &quot;{from_username}&quot;,
+                        &quot;password&quot;: &quot;{from_password}&quot;,
+                        &quot;where&quot;: &quot;&quot;,
+                        &quot;column&quot;: [
+                            &quot;id&quot;,
+                            &quot;name&quot;,
+                            &quot;price&quot;,
+                            &quot;detail:VARCHAR:&quot;
+                        ],
+                        &quot;connection&quot;: [
+                            {
+                                &quot;table&quot;: [
+                                    &quot;test_table&quot;
+                                ],
+                                &quot;jdbcUrl&quot;: [
+                                    &quot;jdbc:postgresql://{from_host}:{from_port}/{from_database}&quot;
+                                ]
+                            }
+                        ]
+                    }
+                },
+                &quot;writer&quot;: {
+                    &quot;name&quot;: &quot;postgresqlwriter&quot;,
+                    &quot;parameter&quot;: {
+                        &quot;username&quot;: &quot;{to_username}&quot;,
+                        &quot;password&quot;: &quot;{to_password}&quot;,
+                        &quot;column&quot;: [
+                            &quot;id&quot;,
+                            &quot;name&quot;,
+                            &quot;price&quot;,
+                            &quot;spare&quot;
+                        ],
+                        &quot;preSql&quot;: [
+                            &quot;DELETE FROM test_table;&quot;
+                        ],
+                        &quot;postSql&quot;: [
+                            &quot;UPDATE test_table SET detail = spare::JSONB;&quot;,
+                            &quot;UPDATE test_table SET spare = NULL;&quot;
+                        ],
+                        &quot;connection&quot;: [
+                            {
+                                &quot;jdbcUrl&quot;: &quot;jdbc:postgresql://{to_host}:{to_port}/{to_database}&quot;,
+                                &quot;table&quot;: [
+                                    &quot;test_table&quot;
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+<p>会慢一点，适当调高 <code>channel</code> 并发之后还能接受，等数据量上来了再补性能调优。</p>
+<p>本章结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/datax-note-02/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/datax-note-02/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/datax-note-03/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/datax-note-01/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

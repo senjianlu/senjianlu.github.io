@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/openwrt-note-02/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件">
+
+<meta itemprop="wordCount" content="1106">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/openwrt-note-02/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/openwrt-note-02/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1106字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>首先明确需要，当前我只需要 Clash 一个插件，并且官方文档是优先用 opkg 命令在 OpenWrt 系统下安装的，因此决定首先在编译前的配置文件生成步骤把不需要的插件（组件）都取消勾选、重新编译出干净的系统，再进行 Clash 的安装。</p>
+<blockquote>
+<p>顺带贴一下 Clash 和 OpenClash 这两个插件的区别（来源于<a href="https://www.youtube.com/watch?v=B6ULhXrk4CE">悟空的 YouTube 视频</a>）：
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2007b26006.png" alt="区别"><br>
+这里我的机场主要都是 SSR 协议，因此必须选择 clashr 的内核（目前 clashr 内核已经合并到了 clash 内核内），而能更改内核的 Clash 路由器插件也只有 Clash 这个版本的了。</p>
+</blockquote>
+<hr>
+<p><strong>1、首先重新配置软路由系统镜像内的插件</strong></p>
+<pre><code class="language-bash"># 清空之前的配置
+rm -rf ./tmp &amp;&amp; rm -rf .config
+# 生成配置文件
+make menuconfig
+</code></pre>
+<p>对照着页面上的插件按钮和左下角的链接，在 LuCI → Applications 内将不需要的插件一个个删除：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2007bd6d68.png" alt="对照"><br>
+嫌麻烦的话可以直接参照下方列表进行删除：</p>
+<pre><code class="language-bash"># 服务 → 上网时间控制
+luci-app-accesscontrol
+# 服务 → 广告屏蔽大师 Plus+
+luci-app-adbyby-plus
+# 服务 → 动态 DNS
+luci-app-ddns
+# 网络存储 → qBittorrent
+luci-app-qbittorrent
+# 服务 → 解锁网易云灰色歌曲
+luci-app-unblockmusic
+# 服务 → UPnP
+luci-app-upnp
+# 服务 → UU 游戏加速器
+luci-app-uugamebooster
+# 服务 → KMS 服务器
+luci-app-vlmcsd
+# 服务 → 网络唤醒
+luci-app-wol
+# 服务 → 迅雷快鸟
+luci-app-xlnetacc
+</code></pre>
+<p>之后保存退出。</p>
+<p><strong>2、二次编译</strong><br>
+由于我是在 WSL2 下进行编译的，防止存在带空格的 Windows 目录而导致的编译失败，使用以下命令：</p>
+<pre><code class="language-bash">PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j$(($(nproc) + 1)) V=s
+</code></pre>
+<p><strong>3、安装新编译后的系统</strong><br>
+写成一个新的启动盘 disk-2：</p>
+<pre><code class="language-bash">./img2kvm openwrt-x86-64-generic-squashfs-combined-efi.img 103 vm-103-disk-2
+</code></pre>
+<p>之后更改虚拟机的引导顺序为使用新盘启动，然后<strong>将软路由断电重启</strong>。<br>
+重启后修改一下 IP 和用户密码，然后再重启，结束后再进去页面菜单应该就相当干净了。</p>
+<p><strong>4、配置 OpenWrt 系统的网络</strong><br>
+这一步仅供参考，目的是为了使这个 OpenWrt 系统能连上网以便进行后续 opkg 的升级和插件安装，每个人的网络拓跋不一样，我的前置路由是用以拨号的爱快，因此只需要修改下这个 OpenWrt 的网关和 DNS 即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2007dd5a04.png" alt="修改网关和 DNS"><br>
+再强制 DHCP 功能由其提供：<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f47a37718.png" alt="强制 DHCP">
+成功联网：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2007f46e40.png" alt="成功联网"></p>
+<p><strong>5、安装 Clash 插件</strong><br>
+将<a href="https://github.com/frainzy1477/luci-app-clash"> luci-app-clash </a>的<a href="https://github.com/frainzy1477/luci-app-clash/releases/download/v1.7.5.7/luci-app-clash_v1.7.5.7_all.ipk"> .ipk 安装文件</a>上传：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2007c8cec3.png" alt="上传"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2007d323b4.png" alt="上传成功"><br>
+然后更新软件包以方便 Clash 下载依赖，点击刷新列表：<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f47c69c10.png" alt="点击刷新列表"></p>
+<blockquote>
+<p>如果出现以下错误</p>
+<pre><code class="language-bash">...
+...
+Downloading https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/x86_64/luci/Packages.sig
+Signature check failed.
+Remove wrong Signature file.
+...
+...
+</code></pre>
+<p>在 OPKG 配置处用 # 注销掉 option check_signature 即可：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2007fec383.png" alt="注销"></p>
+</blockquote>
+<p>接着执行安装：<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f47d2a737.png" alt="执行安装"><br>
+看见日志最后有 Configuring luci-app-clash. 就说明安装成功了，如果失败的话请多尝试几次，我至少也是执行了 2 次才成功的。</p>
+<blockquote>
+<p>当前你也可以选择使用命令行执行安装：</p>
+<pre><code class="language-bash">mv /tmp/upload/luci-app-clash_v1.7.5.7_all.ipk /tmp
+cd /tmp
+opkg update
+opkg install luci-app-clash_v1.7.5.7_all.ipk
+# 无视部分报警安装（极端情况下可以使用，能用此命令安装成功基础功能也就能使用）
+opkg install luci-app-clash_v1.7.5.7_all.ipk --force-depends
+</code></pre>
+</blockquote>
+<p><strong>6、测试使用</strong><br>
+使用之前还需要配置下内核，安装包内不带内核需要自行下载：<a href="https://github.com/frainzy1477/clash_dev/releases/tag/v1.1.0">https://github.com/frainzy1477/clash_dev/releases/tag/v1.1.0</a><br>
+下载完成之后上传：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20082d33bb.png" alt="上传"><br>
+接着从你的机场复制订阅链接并下载配置：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2008393e83.png" alt="下载配置"><br>
+选择并使用配置：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2008452e8b.png" alt="使用配置"><br>
+再启用客户端：<br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f47f6a366.png" alt="启用客户端"><br>
+此时就已经完成了 Clash 的启动了：
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20085beb68.png" alt="外部地址"></p>
+<blockquote>
+<p>如果你出现国内网站能够访问，但是国外网站不能访问的情况，你又同时能确定线路没问题，那么请尝试更改本机获取 IP 的方式，从固定 IP 改为 DHCP 获取，或许能解决这个问题。</p>
+</blockquote>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/openwrt-note-02/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/openwrt-note-02/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/openwrt-note-03/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/openwrt-note-01/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

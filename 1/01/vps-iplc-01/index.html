@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/vps-iplc-01/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这">
+
+<meta itemprop="wordCount" content="901">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。 这"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/vps-iplc-01/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/vps-iplc-01/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 901字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>随着对延迟和防审查的要求越来越高，挪给代理这一块的预算也相应增多了，看了下 IPLC NAT 机器的价格感觉能接受了，于是决定开始升级个人用的代理节点了。<br>
+这个系列单纯就用来记录我已经使用过一段时间的 IPLC 线路（机器）提供商，<strong>没有任何推荐或 AFF 内容，请确定好自己的需求并货比三家后再购买</strong>。</p>
+<hr>
+<p><strong>关于 IPLC</strong></p>
+<blockquote>
+<p><a href="https://wiki.mbalib.com/wiki/IPLC">百科</a>上的介绍：IPLC 是 &ldquo;International Private Leased Circuit&rdquo; 的缩写，即“国际私用出租线路”，是指用户专用的跨国的数据、话音等综合信息业务的通信线路。通俗地说，也就是指传统的专线，如 DDN、E1 等，用于互连两点之间的通信，只不过 IPLC 是跨国跨境的而已。</p>
+</blockquote>
+<p>简单来讲就是点到点的不过墙线路，延迟、隐私保护都极为优秀。</p>
+<hr>
+<p><strong>本章商家</strong>：<a href="https://idc.wiki/">wikihost（维基主机）</a></p>
+<p><strong>1、价格信息</strong><br>
+<strong>注意</strong>：维基家的流量转发计价方式为<strong>一次性设置费</strong> + <strong>流量按量付费</strong> + <strong>端口占用费</strong>，而带宽方面 IPLC 转发均为 80 Mbps。<br>
+① 一次性设置费（高价版本每个月会赠送一点 IPLC 流量）：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014967d02.png" alt="一次性设置费"><br>
+② IPLC 流量费用：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014a3a353.png" alt="IPLC 流量费用"><br>
+③ 端口占用费：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014ad8df4.png" alt="端口占用费"></p>
+<p><strong>2、配置（流量转发）</strong><br>
+<strong>注意：需要自备落地（即提前准备好搭建了代理服务的境外服务器）</strong><br>
+购买后在产品和服务处选择流量转发服务，点击<code>管理产品</code>：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014b69a01.png" alt="管理产品"><br>
+选择<code>添加 IPLC 转发</code>：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014c56b81.png" alt="添加 IPLC 转发"><br>
+假设你有一个 SOCKS5 代理运行在 <code>13.233.150.148</code> 服务器的 <code>2222</code> 端口上，那么如下配置即可（除了 HTTP 代理其他全支持转发）：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014d22183.png" alt="具体配置"></p>
+<blockquote>
+<p>协议处可选 TCP 和 UDP，如果都选择了则会分别产生一条转发规则，端口占用收费会翻倍。</p>
+</blockquote>
+<p>创建需要一点时间：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014dc63e3.png" alt="等待创建"><br>
+趁这个时间我们查看一下转发规则：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014e46c45.png" alt="转发规则"><br>
+使用方式则很简单，本来你是使用如下代理信息的：</p>
+<pre><code class="language-python">import requests
+
+proxies = {
+    &quot;http&quot;: &quot;socks5://username:password@13.233.150.148:2222&quot;,
+    &quot;https&quot;: &quot;socks5://username:password@13.233.150.148:2222&quot;,
+}
+r = requests.get(&quot;https://google.com&quot;, proxies=proxies)
+</code></pre>
+<p>直接将 <code>13.233.150.148:2222</code> 替换为 <code>211.xx.xxx.xx:49333</code>（IPLC 转发规则内的地址）即可：</p>
+<pre><code class="language-python">import requests
+
+# IPLC 转发
+proxies = {
+    &quot;http&quot;: &quot;socks5://username:password@211.xx.xxx.xx:49333&quot;,
+    &quot;https&quot;: &quot;socks5://username:password@211.xx.xxx.xx:49333&quot;,
+}
+r = requests.get(&quot;https://google.com&quot;, proxies=proxies)
+</code></pre>
+<p>你的请求会直接到 <code>211.xx.xxx.xx</code> 这台境内服务器，然后走隧道过墙直达 Google。</p>
+<p><strong>3、使用体验</strong><br>
+① 价格方面<br>
+设置费略贵，至少要花 150 才能使用 IPLC 线路，不过每个月赠送流量还是蛮好评的，虽然没多少，但是不看视频只查文档的话一个月 500 MB 是基本用不完的，这是我的购买日期：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014f24618.png" alt="购买日期"><br>
+在 Clash 中配置了这条线路只接管 Google 和 GitHub 相关服务的流量，截至 12 月 28 日：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2014fa9790.png" alt="12 月 28 日"><br>
+总共 3 个月花 9 块钱。<br>
+② 使用方面<br>
+除了 HTTP 外的代理协议全支持，并且晚高峰也绝对稳定。<br>
+Python3 100 次对 Google 的爬取：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2015194c56.png" alt="成功率"><br>
+YouTube 1080p 分辨率下秒加载：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20150d4e8a.png" alt="秒加载"><br>
+准确的延迟测量等有了专业工具再补。</p>
+<p>本章结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/vps-iplc-01/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/vps-iplc-01/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/vps-iplc-02/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/ubuntu18-rust-server-01/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

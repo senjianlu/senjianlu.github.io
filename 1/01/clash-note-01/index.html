@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="Clash 的优点太多了不赘述了，我选择它的理由是 OpenWrt 的 Clash 插件可以在软路由层面将流量分流到不同节点，比如说：YouTube 使用香港节点、Netflix 走" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="Clash 的优点太多了不赘述了，我选择它的理由是 OpenWrt 的 Clash 插件可以在软路由层面将流量分流到不同节点，比如说：YouTube 使用香港节点、Netflix 走" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/clash-note-01/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Clash 的优点太多了不赘述了，我选择它的理由是 OpenWrt 的 Clash 插件可以在软路由层面将流量分流到不同节点，比如说：YouTube 使用香港节点、Netflix 走">
+
+<meta itemprop="wordCount" content="2062">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Clash 的优点太多了不赘述了，我选择它的理由是 OpenWrt 的 Clash 插件可以在软路由层面将流量分流到不同节点，比如说：YouTube 使用香港节点、Netflix 走"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/clash-note-01/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/clash-note-01/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2062字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>Clash 的优点太多了不赘述了，我选择它的理由是 OpenWrt 的 Clash 插件可以在软路由层面将流量分流到不同节点，比如说：YouTube 使用香港节点、Netflix 走日本节点同时谷歌学术使用自建节点，这可以帮助我大幅度降低延迟和增强自建节点可用性（不会因为使用大量流量而被侦测到）。</p>
+<hr>
+<p>本章内容和标题描述的一样，会尽量帮助你了解配置文件各项在 Clash 实际使用中的用处，最后也会从零书写一个自己的配置文件。<br>
+我会推荐在开始阅读之前先看完这个很棒的介绍 Clash 配置的视频：<a href="https://www.youtube.com/watch?v=CA5_ZbJpEQw">Clash 配置文件详解，看完你自己也可以写规则</a></p>
+<p><strong>1、配置文件各项的用处</strong><br>
+一个配置文件最简单的模板：</p>
+<pre><code class="language-yaml"># HTTP 协议代理所在端口
+port: 7890
+# SOCKS5 协议代理所在端口
+socks-port: 7891
+# 允许局域网内其他设备连接以上 2 个代理端口
+allow-lan: true
+# 规则模式（可选：全局、规则和直连 3 种模式）
+mode: Rule
+# 日志级别
+log-level: info
+# RESTful 风格的控制 API 服务地址（你可以自己写程序调用接口以切换代理节点等）
+external-controller: 0.0.0.0:9090
+
+# 代理节点池
+proxies:
+  - {name: 自建节点 1, type: ss, server: proxy.example.com, port: 12345, cipher: aes-256-cfb, password: mypassword }
+
+# 代理节点组
+proxy-groups:
+  # type: select 意为着这个节点组内的节点需要你手动选择切换
+  - name: 使用代理的组名
+    type: select
+    proxies:
+      - 自建节点 1
+  # 不使用代理直连
+  - name: 直连的组名
+    type: select
+    proxies:
+      # DIRECT 意为直连
+      - DIRECT
+
+# 规则，“规则模式”下需要配置，你设备每一次发送的请求都会经由该规则列表由上至下筛选
+# 格式为：- $匹配模式,$匹配参数,$代理节点组
+rules:
+    - DOMAIN-SUFFIX,google.com,使用代理的组名
+    - GEOIP,CN,直连的组名
+    - MATCH,使用代理的组名
+</code></pre>
+<blockquote>
+<p>部分配置选项解释（各种协议的节点配置不在这章解释）：<br>
+<strong>proxy-groups</strong> 中各组 <strong>type</strong> 可选：select、url-test 和 fallback 等。<br>
+<em>注：fallback 和 url-test 都为测速并自动选择节点，fallback 需要事前配置好域名服务器以防止 DNS 污染等造成的测速失败。</em><br>
+<strong>rules</strong> 中各规则匹配模式可选：DOMAIN、DOMAIN-KEYWORD、DOMAIN-SUFFIX、GEOIP 和 MATCH 等，具体功能可以参照下表：</p>
+<table>
+<thead>
+<tr>
+<th>匹配规则</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DOMAIN</td>
+<td>表示包含完整的域名</td>
+</tr>
+<tr>
+<td>DOMAIN-SUFFIX</td>
+<td>表示包含什么后缀的域名</td>
+</tr>
+<tr>
+<td>DOMAIN-KEYWORD</td>
+<td>表示包含 xxx域名关键字的链接</td>
+</tr>
+<tr>
+<td>IP-CIDR</td>
+<td>IPV4 匹配</td>
+</tr>
+<tr>
+<td>IP-CIDR6</td>
+<td>IPV6 匹配</td>
+</tr>
+<tr>
+<td>PROCESS-NAME</td>
+<td>表示进程名称</td>
+</tr>
+<tr>
+<td>GEOIP</td>
+<td>数据库（国家代码）匹配</td>
+</tr>
+<tr>
+<td>MATCH</td>
+<td>全匹配（一般放在最后）</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>当启动了 Clash 并载入了以上的配置文件，你尝试访问 Google，节点配置无误的情况下你会惊喜的发现连接上了，那么它是怎么工作的呢？<br>
+首先因为是 Rule 规则模式，目标域名为 <a href="https://www.google.com">www.google.com</a> 的请求没有管节点和节点组，直奔 rules 规则组查找有没有自身匹配的&hellip;&hellip;<br>
+似乎是有的！就在第一条，www.google.com 的域名后缀是 google.com，匹配上了！然后看看这条规则对应的代理组，“使用代理的组名”，进入，代理组内的选择模式为手动选择&hellip;&hellip;当前被选上的代理是：“自建节点 1”，那就使用它进行访问&hellip;&hellip;成功！<br>
+是不是很简单，接着你有尝试访问 ip.cn 想查证下本机的 IP 有没有变&hellip;&hellip;没变？！因为 ip.cn 所在的服务器是大陆 IP 的，匹配上了第二条规则，于是进了直连代理组，接着进行访问而没有使用代理。<br>
+那么，YouTube 呢，当然是可以的！所有域名解析的 IP 如果不在大陆都会被指向第三条规则。<br>
+很简单对吗，来试试加点难度，理解一下下面的配置中各项的功能😀</p>
+<p><strong>2、编写第一个配置文件</strong><br>
+在简单模板的基础上稍加更改，添加以下功能：</p>
+<ol>
+<li>增加基础配置以给 OpenWrt 软路由系统上的 Clash 插件使用。</li>
+<li>代理节点组区分为 5 个：自建节点、油管用、奈飞用、不使用代理直连和使用代理。</li>
+<li>规则处新增 Google 学术域名的匹配、YouTube 域名的匹配、Netflix 域名的匹配和域名所在 IP 的匹配。</li>
+</ol>
+<pre><code class="language-yaml">port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+ipv6: false
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 0.0.0.0:9090
+# ====== 路由器插件使用所需要增加的基础配置 ======
+# 绑定内网的 IP 地址，我这里不绑定了，因为就是 OpenWrt 地址加 9090 端口访问
+bind-address: &quot;*&quot;
+# Clash 面板密码
+secret: &quot;123456&quot;
+# Clash 面板前端 UI 样式
+external-ui: &quot;./dashboard&quot;
+# ====== ***************** ======
+
+proxies:
+  - {name: 自建节点（Google 学术用）, type: ss, server: proxy.example.com, port: 12345, cipher: aes-256-cfb, password: mypassword }
+  - {name: 机场香港节点 1...... }
+  - {name: 机场香港节点 2...... }
+  - {name: 机场奈飞节点...... }
+  - {name: 机场节点普通节点 1...... }
+  - {name: 机场节点普通节点 2...... }
+  - {name: 机场节点普通节点 3...... }
+  - {name: 机场节点普通节点 4...... }
+
+proxy-groups:
+  # Google 学术组
+  - name: 自建节点
+    type: select
+    proxies:
+      - 自建节点（Google 学术用）
+  # type: url-test 和其下面的 url、interval 参数共同完成：此组下节点每 300 毫秒向 http://www.gstatic.com/generate_204c 发送一次请求并自动选择延迟最低的节点这一功能
+  - name: 油管用
+    type: url-test
+    url: http://www.gstatic.com/generate_204c
+    proxies:
+      - 机场香港节点 1
+      - 机场香港节点 2
+  # 奈飞组
+  - name: 奈飞用
+    type: select
+    proxies:
+      - 机场奈飞节点
+  # 直连组
+  - name: 不使用代理直连
+    type: select
+    proxies:
+      - DIRECT
+  # 其他所有访问走该代理组
+  - name: 其他所有访问走该代理组
+    type: select
+    proxies:
+      - 机场节点普通节点 1
+      - 机场节点普通节点 2
+      - 机场节点普通节点 3
+      - 机场节点普通节点 4
+
+# 规则
+rules:
+    - DOMAIN-SUFFIX,scholar.google.com,自建节点
+    - DOMAIN-SUFFIX,scholar.google.com.hk,自建节点
+    - DOMAIN-SUFFIX,youtube.com,油管用
+    - DOMAIN-SUFFIX,netflix.com,奈飞用
+    - GEOIP,CN,不使用代理直连
+    - MATCH,其他所有访问走该代理组
+</code></pre>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/clash-note-01/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/clash-note-01/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/clash-note-02/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/clash-contents/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

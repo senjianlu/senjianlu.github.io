@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="本来是很简单的一件事情，追求新版本又把自己坑了一次&amp;hellip;&amp;hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="本来是很简单的一件事情，追求新版本又把自己坑了一次&hellip;&hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/vscode-remote-ssh-use-proxy-with-auth/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="本来是很简单的一件事情，追求新版本又把自己坑了一次&hellip;&hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS">
+
+<meta itemprop="wordCount" content="909">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="本来是很简单的一件事情，追求新版本又把自己坑了一次&hellip;&hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/vscode-remote-ssh-use-proxy-with-auth/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/vscode-remote-ssh-use-proxy-with-auth/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 909字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>本来是很简单的一件事情，追求新版本又把自己坑了一次&hellip;&hellip;<br>
+留个记录稍微描述详细一点，希望能帮到你。</p>
+<hr>
+<p>参考的文章：<a href="https://blog.csdn.net/maokelong95/article/details/91801944">「VS Code」如何通过跳板机连接服务器进行远程开发：Remote-SSH 篇</a></p>
+<p>1、VS Code 中 Remote - SSH 的安装和使用都很简单，就一步带过了。<br>
+在插件库中搜索安装：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20e1f4cf8c.png" alt="选择安装"><br>
+新建连接：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20b9876c22.png" alt="配置"><br>
+选择 SSH 配置存放和读取路径：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20c7490c0f.png" alt="选择 SSH 配置存放路径"><br>
+接下来就是输入密码登录服务器，自行操作即可，但是如果你需要密钥登录，请跟着步骤 2 进行配置。</p>
+<p>2、进行 SSH 密钥登录的配置和代理的配置。<br>
+进入刚刚所选 SSH 配置存放的目录，一般是 <a href="">C:\Users\你的用户名\.ssh</a> 这个路径。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2003d0fdb9.png" alt=""><br>
+选择编辑 config 文件，密钥和代理的配置参照我设置即可：</p>
+<pre><code class="language-bash"># Host 为服务器别名，可以和 HostName 一样
+Host $server_host
+  # 你的服务器域名或 IP
+  HostName $server_host
+  # 用户
+  User $user
+  # SSH 私钥地址，例如：C:\Users\你的用户名\.ssh\example
+  IdentityFile $ssh_primary_key$path
+  # 代理配置
+  ProxyCommand C:\bin\nmap\ncat.exe --proxy-type socks5 --proxy $proxy_host:$proxy_port %h %p --proxy-auth $proxy_auth_username:$proxy_auth_passwod
+</code></pre>
+<p>代理的配置详细说一下，也是我踩坑的地方。<br>
+下载压缩包后解压到任意目录，然后替换上面 C:\bin\nmap\ncat.exe 的路径即可。<br>
+虽然<a href="https://nmap.org/ncat/guide/ncat-proxy.html">官方文档</a>中明确记载了代理认证信息的配置方法，但是经过实测在当前最新版本：<a href="https://nmap.org/dist/nmap-7.70-win32.zip">nmap-7.91-win32.zip</a> 下是不支持的，VS Code 具体错误日志：</p>
+<pre><code class="language-bash">[01:09:46.557] Running script with connection command: ssh -T -D 13100 &quot;example.com&quot; bash
+[01:09:46.559] Terminal shell path: C:\Windows\System32\cmd.exe
+[01:09:46.742] &gt; ]0;C:\Windows\System32\cmd.exe
+[01:09:46.742] Got some output, clearing connection timeout
+[01:09:47.447] &gt; kex_exchange_identification: Connection closed by remote host
+[01:09:47.454] &gt; 过程试图写入的管道不存在。
+[01:09:48.732] &quot;install&quot; terminal command done
+[01:09:48.732] Install terminal quit with output: 过程试图写入的管道不存在。
+[01:09:48.732] Received install output: 过程试图写入的管道不存在。
+[01:09:48.733] Failed to parse remote port from server output
+[01:09:48.733] Resolver error: Error: 
+	at Function.Create (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:64659)
+	at Object.t.handleInstallOutput (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:63302)
+	at Object.t.tryInstall (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:415135)
+	at processTicksAndRejections (internal/process/task_queues.js:93:5)
+	at async c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:294918
+	at async Object.t.withShowDetailsEvent (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:406463)
+	at async Object.t.resolve (c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:1:295994)
+	at async c:\Users\my_user\.vscode\extensions\ms-vscode-remote.remote-ssh-0.65.7\out\extension.js:127:110656
+[01:09:48.736] ------
+</code></pre>
+<p>这种情况似乎只会在 VS Code 中出现，我在命令行中尝试连接时没有问题：</p>
+<pre><code class="language-bash">C:\Users\my_user&gt;ssh root@example.com ProxyCommand=&quot;C:\bin\nmap-7.91\ncat.exe --proxy-type socks5 --proxy example.proxy:1080 %h %p --proxy-auth 111:222&quot;
+root@example.com: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+</code></pre>
+<p>而解决方法则只有一个，回退版本，和参考的教程中使用同样的版本：<a href="https://nmap.org/dist/nmap-7.70-win32.zip">nmap-7.70-win32.zip</a><br>
+这个问题的解决单纯就是试出来的，暂时也没有功夫去探究错误的原因，可能也只是个例，Stack Overflow 的个别讨论也都是纠结配置方法的问题，事实上格式官方已经给了，参考意义都不是很大。<br>
+如果回退依然没有解决你的问题的话，在确保 SSH 不适用代理能访问的前提下，使用以下代码去排查下：</p>
+<pre><code class="language-bash">lastb -n 100
+</code></pre>
+<p>在服务器运行，查看最近受阻的 100 次 SSH 登录，看客户端到服务器是否打开过连接，再做下一步的判断。<br>
+结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/vscode-remote-ssh-use-proxy-with-auth/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/vscode-remote-ssh-use-proxy-with-auth/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/windows11-android/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/vscode-github-push-error/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

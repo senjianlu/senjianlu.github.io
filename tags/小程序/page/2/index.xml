@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>小程序 on 森见鹿的博客 </title>
+    <link>https://bak.senjianlu.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+    <description>Recent content in 小程序 on 森见鹿的博客 </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://bak.senjianlu.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>以太坊矿机搭建（二）安装 Mining OS 专业挖矿系统一键挖矿</title>
+      <link>https://bak.senjianlu.com/2021/12/eth-miner-note-02-bak/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/eth-miner-note-02-bak/</guid>
+      <description>上一章讲了硬件选配，这章讲适合小白的专业挖矿系统 Mining OS 的安装、矿软件的设置和启动，当然也包括路由器上（OpenWrt 系统）设置使用代理（Cla</description>
+    </item>
+    
+    <item>
+      <title>以太坊矿机搭建（二）安装 Mining OS（Minerstat OS）专业挖矿系统一键挖矿</title>
+      <link>https://bak.senjianlu.com/2021/12/eth-miner-note-02/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/eth-miner-note-02/</guid>
+      <description>上一章讲了硬件选配和组装，这章讲适合小白的专业挖矿系统 Mining OS（Minerstat OS）的安装、矿软件的设置和启动，当然也包括路由器上（Ope</description>
+    </item>
+    
+    <item>
+      <title>以太坊矿机搭建（一）矿机平台的硬件挑选和组装</title>
+      <link>https://bak.senjianlu.com/2021/12/eth-miner-note-01/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/eth-miner-note-01/</guid>
+      <description>趁着币价开始下跌，挖矿热潮暂退的间隙，开始组自己的第一台矿机了。并没有赚钱的打算，只是为了接触区块链最基础的一环来为自己的智能合约学习做铺垫</description>
+    </item>
+    
+    <item>
+      <title>Cloudflare Workers 反代使用 GitHub 仓库搭建的图床</title>
+      <link>https://bak.senjianlu.com/2021/12/cloudflare-workers-image/</link>
+      <pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/cloudflare-workers-image/</guid>
+      <description>虽然一直都知道存在无法在境内正常加载文章中图片的问题，但是嫌麻烦一直就拖着。最近接触到了 Cloudflare Workers，实践反代的时候发现异常简单，顺便就</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下用 Docker 部署 Firefox 以实现浏览器套浏览器访问被屏蔽的网站</title>
+      <link>https://bak.senjianlu.com/2021/12/centos7-docker-firefox-in-browser/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/centos7-docker-firefox-in-browser/</guid>
+      <description>公司用的日本专线，狡猾的日本人为了防止上班摸鱼把博客园都屏蔽了，使用中文搜索问题检索结果永远只有 CSDN 和内容农场&amp;hellip;&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>基于以太坊 ETH 的智能合约学习（一）下载和使用小狐狸钱包 MetaMask（Chrome 插件版）并添加 BSC 主网络进行 BNB 转账</title>
+      <link>https://bak.senjianlu.com/2021/12/smart-contracts-note-01/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/smart-contracts-note-01/</guid>
+      <description>翻出了刚开始交易时候的收益图，不到 1600 USDT 均价的 ETH 忍痛割肉，现在涨到了 4000 U 左右，抱着困惑去重新了解了一遍 Ethereum 的愿景是什么、怎么运作和如何基于它开发</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 学习笔记（三） MongoDB 数据库远程连接 GUI 工具 MongoDB Compass 的使用</title>
+      <link>https://bak.senjianlu.com/2021/12/mongodb-note-03/</link>
+      <pubDate>Sat, 11 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/mongodb-note-03/</guid>
+      <description>本来是准备买 Navicat 的，但是不巧错过了永久版 7 折的优惠&amp;hellip;&amp;hellip;意外发现 MongoDB 官方居然也有可视化工具：MongoDB Compas</description>
+    </item>
+    
+    <item>
+      <title>Windows11 时钟 Clock 的使用体验</title>
+      <link>https://bak.senjianlu.com/2021/12/windows11-clock/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/windows11-clock/</guid>
+      <description>才发现 Windows11 添加了时钟应用，自带专注时段（可以直接理解为番茄时间）的规划功能，对于一直以来只有较大任务计划而导致在碎片时间内无法集中注意力的我来</description>
+    </item>
+    
+    <item>
+      <title>Gullo 2 美刀年付 NAT 主机的基础操作和玩法</title>
+      <link>https://bak.senjianlu.com/2021/12/gullo-nat-vps/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/gullo-nat-vps/</guid>
+      <description>这个黑五本来是准备上斯巴达和 HostHatch 的车的，但是把前两年黑五的账单付了下后，发现吃灰的小鸡实在太多了，除了腾讯云香港的几台主机建了站在稳定服役，其</description>
+    </item>
+    
+    <item>
+      <title>申请 Google AdSense 并为 Hugo 静态博客配置 Shortcodes 广告模板页面方便 Markdown 的书写和渲染</title>
+      <link>https://bak.senjianlu.com/2021/12/hugo-google-adsense/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/12/hugo-google-adsense/</guid>
+      <description>本博客有且只有在该文章末尾添加了测试用的广告。 1、注册 Google AdSense 官方链接：Google AdSense 填入链接和邮箱： 接着使用 Google 账号登录以完成绑定： 2、确认网站</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 学习笔记（四） MongoDB 权限管理及实践</title>
+      <link>https://bak.senjianlu.com/2021/11/mongodb-note-04/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/mongodb-note-04/</guid>
+      <description>注意：默认的 root 用户只在 admin 数据库中有效，如果你需要在其他数据库使用该用户仍需要自己创建： db.createUser({user:&amp;quot;admin&amp;quot;, pwd:&amp;quot;123456&amp;quot;, roles:[&amp;quot;readWrite&amp;quot;, &amp;quot;dbAdmin&amp;quot;] }) 用户权限角色说明 角色 说明 root 只在 admin 数据库中可用</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 学习笔记（二） MongoDB 层级关系的梳理和基础操作</title>
+      <link>https://bak.senjianlu.com/2021/11/mongodb-note-02/</link>
+      <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/mongodb-note-02/</guid>
+      <description>第一次接触 MongoDB 这种非关系型数据库的表结构设计。 MongoDB 的层级名词翻译过来会有点难理解，所以我将它和 PostgreSQL 数据库的对应起来： PostgreSQL MongoDB Database（数据库）</description>
+    </item>
+    
+    <item>
+      <title>Windows11 抢先体验 Android 虚拟机并安装第三方应用</title>
+      <link>https://bak.senjianlu.com/2021/11/windows11-android/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/windows11-android/</guid>
+      <description>应该也算硬件相关吧&amp;hellip;&amp;hellip; 1、将系统地区切换至美国并开启虚拟化 因为是系统层面的配置因此放在一起讲。 ① 设置 -&amp;gt; 时间和语言</description>
+    </item>
+    
+    <item>
+      <title>DataX 实践（二）从 PostgreSQL 读数据库全量同步表到 PostgreSQL 写数据库</title>
+      <link>https://bak.senjianlu.com/2021/11/datax-note-02/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/datax-note-02/</guid>
+      <description>在开展 PostgreSQL 增量同步到 MongoDB 的工作之前，先尝试个简单点的全量同步，也能熟悉一下 DataX 的各个配置项和其作用。 附下 DataX 的工作原理： 官方文档中也给了一个 MySQL 同步到</description>
+    </item>
+    
+    <item>
+      <title>DataX 实践（三）从 PostgreSQL 读数据库增量同步表到 MongoDB 写数据库</title>
+      <link>https://bak.senjianlu.com/2021/11/datax-note-03/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/datax-note-03/</guid>
+      <description>对价格字段进行增量同步。 简单阐述全量同步和增量同步区别： 全量同步：就是每天定时（避开业务高峰期）或者周期性全量把数据从一个地方拷贝到另外一个</description>
+    </item>
+    
+    <item>
+      <title>DataX 实践（一）构建 DataX 的 Docker 容器镜像并测试运行</title>
+      <link>https://bak.senjianlu.com/2021/11/datax-note-01/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/datax-note-01/</guid>
+      <description>需要从 PostgreSQL 同步数据到 MongoDB，看了一圈选择了 DataX 工具，阿里的开源项目还是蛮值得信赖的。 官方并未提供 Docker 镜像，但是考虑到我现在已经部署了 K3s 集群</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 学习笔记（一） 补足：CentOS7 下 12.8 版本数据库的安装</title>
+      <link>https://bak.senjianlu.com/2021/11/postgresql-note-01-supplement/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/postgresql-note-01-supplement/</guid>
+      <description>虽然我很早之前就完成了数据库版本的升级（9.2.4 -&amp;gt; 12.8），但是由于考虑到教程对新手的友好就一直没有去更新第一章，这次作为补足放出吧。 新</description>
+    </item>
+    
+    <item>
+      <title>VS Code 使用 Remote 连接服务器并 Push 到 GitHub 私有仓库时报错：Missing or invalid credentials. 的解决办法</title>
+      <link>https://bak.senjianlu.com/2021/11/vscode-github-push-error/</link>
+      <pubDate>Sun, 14 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/vscode-github-push-error/</guid>
+      <description>1、错误信息 Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } Missing or invalid credentials. Error: connect ECONNREFUSED /run/user/0/vscode-git-02xxxeed11.sock at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1146:16) { errno: -111, code: &#39;ECONNREFUSED&#39;, syscall: &#39;connect&#39;, address: &#39;/run/user/0/vscode-git-02xxxeed11.sock&#39; } remote: Repository not found. fatal: Authentication failed for &#39;https://github.com/username/repo.git/&#39; 2、解决办法 参考文</description>
+    </item>
+    
+    <item>
+      <title>Clash 学习（三）进阶配置：在 Clash 中定时更新机场节点和导入外部规则</title>
+      <link>https://bak.senjianlu.com/2021/11/clash-note-03/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/clash-note-03/</guid>
+      <description>1、定时更新机场节点 注意：定时更新机场节点配置中填入的链接，一定是要能被 Clash 正常读取的配置文件形式。 不仅是类似原生 SSR 等的订阅链接无法被 Clash 正常读</description>
+    </item>
+    
+    <item>
+      <title>Fiddler 学习（一）安装、配置和尝试抓取 UWP 版网易云音乐的请求域名</title>
+      <link>https://bak.senjianlu.com/2021/11/fiddler-note-01/</link>
+      <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/11/fiddler-note-01/</guid>
+      <description>在路由器上的 Clash 中配置网易云音乐灰歌解锁的时候发现：UWP 版的网易云音乐请求指向的似乎不是 music.163.com 等域名（事实上走的是 music.163.com 域名，只是我 Clash 配置的有问题罢</description>
+    </item>
+    
+  </channel>
+</rss>

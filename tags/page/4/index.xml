@@ -2,192 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 森见鹿的博客 </title>
-    <link>https://senjianlu.com/tags/</link>
+    <link>https://bak.senjianlu.com/tags/</link>
     <description>Recent content in Tags on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://bak.senjianlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>CentOS7 下 Zabbix Docker 容器修复管理界面中文字体为方框的问题</title>
+      <link>https://bak.senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</link>
+      <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/10/centos7-docker-zabbix-fix-font/</guid>
+      <description>这次迁移又需要修复一下中文字体的问题，记录一下。 1、下载有中文的字体 前端管理界面出现以下方框的原因就是 Zabbix 默认使用的 DejaVuSans.ttf 字体中缺少中文字体样式：</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（三）Rancher 导入现有 K3s 集群并创建第一个容器应用</title>
+      <link>https://bak.senjianlu.com/2021/10/k3s-note-03/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/10/k3s-note-03/</guid>
+      <description>将 server + agent 的集群导入 Docker 安装的 Rancher 中以进行管理。 1、从面板导入现有集群 添加集群： 导入： 输入集群名词后创建： 复制命令前往集群执行： 我是在节点的主 server 节</description>
+    </item>
+    
+    <item>
+      <title>Nginx 学习（三）配置基础的用户登录验证以保护站点</title>
+      <link>https://bak.senjianlu.com/2021/10/nginx-note-03/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/10/nginx-note-03/</guid>
+      <description>临时分享下文件可用，没有认证时间限制所以无法实现类似认证一次 6 小时后超时这种功能，每次访问页面或是 API 调用都需要验证。 官方文档：Restric</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下的一些 iptables 实用配置</title>
+      <link>https://bak.senjianlu.com/2021/09/centos7-iptables/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/09/centos7-iptables/</guid>
+      <description>一些基础的 iptables 规则来保护服务器，持续更新。 1、查看当前 iptables 入方向规则： 注意：和 Nginx 规则一样，从上到下匹配，有符合的就直接跳出不会再向下执行！ iptables -L INPUT</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（二）安装 Rancher Labs（Docker 安装，推荐）</title>
+      <link>https://bak.senjianlu.com/2021/09/k3s-note-02-02/</link>
+      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/09/k3s-note-02-02/</guid>
+      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 考虑到作为 Docker 容器运行的 Rancher 重启较为安全简单，不再使用</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下使用 OpenSSL 生成 CA 自签发证书并解决 Windows 下信任证书后 Chrome 出现 ERR_CERT_COMMON_NAME_INVALID 的问题</title>
+      <link>https://bak.senjianlu.com/2021/09/centos7-openssl-ca/</link>
+      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/09/centos7-openssl-ca/</guid>
+      <description>主要是两个步骤：1、生成 SSL 私钥（.key 文件）和证书签发请求文件（.csr 文件）；2、自己充当证书颁发机构（CA）进行签发生成证书（.crt</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（二）安装 Rancher Labs（手动安装版本，不推荐）</title>
+      <link>https://bak.senjianlu.com/2021/09/k3s-note-02-01/</link>
+      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/09/k3s-note-02-01/</guid>
+      <description>第一章安装完一个 server 和一个 agent 节点之后，就相当于拥有了一个迷你的 K3s 集群，现在开始安装管理面板。 注意：请参考成功率更高的Docker 安装 Rancher Labs</description>
+    </item>
+    
+    <item>
+      <title>K3s 学习（一）高可用模式在 CentOS7 服务器上构建第一组 server &#43; agent 节点</title>
+      <link>https://bak.senjianlu.com/2021/09/k3s-note-01/</link>
+      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/09/k3s-note-01/</guid>
+      <description>之前是在一台 2H4G 服务器上用 Screen 跑多个项目，明明睡前看都是运行的好好的，早上起来检查却总有 1、2 个被 Kill 掉了，属实心累，正巧腾讯云送了老用户一年 2H4G 的</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL 学习笔记（四）安装 plpythonu 以使用 Python3 语言编写函数</title>
+      <link>https://bak.senjianlu.com/2021/09/postgresql-note-04/</link>
+      <pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/09/postgresql-note-04/</guid>
+      <description>我不想写 SQL。 1、首先安装 plpython3u 包 PostgreSQL 版本请自行更改，安装之前先前往 pkgs.org 搜索以确定有对应的包。 yum install postgresql12-plpython3 2、为数据库添加扩展 切换到你需要安装 Python3 语言扩展</description>
+    </item>
+    
+    <item>
       <title>CentOS7 下安装 Jupyter</title>
-      <link>https://senjianlu.com/2021/09/centos7-jupyter/</link>
+      <link>https://bak.senjianlu.com/2021/09/centos7-jupyter/</link>
       <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/09/centos7-jupyter/</guid>
+      <guid>https://bak.senjianlu.com/2021/09/centos7-jupyter/</guid>
       <description>因为 Linux 系统下用 code-server 作为编译器预览 Matplotlib 图表实在过于麻烦，于是决定多装一个 Jupyter 作为数据分析图表预览用工具。 安装较为简单，但是开机启动碰到了一些问题，但</description>
     </item>
     
     <item>
       <title>Rust 开服（一）Ubuntu18 下通过 LinuxGSM 搭建 Rust Server 游戏服务器端</title>
-      <link>https://senjianlu.com/2021/09/ubuntu18-rust-server-01/</link>
+      <link>https://bak.senjianlu.com/2021/09/ubuntu18-rust-server-01/</link>
       <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/09/ubuntu18-rust-server-01/</guid>
+      <guid>https://bak.senjianlu.com/2021/09/ubuntu18-rust-server-01/</guid>
       <description>LinuxGSM (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。 注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一</description>
     </item>
     
     <item>
       <title>Nextcloud 前端页面插入 JS 代码以使用 Google Analytics 分析</title>
-      <link>https://senjianlu.com/2021/09/nextcloud-google-analytics/</link>
+      <link>https://bak.senjianlu.com/2021/09/nextcloud-google-analytics/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/09/nextcloud-google-analytics/</guid>
+      <guid>https://bak.senjianlu.com/2021/09/nextcloud-google-analytics/</guid>
       <description>作为长期手搓 JS 的后端，对前端的安全规则几乎是一点都不熟悉，Java Spring 都是 Security 一把梭，这次给 PHP 语言编写的 Nextcloud 添加几行代码真的是要了我的老命了，赶紧</description>
     </item>
     
     <item>
       <title>CentOS7 关于使用 GNU Screen 的笔记</title>
-      <link>https://senjianlu.com/2021/09/centos7-gun-screen/</link>
+      <link>https://bak.senjianlu.com/2021/09/centos7-gnu-screen/</link>
       <pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/09/centos7-gun-screen/</guid>
+      <guid>https://bak.senjianlu.com/2021/09/centos7-gnu-screen/</guid>
       <description>持续更新。 Screen 环境变量的配置使其能读取类似 /usr/bin 下的脚本。 vi /etc/screenrc 取消注释 ... shell -$SHELL ...</description>
     </item>
     
     <item>
       <title>CentOS7 下解决 Python3 使用 Matplotlib 生成图表时中文乱码的问题</title>
-      <link>https://senjianlu.com/2021/09/centos7-matplotlib-chinese/</link>
+      <link>https://bak.senjianlu.com/2021/09/centos7-matplotlib-chinese/</link>
       <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/09/centos7-matplotlib-chinese/</guid>
+      <guid>https://bak.senjianlu.com/2021/09/centos7-matplotlib-chinese/</guid>
       <description>不需要 Yum 安装任何其他软件，也不需要修改 Matplotlib 包的配置文件，实测是最简单的方法了。 全程使用 HostVDS 新开的服务器并只安装了 Python3.8.2 以保证教程正确。 1、首先看下没</description>
     </item>
     
     <item>
       <title>VS Code 使用需要认证的 SOCKS5 代理通过 Remote - SSH 连接远程服务器进行开发</title>
-      <link>https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</link>
+      <link>https://bak.senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</link>
       <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</guid>
+      <guid>https://bak.senjianlu.com/2021/07/vscode-remote-ssh-use-proxy-with-auth/</guid>
       <description>本来是很简单的一件事情，追求新版本又把自己坑了一次&amp;hellip;&amp;hellip; 留个记录稍微描述详细一点，希望能帮到你。 参考的文章：「VS</description>
     </item>
     
     <item>
       <title>CentOS7 下 Docker 配置代理以解决国内服务器无法拉取官方镜像的问题（需要账号密码的代理也可使用）</title>
-      <link>https://senjianlu.com/2021/07/centos7-docker-command-proxy/</link>
+      <link>https://bak.senjianlu.com/2021/07/centos7-docker-command-proxy/</link>
       <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/07/centos7-docker-command-proxy/</guid>
+      <guid>https://bak.senjianlu.com/2021/07/centos7-docker-command-proxy/</guid>
       <description>国内服务器访问不到各种官方镜像应该是老生常谈的问题了，Docker 也不例外，拉取官方镜像时各种 EOF 错误大概率就是墙的问题了，这篇文档不会记录 Linux</description>
     </item>
     
     <item>
       <title>CentOS7 下安装 code-server</title>
-      <link>https://senjianlu.com/2021/07/centos7-code-server/</link>
+      <link>https://bak.senjianlu.com/2021/07/centos7-code-server/</link>
       <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/07/centos7-code-server/</guid>
+      <guid>https://bak.senjianlu.com/2021/07/centos7-code-server/</guid>
       <description>记录下 code-server 从官方源下载安装并配置 HTTPS 的过程。 官方 GitHub 项目地址：code-server 1、下载安装 选个中意的 Release 下载并解压： # 下载 wget https://github.com/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz # 解压 tar -xzvf code-server-3.11.0-linux-amd64.tar.gz # 转</description>
     </item>
     
     <item>
       <title>MinIO 9000 端口强制跳转 9001 端口且报 This &#39;admin&#39; API is not supported by server in &#39;mode-server-fs&#39;、An error occurred, please try again 和 The server side encryption configuration was not found 错误</title>
-      <link>https://senjianlu.com/2021/07/centos7-minio-error/</link>
+      <link>https://bak.senjianlu.com/2021/07/centos7-minio-error/</link>
       <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/07/centos7-minio-error/</guid>
+      <guid>https://bak.senjianlu.com/2021/07/centos7-minio-error/</guid>
       <description>刚装完 MinIO 测试的时候其实就发现了部分页面会出错，但是看了下错误基本都是认证错误，响应代码为 500，觉得可能是 Nginx 配置有误，实则不然&amp;hellip</description>
     </item>
     
     <item>
       <title>Linux 命令（1）系统硬件、网络相关 | SSH 连接、文件相关 | 防火墙端口开启关闭</title>
-      <link>https://senjianlu.com/2021/07/linux-command-01/</link>
+      <link>https://bak.senjianlu.com/2021/07/linux-command-01/</link>
       <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/07/linux-command-01/</guid>
+      <guid>https://bak.senjianlu.com/2021/07/linux-command-01/</guid>
       <description>Linux 命令笔记，方便查找。 系统硬件 1、内存 SWaP 查看： free -m 2、系统内核查看： uname -a 3、SELinux 关闭： # 临时关闭 setenforce 0 修改 /etc/selinux/config 文件： # 永久关闭 vi /etc/selinux/config 将 SELINUX=enforcing</description>
     </item>
     
     <item>
       <title>CentOS7 下 MinIO 的安装和配置</title>
-      <link>https://senjianlu.com/2021/07/centos7-minio/</link>
+      <link>https://bak.senjianlu.com/2021/07/centos7-minio/</link>
       <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/07/centos7-minio/</guid>
+      <guid>https://bak.senjianlu.com/2021/07/centos7-minio/</guid>
       <description>起因是 BuyVM 的存储块补货了，于是下单买了一年 256 GB 的再套个 CloudFalre 用来做对象存储，存存图片和 Docker 镜像文件应该是够了，反正不够还能继续挂载。 顺便把 BuyVM 挂载硬盘</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统</title>
-      <link>https://senjianlu.com/2021/07/centos7-docker-zabbix/</link>
-      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/centos7-docker-zabbix/</guid>
-      <description>又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的</description>
-    </item>
-    
-    <item>
-      <title>Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法</title>
-      <link>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</link>
-      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</guid>
-      <description>新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的</description>
-    </item>
-    
-    <item>
-      <title>Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置</title>
-      <link>https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</link>
-      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</guid>
-      <description>腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一</description>
-    </item>
-    
-    <item>
-      <title>Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题</title>
-      <link>https://senjianlu.com/2021/07/nginx-note-02/</link>
-      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/nginx-note-02/</guid>
-      <description>给网站套上 Cloudflare 防止被打和缓存部分静态文件应该是常规操作了，但是想起来之前好像见到过的帖子：第一次知道 HTTPS 会暴露服务器 IP，在新的服务器上试验了一</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下建立 SWaP 分区以增加虚拟内存</title>
-      <link>https://senjianlu.com/2021/07/centos7-swap/</link>
-      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/07/centos7-swap/</guid>
-      <description>明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&amp;hellip;&amp;hellip; 看了下现在的这些容器基本都</description>
-    </item>
-    
-    <item>
-      <title>日语学习 「こそあど系統」</title>
-      <link>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</link>
-      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</guid>
-      <description>Notion 链接：https://www.notion.so/rabbir/1a25e9f6a26d4551902af651915117d7</description>
-    </item>
-    
-    <item>
-      <title>日语学习 格助词「を」在自动词前的使用</title>
-      <link>https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</link>
-      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</guid>
-      <description>Notion 链接：https://www.notion.so/rabbir/a24f7acbdba44e0ebe290fd0c3dd1907</description>
-    </item>
-    
-    <item>
-      <title>日语学习 日语词类划分整理</title>
-      <link>https://senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/</link>
-      <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/</guid>
-      <description>Notion 链接：https://www.notion.so/rabbir/e0d5da57af9c47c5a58df377cc4ac558</description>
-    </item>
-    
-    <item>
-      <title>日语学习 使役、被动和使役被动</title>
-      <link>https://senjianlu.com/2021/06/japanese-shi-yi-bei-dong/</link>
-      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2021/06/japanese-shi-yi-bei-dong/</guid>
-      <description>Notion 链接：https://www.notion.so/rabbir/eee6ce0ebd9249a9a281805aadb54582</description>
     </item>
     
   </channel>

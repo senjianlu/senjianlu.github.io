@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部 - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="外出跑业务的员工有在移动端操作管理系统内客户、商机的需求，考虑到目前企业内部使用的是钉钉作为 IM，做钉钉小程序很合适因此直接开干。 关于使用的" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title>钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部 - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部" />
+<meta property="og:description" content="外出跑业务的员工有在移动端操作管理系统内客户、商机的需求，考虑到目前企业内部使用的是钉钉作为 IM，做钉钉小程序很合适因此直接开干。 关于使用的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/2022/09/dingding-applet-01/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-02T00:00:00+00:00" />
+
+<meta itemprop="name" content="钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部">
+<meta itemprop="description" content="外出跑业务的员工有在移动端操作管理系统内客户、商机的需求，考虑到目前企业内部使用的是钉钉作为 IM，做钉钉小程序很合适因此直接开干。 关于使用的"><meta itemprop="datePublished" content="2022-09-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-09-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="691">
+<meta itemprop="keywords" content="小程序," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部"/>
+<meta name="twitter:description" content="外出跑业务的员工有在移动端操作管理系统内客户、商机的需求，考虑到目前企业内部使用的是钉钉作为 IM，做钉钉小程序很合适因此直接开干。 关于使用的"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客地址：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
+                    class="tag-list-count">11</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">13</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/java/" class="tag-list-link">java</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
+                    class="tag-list-count">6</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">26</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/redis/" class="tag-list-link">redis</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="tag-list-link">小程序</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
+                    class="tag-list-count">13</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/09/dingding-applet-01/" class="title">钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-09-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-09-02</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/" class="title">CentOS7 下搭建 Trojan 服务端（附带搬瓦工机器的一些特殊配制）</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-07-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/" class="title">CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-16</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2022/09/dingding-applet-01/"
+    >钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://bak.senjianlu.com/2022/09/dingding-applet-01/" class="article-date">
+  <time datetime="2022-09-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-09-02</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"> 学习笔记 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"> 小程序 </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2022/09/dingding-applet-01/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 691字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>外出跑业务的员工有在移动端操作管理系统内客户、商机的需求，考虑到目前企业内部使用的是钉钉作为 IM，做钉钉小程序很合适因此直接开干。</p>
+<hr>
+<ol>
+<li><strong>关于使用的技术栈做个简单介绍</strong><br>
+<strong><a href="https://docs.taro.zone/docs/README">Taro</a></strong>：开放式跨端跨框架解决方案，一套代码可以打包成微信、钉钉、百度、京东等多端的小程序<br>
+<strong><a href="https://www.runoob.com/react/react-tutorial.html">React</a></strong>：前端框架<br>
+<strong><a href="https://www.runoob.com/typescript/ts-tutorial.html">TypeScript</a></strong>：扩展了语法的 JavaScript<br>
+<strong><a href="https://taro-ui.jd.com/#/docs/introduction">Taro UI</a></strong>：Taro 官方提供的基于 Taro 的多端 UI 组件库</li>
+</ol>
+<blockquote>
+<p>如果您之前从未使用过 React 和 TypeScript，我强烈建议您跟着任意教程先熟悉一遍 React + TS 的项目搭建、NPM 包和插件的导入使用、项目基本结构和实际开发感受，之后再进行小程序开发，这并不会花费您太多时间，一个周末足矣。</p>
+</blockquote>
+<ol start="2">
+<li>
+<p><strong>你在开发之前绝对应该看一遍的文档</strong><br>
+钉钉官方：<a href="https://open.dingtalk.com/document/org/develop-org-mini-programs">如何在企业内部发布一个钉钉小程序</a><br>
+知乎用户经验分享：<a href="https://zhuanlan.zhihu.com/p/498872062">React + TypeScript + Taro前端开发小结</a></p>
+</li>
+<li>
+<p><strong>你在实际开发中需要翻阅的文档</strong><br>
+组件：<a href="https://open.dingtalk.com/document/orgapp-client/view-container">钉钉小程序组件文档</a><br>
+组件：<a href="https://taro-ui.jd.com/#/docs/icon">Taro UI 组件文档</a></p>
+</li>
+</ol>
+<hr>
+<p><strong>本章教程顺序为：搭建小程序 Demo 并在钉钉小程序 IDE 中预览 → 钉钉开发者中心创建小程序 → 发布并实际在手机预览。开始吧！</strong></p>
+<h2 id="一搭建小程序-demo">一、搭建小程序 Demo</h2>
+<h3 id="创建-taro-项目">创建 Taro 项目</h3>
+<p>我使用的是 <code>yarn</code> 作为 npm 包管理工具，首先安装下 Taro CLI 工具：</p>
+<pre><code class="language-bash">yarn global add @tarojs/cli
+</code></pre>
+<blockquote>
+<p>Taro 官方安装文档：<a href="https://nervjs.github.io/taro-docs/docs/GETTING-STARTED">安装及使用</a></p>
+</blockquote>
+<p>之后创建项目，名字为：<code>demo-app</code></p>
+<pre><code class="language-bash">taro init demo-app
+</code></pre>
+<p>配置项如下：
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201d91c40d.png" alt="配置项"><br>
+之后项目会自动执行 <code>yarn install</code> 命令，稍等片刻即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201d0c6498.png" alt="安装完成"></p>
+<blockquote>
+<p>完成之后你可以尝试着直接将其打成一个微信小程序的包，并通过<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html">微信开发者工具</a>打开：</p>
+<pre><code class="language-bash">taro build --type weapp --watch
+</code></pre>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d201d242ecc.png" alt="打包微信小程序的输出">
+<strong>注意打出来的小程序程序包路径为：<code>demo-app/dist</code></strong><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201d37e651.png" alt="选择小程序"><br>
+打开小程序后如下显示则说明 Taro + React + TS 的 Demo 小程序搭建成功了！
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201d80050e.png" alt="Demo 成功"></p>
+</blockquote>
+<h3 id="导入-taro-ui-组件库和钉钉小程序打包插件可选">导入 Taro UI 组件库和钉钉小程序打包插件（可选）</h3>
+<p>导入 Taro UI 较为简单：</p>
+<pre><code class="language-bash">yarn add taro-ui
+</code></pre>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d201d16f0e6.png" alt="导入 Taro UI"></p>
+<blockquote>
+<p>验证方法为在 <code>demo-app/src/pages/index.tsx</code> 中添加几个组件：</p>
+<pre><code class="language-tsx">
+</code></pre>
+</blockquote>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/2022/09/dingding-applet-01/" title="钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部" target="_blank" rel="external">https://bak.senjianlu.com/2022/09/dingding-applet-01/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/" title="CentOS7 下搭建 Trojan 服务端（附带搬瓦工机器的一些特殊配制）"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

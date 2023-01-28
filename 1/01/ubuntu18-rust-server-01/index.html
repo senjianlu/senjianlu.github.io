@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="LinuxGSM (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。 注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="LinuxGSM (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。 注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/ubuntu18-rust-server-01/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="LinuxGSM (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。 注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一">
+
+<meta itemprop="wordCount" content="1174">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="LinuxGSM (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。 注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/ubuntu18-rust-server-01/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/ubuntu18-rust-server-01/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1174字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><a href="https://linuxgsm.com/">LinuxGSM</a> (Linux Game Server Managers) 是开源的 Linux 服务器游戏服务器开设工具，简单好用，可以节省大量时间因此选用。<br>
+<em>注：一般情况下我都是更倾向用熟悉的 CentOS7 系统，但是在尝试搭建一遍过后，卡在了<a href="https://github.com/GameServerManagers/LinuxGSM/issues/3312"> Yum 无法安装 Python3.6 </a>的问题上，因此本教程选择 Ubuntu18 系统。</em></p>
+<hr>
+<blockquote>
+<p><strong>注意：最低的服务器配置需求为 2H4G，低于 4G 内存请不用尝试了。且如果你使用的是境内服务器，我推荐你设置好代理，以保证安装脚本能顺利的从 GitHub 下载所需文件：</strong></p>
+<pre><code class="language-bash"># 仅供参考格式用
+export http_proxy=socks5://99999:22222@63.225.10.10:20800
+git config --global http.proxy socks5://99999:22222@63.225.10.10:20800
+git config --global https.proxy socks5://99999:22222@63.225.10.10:20800
+</code></pre>
+<p>如果你没有代理，也可以试试修改 hosts，但这并不能保证 100% 解决你的问题：</p>
+<pre><code class="language-bash">vi /etc/hosts
+</code></pre>
+<pre><code class="language-bash">...
+···
+199.232.4.133 raw.githubusercontent.com
+</code></pre>
+</blockquote>
+<p><strong>1、安装所需依赖和下载 LinuxGSM</strong><br>
+先更新软件源：</p>
+<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre>
+<p>接着安装<a href="https://linuxgsm.com/lgsm/rustserver/"> LinuxGSM 所需依赖</a>：</p>
+<pre><code class="language-bash">sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux netcat lib32gcc1 lib32stdc++6 libsdl2-2.0-0:i386 steamcmd lib32z1
+</code></pre>
+<blockquote>
+<p>官方文档推荐为每个游戏服务器都新建一个系统用户，我这里新建了 rustserver 用户：</p>
+<pre><code class="language-bash"># 切换到 root 管理员用户下
+sudo su
+# 新建用户
+adduser rustserver
+# 修改密码
+passwd rustserver
+# 切换到这个用户
+su - rustserver
+</code></pre>
+<p>之后的操作都是在这个用户和 /home/rustserver 目录下执行的。</p>
+</blockquote>
+<p>下载 LinuxGSM：</p>
+<pre><code class="language-bash"># 下载 LinuxGSM
+wget -O linuxgsm.sh https://linuxgsm.sh
+# 赋予其执行权限
+chmod +x linuxgsm.sh
+</code></pre>
+<p><strong>2、安装 Rust 服务器</strong><br>
+准备服务器安装所需内容：</p>
+<pre><code class="language-bash">bash linuxgsm.sh rustserver
+# 赋予其执行权限
+chmod +x rustserver
+</code></pre>
+<p>开始安装 Rust 服务器：</p>
+<pre><code class="language-bash">./rustserver install
+</code></pre>
+<p>中途需要确认的地方输入 Y 回车即可（这里用的是 CentOS7 服务器的截图，可能和 Ubuntu18 有些不同，但是流程是一样的一路确定下去即可）：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20926b6fae.png" alt="1 次确认"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20edc908a4.png" alt="2 次确认"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20abc90688.png" alt="3 次确认"><br>
+看到以下信息则说明安装完成：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20ec663807.png" alt="安装完成"></p>
+<p><strong>3、配置 Rust 服务器</strong><br>
+配置文件的路径在安装日志中存在，因此直接拷贝即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20de99a297.png" alt="配置文件路径"><br>
+修改下服务器的描述信息：</p>
+<pre><code class="language-bash">vi /home/rustserver/serverfiles/server/rustserver/cfg/server.cfg
+</code></pre>
+<pre><code class="language-bash">...
+...
+#  A text description of your server. For a new line add:  \n
+server.description &quot;Belong to senjianlu.com&quot;
+...
+...
+</code></pre>
+<p>修改游戏配置：</p>
+<pre><code class="language-bash">cd /home/rustserver/lgsm/config-lgsm/rustserver
+# 拷贝一份默认配置并覆盖当前的空配置文件
+cp _default.cfg rustserver.cfg
+vi rustserver.cfg
+</code></pre>
+<pre><code class="language-bash">...
+...
+## Predefined Parameters | https://docs.linuxgsm.com/configuration/start-parameters
+# 允许所有 IP 地址连接此服务器
+ip=&quot;0.0.0.0&quot;
+# 服务器端口
+port=&quot;28015&quot;
+# 管理端口
+rconport=&quot;28016&quot;
+appport=28082
+# 管理员密码
+rconpassword=&quot;xxxxxxxxx&quot;
+rconweb=&quot;1&quot; # Value is: 1 for the Facepunch web panel, Rustadmin desktop and Rustadmin Online; 0 for RCON tools like Rusty.
+# 服务器名称
+servername=&quot;senjianlu&quot;
+gamemode=&quot;vanilla&quot; # Values: vanilla, softcore ( Doc: https://wiki.facepunch.com/rust/server-gamemodes )
+serverlevel=&quot;Procedural Map&quot; # Values: Procedural Map, Barren, HapisIsland, SavasIsland
+customlevelurl=&quot;&quot; # Custom level url. +server.levelurl \&quot;${customlevelurl}\&quot;
+seed=&quot;&quot; # range: 1-2147483647, used to reproduce a procedural map.
+salt=&quot;&quot; # range: unknown, used to recover a known setting from an existing map.
+# 最大玩家数
+maxplayers=&quot;10&quot;
+worldsize=&quot;3000&quot; # default: 3000, range: 1000-6000, map size in meters.
+saveinterval=&quot;300&quot; # Auto-save in seconds.
+tickrate=&quot;30&quot; # default: 30, range: 15-100.
+...
+...
+</code></pre>
+<p>保存后此步结束。</p>
+<p><strong>4、启动服务器</strong></p>
+<pre><code class="language-bash"># 回到用户目录下
+cd /home/rustserver
+# 启动服务器
+./rustserver start
+</code></pre>
+<p>看到如下信息说明服务器启动完成：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20f0ba2ead.png" alt="启动完成"></p>
+<blockquote>
+<p><strong>几个需要注意的点：</strong><br>
+① 记得开发防火墙和安全组的对应端口，我这里贪省事直接关闭了防火墙：</p>
+<pre><code class="language-bash">sudo ufw disable
+</code></pre>
+<p>② 服务器的启动需要时间，大概在 5 到 10 分钟左右。如何判断服务器是否启动成功可以通过监控，在 2H4G 的云服务器，RustDedicated 大概会吃 50% 的 CPU 资源和 90% 的内存资源，长时间稳定这个占用的话基本就算是启动成功了。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20a00a2b1c.png" alt="top"><br>
+③ 如果发现 kswapd0 长时间占用几乎 100% 的 CPU 资源，那说明你服务器的内存不足以启动 Rust 服务器，系统开始使用硬盘做虚拟内存了，你可以选择多花钱升级服务器的内存或者提前设置好虚拟内存供开服使用，教程在这里：<a href="https://senjianlu.com/2021/07/centos7-swap/">CentOS7 下建立 SWaP 分区以增加虚拟内存</a>（命令可以完全照搬，CentOS7 和 Ubuntu18.04 通用）</p>
+</blockquote>
+<p>最后到游戏中，按下 F1 并输入：</p>
+<pre><code class="language-bash"># IP 和端口自行替换
+connect 127.0.0.30:28015
+</code></pre>
+<p>连接到服务器即可！<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20bccc7f2b.png" alt="连接成功"></p>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/ubuntu18-rust-server-01/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/ubuntu18-rust-server-01/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/vps-iplc-01/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/smart-contracts-note-02/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

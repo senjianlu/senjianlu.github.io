@@ -24,18 +24,18 @@
   
   
   <meta name="description" content="由于在学校针对作业和毕设 MySQL 已经很够用了，因此也没有做更多对数据库的功课，只知道 Oracle 数据库适合企业，MySQL 适合小型项目，但是工作以后的第一个" />
-  <meta name="generator" content="Hugo 0.88.1 with theme pure" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
   <title>PostgreSQL 学习笔记（一） 数据库的安装与环境配置 - 森见鹿的博客 </title>
   
   
-  <link rel="stylesheet" href="https://senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
   <meta property="og:title" content="PostgreSQL 学习笔记（一） 数据库的安装与环境配置" />
 <meta property="og:description" content="由于在学校针对作业和毕设 MySQL 已经很够用了，因此也没有做更多对数据库的功课，只知道 Oracle 数据库适合企业，MySQL 适合小型项目，但是工作以后的第一个" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://senjianlu.com/2020/02/postgresql-note-01/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://bak.senjianlu.com/2020/02/postgresql-note-01/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-02-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-02-02T00:00:00+00:00" />
 
@@ -77,7 +77,7 @@
       <div class="navbar-header">
         <div class="profile-block text-center">
           <a id="avatar" href="https://github.com/senjianlu" target="_blank">
-            <img class="img-circle img-rotate" src="https://senjianlu.com/avatar.png" width="200" height="200">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
           </a>
           <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
@@ -158,7 +158,7 @@
     <h3 class="widget-title">公告</h3>
     <div class="widget-body">
         <div id="board">
-            <div class="content"><p>用来记录在工作中的一些问题和对应解决。</br>博客发布之前我会尽量检查，但是避免不了环境或是配置不同而造成的难以预测的问题，如有错误或疑问请 <a href='https://t.me/rabbirbot00'>Telegram 联系我</a>，感谢！</p>
+            <div class="content"><p>该主题的博客已进入归档状态，新博客地址：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
             </div>
         </div>
     </div>
@@ -168,10 +168,10 @@
     <h3 class="widget-title"> 分类</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">39</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">42</span></li>
-            <li class="category-list-item"><a href="https://senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="category-list-link">使用体验</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E6%95%99%E7%A8%8B%E7%BF%BB%E6%96%B0/" class="category-list-link">教程翻新</a><span class="category-list-count">45</span></li>
+            <li class="category-list-item"><a href="https://bak.senjianlu.com/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="category-list-link">踩坑记录</a><span class="category-list-count">9</span></li>
         </ul>
     </div>
 </div>
@@ -181,79 +181,87 @@
         <ul class="tag-list">
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/apollo/" class="tag-list-link">apollo</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
-                    class="tag-list-count">8</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/clash/" class="tag-list-link">clash</a><span
+                    class="tag-list-count">11</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/datax/" class="tag-list-link">datax</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
-                    class="tag-list-count">12</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/docker/" class="tag-list-link">docker</a><span
+                    class="tag-list-count">13</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/fiddler/" class="tag-list-link">fiddler</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/java/" class="tag-list-link">java</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/java/" class="tag-list-link">java</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/javascript/" class="tag-list-link">javascript</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/k3s/" class="tag-list-link">k3s</a><span
                     class="tag-list-count">6</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
-                    class="tag-list-count">25</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">26</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
-                    class="tag-list-count">3</span></li>
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/mongodb/" class="tag-list-link">mongodb</a><span
+                    class="tag-list-count">4</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/postgresql/" class="tag-list-link">postgresql</a><span
                     class="tag-list-count">8</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/python/" class="tag-list-link">python</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/python/" class="tag-list-link">python</a><span
                     class="tag-list-count">4</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/rabbitmq/" class="tag-list-link">rabbitmq</a><span
                     class="tag-list-count">3</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
-                    class="tag-list-count">3</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
-                    class="tag-list-count">6</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
-                    class="tag-list-count">4</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/redis/" class="tag-list-link">redis</a><span
                     class="tag-list-count">1</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%85%B6%E4%BB%96/" class="tag-list-link">其他</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="tag-list-link">区块链</a><span
                     class="tag-list-count">7</span></li>
             
             
-            <li class="tag-list-item"><a href="https://senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="tag-list-link">小程序</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%97%A5%E8%AF%AD/" class="tag-list-link">日语</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E6%B8%B8%E6%88%8F/" class="tag-list-link">游戏</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%A1%AC%E4%BB%B6/" class="tag-list-link">硬件</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://bak.senjianlu.com/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" class="tag-list-link">网站建设</a><span
                     class="tag-list-count">13</span></li>
             
         </ul>
@@ -268,7 +276,37 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
+                        <a href="https://bak.senjianlu.com/2022/09/dingding-applet-01/" class="title">钉钉小程序开发（一）Taro &#43; React &#43; TypeScript &#43; Taro UI 搭建钉钉小程序 Demo 并发布到企业内部</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-09-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-09-02</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/07/centos7-trojan-server-for-bwg/" class="title">CentOS7 下搭建 Trojan 服务端（附带搬瓦工机器的一些特殊配制）</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-07-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-07-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-redisinsight/" class="title">CentOS7 下 Docker 部署 RedisInsight Redis 网页版的可视化工具</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-wildcord-ssl-certificate/" class="title">CentOS7 下通配符 SSL 证书的购买和配置</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-04-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-16</time>
@@ -278,40 +316,10 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
+                        <a href="https://bak.senjianlu.com/2022/04/centos7-docker-rabbitmq-websocket/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 开启 WebSocket 以使用 JavaScript 进行连接</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-04-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-04-01</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/03/centos7-docker-rabbitmq-error/" class="title">CentOS7 下 Docker 启动的 RabbitMQ 遇到 Virtual host / experienced an error on node rabbit@41xx9xx9xxc6 and may be inaccessible 问题的解决</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-03-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-03-25</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/02/centos7-docker-odoo/" class="title">CentOS7 下用 Docker 部署 Odoo 开源 ERP 系统（企业资源规划及客户关系管理系统）</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-02-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-19</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://senjianlu.com/2022/02/eth-miner-note-03/" class="title">以太坊矿机搭建（三）从 ethermine.org 矿池中将小额 ETH 收益提现</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-02-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-02-18</time>
                     </p>
                 </div>
             </li>
@@ -340,7 +348,7 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://senjianlu.com/2020/02/postgresql-note-01/" class="article-date">
+<a href="https://bak.senjianlu.com/2020/02/postgresql-note-01/" class="article-date">
   <time datetime="2020-02-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-02</time>
 </a>
 </span>
@@ -364,7 +372,7 @@
 <hr>
 <p>主要书籍是 《<strong>PostgreSQL 修炼之道：从小工到专家</strong>》<br>
 JD链接：<a href="https://item.jd.com/11684063.html">PostgreSQL 修炼之道：从小工到专家</a><br>
-<img src="https://img.senjianlu.com/20200202174459.png" alt="书籍"><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f40c6bdb0.png" alt="书籍"><br>
 PDF 下载 (Google Drive)：<a href="https://drive.google.com/file/d/1FU5l9AIvITvauN-pMEH860F16nR1QB1e/view?usp=sharing">PostgreSQL 修炼之道从小工到专家.pdf</a><br>
 <em>无论如何工具书还是入正比较好，个人是因为快递延缓发货，一边等书一边 PDF 先学习起来。况且只在读完两章后就感叹唐成老师这本书写的真的很好，对 PostgreSQl 的特性和基础 SQL语句的解释都很详细，即使是从没这方面基础的也可以收获很多。</em></p>
 <hr>
@@ -390,7 +398,7 @@ PostgreSQL 支持 Linux、Mac OS 和 Windows 下安装，而且方法相当简�
 运行</p>
 <pre><code class="language-bash">yum install postgresql-server.x86_64
 </code></pre>
-<p><img src="https://img.senjianlu.com/20200202181540.png" alt="安装"><br>
+<p><img src="https://image.senjianlu.com/i/2023/01/26/63d1f40d10e4c.png" alt="安装"><br>
 当然在安装前可以先运行</p>
 <pre><code class="language-bash">psql --version
 </code></pre>
@@ -401,7 +409,7 @@ service postgresql start
 service postgresql status
 </code></pre>
 <p>显示 running 就说明数据库已经安装完成了。<br>
-<img src="https://img.senjianlu.com/20200202182013.png" alt="数据库"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20011274a7.png" alt="数据库"></p>
 <p>2、登录到数据库。<br>
 PostgreSQL 在安装时默认会添加用户 postgres，运行</p>
 <pre><code class="language-bash">su - postgres
@@ -410,7 +418,7 @@ PostgreSQL 在安装时默认会添加用户 postgres，运行</p>
 <pre><code class="language-bash">psql
 </code></pre>
 <p>就进入到 PostgreSQL 数据库中了。<br>
-<img src="https://img.senjianlu.com/20200202182821.png" alt="进入数据库"></p>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f40e2be44.png" alt="进入数据库"></p>
 <p><strong>这里推荐先把 postgres 用户的密码改掉：</strong></p>
 <pre><code class="language-bash">ALTER USER postgres WITH PASSWORD &lt;password&gt;;
 </code></pre>
@@ -424,7 +432,7 @@ PostgreSQL 在安装时默认会添加用户 postgres，运行</p>
 port = 5432
 max_connections = 100
 </code></pre>
-<p><img src="https://img.senjianlu.com/20200202184311.png" alt="修改"></p>
+<p><img src="https://image.senjianlu.com/i/2023/01/26/63d1f40ea1988.png" alt="修改"></p>
 <p>保存退出即可。<br>
 然后再修改 pg_hba.conf 这个文件，路径和刚刚相同</p>
 <pre><code class="language-bash">vi /var/lib/psql/data/pg_hba.conf
@@ -433,16 +441,16 @@ max_connections = 100
 <pre><code class="language-bash">host    all         all         0.0.0.0/0           md5
 </code></pre>
 <p>当然开放访问的 IP 视自己情况而定，这里因为腾讯云服务器安全组全开而且机器连防火墙都没开我也就自暴自弃了，后面会再专做一个项目部署时端口等的初步设置以保障最基础的安全性。<br>
-<img src="https://img.senjianlu.com/20200202184538.png" alt="2修改"></p>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d200137285b.png" alt="2修改"></p>
 <p>都保存以后重启 PostgreSQL 服务，再尝试远程连接吧！</p>
 <pre><code class="language-bash">service postgresql restart
 </code></pre>
-<p><img src="https://img.senjianlu.com/20200202185135.png" alt="连接成功"></p>
+<p><img src="https://image.senjianlu.com/i/2023/01/26/63d1f41077132.png" alt="连接成功"></p>
 <p>至此，PostgreSQL 的学习环境就已经安装完成了，如果想升级为开发环境，就像之前强调的一是防火墙要开，端口要适当开放；二是版本最好升级到 10+，以使用最新的特性。</p>
 <p><strong>附上书的目录：</strong><br>
-<img src="https://img.senjianlu.com/20200202185910.png" alt="目录1"><br>
-<img src="https://img.senjianlu.com/20200202190127.png" alt="目录2"><br>
-<img src="https://img.senjianlu.com/20200202190300.png" alt="目录3"><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f4118d17e.png" alt="目录1"><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f4139876f.png" alt="目录2"><br>
+<img src="https://image.senjianlu.com/i/2023/01/26/63d1f414815ec.png" alt="目录3"><br>
 基础篇涉及到所有支持存储的数据类型，并且所有 PostgreSQL 的基础操作也都做了详解，是肯定要认真学习并做好笔记的。<br>
 提高篇的 PostgreSQL 特有正则表达式很值得学习，索引、序列和锁由于自身之前用的不多，也再过一遍好了。<br>
 而之后的数据库优化和第三方开源软件及架构在这次学习中只会做了解，在项目进行或是完成后再结合实际情况学习可能效果会更好。</p>
@@ -453,7 +461,7 @@ max_connections = 100
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接: </strong>
-      <a href="https://senjianlu.com/2020/02/postgresql-note-01/" title="PostgreSQL 学习笔记（一） 数据库的安装与环境配置" target="_blank" rel="external">https://senjianlu.com/2020/02/postgresql-note-01/</a>
+      <a href="https://bak.senjianlu.com/2020/02/postgresql-note-01/" title="PostgreSQL 学习笔记（一） 数据库的安装与环境配置" target="_blank" rel="external">https://bak.senjianlu.com/2020/02/postgresql-note-01/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -470,13 +478,13 @@ max_connections = 100
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://senjianlu.com/2020/01/pve-synology/" title="PVE 下黑群晖的安装和硬盘直通组 RAID1"><i
+                <a href="https://bak.senjianlu.com/2020/01/pve-synology/" title="PVE 下黑群晖的安装和硬盘直通组 RAID1"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
             </li>
             <li class="next">
-                <a href="https://senjianlu.com/2020/02/postgresql-note-02/"
-                    title="PostgreSQL 学习笔记（二）psql 工具的使用"><span>上一篇&nbsp;&nbsp;</span><i
+                <a href="https://bak.senjianlu.com/2020/02/postgresql-note-03/"
+                    title="PostgreSQL 学习笔记（三）用户权限的管理控制"><span>上一篇&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
@@ -490,12 +498,12 @@ max_connections = 100
 <ul class="social-links">
     <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
             <i class="icon icon-github"></i></a></li>
-    <li><a href="https://senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
             <i class="icon icon-rss"></i></a></li>
 </ul>
   <div class="copyright">
     &copy;2019  -
-    2022
+    2023
     <div class="publishby">
         Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>
@@ -527,8 +535,8 @@ max_connections = 100
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://senjianlu.com/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
-<script src="https://senjianlu.com/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
 
 <script>
     (function (window) {
@@ -540,13 +548,13 @@ max_connections = 100
                 TAGS: '标签',
                 UNTITLED: '(未命名)',
             },
-            ROOT_URL: 'https:\/\/senjianlu.com',
-            CONTENT_URL: 'https:\/\/senjianlu.com\/searchindex.json ',
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
         };
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://senjianlu.com/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({

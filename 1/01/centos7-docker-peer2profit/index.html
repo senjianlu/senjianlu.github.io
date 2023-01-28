@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="之前在主机论坛看到了这个帖子：挖 Peer2Profit 网赚回血保姆级教程 支持 Windows/Debian/Ubuntu/Android，想到自己还有 40 来台小鸡，" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="之前在主机论坛看到了这个帖子：挖 Peer2Profit 网赚回血保姆级教程 支持 Windows/Debian/Ubuntu/Android，想到自己还有 40 来台小鸡，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/centos7-docker-peer2profit/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="之前在主机论坛看到了这个帖子：挖 Peer2Profit 网赚回血保姆级教程 支持 Windows/Debian/Ubuntu/Android，想到自己还有 40 来台小鸡，">
+
+<meta itemprop="wordCount" content="1118">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="之前在主机论坛看到了这个帖子：挖 Peer2Profit 网赚回血保姆级教程 支持 Windows/Debian/Ubuntu/Android，想到自己还有 40 来台小鸡，"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/centos7-docker-peer2profit/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/centos7-docker-peer2profit/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1118字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>之前在主机论坛看到了这个帖子：<a href="https://hostloc.com/forum.php?mod=viewthread&amp;tid=939456&amp;highlight=peer2profit">挖 Peer2Profit 网赚回血保姆级教程 支持 Windows/Debian/Ubuntu/Android</a>，想到自己还有 40 来台小鸡，闲着也是闲着索性都挂上来回点本钱吧。<br>
+这篇教程是在我挂了 1 天后写的，这期间主机商（主要是 VirMach 和 Sentris）并未发来警告邮件，我检查了实际的日志，起了 Peer2Profit 的容器除了对 <a href="https://api.peer2profit.global">api.peer2profit.global</a> 进行访问以保持在线状态，其他流量均是加密的，而且目标地址均为 IP 形式，也就是说即使用以违规用途也不会触发 ToS，可以放心食用，<strong>唯一的坏处是你的 IP 可能会变脏</strong>。<br>
+<strong>当然，请不要用国内主机挂这个！不仅是因为收益很少（实测一天就只会跑大概 20 MB 左右的流量，官方给的价格是 $0.8/GB），更需要担心的是被不法分子用以电信诈骗而导致的后续问题。</strong></p>
+<hr>
+<p>明确风险后那我们就开始吧！</p>
+<p><strong>1、了解收益</strong><br>
+官方给的收益预期是单主机一个月 2 美刀左右：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2017bae6aa.png" alt="单主机一个月 2 美刀左右"><br>
+而实际上被标识为 IDC 机房的 IP 不会有这么高的收益，实际价目表为：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2017c2d721.png" alt="实际价目表"><br>
+我跑了将近 1 天，实际消耗流量分别为（<code>residential</code> 为家宽，<code>hosting</code> 为机房 IP，我在同主机上开了 4 个容器试试流量会不会叠加，因此后 4 个流量需要累加）：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2017cd1f69.png" alt="实际消耗流量"><br>
+大致就能估算出家宽 IP 每月消耗流量在 150 MB 左右，收益为 0.1 美刀左右；而机房 IP 则在 100 MB 左右，收益为 0.03 美刀。不能说很少，只能说基本没有&hellip;&hellip;</p>
+<p><strong>2、注册账号</strong><br>
+如果这点收益你能接受，或者说你对自己的 IP 很有自信的话，那么就来试一试吧。<br>
+访问 <a href="https://peer2profit.com/">https://peer2profit.com</a> 并注册账号：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d20180b0cff.png" alt="注册账号"><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2018335baf.png" alt="填入注册信息"></p>
+<blockquote>
+<p>如果愿意的话你可以填入我的邀请码：<a href="https://peer2profit.com/r/164194907761de27958da86/en">164194907761de27958da86</a>，我将会得到你赚取金额的额外 50% 作为奖励，而你实际的赚取金额不会有任何减少。</p>
+</blockquote>
+<p>后续你的邮箱会被用以软件的启动和绑定。</p>
+<p><strong>3、下载官方容器镜像</strong><br>
+官方只提供了 <code>.deb</code> 格式的安装文件，在 CentOS7 系统上安装极为麻烦，因此这里使用官方的 Docker 容器镜像来启动。<br>
+镜像地址：<a href="https://hub.docker.com/r/peer2profit/peer2profit_x86_64">peer2profit/peer2profit_x86_64</a><br>
+直接在服务器上执行：</p>
+<pre><code class="language-bash">docker pull peer2profit/peer2profit_x86_64:latest
+</code></pre>
+<blockquote>
+<p>如果你还没有安装 Docker 的话，使用下面的指令安装和开启开机自启动：</p>
+<pre><code class="language-bash">yum -y install docker
+systemctl start docker.service
+systemctl enable docker.service
+</code></pre>
+</blockquote>
+<p><strong>4、启动容器</strong><br>
+启动较为简单：</p>
+<pre><code class="language-bash">docker run -d --name peer2profit --restart always --env P2P_EMAIL=test@example.com peer2profit/peer2profit_x86_64:latest
+</code></pre>
+<p>只需要把邮箱 <code>test@example.com</code> 替换为你注册账号的邮箱即可，启动后稍等片刻查看下容器内的运行状况：</p>
+<pre><code class="language-bash">docker logs peer2profit
+</code></pre>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d20184561fc.png" alt="日志"><br>
+如上说明启动成功，前往 Peer2Profit 的控制面板，选择 <code>My network</code> 之后应该就能看到这个节点了：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d201855be5c.png" alt="控制面板"><br>
+之后静待收益入账即可。</p>
+<blockquote>
+<p>如果想停止的话，直接关闭和删除容器即可：</p>
+<pre><code class="language-bash">docker stop peer2profit
+docker rm peer2profit
+</code></pre>
+</blockquote>
+<p><strong>5、关于提现</strong><br>
+官方支持多种虚拟货币提现，我推荐莱特币、USDT 和币安智能链上的代币，因为他们转账所需要的油费相对更少：<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d2018679bd4.png" alt="提现"></p>
+<blockquote>
+<p>关于 MetaMask 钱包的安装和币安智能链的添加，可以看我这篇教程：<a href="https://senjianlu.com/2021/12/smart-contracts-note-01/">基于以太坊 ETH 的智能合约学习（一）下载和使用小狐狸钱包 MetaMask（Chrome 插件版）并添加 BSC 主网络进行 BNB 转账</a></p>
+</blockquote>
+<p>结束。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/centos7-docker-peer2profit/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/centos7-docker-peer2profit/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/centos7-docker-rabbitmq-error/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

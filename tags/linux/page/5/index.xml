@@ -2,149 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on 森见鹿的博客 </title>
-    <link>https://senjianlu.com/tags/linux/</link>
+    <link>https://bak.senjianlu.com/tags/linux/</link>
     <description>Recent content in Linux on 森见鹿的博客 </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://senjianlu.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://bak.senjianlu.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>CentOS7 下用 Docker 安装和启动 Zabbix 企业级服务器监控系统</title>
+      <link>https://bak.senjianlu.com/2021/07/centos7-docker-zabbix/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/07/centos7-docker-zabbix/</guid>
+      <description>又购置了一批 VPS 后，大大小小的 Linux 服务器数量来到了 40 多台，自己写的服务器探针开始感受到压力了，专业性先不提，服务器一多前端那么多 Echarts 图标就够 Chrome 受的</description>
+    </item>
+    
+    <item>
+      <title>Nginx 强制跳转 HTTPS 配置无误且使用了 Cloudflare 后出现 ERR_TOO_MANY_REDIRECTS 301 将您重定向的次数过多的解决方法</title>
+      <link>https://bak.senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</link>
+      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/07/nginx-cloudflare-301-too-many-redirects/</guid>
+      <description>新项目初始因为用的是 Cloudflare 的 DNS 解析，下意识的开启了 CDN，在这之后才开始配置 Nginx，明明配置的没问题但是 HTTP 强制跳转 HTTPS 就是会报 ERR_TOO_MANY_REDIRECTS 301 将您重定向的</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Encrypt 证书的申请、自动更新和 Nginx 的配置</title>
+      <link>https://bak.senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</link>
+      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/07/nginx-letsencrypt-apply-and-auto-renew/</guid>
+      <description>腾讯云虽然免费提供诚信亚洲的 SSL 证书申请，但是一年一申请还是有些麻烦，再加上只是给边缘项目域名加上 HTTPS 防止前端引用资源的时候报不安全，稍微折腾一</description>
+    </item>
+    
+    <item>
+      <title>Nginx 学习（二）处理用户仅使用 IP 访问时服务器返回 SSL 证书泄露域名等问题</title>
+      <link>https://bak.senjianlu.com/2021/07/nginx-note-02/</link>
+      <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/07/nginx-note-02/</guid>
+      <description>给网站套上 Cloudflare 防止被打和缓存部分静态文件应该是常规操作了，但是想起来之前好像见到过的帖子：第一次知道 HTTPS 会暴露服务器 IP，在新的服务器上试验了一</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 下建立 SWaP 分区以增加虚拟内存</title>
+      <link>https://bak.senjianlu.com/2021/07/centos7-swap/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/07/centos7-swap/</guid>
+      <description>明明腾讯云才免费帮忙升过配置，1H2G 升到了 2H4G，结果稍微部署了一点 Docker 又不够了&amp;hellip;&amp;hellip; 看了下现在的这些容器基本都</description>
+    </item>
+    
+    <item>
+      <title>日语学习 「こそあど系統」</title>
+      <link>https://bak.senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/06/japanese-ko-so-a-do-xi-tong/</guid>
+      <description>Notion 链接：https://www.notion.so/rabbir/1a25e9f6a26d4551902af651915117d7</description>
+    </item>
+    
+    <item>
+      <title>日语学习 格助词「を」在自动词前的使用</title>
+      <link>https://bak.senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/06/japanese-ge-zhu-ci-wo/</guid>
+      <description>Notion 链接：https://www.notion.so/rabbir/a24f7acbdba44e0ebe290fd0c3dd1907</description>
+    </item>
+    
+    <item>
+      <title>日语学习 日语词类划分整理</title>
+      <link>https://bak.senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/</link>
+      <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/06/japanese-ri-yu-ci-lei-hua-fen-zheng-li/</guid>
+      <description>Notion 链接：https://www.notion.so/rabbir/e0d5da57af9c47c5a58df377cc4ac558</description>
+    </item>
+    
+    <item>
+      <title>日语学习 使役、被动和使役被动</title>
+      <link>https://bak.senjianlu.com/2021/06/japanese-shi-yi-bei-dong/</link>
+      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2021/06/japanese-shi-yi-bei-dong/</guid>
+      <description>Notion 链接：https://www.notion.so/rabbir/eee6ce0ebd9249a9a281805aadb54582</description>
+    </item>
+    
+    <item>
       <title>CentOS7 下安装 SOCKS5 代理并使用 GOST 搭建加密中转隧道</title>
-      <link>https://senjianlu.com/2021/06/centos7-socks5-gost/</link>
+      <link>https://bak.senjianlu.com/2021/06/centos7-socks5-gost/</link>
       <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2021/06/centos7-socks5-gost/</guid>
+      <guid>https://bak.senjianlu.com/2021/06/centos7-socks5-gost/</guid>
       <description>虽然 Telegram 的 APP 自带 SOCKS5 代理支持，直接配置即可使用，但是几乎配置完连上就是秒封，必须通过国内服务器做中转，即：国外服务器先安装 SOCKS5 代理，再安装 GOST 将国内</description>
     </item>
     
     <item>
       <title>CentOS7 下安装 Java 环境（JDK11）</title>
-      <link>https://senjianlu.com/2020/12/centos7-jdk/</link>
+      <link>https://bak.senjianlu.com/2020/12/centos7-jdk/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2020/12/centos7-jdk/</guid>
+      <guid>https://bak.senjianlu.com/2020/12/centos7-jdk/</guid>
       <description>为了在 CentOS7 服务器下部署 Java Web 项目和使用 RabbitMQ 所留的笔记。 1、首先检查服务器当前 OpenJDK 版本，如果不是需要的版本请先卸载。 java -version 由于这次我们使用的是下载压缩包</description>
     </item>
     
     <item>
       <title>CentOS7 下安装 RabbitMQ</title>
-      <link>https://senjianlu.com/2020/12/centos7-install-rabbitmq/</link>
+      <link>https://bak.senjianlu.com/2020/12/centos7-install-rabbitmq/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2020/12/centos7-install-rabbitmq/</guid>
+      <guid>https://bak.senjianlu.com/2020/12/centos7-install-rabbitmq/</guid>
       <description>最近的新项目考虑到有分布式的需要，感觉加入消息队列不仅能增强各系统直接的协调性，对服务器资源也能提高利用效率，决定试下 RabbitMQ，于是</description>
     </item>
     
     <item>
       <title>Nginx 学习（一）proxy_pass 反代路由的替换和 root 与 alias 的区别</title>
-      <link>https://senjianlu.com/2020/12/nginx-note-01/</link>
+      <link>https://bak.senjianlu.com/2020/12/nginx-note-01/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2020/12/nginx-note-01/</guid>
+      <guid>https://bak.senjianlu.com/2020/12/nginx-note-01/</guid>
       <description>因为一开始没整理归类文件的习惯，把手头的主力开发机弄得很乱，索性就备份了些重要文件重装了电脑，然后就把服务器的 Nginx 配置文件全丢了&amp;hellip</description>
     </item>
     
     <item>
       <title>Windows 下 Hugo 静态博客一键推送发布</title>
-      <link>https://senjianlu.com/2020/05/hugo-auto-build/</link>
+      <link>https://bak.senjianlu.com/2020/05/hugo-auto-build/</link>
       <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2020/05/hugo-auto-build/</guid>
+      <guid>https://bak.senjianlu.com/2020/05/hugo-auto-build/</guid>
       <description>为了在东京奥运会期间应对临时封路，紧跟日本人赶了2个月的功能，终于能休息一阵了 :) 虽然是因为奥运会推迟而不是因为开发完成 总之又能学点新东西了，</description>
     </item>
     
     <item>
-      <title>PostgreSQL 学习笔记（三）用户权限的管理控制</title>
-      <link>https://senjianlu.com/2020/02/postgresql-note-03/</link>
-      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/02/postgresql-note-03/</guid>
-      <description>在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中</description>
-    </item>
-    
-    <item>
       <title>PostgreSQL 学习笔记（二）psql 工具的使用</title>
-      <link>https://senjianlu.com/2020/02/postgresql-note-02/</link>
+      <link>https://bak.senjianlu.com/2020/02/postgresql-note-02/</link>
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2020/02/postgresql-note-02/</guid>
+      <guid>https://bak.senjianlu.com/2020/02/postgresql-note-02/</guid>
       <description>psql 是 PostgreSQL 中的一个命令行工具，类似与 Oracle 中的 sqlplus，但是与之不同的是 psql 支持运行数据库命令或者直接运行 SQL 语句并把结果返回。 既然是从头开始学习</description>
     </item>
     
     <item>
+      <title>PostgreSQL 学习笔记（三）用户权限的管理控制</title>
+      <link>https://bak.senjianlu.com/2020/02/postgresql-note-03/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bak.senjianlu.com/2020/02/postgresql-note-03/</guid>
+      <description>在学习具体的权限管理之前，需要先了解一下 PostgreSQL 中权限的几个层次： 特殊权限，包含超级用户的权限、创建数据库的权限、创建用户以及 Login 的权限。 在数据库中</description>
+    </item>
+    
+    <item>
       <title>PostgreSQL 学习笔记（一） 数据库的安装与环境配置</title>
-      <link>https://senjianlu.com/2020/02/postgresql-note-01/</link>
+      <link>https://bak.senjianlu.com/2020/02/postgresql-note-01/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2020/02/postgresql-note-01/</guid>
+      <guid>https://bak.senjianlu.com/2020/02/postgresql-note-01/</guid>
       <description>由于在学校针对作业和毕设 MySQL 已经很够用了，因此也没有做更多对数据库的功课，只知道 Oracle 数据库适合企业，MySQL 适合小型项目，但是工作以后的第一个</description>
     </item>
     
     <item>
       <title>PVE 下黑群晖的安装和硬盘直通组 RAID1</title>
-      <link>https://senjianlu.com/2020/01/pve-synology/</link>
+      <link>https://bak.senjianlu.com/2020/01/pve-synology/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2020/01/pve-synology/</guid>
+      <guid>https://bak.senjianlu.com/2020/01/pve-synology/</guid>
       <description>突然发现 PVE 下安装的 LEDE 和爱快 不是占用的 CPU 物理核心，所设置的 1 核只是限制了最高占用，于是就决定再利用下多下来的 2G 内存，安装个黑群晖做台式和笔记本</description>
     </item>
     
     <item>
       <title>PVE 下 LEDE&#43;爱快 双软路由部署（旧）</title>
-      <link>https://senjianlu.com/2020/01/pve-lede-ikuai-bak/</link>
+      <link>https://bak.senjianlu.com/2020/01/pve-lede-ikuai-bak/</link>
       <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2020/01/pve-lede-ikuai-bak/</guid>
+      <guid>https://bak.senjianlu.com/2020/01/pve-lede-ikuai-bak/</guid>
       <description>此教程由于初版结构混乱，已废弃，请参考新版（更新于 2021-10-24）：PVE 下 OpenWrt 纯净系统 + 爱快双软路由部署配置文件的整理 起因仅仅是不满足</description>
     </item>
     
     <item>
       <title>Windows 下 PicGo&#43;GitHub 搭建个人图床工具</title>
-      <link>https://senjianlu.com/2020/01/picgo-github/</link>
+      <link>https://bak.senjianlu.com/2020/01/picgo-github/</link>
       <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://senjianlu.com/2020/01/picgo-github/</guid>
+      <guid>https://bak.senjianlu.com/2020/01/picgo-github/</guid>
       <description>虽然也有免费的可以用，但是既然软路由已经配置了方便的上网环境，GitHub 访问起来比以前便利了许多，那就把图床直接部署在 GitHub 上好了，虽然隐私性</description>
-    </item>
-    
-    <item>
-      <title>Windows 下 Hugo &#43; GitHub Pages 搭建静态博客</title>
-      <link>https://senjianlu.com/2020/01/hugo-github-pages/</link>
-      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/hugo-github-pages/</guid>
-      <description>确确实实感觉记性越来越差，有记录包括“问题解决方法”、“配置文件修改”等信息的需求了，但同时也希望一切从简，听从V友建议选用 Hugo+GitHub Pages 免费搭建个静</description>
-    </item>
-    
-    <item>
-      <title>CentOS7 下 Nginx&#43;uWSGI 配置 Django 项目</title>
-      <link>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/centos7-nginx-uwsgi-django/</guid>
-      <description>服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编</description>
-    </item>
-    
-    <item>
-      <title>Python3 通过使用 SOCKS5H 来解决爬虫 SSL 错误和境内 DNS 污染的问题</title>
-      <link>https://senjianlu.com/2020/01/centos7-ssl-error/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/2020/01/centos7-ssl-error/</guid>
-      <description>如果你急于解决爬虫 HTTP 代理池访问 HTPPS 出错，并且自己有境外服务器的话，我直接给出解决方案：服务器搭建 SOCKS5 代理并在代码中以 socks5h://账号:密</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://senjianlu.com/about/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://senjianlu.com/about/</guid>
-      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
-Hugo makes use of a variety of open source projects including:
- https://github.</description>
     </item>
     
   </channel>

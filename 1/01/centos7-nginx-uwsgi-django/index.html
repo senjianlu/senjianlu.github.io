@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+         - 森见鹿的博客 
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编" />
+  <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+  <title> - 森见鹿的博客 </title>
+  
+  
+  <link rel="stylesheet" href="https://bak.senjianlu.com/css/style.min.12e76417f505be23cc8728fcdd1af9a7a47ee1f376e3fab1cca2e61bfff7bff2.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="" />
+<meta property="og:description" content="服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bak.senjianlu.com/1/01/centos7-nginx-uwsgi-django/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编">
+
+<meta itemprop="wordCount" content="1284">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="服务器的部署笔记。 各部分功能介绍： Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。 uWSGI 负责多线程，即支持多人同时访问网站。 Django 是由 Python 编"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KY7RM5P6Z1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KY7RM5P6Z1');
+  </script>
+  
+  <script data-ad-client="ca-pub-7999470995937770" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/senjianlu" target="_blank">
+            <img class="img-circle img-rotate" src="https://bak.senjianlu.com/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Rabbir</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">少说废话，埋头干活</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Jiangsu, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>该主题的博客已进入归档状态，新博客：<a href='https://senjianlu.com'>森见鹿的博客</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/apollo-note-01/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-code-server/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-command-proxy/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-firefox-in-browser/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://bak.senjianlu.com/1/01/centos7-docker-odoo/" class="title"></a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/1/01/centos7-nginx-uwsgi-django/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/1/01/centos7-nginx-uwsgi-django/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1284字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p><strong>服务器的部署笔记。</strong></p>
+<hr>
+<p>各部分功能介绍：</p>
+<ul>
+<li>Nginx 是一个高性能的 HTTP 和反向代理 Web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。</li>
+<li>uWSGI 负责多线程，即支持多人同时访问网站。</li>
+<li>Django 是由 Python 编写的开源 Web 应用框架，适合个人小项目搭建。</li>
+</ul>
+<hr>
+<p>服务器系统为 CentOS7，当然记录的所有命令再更高版本上也都可以使用。</p>
+<p>1、既然搭建的是 Python 项目，首先升级以下服务器端的 Python 版本，默认 Linux 自带 Python2，我们把它先升级为 Python3。</p>
+<p>安装依赖软件</p>
+<pre><code class="language-bash">yum -y install sqlite-devel
+yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel
+</code></pre>
+<p>下载安装 Python3.6</p>
+<pre><code class="language-bash">wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz
+tar zxvf Python-3.6.1.tgz
+cd Python-3.6.1
+./configure --prefix=/usr/local/python3
+make &amp;&amp; make install
+</code></pre>
+<p>创建 Python 及 pip 命令软链接</p>
+<pre><code class="language-bash">ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+</code></pre>
+<p>这样 Python3 就已经安装完成了，键入 Python3 再回车就可以进入 Python 编译了。<br>
+<em>注：Ctrl+Z 退出 Python 编译</em><br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffeb46a88.png" alt="python3"></p>
+<p>2、接下来安装 Django 并配置项目，这里选择的版本是 2.1.8，单纯的因为够用且稳定，新版本的环境配置没有前人指导。</p>
+<pre><code class="language-bash">pip3 install django==2.1.8
+</code></pre>
+<p>等待安装完成后，上传 Django 项目到服务器上任意目录，使用 Xftp 或者 git clone 都可以</p>
+<pre><code class="language-bash">cd 项目文件夹
+python3 manage.py runserver 0.0.0.0:80
+</code></pre>
+<p><strong>注意，运行项目时可能报错：</strong></p>
+<blockquote>
+<p>You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run &lsquo;python manage.py migrate&rsquo; to apply them.</p>
+</blockquote>
+<p>这时只需要按照提示，输入以下内容即可</p>
+<pre><code class="language-bash">python3 manage.py migrate
+</code></pre>
+<p>出现以下信息则说明启动成功。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffed7263d.png" alt="启动成功"><br>
+<strong>注意：</strong> 如果访问页面出现了以下错误，那么进入你的项目，修改 settings.py 将 ALLOWED——HOSTS = [] 修改为 [&rsquo;*&rsquo;] 即可解决。</p>
+<blockquote>
+<p>DisallowedHost at / Invalid HTTP_HOST header: &lsquo;47.56.227.27&rsquo;. You may need to add &lsquo;47.56.227.27&rsquo; to ALLOWED_HOSTS.</p>
+</blockquote>
+<p><img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffec53f23.png" alt="修改"><br>
+<strong>至此，Python 环境与 Django 环境就安装完成。</strong></p>
+<p>3、接下来安装 uWSGI Web 网关。<br>
+首先下载安装 uWSGI</p>
+<pre><code class="language-bash">wget http://projects.unbit.it/downloads/uwsgi-2.0.1.tar.gz
+tar zxvf uwsgi-2.0.1.tar.gz
+cd uwsgi-2.0.1
+python3 uwsgiconfig.py --build
+cp -R /home/uwsgi-2.0.1 /usr/local/uwsgi
+ln -s /usr/local/uwsgi/uwsgi /usr/bin/uwsgi
+</code></pre>
+<p>然后测试 uWSGI 是否安装成功，创建测试文件</p>
+<pre><code class="language-bash">vi test.py
+</code></pre>
+<p>文件内容为：</p>
+<pre><code class="language-python">def application(env, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
+    return [b&quot;Hello World&quot;]
+</code></pre>
+<p>输入完成后 :wq 保存，然后执行以下命令进行测试。</p>
+<pre><code class="language-code">/usr/local/uwsgi/uwsgi --http :9090 --wsgi-file /home/test.py
+</code></pre>
+<blockquote>
+<p>防火墙开放端口指令：</p>
+<pre><code class="language-bash"># 查看当前开放的所有端口
+firewall-cmd --list-all
+# 替换为你需要开放的端口
+firewall-cmd --add-port=80/tcp --permanent
+firewall-cmd --reload
+</code></pre>
+</blockquote>
+<p>然后去对应服务商的安全组处开放安全组。这里就以阿里云国际为例。
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffee1bbe3.png" alt="安全组"></p>
+<p>前往你的 IP:9090 出现 Hello World 就说明 uWSGI 的安装已经完成了！<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1ffef663a2.png" alt="成功"></p>
+<p>4、开始 uWSGI 和 Django 结合，执行</p>
+<pre><code class="language-bash">uwsgi --http :9090 --chdir /home/Django 项目文件夹 --wsgi-file Django 项目(与 manage.py 同级)/wsgi.py --master --processes 4 --threads 2 --stats 127.0.0.1:9192
+</code></pre>
+<p>同样访问 IP:9090 ，如果可以访问 Django 页面则说明成功。<br>
+<em>注：如果在访问 Django 项目时静态文件加载失败可以先忽略，在 Nginx 配置中会指定静态文件路径，配置后可以正常访问。</em></p>
+<p>5、安装 Nginx<br>
+首先下载安装依赖第三方软件 PCRE</p>
+<pre><code class="language-bash">wget http://jaist.dl.sourceforge.net/project/pcre/pcre/8.34/pcre-8.34.tar.bz2
+tar jxvf pcre-8.34.tar.bz2
+</code></pre>
+<blockquote>
+<p>如果报错：bzip2: Cannot exec: No such file or directory<br>
+执行：yum -y install bzip2</p>
+</blockquote>
+<pre><code class="language-bash">cd pcre-8.34
+./configure --enable-utf8
+make &amp;&amp; make install
+</code></pre>
+<p>下载安装依赖第三方软件 OpenSSL</p>
+<pre><code class="language-bash">wget http://distfiles.macports.org/openssl/openssl-1.0.2h.tar.gz
+tar zxvf openssl-1.0.2h.tar.gz
+</code></pre>
+<p>下载安装 Nginx</p>
+<pre><code class="language-bash">wget http://nginx.org/download/nginx-1.9.9.tar.gz
+tar zxvf nginx-1.9.9.tar.gz
+./configure --prefix=/usr/local/nginx --with-pcre --with-http_stub_status_module --with-http_ssl_module --with-openssl=/home/openssl-1.0.2h --with-http_gzip_static_module --with-http_sub_module --with-cc=/usr/bin/gcc
+make install
+</code></pre>
+<p>新建 www 用户</p>
+<pre><code class="language-bash">useradd -s /sbin/nologin -M www
+</code></pre>
+<p>备份、修改 Nginx 配置文件</p>
+<pre><code class="language-bash">cd /usr/local/nginx/conf
+cp -f nginx.conf nginx.conf_bak
+vi nginx.conf
+    (修改文件)
+    user www;         # 修改启动用户为 www
+    worker_processes 4;         # 启动4个进程，根据实际需求配置
+</code></pre>
+<p>启动 Nginx</p>
+<pre><code class="language-bash">cd /usr/local/nginx/sbin
+./nginx
+</code></pre>
+<blockquote>
+<p>如果报错：nginx: [emerg] still could not bind()<br>
+说明80端口目前被占用<br>
+执行：</p>
+<pre><code class="language-bash">netstat -apn | grep 80
+</code></pre>
+<p>然后：</p>
+<pre><code class="language-bash">kill -9 26105
+</code></pre>
+<p><em>26105 为搜索出来的 0.0.0.0/80 对应的 PID</em><br>
+<em>注意：需要删除 5-6 次，因为执行的适合有进程保护</em></p>
+</blockquote>
+<p>再访问 IP:80 显示 Nginx 页面说明 Nginx 安装成功。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1fff1a7107.png" alt="成功"></p>
+<p>6、Nginx+uWSGI+Django 三者连携。<br>
+首先在 Django 项目文件夹中创建 uwsgi.ini</p>
+<pre><code class="language-bash">vi uwsgi.ini
+    (文件内容)
+    [uwsgi]
+    # uwsgi启动端口
+    socket = 127.0.0.1:9090 
+    # django项目目录
+    chdir=/home/SteamCash
+    module=SteamCash.wsgi
+    master = true
+    processes=2
+    threads=2
+    max-requests=2000
+    chmod-socket=664
+    vacuum=true
+    # 日志路径
+    daemonize = /home/SteamCash/logs/uwsgi.log
+</code></pre>
+<p>配置 Nginx</p>
+<pre><code class="language-bash">vi /usr/local/nginx/conf/nginx.conf
+    (文件内容)
+    ......
+    server {
+        listen       80;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        # 选择为你项目的static文件夹
+	    location /static {
+		    alias /home/SteamCash/static;
+	    }
+
+        location / {
+	    include uwsgi_params;
+	    uwsgi_pass 127.0.0.1:9090;
+            root   html;
+            index  index.html index.htm;
+        }
+    ......
+</code></pre>
+<p>启动 uWSGI</p>
+<pre><code class="language-bash">uwsgi --ini /home/SteamCash/uwsgi.ini
+</code></pre>
+<p>启动 Nginx</p>
+<pre><code class="language-bash">./usr/local/nginx/sbin/nginx
+</code></pre>
+<p>接着访问页面即可。<br>
+<img src="https://image.senjianlu.com/bak/2023/01/26/63d1fff2f3ca5.png" alt="访问"></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://bak.senjianlu.com/1/01/centos7-nginx-uwsgi-django/" title="" target="_blank" rel="external">https://bak.senjianlu.com/1/01/centos7-nginx-uwsgi-django/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://bak.senjianlu.com/1/01/centos7-openssl-ca/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://bak.senjianlu.com/1/01/centos7-nezha-monitor/"
+                    title=""><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/senjianlu" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://bak.senjianlu.com/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019  -
+    2023
+    <div class="publishby">
+        Theme by <a href="https://github.com/senjianlu" target="_blank"> Rabbir </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://bak.senjianlu.com/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
+<script src="https://bak.senjianlu.com/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/bak.senjianlu.com',
+            CONTENT_URL: 'https:\/\/bak.senjianlu.com\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://bak.senjianlu.com/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>
